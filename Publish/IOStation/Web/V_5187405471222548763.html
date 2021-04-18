@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'>
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#5471407248773288970)'     />
+<defs><linearGradient id="5471407248773288970" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='#'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4671894684820877684' height = '869' width = '528' y = '-5' x = '160'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  d=' M160,-5 L688,-5 L688,864 160,864 Z'   fill='#FFFF80'>
+</path>
+
+<g data-filter='treenode'   id='shapenode_5648244734534060035' height = '23.11719' width = '54.75781' y = '20' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<rect  id='nodebackshapenode_5648244734534060035'   x='180' y='20' width='54.75781' height='23.11719'   fill='url(#5328495388219850106)'    data-filter='treenodebackground'    />
+<defs><linearGradient id="5328495388219850106" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#00FF00;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFC080;stop-opacity:1" /> </linearGradient> </defs>
+<g data-filter='hline'>
+<line  id='line4996081764230420083'  fill='none'   x1='165' y1='31.05859' x2='180' y2='31.05859'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5349770219432497907'  fill='none'   x1='165' y1='31.55859' x2='165' y2='31.05859'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5648244734534060035'    x='207.3789' y='37.33789' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5122261624497536374' height = '23.11719' width = '54.75781' y = '48.11719' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4901149072985248039'  fill='none'   x1='165' y1='59.17578' x2='180' y2='59.17578'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4802633400100308324'  fill='none'   x1='165' y1='31.55859' x2='165' y2='59.17578'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5122261624497536374'    x='207.3789' y='65.45508' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5434775553906502152' height = '23.11719' width = '54.75781' y = '76.23438' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5305168919434047662'  fill='none'   x1='165' y1='87.29297' x2='180' y2='87.29297'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5543181441689052196'  fill='none'   x1='165' y1='31.55859' x2='165' y2='87.29297'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5434775553906502152'    x='210.9453' y='93.57227' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;未命名</text>
+<a xlink:href="#" click="SCADA.TreeNodeExpand('true','node_5434775553906502152','')">
+<text id='nodetextshapenode_5434775553906502152'    x='187.2849' y='94.54752' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+<g>
+<g data-filter='treenode'   id='shapenode_5235421514063469370' height = '23.11719' width = '54.75781' y = '104.3516' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5730824789820258222'  fill='none'   x1='180' y1='115.4102' x2='200' y2='115.4102'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5358274643735735560'  fill='none'   x1='180' y1='87.79297' x2='180' y2='115.9102'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5005626535386716709'  fill='none'   x1='180' y1='87.79297' x2='180' y2='115.9102'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5235421514063469370'    x='227.3789' y='121.6895' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4880770551180344808' height = '23.11719' width = '54.75781' y = '132.4688' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4856692467064779924'  fill='none'   x1='180' y1='143.5273' x2='200' y2='143.5273'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5241855126950153192'  fill='none'   x1='180' y1='87.79297' x2='180' y2='144.0273'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5444068908725728575'  fill='none'   x1='180' y1='87.79297' x2='180' y2='144.0273'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4880770551180344808'    x='227.3789' y='149.8066' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5251477399293465889' height = '23.11719' width = '54.75781' y = '160.5859' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5757126652136798406'  fill='none'   x1='180' y1='171.6445' x2='200' y2='171.6445'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4897685501361251169'  fill='none'   x1='180' y1='87.79297' x2='180' y2='172.1445'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4648787910523466083'  fill='none'   x1='180' y1='87.79297' x2='180' y2='172.1445'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5251477399293465889'    x='227.3789' y='177.9238' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4940216651207123082' height = '23.11719' width = '54.75781' y = '188.7031' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5013431114018319528'  fill='none'   x1='180' y1='199.7617' x2='200' y2='199.7617'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4776838132245145785'  fill='none'   x1='180' y1='87.79297' x2='180' y2='200.2617'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5324340327367089298'  fill='none'   x1='180' y1='87.79297' x2='180' y2='200.2617'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4940216651207123082'    x='227.3789' y='206.041' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5014548045823358057' height = '23.11719' width = '54.75781' y = '216.8203' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5018126936401089415'  fill='none'   x1='180' y1='227.8789' x2='200' y2='227.8789'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5112127308518711733'  fill='none'   x1='180' y1='87.79297' x2='180' y2='228.3789'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5500888632445406236'  fill='none'   x1='180' y1='87.79297' x2='180' y2='228.3789'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5014548045823358057'    x='227.3789' y='234.1582' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5542846629145113377' height = '23.11719' width = '54.75781' y = '244.9375' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5648336871885310791'  fill='none'   x1='180' y1='255.9961' x2='200' y2='255.9961'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5460748778689066550'  fill='none'   x1='180' y1='87.79297' x2='180' y2='256.4961'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4714090549481815475'  fill='none'   x1='180' y1='87.79297' x2='180' y2='256.4961'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5542846629145113377'    x='227.3789' y='262.2754' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5070141745284418823' height = '23.11719' width = '54.75781' y = '273.0547' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5612303295598036730'  fill='none'   x1='165' y1='284.1133' x2='180' y2='284.1133'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5423367670349650923'  fill='none'   x1='165' y1='31.55859' x2='165' y2='284.1133'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5070141745284418823'    x='207.3789' y='290.3926' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4826554297761205272' height = '23.11719' width = '54.75781' y = '301.1719' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4634916565614209070'  fill='none'   x1='165' y1='312.2305' x2='180' y2='312.2305'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5197851578597810680'  fill='none'   x1='165' y1='31.55859' x2='165' y2='312.2305'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4826554297761205272'    x='210.9453' y='318.5098' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;未命名</text>
+<a xlink:href="#" click="SCADA.TreeNodeExpand('true','node_4826554297761205272','')">
+<text id='nodetextshapenode_4826554297761205272'    x='187.2849' y='319.485' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+<g>
+<g data-filter='treenode'   id='shapenode_5158171653221860885' height = '23.11719' width = '54.75781' y = '329.2891' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='False'>
+<g data-filter='hline'>
+<line  id='line5235679345351539603'  fill='none'   x1='180' y1='340.3477' x2='200' y2='340.3477'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5216537467134514402'  fill='none'   x1='180' y1='312.7305' x2='180' y2='340.8477'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5641347512446632224'  fill='none'   x1='180' y1='312.7305' x2='180' y2='340.8477'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5158171653221860885'    x='227.3789' y='346.627' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5377801723096952848' height = '23.11719' width = '54.75781' y = '357.4063' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5448611137750930093'  fill='none'   x1='180' y1='368.4648' x2='200' y2='368.4648'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4826669793251302821'  fill='none'   x1='180' y1='312.7305' x2='180' y2='368.9648'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5624469726524816615'  fill='none'   x1='180' y1='312.7305' x2='180' y2='368.9648'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5377801723096952848'    x='230.9453' y='374.7441' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;未命名</text>
+<a xlink:href="#" click="SCADA.TreeNodeExpand('true','node_5377801723096952848','node_4826554297761205272')">
+<text id='nodetextshapenode_5377801723096952848'    x='207.2849' y='375.7194' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+<g>
+<g data-filter='treenode'   id='shapenode_5038727469988868838' height = '23.11719' width = '54.75781' y = '385.5234' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5356356425865135980'  fill='none'   x1='200' y1='396.582' x2='220' y2='396.582'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4749149313857395709'  fill='none'   x1='200' y1='368.9648' x2='200' y2='397.082'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5609547919529100296'  fill='none'   x1='200' y1='368.9648' x2='200' y2='397.082'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5218084459824279877'  fill='none'   x1='200' y1='368.9648' x2='200' y2='397.082'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5038727469988868838'    x='247.3789' y='402.8613' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5237634376562241882' height = '23.11719' width = '54.75781' y = '413.6406' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4859690657847133890'  fill='none'   x1='200' y1='424.6992' x2='220' y2='424.6992'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5131082974822322845'  fill='none'   x1='200' y1='368.9648' x2='200' y2='425.1992'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5290161495917244460'  fill='none'   x1='200' y1='368.9648' x2='200' y2='425.1992'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5428044728020548033'  fill='none'   x1='200' y1='368.9648' x2='200' y2='425.1992'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5237634376562241882'    x='250.9453' y='430.9785' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;未命名</text>
+<a xlink:href="#" click="SCADA.TreeNodeExpand('true','node_5237634376562241882','node_5377801723096952848')">
+<text id='nodetextshapenode_5237634376562241882'    x='227.2849' y='431.9538' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+<g>
+<g data-filter='treenode'   id='shapenode_5592186575064049175' height = '23.11719' width = '54.75781' y = '441.7578' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4815564993647462984'  fill='none'   x1='220' y1='452.8164' x2='240' y2='452.8164'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5737821316156187475'  fill='none'   x1='220' y1='425.1992' x2='220' y2='453.3164'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5610084176142187279'  fill='none'   x1='220' y1='425.1992' x2='220' y2='453.3164'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4997883495769178981'  fill='none'   x1='220' y1='425.1992' x2='220' y2='453.3164'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5431578263225907225'  fill='none'   x1='220' y1='425.1992' x2='220' y2='453.3164'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5592186575064049175'    x='267.3789' y='459.0957' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4726705875634298047' height = '23.11719' width = '54.75781' y = '469.875' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5081090078366443038'  fill='none'   x1='220' y1='480.9336' x2='240' y2='480.9336'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5357547639735126504'  fill='none'   x1='220' y1='425.1992' x2='220' y2='481.4336'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4941080346246545311'  fill='none'   x1='220' y1='425.1992' x2='220' y2='481.4336'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5621313151319209017'  fill='none'   x1='220' y1='425.1992' x2='220' y2='481.4336'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5665494195456730887'  fill='none'   x1='220' y1='425.1992' x2='220' y2='481.4336'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4726705875634298047'    x='267.3789' y='487.2129' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4764977365067752633' height = '23.11719' width = '54.75781' y = '497.9922' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5130261158763517443'  fill='none'   x1='220' y1='509.0508' x2='240' y2='509.0508'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5077340061803942674'  fill='none'   x1='220' y1='425.1992' x2='220' y2='509.5508'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4881479225237728342'  fill='none'   x1='220' y1='425.1992' x2='220' y2='509.5508'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5590691958563275727'  fill='none'   x1='220' y1='425.1992' x2='220' y2='509.5508'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5083363580063859372'  fill='none'   x1='220' y1='425.1992' x2='220' y2='509.5508'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4764977365067752633'    x='267.3789' y='515.3301' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4932124769694890018' height = '23.11719' width = '54.75781' y = '526.1094' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5303768454767690108'  fill='none'   x1='220' y1='537.168' x2='240' y2='537.168'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4763289147421518165'  fill='none'   x1='220' y1='425.1992' x2='220' y2='537.668'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4914788399411050451'  fill='none'   x1='220' y1='425.1992' x2='220' y2='537.668'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5477020146496091323'  fill='none'   x1='220' y1='425.1992' x2='220' y2='537.668'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5369836513286527407'  fill='none'   x1='220' y1='425.1992' x2='220' y2='537.668'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4932124769694890018'    x='267.3789' y='543.4473' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5437391462362022468' height = '23.11719' width = '54.75781' y = '554.2266' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5034841961392168554'  fill='none'   x1='220' y1='565.2852' x2='240' y2='565.2852'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4760524301330154867'  fill='none'   x1='220' y1='425.1992' x2='220' y2='565.7852'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5130286622419781091'  fill='none'   x1='220' y1='425.1992' x2='220' y2='565.7852'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5648846983080555908'  fill='none'   x1='220' y1='425.1992' x2='220' y2='565.7852'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4775108363619748053'  fill='none'   x1='220' y1='425.1992' x2='220' y2='565.7852'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5437391462362022468'    x='267.3789' y='571.5645' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5079919571270113091' height = '23.11719' width = '54.75781' y = '582.3438' x = '240'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='240' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5365494689673760299'  fill='none'   x1='220' y1='593.4023' x2='240' y2='593.4023'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5197241952953427136'  fill='none'   x1='220' y1='425.1992' x2='220' y2='593.9023'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5166151554450046491'  fill='none'   x1='220' y1='425.1992' x2='220' y2='593.9023'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5296771674314560448'  fill='none'   x1='220' y1='425.1992' x2='220' y2='593.9023'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4856642175049866602'  fill='none'   x1='220' y1='425.1992' x2='220' y2='593.9023'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5079919571270113091'    x='267.3789' y='599.6816' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5467114032660722051' height = '23.11719' width = '54.75781' y = '610.4609' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5078628217351737355'  fill='none'   x1='200' y1='621.5195' x2='220' y2='621.5195'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4848769955789767075'  fill='none'   x1='200' y1='368.9648' x2='200' y2='622.0195'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5150826114498948428'  fill='none'   x1='200' y1='368.9648' x2='200' y2='622.0195'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4782250846343166561'  fill='none'   x1='200' y1='368.9648' x2='200' y2='622.0195'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5467114032660722051'    x='247.3789' y='627.7988' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5440041063174138311' height = '23.11719' width = '54.75781' y = '638.5781' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4682794052777808332'  fill='none'   x1='200' y1='649.6367' x2='220' y2='649.6367'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5411828340426819643'  fill='none'   x1='200' y1='368.9648' x2='200' y2='650.1367'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4849294302971904533'  fill='none'   x1='200' y1='368.9648' x2='200' y2='650.1367'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5197103872888803028'  fill='none'   x1='200' y1='368.9648' x2='200' y2='650.1367'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5440041063174138311'    x='247.3789' y='655.916' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5037330584800236627' height = '23.11719' width = '54.75781' y = '666.6953' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5202667749294532859'  fill='none'   x1='200' y1='677.7539' x2='220' y2='677.7539'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5306540529819514320'  fill='none'   x1='200' y1='368.9648' x2='200' y2='678.2539'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5114958586858153968'  fill='none'   x1='200' y1='368.9648' x2='200' y2='678.2539'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5424605076762992532'  fill='none'   x1='200' y1='368.9648' x2='200' y2='678.2539'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5037330584800236627'    x='247.3789' y='684.0332' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4754403735194166043' height = '23.11719' width = '54.75781' y = '694.8125' x = '220'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='220' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5113019130293302071'  fill='none'   x1='200' y1='705.8711' x2='220' y2='705.8711'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4946378023686159386'  fill='none'   x1='200' y1='368.9648' x2='200' y2='706.3711'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5404811599468805076'  fill='none'   x1='200' y1='368.9648' x2='200' y2='706.3711'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line4939644432279546755'  fill='none'   x1='200' y1='368.9648' x2='200' y2='706.3711'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4754403735194166043'    x='247.3789' y='712.1504' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_4739083119852746780' height = '23.11719' width = '54.75781' y = '722.9297' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5722786886376099015'  fill='none'   x1='180' y1='733.9883' x2='200' y2='733.9883'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5336694486783092851'  fill='none'   x1='180' y1='312.7305' x2='180' y2='734.4883'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5593704603740735143'  fill='none'   x1='180' y1='312.7305' x2='180' y2='734.4883'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_4739083119852746780'    x='227.3789' y='740.2676' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5753064306134274968' height = '23.11719' width = '54.75781' y = '751.0469' x = '200'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='200' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5505280714428152381'  fill='none'   x1='180' y1='762.1055' x2='200' y2='762.1055'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line4829958850207405735'  fill='none'   x1='180' y1='312.7305' x2='180' y2='762.6055'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<line  id='line5580593069225716191'  fill='none'   x1='180' y1='312.7305' x2='180' y2='762.6055'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5753064306134274968'    x='227.3789' y='768.3848' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5685922326375924825' height = '23.11719' width = '54.75781' y = '779.1641' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line5134037056655933992'  fill='none'   x1='165' y1='790.2227' x2='180' y2='790.2227'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5391317811043377562'  fill='none'   x1='165' y1='31.55859' x2='165' y2='790.2227'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5685922326375924825'    x='207.3789' y='796.502' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g data-filter='treenode'   id='shapenode_5204121132969614088' height = '23.11719' width = '54.75781' y = '807.2813' x = '180'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-LocalX='180' data-nodesize='54.75781,23.11719' data-expand='True'>
+<g data-filter='hline'>
+<line  id='line4830915729015856136'  fill='none'   x1='165' y1='818.3398' x2='180' y2='818.3398'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='line5331344899698619614'  fill='none'   x1='165' y1='31.55859' x2='165' y2='818.3398'   stroke ="#00FF00"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+</g>
+<text id='nodetextshapenode_5204121132969614088'    x='207.3789' y='824.6191' alignment-baseline='middle' text-anchor='middle'  fill='#800000'  font-weight='normal' font-size='16' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >未命名</text>
+<g>
+<g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

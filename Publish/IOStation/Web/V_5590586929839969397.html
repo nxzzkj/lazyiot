@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'>
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#5170685314160900617)'     />
+<defs><linearGradient id="5170685314160900617" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='#'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4709491093006918349' height = '536' width = '373' y = '19' x = '294'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  d=' M294,19 L667,19 L667,555 294,555 Z'   fill='#FFFFFF'>
+</path>
+
+<g data-filter='treenode'   id='shapenode_5395515204008994515' height = '20.22754' width = '62.33008' y = '44' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,44,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5394286980031915288'  fill='none'   x1='299' y1='53.86377' x2='314' y2='53.86377'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5131149623455554295'  fill='none'   x1='299' y1='54.11377' x2='299' y2='53.86377'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5395515204008994515','ID4709491093006918349')">
+<text id='nodetextshapenode_5395515204008994515'    x='345.165' y='59.17065' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5581803000824566704' height = '20.22754' width = '62.33008' y = '69.22754' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,69.22754,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5156508775525391370'  fill='none'   x1='299' y1='79.09131' x2='314' y2='79.09131'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5734003184237464145'  fill='none'   x1='299' y1='54.11377' x2='299' y2='79.09131'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5581803000824566704','ID4709491093006918349')">
+<text id='nodetextshapenode_5581803000824566704'    x='345.165' y='84.39819' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5400770455722270667' height = '20.22754' width = '62.33008' y = '94.45508' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,94.45508,62.33008,20.22754' data-showline='true' data-symbolsize='14.56981,27.01821' data-childnum='4' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4711987570421693142'  fill='none'   x1='299' y1='104.3188' x2='314' y2='104.3188'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5156034594005319929'  fill='none'   x1='299' y1='54.11377' x2='299' y2='104.3188'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5400770455722270667','ID4709491093006918349')">
+<text id='nodetextshapenode_5400770455722270667'    x='348.2856' y='109.6257' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;新建节点</text>
+</a>
+</g>
+<g data-filter='expandsymbol'>
+<a xlink:href="#" onclick="SCADA.TreeNodeExpand('true','node_5400770455722270667','ID4709491093006918349')">
+<text id='nodesymbolshapenode_5400770455722270667'    x='321.2849' y='111.3234' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5645413269507611538' height = '20.22754' width = '62.33008' y = '119.6826' x = '334'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='单击事件'  data-event_servicetype='链接服务' data-event_title='111'  onclick='SCADA.OnEventService()'  data-event_confirm='True' data-event_msg='是否要打开连接'   data-event_url='http://www.baidu.com'  data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5400770455722270667' data-hmargin='20' data-vmargin='20' data-rect='334,119.6826,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5529889453682688168'  fill='none'   x1='314' y1='129.5464' x2='334' y2='129.5464'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5279581353569792334'  fill='none'   x1='314' y1='104.5688' x2='314' y2='129.7964'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5419552760710008154'  fill='none'   x1='314' y1='104.5688' x2='314' y2='129.7964'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5645413269507611538','ID4709491093006918349')">
+<text id='nodetextshapenode_5645413269507611538'    x='365.165' y='134.8533' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4809595130789676783' height = '20.22754' width = '62.33008' y = '144.9102' x = '334'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5400770455722270667' data-hmargin='20' data-vmargin='20' data-rect='334,144.9102,62.33008,20.22754' data-showline='true' data-symbolsize='14.56981,27.01821' data-childnum='4' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4758416549747302033'  fill='none'   x1='314' y1='154.7739' x2='334' y2='154.7739'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4860494535717790057'  fill='none'   x1='314' y1='104.5688' x2='314' y2='155.0239'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5123477440873444361'  fill='none'   x1='314' y1='104.5688' x2='314' y2='155.0239'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4809595130789676783','ID4709491093006918349')">
+<text id='nodetextshapenode_4809595130789676783'    x='368.2856' y='160.0808' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;新建节点</text>
+</a>
+</g>
+<g data-filter='expandsymbol'>
+<a xlink:href="#" onclick="SCADA.TreeNodeExpand('true','node_4809595130789676783','ID4709491093006918349')">
+<text id='nodesymbolshapenode_4809595130789676783'    x='341.2849' y='161.7785' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4898794642700832111' height = '20.22754' width = '62.33008' y = '170.1377' x = '354'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4809595130789676783' data-hmargin='20' data-vmargin='20' data-rect='354,170.1377,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='2' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4712638027435759746'  fill='none'   x1='334' y1='180.0015' x2='354' y2='180.0015'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5509415370263016123'  fill='none'   x1='334' y1='155.0239' x2='334' y2='180.2515'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5451039470093543815'  fill='none'   x1='334' y1='155.0239' x2='334' y2='180.2515'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5403890747956327207'  fill='none'   x1='334' y1='155.0239' x2='334' y2='180.2515'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4898794642700832111','ID4709491093006918349')">
+<text id='nodetextshapenode_4898794642700832111'    x='385.165' y='185.3083' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4850032655916595272' height = '20.22754' width = '62.33008' y = '195.3652' x = '354'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4809595130789676783' data-hmargin='20' data-vmargin='20' data-rect='354,195.3652,62.33008,20.22754' data-showline='true' data-symbolsize='14.56981,27.01821' data-childnum='3' data-showicon='false' data-iconsize='20,20' data-level='2' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4980800455090058027'  fill='none'   x1='334' y1='205.229' x2='354' y2='205.229'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5593872272012733292'  fill='none'   x1='334' y1='155.0239' x2='334' y2='205.479'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5748894510622560285'  fill='none'   x1='334' y1='155.0239' x2='334' y2='205.479'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5322580411351232726'  fill='none'   x1='334' y1='155.0239' x2='334' y2='205.479'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4850032655916595272','ID4709491093006918349')">
+<text id='nodetextshapenode_4850032655916595272'    x='388.2856' y='210.5359' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >&nbsp;&nbsp;新建节点</text>
+</a>
+</g>
+<g data-filter='expandsymbol'>
+<a xlink:href="#" onclick="SCADA.TreeNodeExpand('true','node_4850032655916595272','ID4709491093006918349')">
+<text id='nodesymbolshapenode_4850032655916595272'    x='361.2849' y='212.2336' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5055345390242451543' height = '20.22754' width = '62.33008' y = '220.5928' x = '374'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4850032655916595272' data-hmargin='20' data-vmargin='20' data-rect='374,220.5928,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='3' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4840804821133983302'  fill='none'   x1='354' y1='230.4565' x2='374' y2='230.4565'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4653723210055916735'  fill='none'   x1='354' y1='205.479' x2='354' y2='230.7065'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5117510240990653928'  fill='none'   x1='354' y1='205.479' x2='354' y2='230.7065'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5733794550087737245'  fill='none'   x1='354' y1='205.479' x2='354' y2='230.7065'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5543706094342301233'  fill='none'   x1='354' y1='205.479' x2='354' y2='230.7065'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5055345390242451543','ID4709491093006918349')">
+<text id='nodetextshapenode_5055345390242451543'    x='405.165' y='235.7634' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5708956573350782947' height = '20.22754' width = '62.33008' y = '245.8203' x = '374'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4850032655916595272' data-hmargin='20' data-vmargin='20' data-rect='374,245.8203,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='3' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5264421627350451930'  fill='none'   x1='354' y1='255.6841' x2='374' y2='255.6841'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4874543751014457215'  fill='none'   x1='354' y1='205.479' x2='354' y2='255.9341'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline4784729864192858918'  fill='none'   x1='354' y1='205.479' x2='354' y2='255.9341'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5065072773975734314'  fill='none'   x1='354' y1='205.479' x2='354' y2='255.9341'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5362765344356446859'  fill='none'   x1='354' y1='205.479' x2='354' y2='255.9341'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5708956573350782947','ID4709491093006918349')">
+<text id='nodetextshapenode_5708956573350782947'    x='405.165' y='260.991' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4961237630649207737' height = '20.22754' width = '62.33008' y = '271.0479' x = '374'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4850032655916595272' data-hmargin='20' data-vmargin='20' data-rect='374,271.0479,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='3' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5472370410899503238'  fill='none'   x1='354' y1='280.9116' x2='374' y2='280.9116'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5480508188646835462'  fill='none'   x1='354' y1='205.479' x2='354' y2='281.1616'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline4795732753225773392'  fill='none'   x1='354' y1='205.479' x2='354' y2='281.1616'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5557289753099337579'  fill='none'   x1='354' y1='205.479' x2='354' y2='281.1616'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5091359518932734820'  fill='none'   x1='354' y1='205.479' x2='354' y2='281.1616'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4961237630649207737','ID4709491093006918349')">
+<text id='nodetextshapenode_4961237630649207737'    x='405.165' y='286.2185' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5242548183562445664' height = '20.22754' width = '62.33008' y = '296.2754' x = '354'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4809595130789676783' data-hmargin='20' data-vmargin='20' data-rect='354,296.2754,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='2' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5758472157599805981'  fill='none'   x1='334' y1='306.1392' x2='354' y2='306.1392'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5112209059179075820'  fill='none'   x1='334' y1='155.0239' x2='334' y2='306.3892'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5755094891854767368'  fill='none'   x1='334' y1='155.0239' x2='334' y2='306.3892'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5332917183811838293'  fill='none'   x1='334' y1='155.0239' x2='334' y2='306.3892'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5242548183562445664','ID4709491093006918349')">
+<text id='nodetextshapenode_5242548183562445664'    x='385.165' y='311.446' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5600932976191184137' height = '20.22754' width = '62.33008' y = '321.5029' x = '354'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_4809595130789676783' data-hmargin='20' data-vmargin='20' data-rect='354,321.5029,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='2' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5691185001174465368'  fill='none'   x1='334' y1='331.3667' x2='354' y2='331.3667'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5284957052660425031'  fill='none'   x1='334' y1='155.0239' x2='334' y2='331.6167'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5052020236454005882'  fill='none'   x1='334' y1='155.0239' x2='334' y2='331.6167'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5269866398646344309'  fill='none'   x1='334' y1='155.0239' x2='334' y2='331.6167'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5600932976191184137','ID4709491093006918349')">
+<text id='nodetextshapenode_5600932976191184137'    x='385.165' y='336.6736' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4788645777692022681' height = '20.22754' width = '62.33008' y = '346.7305' x = '334'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5400770455722270667' data-hmargin='20' data-vmargin='20' data-rect='334,346.7305,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5174213235048501702'  fill='none'   x1='314' y1='356.5942' x2='334' y2='356.5942'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5746306636903230989'  fill='none'   x1='314' y1='104.5688' x2='314' y2='356.8442'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline4668744836862780773'  fill='none'   x1='314' y1='104.5688' x2='314' y2='356.8442'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4788645777692022681','ID4709491093006918349')">
+<text id='nodetextshapenode_4788645777692022681'    x='365.165' y='361.9011' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4748632583128997261' height = '20.22754' width = '62.33008' y = '371.958' x = '334'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5400770455722270667' data-hmargin='20' data-vmargin='20' data-rect='334,371.958,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5675173155205425373'  fill='none'   x1='314' y1='381.8218' x2='334' y2='381.8218'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4720970800640484317'  fill='none'   x1='314' y1='104.5688' x2='314' y2='382.0718'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+<line  id='vline5293943977734064256'  fill='none'   x1='314' y1='104.5688' x2='314' y2='382.0718'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4748632583128997261','ID4709491093006918349')">
+<text id='nodetextshapenode_4748632583128997261'    x='365.165' y='387.1287' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5315554463749828864' height = '20.22754' width = '62.33008' y = '397.1855' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,397.1855,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5537963752447174273'  fill='none'   x1='299' y1='407.0493' x2='314' y2='407.0493'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4678556050724734056'  fill='none'   x1='299' y1='54.11377' x2='299' y2='407.0493'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5315554463749828864','ID4709491093006918349')">
+<text id='nodetextshapenode_5315554463749828864'    x='345.165' y='412.3562' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5383123757003307343' height = '20.22754' width = '62.33008' y = '422.4131' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,422.4131,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4615195033029503261'  fill='none'   x1='299' y1='432.2769' x2='314' y2='432.2769'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4970662965900969688'  fill='none'   x1='299' y1='54.11377' x2='299' y2='432.2769'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5383123757003307343','ID4709491093006918349')">
+<text id='nodetextshapenode_5383123757003307343'    x='345.165' y='437.5837' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5499004363261132123' height = '20.22754' width = '62.33008' y = '447.6406' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,447.6406,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline5524098572197903934'  fill='none'   x1='299' y1='457.5044' x2='314' y2='457.5044'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4839521636038353982'  fill='none'   x1='299' y1='54.11377' x2='299' y2='457.5044'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_5499004363261132123','ID4709491093006918349')">
+<text id='nodetextshapenode_5499004363261132123'    x='345.165' y='462.8113' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4639508447995794003' height = '20.22754' width = '62.33008' y = '472.8682' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,472.8682,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4887578371274637272'  fill='none'   x1='299' y1='482.7319' x2='314' y2='482.7319'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5298228989588258801'  fill='none'   x1='299' y1='54.11377' x2='299' y2='482.7319'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4639508447995794003','ID4709491093006918349')">
+<text id='nodetextshapenode_4639508447995794003'    x='345.165' y='488.0388' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_4860951776184319650' height = '20.22754' width = '62.33008' y = '498.0957' x = '314'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='294' data-localy='19'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='314,498.0957,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'>
+<g data-filter='hline'>
+<line  id='hline4936649634075268435'  fill='none'   x1='299' y1='507.9595' x2='314' y2='507.9595'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5745189835870500235'  fill='none'   x1='299' y1='54.11377' x2='299' y2='507.9595'   stroke ="#808080"   stroke-width="0.5"   stroke-dasharray="3 2" stroke-opacity="1"     />
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="#" onclick="SCADA.TreeNodeSelect('node_4860951776184319650','ID4709491093006918349')">
+<text id='nodetextshapenode_4860951776184319650'    x='345.165' y='513.2664' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'   >新建节点</text>
+</a>
+</g>
+</g>
+<g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

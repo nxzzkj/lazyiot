@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5170F595-7A94-4CAD-8D96-62F1AADA089B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IOMonitor</RootNamespace>
+    <AssemblyName>IOMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>regional options.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="COM.Excel, Version=1.1.1606.17082, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\COM.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.20\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IOTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IoTreeNode.cs" />
+    <Compile Include="Core\delegate.cs" />
+    <Compile Include="Core\DriverAssembly.cs" />
+    <Compile Include="Core\MonitorDataBaseModel.cs" />
+    <Compile Include="Core\MonitorFormManager.cs" />
+    <Compile Include="Core\IOMonitorManager.cs" />
+    <Compile Include="Core\RealDataDBUtility.cs" />
+    <Compile Include="Core\IOMonitorTCPClient.cs" />
+    <Compile Include="Core\RelationalDatabase.cs" />
+    <Compile Include="Core\SimulatorManager.cs" />
+    <Compile Include="Forms\IOMonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IOMonitorForm.Designer.cs">
+      <DependentUpon>IOMonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IOMonitorLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IOMonitorLogForm.Designer.cs">
+      <DependentUpon>IOMonitorLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IOPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IOPropertiesForm.Designer.cs">
+      <DependentUpon>IOPropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IOStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IOStatusForm.Designer.cs">
+      <DependentUpon>IOStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SimulatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimulatorForm.Designer.cs">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserAccountForm.Designer.cs">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOConfig.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediator.cs" />
+    <Compile Include="MonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorForm.Designer.cs">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NetConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NetConfigForm.Designer.cs">
+      <DependentUpon>NetConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabFactory.cs" />
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IOMonitorForm.resx">
+      <DependentUpon>IOMonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IOMonitorLogForm.resx">
+      <DependentUpon>IOMonitorLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IOPropertiesForm.resx">
+      <DependentUpon>IOPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IOStatusForm.resx">
+      <DependentUpon>IOStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimulatorForm.resx">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserAccountForm.resx">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorForm.resx">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NetConfigForm.resx">
+      <DependentUpon>NetConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="IconFont\ElegantIcons.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IconFont\FontAwesome.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IOProject\Station.station">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="SqliteDB\MDS.s3db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BaseProject\Common\Scada.Common.csproj">
+      <Project>{e3d8759a-c5eb-402d-9f10-f5c6029a8d1a}</Project>
+      <Name>Scada.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BaseProject\DBUtility\Scada.DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>Scada.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\AsyncTcpClient\Scada.AsyncNetTcp.csproj">
+      <Project>{8DE0CCC8-EC18-4982-9628-7AD84BD9E7B5}</Project>
+      <Name>Scada.AsyncNetTcp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\Logger\Scada.Logger.csproj">
+      <Project>{faca4c7e-b4c3-4738-b981-7a1b3d4d1d0a}</Project>
+      <Name>Scada.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\ScadaMakeAlarm\Scada.MakeAlarm.csproj">
+      <Project>{161ec259-4428-4547-878a-6d1edf861d46}</Project>
+      <Name>Scada.MakeAlarm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\SCADA_Controls\Scada.Controls.csproj">
+      <Project>{af32e163-c577-4cbc-a072-0dc1ce0e1da3}</Project>
+      <Name>Scada.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DriverBase\IOData\Scada.IOStructure.csproj">
+      <Project>{ea7a9840-d2f5-44e3-a7f4-07430a305d34}</Project>
+      <Name>Scada.IOStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DriverBase\IScadaDriver\Scada.Kernel.csproj">
+      <Project>{212E09D3-A5AB-4141-8AD0-B9246381690E}</Project>
+      <Name>Scada.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.BLL\Scada.Business.csproj">
+      <Project>{38d7aa58-c95b-449b-86c6-a8073a56e11f}</Project>
+      <Name>Scada.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.DAL\Scada.Database.csproj">
+      <Project>{9fe00521-3a8b-42b1-814e-585e99407b2e}</Project>
+      <Name>Scada.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.Model\Scada.Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Scada.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDriver\NModbus\Modbus.csproj">
+      <Project>{1c6b60e9-8ba8-4925-ab47-5cf098089151}</Project>
+      <Name>Modbus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOManager\IOManager.csproj">
+      <Project>{5271ECDB-4EAD-440C-B8E4-B47FD97365B6}</Project>
+      <Name>IOManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="regional options.ico" />
+    <None Include="Resources\play.ico" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\continue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

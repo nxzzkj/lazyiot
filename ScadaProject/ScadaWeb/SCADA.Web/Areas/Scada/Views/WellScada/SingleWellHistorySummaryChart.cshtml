@@ -1,0 +1,598 @@
+﻿@model ScadaWeb.Model.WellModel
+@{
+    ViewBag.Title = "单井历史汇总曲线";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<!--引用多选下拉框-->
+ 
+<script src="~/Content/lib/echarts/echarts.min.js"></script>
+ 
+
+<!--条件筛选区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <input type="hidden" name="WellID" id="WellID" value="@Model.Id"  >
+        
+ 
+ 
+        <div class="layui-input-inline">
+                <div id="multiindexselect" style="width:150px;"></div>
+            </div>
+       
+       
+        <div class="layui-input-inline">
+            <input type="radio" name="chartstyle" value="1" title="叠加" checked="" style="width:50px;">
+            <input type="radio" name="chartstyle" value="2" title="轮播" style="width:50px;">
+            <input type="radio" name="chartstyle" value="3" title="分区" style="width:50px;">
+        
+        </div>
+      
+      
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartDate" id="StartDate">
+
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="结束日期" autocomplete="off" name="EndDate" id="EndDate">
+        </div>
+        <div class="layui-input-inline" style="width:80px;">
+            <select name="Period" id="Period" placeholder="统计周期" style="width:80px;" lay-filter="aihao">
+
+                <option value="1m">1分钟</option>
+                <option value="10m" selected="">10分钟</option>
+                <option value="30m">30分钟</option>
+                <option value="1h">1小时</option>
+                <option value="2h">2小时</option>
+                <option value="4h">4小时</option>
+                <option value="6">6小时</option>
+                <option value="12h">12小时</option>
+                <option value="24h">24小时</option>
+                <option value="1d">1天</option>
+                <option value="2d">2天</option>
+                <option value="1w">1周</option>
+                <option value="2w">2周</option>
+            </select>
+        </div>
+        <div class="layui-input-inline" style="width:100px;">
+            <select name="Method" id="Method" placeholder="统计方法" style="width:80px;" lay-filter="aihao2">
+
+                <option value="MEAN">1算数平均值</option>
+                <option value="MEDIAN" selected="">中间值(中位数)</option>
+                <option value="SPREAD">最大最小差值</option>
+                <option value="SUM">求和</option>
+                <option value="MAX">最大值</option>
+                <option value="MIN">最小值</option>
+                <option value="STDDEV">标准偏差</option>
+
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-normal" onclick="ReadHistorySeries()">确定</button>
+        </div>
+</form>
+</div>
+<hr class="layui-bg-orange">
+
+  <div class="layui-row">
+        <div id="stackrealchart" style="width:100%;height:500px"></div>
+ </div>
+
+
+
+ 
+
+<script>
+    //加载曲线指标
+    $.get("/Scada/WellScada/GetSerieClassify?SerieClassify=单井汇总曲线", function (result) {
+
+
+        var seriesIndex = xmSelect.render({
+            el: '#multiindexselect',
+            language: 'zn',
+            data: result
+
+        })
+
+    });
+    layui.use(["form", "okLayer", "okUtils", "laydate"], function () {
+
+        let form = layui.form;
+
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+
+        let startdate = layui.laydate;
+        let enddate = layui.laydate;
+        var $ = layui.$;
+
+        startdate.render({
+            elem: '#StartDate'
+           , type: 'datetime'
+        });
+        enddate.render({
+            elem: '#EndDate'
+          , type: 'datetime'
+        });
+
+
+
+
+    });
+ 
+
+    //初始化选择的井的历史数据
+    function ReadHistorySeries()
+    {
+
+        //图显示样式
+        var charttype = $("input[name='chartstyle']:checked").val();
+        var seriesIndex = xmSelect.render({
+            el: '#multiindexselect',
+            language: 'zn',
+
+        })
+        var sdate = $("#StartDate").val();
+        var edate = $("#EndDate").val();
+        if (sdate == "" || sdate == undefined)
+        {
+            return;
+        }
+        if (edate == "" || edate == undefined) {
+            return;
+        }
+        var series= seriesIndex.getValue('valueStr');
+        $.get("/Scada/WellScada/QueryWellHistorySummarySeriesData?wellid=@Model.Id&serverid=@Model.IO_ServerID&communicateid=@Model.IO_CommunicateID&deviceid=@Model.IO_DeviceID&series=" + series + "&charttype=" + charttype + "&sdate=" + sdate + "&edate=" + edate + "&serieclassify=单井汇总曲线&period=" + $("#Period").val() + "&method=" + $("#Method").val(), function (result) {
+
+             var res = JSON.parse(JSON.stringify(result).replace("-9999",""));
+             var yAxiss = new Array();
+             var xAxiss = new Array();//分区显示要用,叠加显示不需要此集合
+             var grids = new Array();
+             var gridheight = 80 / res.yAxis.length;
+             for (var i = 0; i < res.yAxis.length; i++) {
+                 yAxiss.push({
+                     type: "value",
+                     data: res.yAxis[i].data,
+                     name: res.yAxis[i].name,
+
+                     offset: i * 40,
+                     minorTick: {
+                         show: true
+                     },
+                     splitLine: { show: true },
+                     minorSplitLine: {
+                         show: true
+                     },
+                     position: 'left',
+                     nameRotate: 90,
+                     nameLocation: 'middle',
+
+
+                 })
+
+                 xAxiss.push({
+                     type: "category",
+                     data: res.xAxis[0].data,
+
+                     minorTick: {
+                         show: true
+                     },
+
+                 })
+                 grids.push({
+
+                     top: (4+i*gridheight+2).toString()+'%',
+                     bottom: (4 + (i + 1) * gridheight).toString() + '%',
+                     height: gridheight.toString()+'%'
+                 });
+             }
+
+             var series = new Array();
+             var series3 = new Array();
+             for (var i = 0; i < res.series.length; i++) {
+                 series.push({
+                     id: res.series[i].id,
+                     type: res.series[i].type,
+                     data: res.series[i].data,
+                     name: res.series[i].name,
+                     yAxisIndex: i,
+                     showSymbol: res.series[i].showSymbol,
+                     symbol: res.series[i].symbol,
+                     symbolSize: res.series[i].symbolSize,
+
+                     lineStyle: {
+                         color: res.series[i].lineStyle.color,
+                         width: res.series[i].lineStyle.width,
+                         type: res.series[i].lineStyle.type,
+
+                     }
+
+                 });
+                 series3.push({
+                     id:res.series[i].id,
+                     type: res.series[i].type,
+                     data: res.series[i].data,
+                     name: res.series[i].name,
+                     yAxisIndex: i,
+                     xAxisIndex:i,
+                     showSymbol: res.series[i].showSymbol,
+                     symbol: res.series[i].symbol,
+                     symbolSize: res.series[i].symbolSize,
+
+                     lineStyle: {
+                         color: res.series[i].lineStyle.color,
+                         width: res.series[i].lineStyle.width,
+                         type: res.series[i].lineStyle.type,
+
+                     },
+
+                     markLine: {
+                         data: [
+                             {
+                                 type: 'average',
+                                 name: '平均值',
+                                 label: {
+                                     position: 'end',
+                                     formatter: "平均值{c}"
+                                 },
+                                 lineStyle: { color: "#00FF00" }
+                             },
+
+                             {
+                                 symbol: 'circle',
+                                 label: {
+                                     position: 'end',
+                                     formatter: "最大值{c}"
+
+                                 },
+                                 type: 'max',
+                                 name: '最高点',
+                                 lineStyle: { color: "#FF0000" }
+                             },
+                              {
+                                  symbol: 'circle',
+                                  label: {
+                                      position: 'end',
+                                      formatter: "最小值{c}"
+
+                                  },
+                                  type: 'min',
+                                  name: '最底点',
+                                  lineStyle: { color: "#0000FF" }
+
+                              }
+
+                         ]
+                     },
+
+
+                 })
+
+             }
+              if (charttype == 3)//如果是独立分区显示的话要设置坐标轴所在的每个单元
+             {
+                 for (var i = 0; i < res.yAxis.length; i++) {
+                     yAxiss[i].gridIndex = i;
+                     yAxiss[i].offset = 0;
+                     xAxiss[i].gridIndex = i;
+
+                 }
+             }
+            if (charttype == 1)//叠加显示,曲线图元是 stackrealchart
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 120);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                // 基于准备好的dom，初始化echarts实例
+
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: '@(Model.WellName)井实时采集曲线',
+                        left:'center',
+                        subtext:'数据来源LAZY OS 系统'
+                    },
+                    tooltip: {
+                        trigger: 'none',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+
+                    legend: {
+                        data: res.legend.data,
+                        left: 10,
+
+                        x: 'center',      //可设定图例在左、右、居中
+                        y: 'bottom',     //可设定图例在上、下、居中
+                    },
+
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    grid: {
+                        left: '4%',
+                        right: '4%',
+                        bottom: '7%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                       {
+                           type: "category",
+                         data: res.xAxis[0].data,
+                         minorTick: {
+                             show: true
+                         },
+                         minorSplitLine: {
+                             show: true
+                         },
+                         splitLine: { show: false },
+                       }
+                    ],
+                    series: series,
+                    yAxis: yAxiss,
+
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 120);
+                myChart.resize();
+
+            }
+            else if(charttype==2)//轮播显示
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 20);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                var series2 = new Array();
+                for (var i = 0; i < res.series.length; i++) {
+                    series2.push({
+                        id: res.series[i].id,
+                        type: res.series[i].type,
+
+                        name: res.series[i].name,
+
+                        showSymbol: res.series[i].showSymbol,
+                        symbol: res.series[i].symbol,
+                        symbolSize: res.series[i].symbolSize,
+
+                        lineStyle: {
+                            color: res.series[i].lineStyle.color,
+                            width: res.series[i].lineStyle.width,
+                            type: res.series[i].lineStyle.type,
+
+                        }
+
+                    })
+                }
+
+                // 基于准备好的dom，初始化echarts实例
+
+                // 指定图表的配置项和数据
+                var option =  {
+                    baseOption: {
+                        timeline: {
+                            data: res.legend.data,
+                            axisType: 'category',
+                            show: true,
+                            autoPlay: true,
+                            playInterval: 10000,
+
+                        },
+                        title: {
+                            text: '@(Model.WellName)井实时采集曲线',
+                            left: 'center',
+                            subtext: '数据来源LAZY OS 系统'
+                        },
+                        calculable: true,
+                        tooltip: {
+                            trigger: 'none',
+                            axisPointer: {
+                                type: 'cross'
+                            }
+                        },
+
+                        legend: {
+                            data: res.legend.data,
+                            left: 10,
+                            x: 'center',      //可设定图例在左、右、居中
+                            y: 'bottom',     //可设定图例在上、下、居中
+
+                        },
+                        grid: [{
+                            top: 80,
+                            bottom: 100
+                        }],
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                dataView: { show: true, readOnly: false },
+                                magicType: { show: true, type: ['line', 'bar'] },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                            }
+                        },
+
+
+                        xAxis: [
+                              {
+                                  type: "category",
+
+                                    minorTick: {
+                                      show: true
+                                  },
+                                  minorSplitLine: {
+                                      show: true
+                                  },
+                                  splitLine: { show: false },
+
+                              }
+
+                        ],
+                        series: [{
+                            type: 'line',
+
+                        }],
+
+                        yAxis: [{
+                            type: 'value',
+                            name:"实时值",
+                            minorTick: {
+                                show: true
+                            },
+                            splitLine:{show:true},
+                            minorSplitLine: {
+                                show: true
+                            },
+
+                            position: 'left',
+                            nameRotate: 90,
+                            nameLocation: 'middle',
+
+                        }
+                        ],
+
+
+                    },
+                    options: []
+                };
+
+                option.options = new Array();
+                for (var i = 0; i < res.yAxis.length; i++) {
+                    option.options.push({
+                        yAxis: {
+                            type: 'value',
+                            name: res.yAxis[i].name,
+                        },
+                        xAxis: {
+                            type: 'category',
+                            name: res.xAxis[0].name,
+                            data: res.xAxis[0].data,
+                        },
+                        series: {
+                            id:"real",
+                            markLine: {
+                                data: [
+                                    {
+                                        type: 'average',
+                                        name: '平均值',
+                                        label: {
+                                            position: 'end',
+                                            formatter:"平均值{c}"
+                                        },
+                                        lineStyle: {color:"#00FF00"}
+                                    },
+
+                                    {
+                                        symbol: 'circle',
+                                        label: {
+                                            position: 'end',
+                                            formatter: "最大值{c}"
+
+                                        },
+                                        type: 'max',
+                                        name: '最高点',
+                                        lineStyle: { color: "#FF0000" }
+                                    },
+                                     {
+                                         symbol: 'circle',
+                                         label: {
+                                             position: 'end',
+                                             formatter: "最小值{c}"
+
+                                         },
+                                         type: 'min',
+                                         name: '最底点',
+                                         lineStyle: { color: "#0000FF" }
+
+                                     }
+
+                                ]
+                            },
+                            type: res.series[i].type,
+                            data: res.series[i].data,
+
+                            yAxisIndex: 0,
+                            xAxisIndex:0,
+                            showSymbol: res.series[i].showSymbol,
+                            symbol: res.series[i].symbol,
+                            symbolSize: res.series[i].symbolSize,
+                            lineStyle: {
+                                color: res.series[i].lineStyle.color,
+                                width: res.series[i].lineStyle.width,
+                                type: res.series[i].lineStyle.type,
+
+                            }
+                        }
+                    })
+                }
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 20);
+                myChart.resize();
+            }
+            else if (charttype == 3)//分区显示
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', 250 * res.yAxis.length);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                option = {
+
+                    title: {
+                        text: '@(Model.WellName)井历史曲线',
+                        left: 'center',
+                        subtext: '数据来源LAZY OS 系统'
+                    },
+                    tooltip: {
+                        trigger: 'none',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+
+                    legend: {
+                        data: res.legend.data,
+                        left: 10,
+
+                        x: 'center',      //可设定图例在左、右、居中
+                        y: 'bottom',     //可设定图例在上、下、居中
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: { show: true, readOnly: false },
+                            magicType: { show: true, type: ['line', 'bar'] },
+                            restore: { show: true },
+                            saveAsImage: { show: true }
+                        }
+                    },
+                    grid: grids,
+                    series: series3,
+                    yAxis: yAxiss,
+                    xAxis: xAxiss,
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', 250 * res.yAxis.length);
+                myChart.resize();
+            }
+        });
+
+    }
+
+   //读取实时数据
+
+</script>
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+ 

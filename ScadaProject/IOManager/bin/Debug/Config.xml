@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IOServer>
+  <RemoteIP>39.105.48.206</RemoteIP>
+  <RemotePort>8888</RemotePort>
+  <LocalPort>8888</LocalPort>
+  <User>admin</User>
+  <Password>123456</Password>
+  <Project>C:\Users\Administrator\Desktop\20201112.station</Project>
+  <HeartBeat>HH</HeartBeat>
+  <HeadPack>ZZTEC</HeadPack>
+  <TailPack>SCADA</TailPack>
+  <ReceiveTimeout>20000</ReceiveTimeout>
+  <ReceiveBufferSize>10240</ReceiveBufferSize>
+  <SendTimeout>20000</SendTimeout>
+  <SendBufferSize>10240</SendBufferSize>
+  <DelayTime>200</DelayTime>
+</IOServer>

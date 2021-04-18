@@ -1,0 +1,15 @@
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\MDSServiceProxyGenerator.exe.config
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\MDSServiceProxyGenerator.exe
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\MDSServiceProxyGenerator.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\MDSCommonLib.dll
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\log4net.dll
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\MDSCommonLib.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\bin\Debug\log4net.xml
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDS.Properties.Resources.resources
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDS.Tools.ProxyGenerator.ProxyGeneratorForm.resources
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.csproj.GenerateResource.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.csproj.CopyComplete
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.exe
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Debug\MDSServiceProxyGenerator.pdb

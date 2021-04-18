@@ -1,0 +1,84 @@
+﻿
+--PROJ #5199775147311924023#1
+
+ 
+
+--VIEW #V_5032083211199995235#登录界面1#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5461039722207039196)'     />
+<defs><linearGradient id="5461039722207039196" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5627108017120663998#登录界面2#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5329656460027092761)'     />
+<defs><linearGradient id="5329656460027092761" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5591735746043500081#登录界面3#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5696702098797572534)'     />
+<defs><linearGradient id="5696702098797572534" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5744395220744054876#登录界面4#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5250484062934412023)'     />
+<defs><linearGradient id="5250484062934412023" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_4709483994559475181#登录界面5#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5578797582690958852)'     />
+<defs><linearGradient id="5578797582690958852" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5473058118616281793#登录界面6#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4816447160156923543)'     />
+<defs><linearGradient id="4816447160156923543" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5088673683086920061#登录界面7#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4794063988341516732)'     />
+<defs><linearGradient id="4794063988341516732" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5343108195395543948#登录界面8#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5365492535932646260)'     />
+<defs><linearGradient id="5365492535932646260" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+

@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入账户" name="Account" autocomplete="off">
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入姓名" name="RealName" autocomplete="off">
+        </div>
+        @Html.EnabledMarkSelectHtml()
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="日期范围" autocomplete="off" name="StartEndDate" id="StartEndDate">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "laydate", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let laydate = layui.laydate;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        laydate.render({
+            elem: '#StartEndDate'
+            , range: '~'
+        });
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Permissions/User/List",
+            limit: 10,
+            page: true,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                { type: "checkbox" },
+                { field: "Id", title: "ID", width: 80, sort: true },
+                { field: "Account", title: "账户", width: 120 },
+                { field: "RealName", title: "姓名", width: 120 },
+                { field: "Gender", title: "性别", width: 80, templet: "#genderTpl" },
+                { field: "DepartmentName", title: "部门", width: 120 },
+                { field: "RoleName", title: "角色", width: 120 },
+                { field: "EnabledMark", title: "状态", width: 80, templet: "#enabledMarkTpl" },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]],
+            done: function (res, curr, count) {
+                console.log(res, curr, count);
+            }
+        });
+
+        form.on("submit(search)", function (data) {
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+        table.on("toolbar(tableFilter)", function (obj) {
+            switch (obj.event) {
+                case "add":
+                    add();
+                    break;
+                case "batchDel":
+                    batchDel();
+                    break;
+            }
+        });
+
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+                case "pwdReset":
+                    pwdReset(data.Id);
+                    break;
+            }
+        });
+
+        function add() {
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, null);
+        }
+
+        function batchDel() {
+            okLayer.confirm("确定要批量删除吗？", function (index) {
+                layer.close(index);
+                let idsStr = okUtils.tableBatchCheck(table);
+                if (idsStr) {
+                    okUtils.ajax("/Permissions/User/BatchDel", "get", { idsStr: idsStr }, true).done(function (response) {
+                        okUtils.tableSuccessMsg(response.message);
+                    }).fail(function (error) {
+                        console.log(error)
+                    });
+                }
+            });
+        }
+
+        function edit(id) {
+            okLayer.open("编辑用户", "/Permissions/User/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除吗？", function () {
+                okUtils.ajax("/Permissions/User/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+        function pwdReset(id) {
+            okLayer.confirm("确定要重置密码吗？", function () {
+                okUtils.ajax("/Permissions/User/InitPwd", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+<!-- 启用|停用模板 -->
+<script type="text/html" id="enabledMarkTpl">
+    {{#  if(!d.EnabledMark){ }}
+    <span class="layui-btn layui-btn-normal layui-btn-xs">已启用</span>
+    {{#  } else{ }}
+    <span class="layui-btn layui-btn-warm layui-btn-xs">已停用</span>
+    {{#  } }}
+</script>
+<!-- 性别模板 -->
+<script type="text/html" id="genderTpl">
+    {{#  if(d.Gender){ }}
+    <span>男</span>
+    {{#  } else{ }}
+    <span>女</span>
+    {{#  } }}
+</script>

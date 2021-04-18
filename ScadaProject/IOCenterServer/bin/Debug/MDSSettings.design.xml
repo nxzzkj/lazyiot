@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MDSConfiguration>
+  <Servers>
+    <Server Name="SCADA MDS 服务" Location="14,15" />
+  </Servers>
+</MDSConfiguration>

@@ -1,0 +1,122 @@
+﻿@model ScadaWeb.Model.ModuleModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    #sltIcon {
+        height: 38px;
+        line-height: 38px;
+        margin-left: 40px;
+        float: left;
+        display: block;
+    }
+
+    #spnIcon {
+        font-size: 24px;
+        line-height: 38px;
+        float: left;
+        margin-left: 12px;
+    }
+</style>
+@if(Model==null)
+{
+    <span>系统模块不能进行删除修改编辑等操作!</span>
+}
+else
+{
+
+
+<form class="layui-form layui-form-pane ok-form" lay-filter="formTest">
+    @*一些不需要更新的隐藏字段*@
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreateTime)
+    @Html.HiddenFor(x => x.CreateUserId)
+    @Html.HiddenFor(x => x.FontFamily)
+    @Html.HiddenFor(x => x.IsSystem)
+    <div class="layui-form-item">
+        <label class="layui-form-label">菜单名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="FullName" placeholder="菜单名称" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">菜单路径</label>
+        <div class="layui-input-block">
+            <input type="text" name="UrlAddress" placeholder="菜单路径" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">菜单图标</label>
+        <div class="layui-input-inline">
+            <input type="text" id="Icon" name="Icon" placeholder="菜单图标" autocomplete="off" class="layui-input" lay-verify="required" disabled="disabled">
+        </div>
+        <div class="layui-input-inline">
+            <a id="sltIcon" href="javascript:;">选择图标</a><span id="spnIcon" class="icon ok-icon">@Html.Raw(Model.Icon)</span>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">上级菜单</label>
+        <div class="layui-input-block">
+            <input type="text" id="ParentId" lay-filter="tree" name="ParentId" placeholder="上级菜单" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序码</label>
+        <div class="layui-input-block">
+            <input type="text" name="SortCode" placeholder="排序码" autocomplete="off" class="layui-input" lay-verify="number" maxlength="2">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "treeSelect", "okLayer", "okUtils"], function () {
+        let treeSelect = layui.treeSelect;
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let layer = layui.layer;
+        let $ = layui.$;
+        $("#sltIcon").on("click", function () {
+            openSetIcon();
+        })
+        treeSelect.render({
+            elem: "#ParentId",
+            data: "/Permissions/Module/GetModuleTreeSelect",
+            type: "get"
+            @if (Model.ParentId!=0)
+            {
+                <text>,success: function (d) {
+                treeSelect.checkNode('tree', "@Model.ParentId");
+                treeSelect.refresh('tree');
+                }</text>
+            }
+        });
+        //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "FullName": "@Model.FullName",
+            "UrlAddress": "@Model.UrlAddress",
+            "FontFamily": "@Model.FontFamily",
+            "Icon": "@Html.Raw(Model.Icon)",
+            "SortCode": "@Model.SortCode"
+        });
+        form.on("submit(add)", function (data) {
+            okUtils.ajax("/Permissions/Module/Edit", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>
+}
+

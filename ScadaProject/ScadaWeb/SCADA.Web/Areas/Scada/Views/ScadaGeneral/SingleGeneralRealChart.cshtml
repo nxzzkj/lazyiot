@@ -1,0 +1,861 @@
+﻿@model ScadaWeb.Model.WellModel
+@{
+    ViewBag.Title = "单井曲线";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<!--引用多选下拉框-->
+ 
+<script src="~/Content/lib/echarts/echarts.min.js"></script>
+ 
+
+<!--条件筛选区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        @Html.HiddenFor(x => x.Id)
+        @Html.HiddenFor(x => x.UpdateCycle)
+        <div class="layui-input-inline">
+            <label class="layui-form-label">曲线选择:</label>
+            <div class="layui-input-block">
+                <div id="multiindexselect" style="width:250px;"></div>
+            </div>
+            </div>
+       
+       
+        <div class="layui-input-inline">
+            <label class="layui-form-label">曲线样式:</label>
+            <div class="layui-input-block">
+                <input type="radio" name="chartstyle" value="1" title="叠加" checked="">
+                <input type="radio" name="chartstyle" value="2" title="轮播">
+                <input type="radio" name="chartstyle" value="3" title="分区">
+            </div>
+        </div>
+       
+        <!--<div class="layui-input-inline">
+                <div id="multiwellselect" style="width:120px;"></div>
+        </div>-->
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-normal" onclick="DrawSeries()">确定</button>
+        </div>
+</form>
+</div>
+<hr class="layui-bg-orange">
+
+    <div class="layui-row">
+
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">实时曲线</li>
+                <li>实时监控</li>
+
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+
+                            <div class="layui-card-body">
+                                <div id="stackrealchart" style="width:100%;height:500px" ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="layui-tab-item">
+                    <form class="layui-form layui-form-pane ok-form">
+                        <div class="layui-col-md3">
+                            <div class="layui-card">
+                                <div class="layui-card-header" >
+                                    <i class="layui-icon" style="font-size: 18px; color: #1E9FFF;">&#xe60e;</i>  采集日期:  <label id="DateStampTime" name="DateStampTime" data-io="DateStampTime">@Model.DateStampTime</label>
+                                </div>
+                                <div class="layui-card-body">
+
+                                    
+                                   
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">井位名称</label>
+                                        <div class="layui-form-label">
+
+                                            <label id="WellName" name="WellName" >@Model.WellName</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">井类型</label>
+                                        <div class="layui-form-label">
+                                            <label id="WellType" name="WellType">@Model.WellType</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">承包商</label>
+                                        <div class="layui-form-label">
+                                            <label id="Contractor" name="Contractor">@Model.Contractor</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">通信状态</label>
+                                        <div class="layui-form-label">
+                                            <label id="WellStatus" name="WellStatus"  data-io="WellStatus">@Model.WellStatus</label>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="layui-form-item">
+                                        <div>
+                                            <img src="~/Content/images/cyj.jpg" width="90%" height="60%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                            <div class="layui-card">
+
+                                <div class="layui-card-body">
+
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">井底流压</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_DDLY" name="IO_DDLY" data-io="IO_DDLY" />
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">井口套压</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_JKTY" name="IO_JKTY"  data-io="IO_JKTY"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">系统压力</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_XTYL" name="IO_XTYL"  data-io="IO_XTYL"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">累产气量</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_LJCQL" name="IO_LJCQL"  data-io="IO_LJCQL"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">瞬产气量</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_SSCQL" name="IO_SSCQL"  data-io="IO_SSCQL"/>
+                                        </div>
+                                    </div>
+                                  
+                                     
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">气体温度</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_QTWD" name="IO_QTWD"  data-io="IO_QTWD"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">三相功率</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_SXGL" name="IO_SXGL"  data-io="IO_SXGL"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                            <div class="layui-card">
+
+                                <div class="layui-card-body">
+
+
+                                
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">累产水量</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_LJCSL" name="IO_LJCSL"  data-io="IO_LJCSL"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">瞬产水量</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_SSCSL" name="IO_SSCSL"  data-io="IO_SSCSL"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">冲次</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_GTCC" name="IO_GTCC"  data-io="IO_GTCC"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">功图冲程</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_GTCC1" name="IO_GTCC1"  data-io="IO_GTCC1"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">功图载荷</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_GTZH" name="IO_GTZH"  data-io="IO_GTZH"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">三相电压</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_SXDY" name="IO_SXDY"  data-io="IO_SXDY"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">三相电流</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_SXDL" name="IO_SXDL"  data-io="IO_SXDL"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="layui-col-md3">
+                            <div class="layui-card">
+
+                                <div class="layui-card-body">
+
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">用电量</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_YDL" name="IO_YDL"  data-io="IO_YDL"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">频率</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_BPQPL" name="IO_BPQPL"  data-io="IO_BPQPL"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">电机电流</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_DJGZDL" name="IO_DJGZDL"  data-io="IO_DJGZDL"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">电机扭矩</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_DJNJ" name="IO_DJNJ"  data-io="IO_DJNJ"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">电机电压</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_DJGZDY" name="IO_DJGZDY"  data-io="IO_DJGZDY"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">动液面</label>
+                                        <div class="layui-form-label">
+                                            <label id="IO_DYM" name="IO_DYM" data-io="IO_DYM" />
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">&nbsp;</label>
+                                        <div class="layui-form-label">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+ 
+
+<script>
+    //加载曲线指标
+    $.get("/Scada/WellScada/GetSerieClassify?SerieClassify=单井实时曲线", function (result) {
+
+
+        var seriesIndex = xmSelect.render({
+            el: '#multiindexselect',
+            language: 'zn',
+            data: result
+
+        })
+
+    });
+ 
+ 
+  
+   
+    
+ </script>
+<script>
+    layui.use([ 'form', 'element'], function () {
+ 
+ let form = layui.form;
+  var element = layui.element;
+
+ 
+ 
+});
+
+ 
+//数据表定时加载
+function LoadWellReal()
+{
+    //实时读取数据
+    $.get("/Scada/WellScada/QueryWellRealData?wellid=@Model.Id&serverid=@Model.IO_ServerID&communicateid=@Model.IO_CommunicateID&deviceid=@Model.IO_DeviceID&updatecycle=@Model.UpdateCycle", function (result) {
+
+        //设置所有绑定的IO参数的值
+        for (var p in result) {
+            $("label[data-io='" + p + "']").each(function (index) {
+                //根据形参index设置元素的title属性
+                $("#"+this.id).html(result[p]);
+            })
+        }
+        //实时增加曲线数据
+        var myChart = echarts.init(document.getElementById('stackrealchart'));
+        var option = myChart.getOption();
+        if (option == undefined)
+        {
+            return;
+        }
+
+        //图显示样式
+        var charttype = $("input[name='chartstyle']:checked").val();
+        if (charttype == 2) {
+            for (var i = 0; i < option.options.length; i++)
+            {
+                for (var s = 0; s < option.options[i].series.length; s++) {
+                    for (var p in result) {
+                        if (p == option.options[i].series[s].id) {
+                            option.options[i].series[s].data.push(result[p]);
+                            if (option.options[i].series[s].data.length >= 1000) {
+                                option.options[i].series[s].data.shift();
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            for (var a = 0; a < option.baseOption.xAxis.length; a++) {
+                option.baseOption.xAxis[a].data.push(result["DateStampTime"]);
+                if (option.baseOption.xAxis[a].data.length >= 1000) {
+                    option.baseOption.xAxis[a].data.shift();
+                }
+
+            }
+
+        }
+        else {
+            for (var i = 0; i < option.series.length; i++) {
+
+                for (var p in result) {
+                    if (p == option.series[i].id) {
+
+                        option.series[i].data.push(result[p]);
+                        if (option.series[i].data.length >= 1000) {
+                            option.series[i].data.shift();
+                        }
+                       
+                    }
+
+                }
+
+
+            }
+
+            //增加日期数据
+            for (var a = 0; a < option.xAxis.length; a++) {
+                option.xAxis[a].data.push(result["DateStampTime"]);
+                if (option.xAxis[a].data.length >= 1000) {
+                    option.xAxis[a].data.shift();
+                }
+
+            }
+           
+        }
+        myChart.setOption(option);
+
+    });
+  
+}
+    //初始化曲线数据，默认加载前4个小时的数据
+    function DrawSeries()
+    {
+
+        //图显示样式
+        var charttype = $("input[name='chartstyle']:checked").val();
+        var seriesIndex = xmSelect.render({
+            el: '#multiindexselect',
+            language: 'zn',
+
+        })
+
+        var series= seriesIndex.getValue('valueStr');
+        $.get("/Scada/WellScada/QueryWellHistorySeriesDefaultData?wellid=@Model.Id&serverid=@Model.IO_ServerID&communicateid=@Model.IO_CommunicateID&deviceid=@Model.IO_DeviceID&updatecycle=@Model.UpdateCycle&series=" + series + "&charttype=" + charttype + "&serieclassify=单井实时曲线", function (result) {
+
+             var res = JSON.parse(JSON.stringify(result).replace("-9999",""));
+             var yAxiss = new Array();
+             var xAxiss = new Array();//分区显示要用,叠加显示不需要此集合
+             var grids = new Array();
+             var gridheight = 80 / res.yAxis.length;
+             for (var i = 0; i < res.yAxis.length; i++) {
+                 yAxiss.push({
+                     type: "value",
+                     data: res.yAxis[i].data,
+                     name: res.yAxis[i].name,
+                 
+                     offset: i * 40,
+                     minorTick: {
+                         show: true
+                     },
+                     splitLine: { show: true },
+                     minorSplitLine: {
+                         show: true
+                     },
+                     position: 'left',
+                     nameRotate: 90,
+                     nameLocation: 'middle',
+
+
+                 })
+
+                 xAxiss.push({
+                     type: "category",
+                     data: res.xAxis[0].data,
+                
+                     minorTick: {
+                         show: true
+                     },
+                     
+                 })
+                 grids.push({
+
+                     top: (4+i*gridheight+2).toString()+'%',
+                     bottom: (4 + (i + 1) * gridheight).toString() + '%',
+                     height: gridheight.toString()+'%'
+                 });
+             }
+            
+             var series = new Array();
+             var series3 = new Array();
+             for (var i = 0; i < res.series.length; i++) {
+                 series.push({
+                     id: res.series[i].id,
+                     type: res.series[i].type,
+                     data: res.series[i].data,
+                     name: res.series[i].name,
+                     yAxisIndex: i,
+                     showSymbol: res.series[i].showSymbol,
+                     symbol: res.series[i].symbol,
+                     symbolSize: res.series[i].symbolSize,
+
+                     lineStyle: {
+                         color: res.series[i].lineStyle.color,
+                         width: res.series[i].lineStyle.width,
+                         type: res.series[i].lineStyle.type,
+
+                     }
+
+                 });
+                 series3.push({
+                     id:res.series[i].id,
+                     type: res.series[i].type,
+                     data: res.series[i].data,
+                     name: res.series[i].name,
+                     yAxisIndex: i,
+                     xAxisIndex:i,
+                     showSymbol: res.series[i].showSymbol,
+                     symbol: res.series[i].symbol,
+                     symbolSize: res.series[i].symbolSize,
+
+                     lineStyle: {
+                         color: res.series[i].lineStyle.color,
+                         width: res.series[i].lineStyle.width,
+                         type: res.series[i].lineStyle.type,
+
+                     },
+                  
+                     markLine: {
+                         data: [
+                             {
+                                 type: 'average',
+                                 name: '平均值',
+                                 label: {
+                                     position: 'end',
+                                     formatter: "平均值{c}"
+                                 },
+                                 lineStyle: { color: "#00FF00" }
+                             },
+
+                             {
+                                 symbol: 'circle',
+                                 label: {
+                                     position: 'end',
+                                     formatter: "最大值{c}"
+
+                                 },
+                                 type: 'max',
+                                 name: '最高点',
+                                 lineStyle: { color: "#FF0000" }
+                             },
+                              {
+                                  symbol: 'circle',
+                                  label: {
+                                      position: 'end',
+                                      formatter: "最小值{c}"
+
+                                  },
+                                  type: 'min',
+                                  name: '最底点',
+                                  lineStyle: { color: "#0000FF" }
+
+                              }
+
+                         ]
+                     },
+                
+
+                 })
+
+             }
+             if (charttype == 3)//如果是独立分区显示的话要设置坐标轴所在的每个单元
+             {
+                 for (var i = 0; i < res.yAxis.length; i++) {
+                     yAxiss[i].gridIndex = i;
+                     yAxiss[i].offset = 0;
+                     xAxiss[i].gridIndex = i;
+                    
+                 }
+             }
+            if (charttype == 1)//叠加显示,曲线图元是 stackrealchart
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 120);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                // 基于准备好的dom，初始化echarts实例
+   
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: '@(Model.WellName)井实时采集曲线',
+                        left:'center',
+                        subtext:'数据来源LAZY OS 系统'
+                    },
+                    tooltip: {
+                        trigger: 'none',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+                  
+                    legend: {
+                        data: res.legend.data,
+                        left: 10,
+
+                        x: 'center',      //可设定图例在左、右、居中
+                        y: 'bottom',     //可设定图例在上、下、居中
+                    },
+
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    grid: {
+                        left: '4%',
+                        right: '4%',
+                        bottom: '7%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                       {
+                           type: "category",
+                         data: res.xAxis[0].data,
+                         minorTick: {
+                             show: true
+                         },
+                         minorSplitLine: {
+                             show: true
+                         },
+                         splitLine: { show: false },
+                       }
+                    ],
+                    series: series,
+                    yAxis: yAxiss,
+              
+                };
+      
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 120);
+                myChart.resize();
+
+            }
+            else if(charttype==2)//轮播显示
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 20);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                var series2 = new Array();
+                for (var i = 0; i < res.series.length; i++) {
+                    series2.push({
+                        id: res.series[i].id,
+                        type: res.series[i].type,
+    
+                        name: res.series[i].name,
+             
+                        showSymbol: res.series[i].showSymbol,
+                        symbol: res.series[i].symbol,
+                        symbolSize: res.series[i].symbolSize,
+
+                        lineStyle: {
+                            color: res.series[i].lineStyle.color,
+                            width: res.series[i].lineStyle.width,
+                            type: res.series[i].lineStyle.type,
+
+                        }
+
+                    })
+                }
+               
+                // 基于准备好的dom，初始化echarts实例
+      
+                // 指定图表的配置项和数据
+                var option =  {
+                    baseOption: {
+                        timeline: {
+                            data: res.legend.data,
+                            axisType: 'category',
+                            show: true,
+                            autoPlay: true,
+                            playInterval: 10000,
+
+                        },
+                        title: {
+                            text: '@(Model.WellName)井实时采集曲线',
+                            left: 'center',
+                            subtext: '数据来源LAZY OS 系统'
+                        },
+                        calculable: true,
+                        tooltip: {
+                            trigger: 'none',
+                            axisPointer: {
+                                type: 'cross'
+                            }
+                        },
+                        
+                        legend: {
+                            data: res.legend.data,
+                            left: 10,
+                            x: 'center',      //可设定图例在左、右、居中
+                            y: 'bottom',     //可设定图例在上、下、居中
+
+                        },
+                        grid: [{
+                            top: 80,
+                            bottom: 100
+                        }],
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                dataView: { show: true, readOnly: false },
+                                magicType: { show: true, type: ['line', 'bar'] },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                            }
+                        },
+               
+
+                        xAxis: [
+                              {
+                                  type: "category",
+                                 
+                                    minorTick: {
+                                      show: true
+                                  },
+                                  minorSplitLine: {
+                                      show: true
+                                  },
+                                  splitLine: { show: false },
+                              
+                              }
+                              
+                        ],
+                        series: [{
+                            type: 'line',
+
+                        }],
+
+                        yAxis: [{
+                            type: 'value',
+                            name:"实时值",
+                            minorTick: {
+                                show: true
+                            },
+                            splitLine:{show:true},
+                            minorSplitLine: {
+                                show: true
+                            },
+                  
+                            position: 'left',
+                            nameRotate: 90,
+                            nameLocation: 'middle',
+                      
+                        } 
+                        ],
+                       
+
+                    },
+                    options: []
+                };
+            
+                option.options = new Array();
+                for (var i = 0; i < res.yAxis.length; i++) {
+                    option.options.push({
+                        yAxis: {
+                            type: 'value',
+                            name: res.yAxis[i].name,
+                        },
+                        xAxis: {
+                            type: 'category',
+                            name: res.xAxis[0].name,
+                            data: res.xAxis[0].data,
+                        },
+                        series: {
+                            id:"real",
+                            markLine: {
+                                data: [
+                                    {
+                                        type: 'average',
+                                        name: '平均值',
+                                        label: {
+                                            position: 'end',
+                                            formatter:"平均值{c}"
+                                        },
+                                        lineStyle: {color:"#00FF00"}
+                                    },
+                                      
+                                    {
+                                        symbol: 'circle',
+                                        label: {
+                                            position: 'end',
+                                            formatter: "最大值{c}"
+                                          
+                                        },
+                                        type: 'max',
+                                        name: '最高点',
+                                        lineStyle: { color: "#FF0000" }
+                                    },
+                                     {
+                                         symbol: 'circle',
+                                         label: {
+                                             position: 'end',
+                                             formatter: "最小值{c}"
+                                              
+                                         },
+                                         type: 'min',
+                                         name: '最底点',
+                                         lineStyle: { color: "#0000FF" }
+
+                                     }
+                                    
+                                ]
+                            },
+                            type: res.series[i].type,
+                            data: res.series[i].data,
+                      
+                            yAxisIndex: 0,
+                            xAxisIndex:0,
+                            showSymbol: res.series[i].showSymbol,
+                            symbol: res.series[i].symbol,
+                            symbolSize: res.series[i].symbolSize,
+                            lineStyle: {
+                                color: res.series[i].lineStyle.color,
+                                width: res.series[i].lineStyle.width,
+                                type: res.series[i].lineStyle.type,
+
+                            }
+                        }
+                    })
+                }
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', $(window).height() - 20);
+                myChart.resize();
+            }
+            else if (charttype == 3)//分区显示
+            {
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', 250 * res.yAxis.length);
+                var myChart = echarts.init(document.getElementById('stackrealchart'));
+                option = {
+
+                    title: {
+                        text: '@(Model.WellName)井实时采集曲线',
+                        left: 'center',
+                        subtext: '数据来源LAZY OS 系统'
+                    },
+                    tooltip: {
+                        trigger: 'none',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+
+                    legend: {
+                        data: res.legend.data,
+                        left: 10,
+                        x: 'center',      //可设定图例在左、右、居中
+                        y: 'bottom',     //可设定图例在上、下、居中
+
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: { show: true, readOnly: false },
+                            magicType: { show: true, type: ['line', 'bar'] },
+                            restore: { show: true },
+                            saveAsImage: { show: true }
+                        }
+                    },
+                    grid: grids,
+                    series: series3,
+                    yAxis: yAxiss,
+                    xAxis: xAxiss,
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                $("#stackrealchart").css('width', $(window).width() - 150);
+                $("#stackrealchart").css('height', 250 * res.yAxis.length);
+                myChart.resize();
+            }
+        });
+
+    }
+
+   //读取实时数据
+SCADA.RealDataCustumTimer(LoadWellReal,'@Model.UpdateCycle');
+</script>
+ 

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{411EB16C-EB13-49E2-BF95-431E3083A80A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Temporal.Net.InfluxDb</RootNamespace>
+    <AssemblyName>Temporal.Net.InfluxDb</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ClientModules\BasicClientModule.cs" />
+    <Compile Include="ClientModules\ClientModuleBase.cs" />
+    <Compile Include="ClientModules\CqClientModule.cs" />
+    <Compile Include="ClientModules\CqClientModule_v_0_9_6.cs" />
+    <Compile Include="ClientModules\DatabaseClientModule.cs" />
+    <Compile Include="ClientModules\DatabaseClientModule_v_0_9_6.cs" />
+    <Compile Include="ClientModules\DiagnosticsClientModule.cs" />
+    <Compile Include="ClientModules\IBasicClientModule.cs" />
+    <Compile Include="ClientModules\ICqClientModule.cs" />
+    <Compile Include="ClientModules\IDatabaseClientModule.cs" />
+    <Compile Include="ClientModules\IDiagnosticsClientModule.cs" />
+    <Compile Include="ClientModules\IRetentionClientModule.cs" />
+    <Compile Include="ClientModules\ISerieClientModule.cs" />
+    <Compile Include="ClientModules\IUserClientModule.cs" />
+    <Compile Include="ClientModules\RetentionClientModule.cs" />
+    <Compile Include="ClientModules\SerieClientModule.cs" />
+    <Compile Include="ClientModules\SubModules\BatchWriter.cs" />
+    <Compile Include="ClientModules\SubModules\IBatchWriter.cs" />
+    <Compile Include="ClientModules\UserClientModule.cs" />
+    <Compile Include="Constants\QueryParams.cs" />
+    <Compile Include="Constants\QueryStatements.cs" />
+    <Compile Include="Constants\RequestPaths.cs" />
+    <Compile Include="Enums\FillType.cs" />
+    <Compile Include="Enums\Privileges.cs" />
+    <Compile Include="Formatters\IPointFormatter.cs" />
+    <Compile Include="Formatters\PointFormatter.cs" />
+    <Compile Include="Formatters\PointFormatter_v_0_9_2.cs" />
+    <Compile Include="Formatters\PointFormatter_v_1_0_0.cs" />
+    <Compile Include="Helpers\QueryExtensions.cs" />
+    <Compile Include="Helpers\ResponseExtensions.cs" />
+    <Compile Include="Helpers\SerieExtensions.cs" />
+    <Compile Include="IInfluxDbClient.cs" />
+    <Compile Include="InfluxDbClient.cs" />
+    <Compile Include="Infrastructure\InfluxDbClientConfiguration.cs" />
+    <Compile Include="Infrastructure\RequestParamsBuilder.cs" />
+    <Compile Include="Models\BackfillParams.cs" />
+    <Compile Include="Models\CqParams.cs" />
+    <Compile Include="Models\Point.cs" />
+    <Compile Include="Models\Responses\ContinuousQuery.cs" />
+    <Compile Include="Models\Responses\Database.cs" />
+    <Compile Include="Models\Responses\Diagnostics.cs" />
+    <Compile Include="Models\Responses\FieldKey.cs" />
+    <Compile Include="Models\Responses\Grant.cs" />
+    <Compile Include="Models\Responses\Measurement.cs" />
+    <Compile Include="Models\Responses\Message.cs" />
+    <Compile Include="Models\Responses\Pong.cs" />
+    <Compile Include="Models\Responses\QueryResponse.cs" />
+    <Compile Include="Models\Responses\RetentionPolicy.cs" />
+    <Compile Include="Models\Responses\Serie.cs" />
+    <Compile Include="Models\Responses\SerieSet.cs" />
+    <Compile Include="Models\Responses\Stats.cs" />
+    <Compile Include="Models\Responses\TagValue.cs" />
+    <Compile Include="Models\Responses\User.cs" />
+    <Compile Include="Models\WriteRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBuilders\CqQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\CqQueryBuilder_v_0_9_6.cs" />
+    <Compile Include="QueryBuilders\DatabaseQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\DiagnosticsQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\ICqQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\IDatabaseQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\IDiagnosticsQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\IRetentionQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\ISerieQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\IUserQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\RetentionQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\SerieQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\UserQueryBuilder.cs" />
+    <Compile Include="RequestClients\IInfluxDbRequestClient.cs" />
+    <Compile Include="RequestClients\InfluxDbRequestClient.cs" />
+    <Compile Include="RequestClients\InfluxDbRequestClient_v_0_9_2.cs" />
+    <Compile Include="RequestClients\InfluxDbRequestClient_v_0_9_6.cs" />
+    <Compile Include="RequestClients\InfluxDbRequestClient_v_1_0_0.cs" />
+    <Compile Include="ResponseParsers\BasicResponseParser.cs" />
+    <Compile Include="ResponseParsers\CqResponseParser.cs" />
+    <Compile Include="ResponseParsers\DatabaseResponseParser.cs" />
+    <Compile Include="ResponseParsers\DiagnosticsResponseParser.cs" />
+    <Compile Include="ResponseParsers\IBasicResponseParser.cs" />
+    <Compile Include="ResponseParsers\ICqResponseParser.cs" />
+    <Compile Include="ResponseParsers\IDatabaseResponseParser.cs" />
+    <Compile Include="ResponseParsers\IDiagnosticsResponseParser.cs" />
+    <Compile Include="ResponseParsers\IRetentionResponseParser.cs" />
+    <Compile Include="ResponseParsers\ISerieResponseParser.cs" />
+    <Compile Include="ResponseParsers\IUserResponseParser.cs" />
+    <Compile Include="ResponseParsers\RetentionResponseParser.cs" />
+    <Compile Include="ResponseParsers\SerieResponseParser.cs" />
+    <Compile Include="ResponseParsers\SerieResponseParser_v_0_9_6.cs" />
+    <Compile Include="ResponseParsers\UserResponseParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InfluxData.Net.Common\Temporal.Net.Common.csproj">
+      <Project>{977DA0F2-0330-44B2-8118-40DE63909D7B}</Project>
+      <Name>Temporal.Net.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfluxData.Net.Kapacitor\Temporal.Net.Kapacitor.csproj">
+      <Project>{79dbd6da-9f99-47ec-ad42-1a308ab0eb37}</Project>
+      <Name>Temporal.Net.Kapacitor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

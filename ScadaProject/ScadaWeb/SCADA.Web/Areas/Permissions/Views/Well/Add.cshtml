@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<form class="layui-form layui-form-pane ok-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">井位编码</label>
+        <div class="layui-input-block">
+            <input type="text" id="EnCode" name="EnCode" placeholder="井位编码" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">井位名称</label>
+        <div class="layui-input-block">
+            <input type="text" id="WellName" name="WellName" placeholder="井位名称" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">所在机构</label>
+        <div class="layui-input-block">
+            <input type="text" id="OrganizeId" name="OrganizeId" placeholder="所在机构" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">井类型</label>
+        <div class="layui-input-block">
+            <select id="WellType" name="WellType" placeholder="井类型" class="layui-input"></select>
+ 
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">X大地坐标</label>
+        <div class="layui-input-block">
+            <input type="text" name="XZH" id="XZH" placeholder="X大地坐标" autocomplete="off" class="layui-input" value="" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Y大地坐标</label>
+        <div class="layui-input-block">
+            <input type="text" name="YZH" id="YZH" placeholder="Y大地坐标" autocomplete="off" class="layui-input" value="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序码</label>
+        <div class="layui-input-block">
+            <input type="text" name="SortCode" placeholder="排序码" autocomplete="off" class="layui-input" value="1" lay-verify="number" maxlength="2">
+        </div>
+    </div>
+    @*增加的IO点参数*@
+    <div class="layui-form-item">
+        <label class="layui-form-label">采集站/通道</label>
+    
+        <div class="layui-input-block">
+            <input type="text" id="IO_ServerID" name="IO_ServerID" placeholder="采集站" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联设备</label>
+        <div class="layui-input-block">
+          <select id="IO_DeviceID" name="IO_DeviceID"  placeholder="请选择关联设备"     class="layui-input" ></select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">承包商</label>
+        <div class="layui-input-block">
+            <input type="text" id="Contractor" name="Contractor" placeholder="设备安装承包商" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">井底流压</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_DDLY" name="IO_DDLY" placeholder="井底流压(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">动液面</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_DYM" name="IO_DYM" placeholder="动液面(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">井口套压</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_JKTY" name="IO_JKTY" placeholder="井口套压(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">系统压力</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_XTYL" name="IO_XTYL" placeholder="系统压力(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">累计产气量</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_LJCQL" name="IO_LJCQL" placeholder="累计产气量(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">瞬时产气量</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_SSCQL" name="IO_SSCQL" placeholder="瞬时产气量(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">气体温度</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_QTWD" name="IO_QTWD" placeholder="气体温度(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">三相功率</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_SXGL" name="IO_SXGL" placeholder="三相功率(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+   
+    <div class="layui-form-item">
+        <label class="layui-form-label">累计产水量</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_LJCSL" name="IO_LJCSL" placeholder="累计产水量(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">瞬时产水量</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_SSCSL" name="IO_SSCSL" placeholder="瞬时产水量(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">冲次</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_GTCC" name="IO_GTCC" placeholder="冲次(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">示功图冲程</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_GTCC1" name="IO_GTCC1" placeholder="示功图冲程(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">示功图载荷</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_GTZH" name="IO_GTZH" placeholder="示功图载荷(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">三相电压</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_SXDY" name="IO_SXDY" placeholder="三相电压(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">三相电流</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_SXDL" name="IO_SXDL" placeholder="三相电流(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用电量</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_YDL" name="IO_YDL" placeholder="用电量(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">变频器频率</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_BPQPL" name="IO_BPQPL" placeholder="变频器频率(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电机工作电流</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_DJGZDL" name="IO_DJGZDL" placeholder="电机工作电流(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电机扭矩</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_DJNJ" name="IO_DJNJ" placeholder="电机扭矩(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电机工作电压</label>
+        <div class="layui-input-block">
+            <input type="text" id="IO_DJGZDY" name="IO_DJGZDY" placeholder="电机工作电压(IO参数名称,可通过数据中心服务商查询，也可以由相应的设备接入商提供)" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "treeSelect", "okLayer", "okUtils"], function () {
+        let treeSelect = layui.treeSelect;
+        let ioServerTreeSelect = layui.treeSelect;
+       
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        treeSelect.render({
+            elem: "#OrganizeId",
+            data: "/Permissions/Well/GetOrganizeTreeSelect",
+            type: "GET"
+        });
+        //加载IO参数
+        ioServerTreeSelect.render({
+            elem: "#IO_ServerID",
+            data: "/Permissions/Well/GetIOServerTreeSelect",
+            type: "GET",
+            click: function (obj) {
+              
+                if(obj.current.id.split("/").length==2)
+                {
+                  
+ 
+          
+                    $.ajax({
+                        type: "GET",
+                        url: "/Permissions/Well/GetDeviceSelect",
+                        data: { 'serverId': obj.current.id.split("/")[0], 'communicateId': obj.current.id.split("/")[1] },
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result != null) {
+                                /**  * 先移除上次追加的选项（不移除的话会一直追加） * */
+                                $("#IO_DeviceID").empty();
+                                for (var i = 0; i < result.length; i++)
+                                {
+                     
+                                    $("#IO_DeviceID").append("<option value='" + result[i].id + "'>" + result[i].name + "</option>");
+                                }
+                             
+                                layui.form.render("select");
+                            }
+                        },
+                        error: function (xhr, status, errMsg) {
+                            alert(errMsg);
+                        }
+                    });
+                }
+
+            }
+        });
+        //加载井类型
+        $.get("/Permissions/Well/GetWellType?EnCode=WellType", function (result) {
+
+           
+            for (var i = 0; i < result.length; i++) {
+
+                $("#WellType").append("<option value='" + result[i].id + "'>" + result[i].name + "</option>");
+            }
+
+            layui.form.render("select");
+  
+            //重新渲染select
+            form.render('select');
+        });
+        form.on("submit(add)", function (data) {
+            okUtils.ajax("/Permissions/Well/Add", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>
+

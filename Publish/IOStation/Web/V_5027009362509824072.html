@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#4614289264799113603)'     >
+
+</rect>
+<defs><linearGradient id="4614289264799113603" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4949655344857461431'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID4949655344857461431' cx='300' cy='300' r='100'     stroke ="#1E90FF"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 300 300;-360 300 300'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID4949655344857461431' cx='300' cy='300' r='100'     stroke ="#00BFFF"   stroke-opacity="0.5"  stroke-width="19"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 300 300;360 300 300'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID4949655344857461431' cx='300' cy='300' r='79'     stroke ="#87CEFA"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 300 300;360 300 300'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID4949655344857461431' cx='300' cy='300' r='65.5'     stroke ="#0000CD"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 300 300;-360 300 300'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID4949655344857461431' cx='300' cy='300' r='54'     stroke ="#4169E1"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 300 300;360 300 300'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5447497461183196832'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='rectID5447497461183196832'   x='638' y='216.8328' width='15' height='57.33434'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '217.8328;245.5;217.8328'
+          dur ='4s'
+          begin = '7.446018s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '57.33434;1;57.33434'
+          dur ='4s'
+          begin = '7.446018s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='656' y='210.0751' width='15' height='70.84988'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '211.0751;245.5;211.0751'
+          dur ='4s'
+          begin = '9.201283s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '70.84988;1;70.84988'
+          dur ='4s'
+          begin = '9.201283s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='674' y='234.1035' width='15' height='22.79301'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '235.1035;245.5;235.1035'
+          dur ='4s'
+          begin = '2.960132s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '22.79301;1;22.79301'
+          dur ='4s'
+          begin = '2.960132s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='692' y='232.0226' width='15' height='26.95474'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '233.0226;245.5;233.0226'
+          dur ='4s'
+          begin = '3.500615s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '26.95474;1;26.95474'
+          dur ='4s'
+          begin = '3.500615s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='710' y='220.2464' width='15' height='50.50714'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '221.2464;245.5;221.2464'
+          dur ='4s'
+          begin = '6.559369s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '50.50714;1;50.50714'
+          dur ='4s'
+          begin = '6.559369s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='728' y='218.6949' width='15' height='53.61029'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '219.6949;245.5;219.6949'
+          dur ='4s'
+          begin = '6.962375s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '53.61029;1;53.61029'
+          dur ='4s'
+          begin = '6.962375s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='746' y='238.5277' width='15' height='13.94451'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '239.5277;245.5;239.5277'
+          dur ='4s'
+          begin = '1.810975s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '13.94451;1;13.94451'
+          dur ='4s'
+          begin = '1.810975s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='764' y='209.9671' width='15' height='71.06573'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '210.9671;245.5;210.9671'
+          dur ='4s'
+          begin = '9.229316s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '71.06573;1;71.06573'
+          dur ='4s'
+          begin = '9.229316s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='782' y='210.548' width='15' height='69.90394'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '211.548;245.5;211.548'
+          dur ='4s'
+          begin = '9.078433s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '69.90394;1;69.90394'
+          dur ='4s'
+          begin = '9.078433s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='800' y='231.6423' width='15' height='27.71531'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '232.6423;245.5;232.6423'
+          dur ='4s'
+          begin = '3.599391s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '27.71531;1;27.71531'
+          dur ='4s'
+          begin = '3.599391s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='818' y='239.8256' width='15' height='11.34888'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '240.8256;245.5;240.8256'
+          dur ='4s'
+          begin = '1.473881s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '11.34888;1;11.34888'
+          dur ='4s'
+          begin = '1.473881s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='836' y='240.7507' width='15' height='9.49853'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '241.7507;245.5;241.7507'
+          dur ='4s'
+          begin = '1.233575s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '9.49853;1;9.49853'
+          dur ='4s'
+          begin = '1.233575s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='854' y='239.1099' width='15' height='12.78025'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '240.1099;245.5;240.1099'
+          dur ='4s'
+          begin = '1.659773s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '12.78025;1;12.78025'
+          dur ='4s'
+          begin = '1.659773s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='872' y='229.339' width='15' height='32.32199'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '230.339;245.5;230.339'
+          dur ='4s'
+          begin = '4.197661s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '32.32199;1;32.32199'
+          dur ='4s'
+          begin = '4.197661s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='890' y='209.7175' width='15' height='71.56496'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '210.7175;245.5;210.7175'
+          dur ='4s'
+          begin = '9.29415s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '71.56496;1;71.56496'
+          dur ='4s'
+          begin = '9.29415s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='908' y='226.9031' width='15' height='37.19371'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '227.9031;245.5;227.9031'
+          dur ='4s'
+          begin = '4.830352s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '37.19371;1;37.19371'
+          dur ='4s'
+          begin = '4.830352s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='926' y='218.0599' width='15' height='54.88019'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '219.0599;245.5;219.0599'
+          dur ='4s'
+          begin = '7.127297s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '54.88019;1;54.88019'
+          dur ='4s'
+          begin = '7.127297s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='944' y='215.7421' width='15' height='59.51577'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '216.7421;245.5;216.7421'
+          dur ='4s'
+          begin = '7.72932s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '59.51577;1;59.51577'
+          dur ='4s'
+          begin = '7.72932s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='962' y='221.0894' width='15' height='48.82112'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '222.0894;245.5;222.0894'
+          dur ='4s'
+          begin = '6.340405s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '48.82112;1;48.82112'
+          dur ='4s'
+          begin = '6.340405s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='980' y='244.4737' width='15' height='2.052511'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '245.4737;245.5;245.4737'
+          dur ='4s'
+          begin = '0.2665598s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '2.052511;1;2.052511'
+          dur ='4s'
+          begin = '0.2665598s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='998' y='211.9783' width='15' height='67.04331'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '212.9783;245.5;212.9783'
+          dur ='4s'
+          begin = '8.706923s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '67.04331;1;67.04331'
+          dur ='4s'
+          begin = '8.706923s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='1016' y='213.7057' width='15' height='63.58867'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '214.7057;245.5;214.7057'
+          dur ='4s'
+          begin = '8.258268s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '63.58867;1;63.58867'
+          dur ='4s'
+          begin = '8.258268s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5447497461183196832'   x='1034' y='236.3462' width='15' height='18.30762'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '237.3462;245.5;237.3462'
+          dur ='4s'
+          begin = '2.377613s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '18.30762;1;18.30762'
+          dur ='4s'
+          begin = '2.377613s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5679262820337733348'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<ellipse    id='ellipseID5679262820337733348' cx='588' cy='447' rx='20' ry='20'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""    fill='none'    >
+
+</ellipse>
+
+
+<ellipse    id='ellipseID5679262820337733348' cx='588' cy='447' rx='40' ry='40'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""    fill='none'    >
+
+</ellipse>
+
+
+<ellipse    id='ellipseID5679262820337733348' cx='588' cy='447' rx='60' ry='60'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""    fill='none'    >
+
+</ellipse>
+
+
+<circle    id='ellipseID5679262820337733348' cx='588' cy='447' r='10'     fill='#FFFF00' opacity='0.1960784'    >
+  <animate
+          attributeName = 'r'
+          values = '0;60'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />   <animate
+          attributeName = 'opacity'
+          values = '1;0'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='588' y2='387'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='558' y2='395.0385'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<path  id='arcID5679262820337733348'     data-rect='528,387,120,120'  d='M639.9615,477 A60,60 0 0,1 618,498.9615'       stroke ="#ADD8E6"   stroke-opacity="1"  stroke-width="4"   stroke-dasharray=""    fill='none' >
+
+</path>
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='536.0385' y2='417'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='528' y2='447'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='536.0385' y2='477'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<path  id='arcID5679262820337733348'     data-rect='528,387,120,120'  d='M558,498.9615 A60,60 0 0,1 536.0385,477'       stroke ="#ADD8E6"   stroke-opacity="1"  stroke-width="4"   stroke-dasharray=""    fill='none' >
+
+</path>
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='558' y2='498.9615'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='588' y2='507'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='618' y2='498.9615'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<path  id='arcID5679262820337733348'     data-rect='528,387,120,120'  d='M536.0385,417 A60,60 0 0,1 558,395.0385'       stroke ="#ADD8E6"   stroke-opacity="1"  stroke-width="4"   stroke-dasharray=""    fill='none' >
+
+</path>
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='639.9615' y2='477'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='648' y2='447'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='639.9615' y2='417'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<path  id='arcID5679262820337733348'     data-rect='528,387,120,120'  d='M618,395.0385 A60,60 0 0,1 639.9615,417'       stroke ="#ADD8E6"   stroke-opacity="1"  stroke-width="4"   stroke-dasharray=""    fill='none' >
+
+</path>
+
+<line  id='scalineID5679262820337733348'     x1='588' y1='447' x2='618' y2='395.0385'   stroke ="#00008B"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<path  id='pieID5679262820337733348'   data-rect='528,387,120,120'  d='M588,447 L558,498.9615 A60,60 0 0,1 536.0385,477 L588,447'      fill='url(#5067090413328488754)'  >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0, 588 447;360, 588 447'
+          dur ='3s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</path>
+<defs><radialGradient id="5067090413328488754"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#ADD8E6;stop-opacity:0.1960784" /> <stop offset ="100%" style ="stop-color:#BDDFEB;stop-opacity:0.1960784" /> </radialGradient> </defs>
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5413472391402171639'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID5413472391402171639' cx='829.5' cy='466.5' r='85.5'     fill='#FFFF00' opacity='0.1960784'    >
+  <animate
+          attributeName = 'r'
+          values = '0;85.5'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />   <animate
+          attributeName = 'opacity'
+          values = '0.8;0'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5611826773066720266'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID5611826773066720266' cx='442.5' cy='662.5' r='125.5'     stroke ="#1E90FF"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 442.5 662.5;-360 442.5 662.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5611826773066720266' cx='442.5' cy='662.5' r='125.5'     stroke ="#00BFFF"   stroke-opacity="0.5"  stroke-width="19"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 442.5 662.5;360 442.5 662.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5611826773066720266' cx='442.5' cy='662.5' r='104.5'     stroke ="#87CEFA"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 442.5 662.5;360 442.5 662.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5611826773066720266' cx='442.5' cy='662.5' r='91'     stroke ="#0000CD"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 442.5 662.5;-360 442.5 662.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5611826773066720266' cx='442.5' cy='662.5' r='79.5'     stroke ="#4169E1"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 442.5 662.5;360 442.5 662.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

@@ -1,0 +1,12 @@
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\IOCenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\IOCenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\IOCenterServer.Model\bin\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\IOCenterServer.Model\bin\Debug\IOCenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\IOCenterServer.Model\obj\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\IOCenterServer.Model\obj\Debug\IOCenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\IOCenterServerBase\IOCenterServer.Model\bin\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\IOCenterServerBase\IOCenterServer.Model\bin\Debug\IOCenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\IOCenterServerBase\IOCenterServer.Model\obj\Debug\IOCenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\IOCenterServerBase\IOCenterServer.Model\obj\Debug\IOCenterServer.Model.pdb

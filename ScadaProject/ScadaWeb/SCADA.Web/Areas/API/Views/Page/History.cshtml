@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "历史数据查询";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+<style>
+    body {
+        background-color: white;
+    }
+</style>
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search" lay-filter="formTest">
+
+        <input id="DeviceID" name="DeviceID" type="hidden" class="layui-input" lay-filter>
+        <input id="ServerID" name="ServerID" type="hidden" class="layui-input" lay-filter>
+        <input id="CommunicateID" name="CommunicateID" type="hidden" class="layui-input" lay-filter>
+        <input id="list" name="list" type="hidden" class="layui-input" lay-filter>
+        <div class="layui-input-inline">
+            <div id="DeviceList" style="width:100px;"></div>
+
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartDate" id="StartDate" value="@Model.StartDate">
+
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="结束日期" autocomplete="off" name="EndDate" id="EndDate" value="@Model.EndDate">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+
+<script>
+
+    layui.use(["table", "form", "okLayer", "okUtils", "treeSelect", "laydate"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let treeSelect = layui.treeSelect;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+
+        let startdate = layui.laydate;
+        let enddate = layui.laydate;
+        var $ = layui.$;
+
+        startdate.render({
+            elem: '#StartDate'
+            , type: 'datetime'
+        });
+        enddate.render({
+            elem: '#EndDate'
+            , type: 'datetime'
+        });
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/API/Page/ApiScadaHistory",
+            limit: 1000,
+            limits: [100, 200, 300, 500, 600, 800, 1000, 1500, 2000, 3000],
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            page: true,
+            loading: true,
+            id: 'HistoryGrid',
+            toolbar: "#toolbarTpl",
+            jump: function (obj, first) {
+                if (!first) {
+                    layer.msg('第 ' + obj.curr + ' 页');
+                }
+            },
+            size: "sm",
+
+            cols: [],
+            done: function (res, curr, count) {
+
+            },
+            parseData: function (res) { //将原始数据解析成 table 组件所规定的数据
+                var result = eval('(' + res + ')');
+                return result;
+            }
+        });
+
+        //获取用户指定的查询设备列表
+        $.get("/API/Page/ApiGetDevice", { list: SCADA.GetUrlParam("list") }, function (result) {
+            var devices = xmSelect.render({
+                el: '#DeviceList',
+                filterable: true,
+                paging: true,
+                pageSize: 50,
+                radio: true,
+                clickClose: true,
+                data: result,
+                on: function (data) {
+                    //arr:  当前多选已选中的数据
+                    var arr = data.change[0].id;
+                    var sid = data.change[0].value3;
+                    var cid = data.change[0].value2;
+                    var did = data.change[0].value1;
+                    $("#DeviceID").val(did);
+                    $("#CommunicateID").val(cid);
+                    $("#ServerID").val(sid);
+                    $.get("/API/Page/ApiGetDeviceParasGridColumn?id=" + arr, function (result) {
+                        //重新加载数据表，并根据数据构造表列
+                        AllTable.reload({
+
+                            cols: [result],
+                            data:[]
+                        });
+
+                    });
+
+
+
+                },
+            })
+        });
+
+        //数据表定时加载
+
+        form.on("submit(search)", function (data) {
+
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+
+            });
+            return false;
+        });
+
+     //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "list": SCADA.GetUrlParam("list"),
+            
+        });
+        form.render(); //更新全部
+
+
+    })
+</script>
+

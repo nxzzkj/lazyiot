@@ -1,0 +1,15 @@
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.dll
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.pdb
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.dll
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.pdb
+E:\LazyScadaOS\LazyScadaOS20210210\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.dll
+E:\LazyScadaOS\LazyScadaOS20210210\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.pdb
+E:\LazyScadaOS\LazyScadaOS20210210\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaOS20210210\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.dll
+E:\LazyScadaOS\LazyScadaOS20210210\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.pdb
+D:\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.dll
+D:\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.pdb
+D:\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csproj.CoreCompileInputs.cache
+D:\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.dll
+D:\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.pdb

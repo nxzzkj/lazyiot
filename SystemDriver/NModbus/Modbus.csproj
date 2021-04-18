@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C6B60E9-8BA8-4925-AB47-5CF098089151}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modbus</RootNamespace>
+    <AssemblyName>Modbus</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataStore.cs" />
+    <Compile Include="Data\DataStoreEventArgs.cs" />
+    <Compile Include="Data\DataStoreFactory.cs" />
+    <Compile Include="Data\DiscreteCollection.cs" />
+    <Compile Include="Data\IModbusMessageDataCollection.cs" />
+    <Compile Include="Data\ModbusDataCollection.cs" />
+    <Compile Include="Data\ModbusDataType.cs" />
+    <Compile Include="Data\RegisterCollection.cs" />
+    <Compile Include="Device\IModbusMaster.cs" />
+    <Compile Include="Device\IModbusSerialMaster.cs" />
+    <Compile Include="Device\ModbusDevice.cs" />
+    <Compile Include="Device\ModbusIpMaster.cs" />
+    <Compile Include="Device\ModbusMaster.cs" />
+    <Compile Include="Device\ModbusMasterTcpConnection.cs" />
+    <Compile Include="Device\ModbusSerialMaster.cs" />
+    <Compile Include="Device\ModbusSerialSlave.cs" />
+    <Compile Include="Device\ModbusSlave.cs" />
+    <Compile Include="Device\ModbusSlaveRequestEventArgs.cs" />
+    <Compile Include="Device\ModbusTcpSlave.cs" />
+    <Compile Include="Device\ModbusUdpSlave.cs" />
+    <Compile Include="Device\TcpConnectionEventArgs.cs" />
+    <Compile Include="Extensions\Enron\EnronModbus.cs" />
+    <Compile Include="Extensions\Enron\NetworkBrigeModbus.cs" />
+    <Compile Include="Globel\GlobalSuppressions.cs" />
+    <Compile Include="Globel\InvalidModbusRequestException.cs" />
+    <Compile Include="IO\EmptyTransport.cs" />
+    <Compile Include="IO\IStreamResource.cs" />
+    <Compile Include="IO\ModbusAsciiTransport.cs" />
+    <Compile Include="IO\ModbusIpTransport.cs" />
+    <Compile Include="IO\ModbusRtuTransport.cs" />
+    <Compile Include="IO\ModbusSerialTransport.cs" />
+    <Compile Include="IO\ModbusTransport.cs" />
+    <Compile Include="IO\StreamResourceUtility.cs" />
+    <Compile Include="IO\TcpClientAdapter.cs" />
+    <Compile Include="IO\UdpClientAdapter.cs" />
+    <Compile Include="Message\AbstractModbusMessage.cs" />
+    <Compile Include="Message\AbstractModbusMessageWithData.cs" />
+    <Compile Include="Message\DiagnosticsRequestResponse.cs" />
+    <Compile Include="Message\IModbusMessage.cs" />
+    <Compile Include="Message\IModbusRequest.cs" />
+    <Compile Include="Message\ModbusMessageFactory.cs" />
+    <Compile Include="Message\ModbusMessageImpl.cs" />
+    <Compile Include="Message\ReadCoilsInputsRequest.cs" />
+    <Compile Include="Message\ReadCoilsInputsResponse.cs" />
+    <Compile Include="Message\ReadHoldingInputRegistersRequest.cs" />
+    <Compile Include="Message\ReadHoldingInputRegistersResponse.cs" />
+    <Compile Include="Message\ReadWriteMultipleRegistersRequest.cs" />
+    <Compile Include="Message\SlaveExceptionResponse.cs" />
+    <Compile Include="Message\WriteMultipleCoilsRequest.cs" />
+    <Compile Include="Message\WriteMultipleCoilsResponse.cs" />
+    <Compile Include="Message\WriteMultipleRegistersRequest.cs" />
+    <Compile Include="Message\WriteMultipleRegistersResponse.cs" />
+    <Compile Include="Message\WriteSingleCoilRequestResponse.cs" />
+    <Compile Include="Message\WriteSingleRegisterRequestResponse.cs" />
+    <Compile Include="Modbus.cs" />
+    <Compile Include="ModbusAnalysis\IODeviceCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusAnalysis\IODeviceCtrl.Designer.cs">
+      <DependentUpon>IODeviceCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusAnalysis\IOParaCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusAnalysis\IOParaCtrl.Designer.cs">
+      <DependentUpon>IOParaCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusAnalysis\Modbus ASCII Serial\Modbus_ASCII_DeviceDriver.cs" />
+    <Compile Include="ModbusAnalysis\Modbus RTU Serial\Modbus_RTU_DeviceDriver.cs" />
+    <Compile Include="ModbusAnalysis\Modbus TCP\Modbus_TCP_DeviceDriver.cs" />
+    <Compile Include="Globel\ModbusFunctionCode.cs" />
+    <Compile Include="ModbusAnalysis\ModbusNBIot\ModbusNbIot_DeviceDriver.cs" />
+    <Compile Include="ModbusAnalysis\ModbusSetCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusAnalysis\ModbusSetCtrl.Designer.cs">
+      <DependentUpon>ModbusSetCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\Modbus Serial\Modbus_Serial.cs" />
+    <Compile Include="ModbusService\Modbus Serial\Modbus_Serial_Ctrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusService\Modbus Serial\Modbus_Serial_Ctrl.Designer.cs">
+      <DependentUpon>Modbus_Serial_Ctrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\Modbus TCP\Modbus_TCP.cs" />
+    <Compile Include="ModbusService\Modbus TCP\Modbus_TCP_Ctrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusService\Modbus TCP\Modbus_TCP_Ctrl.Designer.cs">
+      <DependentUpon>Modbus_TCP_Ctrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\Modbus UDP\Modbus_UDP.cs" />
+    <Compile Include="ModbusService\Modbus UDP\Modbus_UDP_Ctrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusService\Modbus UDP\Modbus_UDP_Ctrl.Designer.cs">
+      <DependentUpon>Modbus_UDP_Ctrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\ModbusNBIot\ClientConnection.cs" />
+    <Compile Include="ModbusService\ModbusNBIot\DtuData.cs" />
+    <Compile Include="ModbusService\ModbusNBIot\EventHandles.cs" />
+    <Compile Include="ModbusAnalysis\ModbusNBIot\ModbusNbIotParaCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusAnalysis\ModbusNBIot\ModbusNbIotParaCtrl.Designer.cs">
+      <DependentUpon>ModbusNbIotParaCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\ModbusNBIot\NbIotCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusService\ModbusNBIot\NbIotCtrl.Designer.cs">
+      <DependentUpon>NbIotCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusAnalysis\ModbusNBIot\NbIotDeviceCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusAnalysis\ModbusNBIot\NbIotDeviceCtrl.Designer.cs">
+      <DependentUpon>NbIotDeviceCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusService\ModbusNBIot\Nb_IotModbusServer.cs" />
+    <Compile Include="ModbusService\ModbusNBIot\ZYBClient.cs" />
+    <Compile Include="ModbusService\ModbusNBIot\ZYBServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Globel\Resources.cs" />
+    <Compile Include="Globel\SerialPortAdapter.cs" />
+    <Compile Include="Globel\SlaveException.cs" />
+    <Compile Include="Unme.Common\DisposableUtility.cs" />
+    <Compile Include="Unme.Common\SequenceUtility.cs" />
+    <Compile Include="Utility\DiscriminatedUnion.cs" />
+    <Compile Include="Utility\ModbusUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModbusExtension\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DriverBase\IOData\Scada.IOStructure.csproj">
+      <Project>{ea7a9840-d2f5-44e3-a7f4-07430a305d34}</Project>
+      <Name>Scada.IOStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DriverBase\IScadaDriver\Scada.Kernel.csproj">
+      <Project>{212e09d3-a5ab-4141-8ad0-b9246381690e}</Project>
+      <Name>Scada.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.Model\Scada.Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Scada.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModbusAnalysis\IODeviceCtrl.resx">
+      <DependentUpon>IODeviceCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusAnalysis\IOParaCtrl.resx">
+      <DependentUpon>IOParaCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusAnalysis\ModbusSetCtrl.resx">
+      <DependentUpon>ModbusSetCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusService\Modbus Serial\Modbus_Serial_Ctrl.resx">
+      <DependentUpon>Modbus_Serial_Ctrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusService\Modbus TCP\Modbus_TCP_Ctrl.resx">
+      <DependentUpon>Modbus_TCP_Ctrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusService\Modbus UDP\Modbus_UDP_Ctrl.resx">
+      <DependentUpon>Modbus_UDP_Ctrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusAnalysis\ModbusNBIot\ModbusNbIotParaCtrl.resx">
+      <DependentUpon>ModbusNbIotParaCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusService\ModbusNBIot\NbIotCtrl.resx">
+      <DependentUpon>NbIotCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusAnalysis\ModbusNBIot\NbIotDeviceCtrl.resx">
+      <DependentUpon>NbIotDeviceCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

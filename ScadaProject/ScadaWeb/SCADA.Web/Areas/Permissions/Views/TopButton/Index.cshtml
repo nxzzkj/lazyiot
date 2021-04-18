@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入按钮编码" name="EnCode" autocomplete="off">
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入按钮名称" name="FullName" autocomplete="off">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Permissions/TopButton/List",
+            limit: 10,
+            page: true,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                { type: "checkbox" },
+                { field: "Id", title: "ID", width: 80, sort: true },
+                { field: "EnCode", title: "按钮编码" },
+                { field: "FullName", title: "按钮名称" },
+                { field: "ClassName", title: "按钮样式" },
+                { field: "ButtonColor", title: "按钮颜色" },
+     
+                { field: "Url", title: "程序地址", width: 150 },
+                { field: "Icon", title: "图标", width: 150 },
+                { field: "SortCode", title: "排序码", width: 80 },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 180, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]],
+            done: function (res, curr, count) {
+                console.log(res, curr, count);
+            }
+        });
+
+        form.on("submit(search)", function (data) {
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+        table.on("toolbar(tableFilter)", function (obj) {
+            switch (obj.event) {
+                case "add":
+                    add();
+                    break;
+            }
+        });
+
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+            }
+        });
+
+        function add() {
+            okLayer.open("添加按钮", "/Permissions/TopButton/Add", "100%", "100%", null, null);
+        }
+
+        function edit(id) {
+            okLayer.open("编辑按钮", "/Permissions/TopButton/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除吗？", function () {
+                okUtils.ajax("/Permissions/TopButton/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+<!-- 按钮位置模板 -->
+<script type="text/html" id="locationTpl">
+    {{#  if(d.Location==1){ }}
+    <span>表外</span>
+    {{#  } else{ }}
+    <span>表内</span>
+    {{#  } }}
+</script>
+

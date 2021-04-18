@@ -1,0 +1,4 @@
+E:\中联公司项目\ZZSCADA\Logger\bin\Debug\Logger.dll
+E:\中联公司项目\ZZSCADA\Logger\bin\Debug\Logger.pdb
+E:\中联公司项目\ZZSCADA\Logger\obj\Debug\Logger.dll
+E:\中联公司项目\ZZSCADA\Logger\obj\Debug\Logger.pdb

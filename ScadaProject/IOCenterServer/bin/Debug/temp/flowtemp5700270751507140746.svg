@@ -1,0 +1,65 @@
+﻿
+--PROJ #5542476856996772541#1
+
+ 
+
+--VIEW #V_5015110408816365434#1#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4674487244089983286)'     />
+<defs><linearGradient id="4674487244089983286" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='#'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5453126321132307576' height = '485' width = '614' y = '89' x = '173'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  d=' M173,89 L787,89 L787,574 173,574 Z'   fill='#FFFFFF'>
+</path>
+<foreignObject id = 'svg_ID5453126321132307576'  height = '485' width = '614' y = '89' x = '173' align = 'left'>
+ <div id = 'treeID5453126321132307576' style='width: 614px; height: 485px; overflow: scroll; ' ></div>
+<style>.layui-tree-txt{color:'#000000', font-family:Microsoft YaHei;font-size:14px;font-style:normal;font-weight:normal;} </style>
+<script>
+    layui.use(['tree', 'util'], function(){
+                    var tree = layui.tree
+                    ,layer = layui.layer
+                    ,util = layui.util 
+  tree.render({
+    elem: '#treeID5453126321132307576'
+    ,showCheckbox:'false'
+    ,data: []
+    ,showLine:'false'
+    ,isJump:'false'
+    ,text: {
+  defaultNodeName: '未命名' //节点默认名称
+  ,none: '无数据' //数据为空时的提示文本
+   } 
+    ,accordion: true
+     ,click: function(obj){
+     if(obj.data.children.length<=0)
+      SCADA.OnTreeNodeEventService(obj.data);
+ 
+  }
+  });
+ 
+
+var nodes = document.getElementsByClassName('layui-tree-txt');
+                for (var i = 0; i < nodes.length; i++)
+                {
+                     nodes[i].style.color = '#000000';
+                }
+ });
+</script>
+</foreignObject>
+<g>
+</a></svg>
+
+--ENDVIEW
+
+
+--USER #管理员#admin#123456#1#1
+
+
+--ENDUSER
+
+
+--USER ####0#0
+
+
+--ENDUSER
+

@@ -1,0 +1,1 @@
+E:\中联公司项目\ZZSCADA\InfluxDB\InfluxData.Net.Tests\obj\Debug\InfluxData.Net.Tests.csprojResolveAssemblyReference.cache

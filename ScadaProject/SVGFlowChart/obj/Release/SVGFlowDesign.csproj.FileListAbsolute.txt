@@ -1,0 +1,14 @@
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.csprojResolveAssemblyReference.cache
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowChart.MainForm.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.PropertiesForm.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.Properties.Resources.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.ShapeForm.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.ToolForm.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.csproj.GenerateResource.Cache
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\bin\Release\SVGFlowDesign.dll
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\bin\Release\SVGFlowDesign.pdb
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\bin\Release\ScadaGraphEngine.dll
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\bin\Release\ScadaGraphEngine.pdb
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.WorkForm.resources
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.dll
+E:\中联公司项目\ZZSCADA\ScadaProject\SVGFlowChart\obj\Release\SVGFlowDesign.pdb

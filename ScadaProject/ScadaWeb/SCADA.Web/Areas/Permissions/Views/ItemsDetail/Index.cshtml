@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入字典编码" name="ItemCode" autocomplete="off">
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入字典名称" name="ItemName" autocomplete="off">
+        </div>
+        <div class="layui-input-inline">
+            <!-- treeSelect渲染会给input自动加上style="display: none;"，导致jquery无法给input赋值，type text要改为hidden，但会存在渲染的过程 -->
+            <input type="hidden" id="ItemId" name="ItemId" autocomplete="off" class="layui-input">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "treeSelect", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let treeSelect = layui.treeSelect;
+        let $ = layui.$;
+        treeSelect.render({
+            elem: "#ItemId",
+            data: "/Permissions/Organize/GetItemsTreeSelect",
+            type: "GET"
+        });
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Permissions/ItemsDetail/List",
+            limit: 10,
+            page: true,
+            toolbar: true,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                { type: "checkbox" },
+                { field: "Id", title: "ID", width: 60, sort: true },
+                { field: "ItemName", title: "字典名称", width: 120},
+                { field: "ItemCode", title: "字典编码", width: 120 },
+                { field: "ItemType", title: "字典分类", width: 120 },
+                { field: "SortCode", title: "排序码", width: 60 },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 250, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]],
+            done: function (res, curr, count) {
+                console.log(res, curr, count);
+            }
+        });
+
+        form.on("submit(search)", function (data) {
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+        table.on("toolbar(tableFilter)", function (obj) {
+            switch (obj.event) {
+                case "add":
+                    add();
+                    break;
+            }
+        });
+
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+            }
+        });
+
+        function add() {
+            okLayer.open("添加字典", "/Permissions/ItemsDetail/Add", "100%", "100%", null, null);
+        }
+
+        function edit(id) {
+            okLayer.open("编辑字典", "/Permissions/ItemsDetail/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除吗？", function () {
+                okUtils.ajax("/Permissions/ItemsDetail/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+        //重置点击设置ItemId为0，原Button reset也会触发清空编码和名称
+        $("#reset").click(function () {
+            $("#ItemId").val("0"); //设置0 或则 "0" 效果一样，设置0查出所有
+        });
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+

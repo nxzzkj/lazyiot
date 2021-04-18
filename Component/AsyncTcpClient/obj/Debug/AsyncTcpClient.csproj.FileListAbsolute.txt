@@ -1,0 +1,4 @@
+E:\中联公司项目\ZZSCADA\AsyncTcpClient\bin\Debug\AsyncTcpClient.dll
+E:\中联公司项目\ZZSCADA\AsyncTcpClient\bin\Debug\AsyncTcpClient.pdb
+E:\中联公司项目\ZZSCADA\AsyncTcpClient\obj\Debug\AsyncTcpClient.dll
+E:\中联公司项目\ZZSCADA\AsyncTcpClient\obj\Debug\AsyncTcpClient.pdb

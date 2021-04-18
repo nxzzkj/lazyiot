@@ -1,0 +1,4 @@
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\CenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\CenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\CenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\CenterServer.Model.pdb

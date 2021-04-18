@@ -1,0 +1,9 @@
+E:\中联公司项目\ZZKJSCADA\ZZSCADA\IOServer\bin\Debug\IOServer.exe.config
+E:\中联公司项目\ZZSCADA\IOServer\bin\Debug\IOServer.exe.config
+E:\中联公司项目\ZZSCADA\IOServer\bin\Debug\IOServer.exe
+E:\中联公司项目\ZZSCADA\IOServer\bin\Debug\IOServer.pdb
+E:\中联公司项目\ZZSCADA\IOServer\obj\Debug\IOServer.csprojResolveAssemblyReference.cache
+E:\中联公司项目\ZZSCADA\IOServer\obj\Debug\IOServer.Properties.Resources.resources
+E:\中联公司项目\ZZSCADA\IOServer\obj\Debug\IOServer.csproj.GenerateResource.Cache
+E:\中联公司项目\ZZSCADA\IOServer\obj\Debug\IOServer.exe
+E:\中联公司项目\ZZSCADA\IOServer\obj\Debug\IOServer.pdb

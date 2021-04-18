@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 系统测试</title>
+    <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='Content/css/okadmin.css' rel='stylesheet' />
+    <link href='Content/css/common.css' rel='stylesheet' />
+    <script src='Content/lib/layui/layui.js'></script>
+    <script src='Content/js/global.js'></script>
+    <script src='Content/js/jquery-3.4.1.js'></script>
+    <script src='Content/js/jquery.timers-1.2.js'></script>
+    <script src='Content/js/svg-pan-zoom.js'></script>
+    <script src='Content/js/SVG.js'></script>
+    <script src='Content/js/Scada.js'></script>
+    <!--引用多选下拉框-->
+    <script src='~/Content/js/xm-select.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#000000;'>
+    <div id='container' class='ok-body'>
+        <form class="layui-form layui-form-pane ok-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">下置命令</label>
+                <div class="layui-input-block">
+                    <input type="text" name="GroupTitle" placeholder="下置值" autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+
+          
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="add">下发命令</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

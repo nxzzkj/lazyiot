@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{212E09D3-A5AB-4141-8AD0-B9246381690E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scada.Kernel</RootNamespace>
+    <AssemblyName>Scada.Kernel</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HslCommunication">
+      <HintPath>..\..\Lib\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ScadaProject\ScadaWeb\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICommunicationKernel\ScadaCommunicateKernel.cs" />
+    <Compile Include="ICommunicationKernel\CommunicationKernelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ICommunicationKernel\CommunicationKernelControl.Designer.cs">
+      <DependentUpon>CommunicationKernelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDeviceKernel\delegate.cs" />
+    <Compile Include="IDeviceKernel\ScadaDeviceKernel.cs" />
+    <Compile Include="IDeviceKernel\IODeviceKernelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDeviceKernel\IODeviceKernelControl.Designer.cs">
+      <DependentUpon>IODeviceKernelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDeviceKernel\IOParaKernelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDeviceKernel\IOParaKernelControl.Designer.cs">
+      <DependentUpon>IOParaKernelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParaPack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ICommunicationKernel\CommunicationKernelControl.resx">
+      <DependentUpon>CommunicationKernelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDeviceKernel\IOParaKernelControl.resx">
+      <DependentUpon>IOParaKernelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Component\Logger\Scada.Logger.csproj">
+      <Project>{faca4c7e-b4c3-4738-b981-7a1b3d4d1d0a}</Project>
+      <Name>Scada.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.BLL\Scada.Business.csproj">
+      <Project>{38d7aa58-c95b-449b-86c6-a8073a56e11f}</Project>
+      <Name>Scada.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.Model\Scada.Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Scada.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOData\Scada.IOStructure.csproj">
+      <Project>{ea7a9840-d2f5-44e3-a7f4-07430a305d34}</Project>
+      <Name>Scada.IOStructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

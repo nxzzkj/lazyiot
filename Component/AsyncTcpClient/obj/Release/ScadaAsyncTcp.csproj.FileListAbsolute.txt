@@ -1,0 +1,16 @@
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\ScadaAsyncTcp.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\ScadaAsyncTcp.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\Scada.DBUtility.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\ZZSCADA.Model.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\MySql.Data.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\System.Data.SQLite.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\IO_Structure.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\System.Data.SQLite.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\System.Data.SQLite.xml
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\System.Data.SQLite.dll.config
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\bin\Release\IO_Structure.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\obj\Release\ScadaAsyncTcp.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\obj\Release\ScadaAsyncTcp.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\obj\Release\ScadaAsyncTcp.csproj.CopyComplete
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\obj\Release\ScadaAsyncTcp.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\AsyncTcpClient\obj\Release\ScadaAsyncTcp.pdb

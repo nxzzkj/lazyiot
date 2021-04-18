@@ -1,0 +1,255 @@
+﻿
+--PROJ #4949049190355520459#1
+
+ 
+
+--VIEW #V_5419452455128497119#A1#True
+
+ 
+<svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5254846014780525366)'     />
+<defs><linearGradient id="5254846014780525366" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g id='shapeID4674631594206089813' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,150,162)'   data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#800000'  data-rect='86,96,128,132'>
+<path  data-originalfill='#aa547f'   id='pathID4674631594206089813'  d=' M214,228 L214,132.0434 L193.5322,99.81917 L111.3556,99.81917 L90.88783,132.0434 90.88783,228 Z' fill='#aa547f'  stroke="#000000" stroke-width="0.6967222"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID4674631594206089813'  d=' M214,132.0434 L90.88783,132.0434' fill='none'  stroke="#000000" stroke-width="0.6967222"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+<g     id='shapeID4904620214972966964'  data-baseshape='SVG_IOShape'   data-shape='SVG_IOLabelShape'    data-rect='247,100,142,64'     data-iovalue= '0028F89F632F,5235557621277692321,5435396161018621655,4849372350374956383,Value,2,,120,A1'   date-ioclass='SCADAFlow_String'   data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      data-changcolor='#FF0000' data-sourcecolor='#000000'    >
+<rect  id='ID4904620214972966964'   x='247' y='100' width='142' height='64'   fill='none'     />
+
+<text id='textID4904620214972966964'    x='318' y='136.4297' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='SimHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >IO参数</text>
+</g>
+<g    id='shapeID5494381052074675891' data-baseshape='SVG_IOShape'  data-speed='0' data-truecolor='#FF0000' data-falsecolor='#008000' data-arrowcolor='#000000'  data-arrowcolor2='#F5F5F5' data-shape='SVG_ArrowShape'       data-rect='309,248,115,78'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID5494381052074675891'  d=' M309,267.5 L394,267.5 L394,248 L423,287 L394,326 L394,306.5 L309,306.5 309,267.5 Z' fill='url(#4762905890481656729)'    0ms /><defs><linearGradient id="4762905890481656729" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+  <animate  id='animateID5494381052074675891' xlink:href='#pathID5494381052074675891'  begin='100ms' offset-value='0ms'  attributeName ="fill"   values='#000000;#FF0000' dur='0ms' repeatCount="indefinite" /> 
+<path id='path2ID5494381052074675891'  d=' M309,267.5 L394,267.5 L394,248 L423,287 L394,326 L394,306.5 L309,306.5 309,267.5 Z' fill='none'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+</g>
+
+<g    id='shapeID4793804734568422170' data-baseshape='SVG_IOShape'   data-timetype='系统时间'      data-shape='SVG_ClockShape'       data-rect='472,58,208,208'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID4793804734568422170'  d=' M680,162 C680,219.4376 633.4376,266 576,266 518.5624,266 472,219.4376 472,162 472,104.5624 518.5624,58 576,58 633.4376,58 680,104.5624 680,162 Z' fill='url(#5082589030769803240)'     /><defs><radialGradient id="5082589030769803240"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#808080;stop-opacity:1" /> </radialGradient> </defs>
+<path id='pathID4793804734568422170'  d=' M680,162 C680,219.4376 633.4376,266 576,266 518.5624,266 472,219.4376 472,162 472,104.5624 518.5624,58 576,58 633.4376,58 680,104.5624 680,162 Z' fill='none'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4793804734568422170'  d=' M680,162 C680,219.4376 633.4376,266 576,266 518.5624,266 472,219.4376 472,162 472,104.5624 518.5624,58 576,58 633.4376,58 680,104.5624 680,162 Z' fill='none'  stroke="#666666" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4793804734568422170'  d=' M555.1999,162 C555.1999,150.5125 564.5124,141.2 575.9999,141.2 587.4874,141.2 596.7999,150.5125 596.7999,162 596.7999,173.4875 587.4874,182.8 575.9999,182.8 564.5124,182.8 555.1999,173.4875 555.1999,162 Z' fill='url(#5661683203678202781)'     /><defs><radialGradient id="5661683203678202781"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#808080;stop-opacity:1" /> </radialGradient> </defs>
+<path id='pathID4793804734568422170'  d=' M555.1999,162 C555.1999,150.5125 564.5124,141.2 575.9999,141.2 587.4874,141.2 596.7999,150.5125 596.7999,162 596.7999,173.4875 587.4874,182.8 575.9999,182.8 564.5124,182.8 555.1999,173.4875 555.1999,162 Z' fill='none'  stroke="#696969" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4793804734568422170'  d=' M555.1999,162 C555.1999,150.5125 564.5124,141.2 575.9999,141.2 587.4874,141.2 596.7999,150.5125 596.7999,162 596.7999,173.4875 587.4874,182.8 575.9999,182.8 564.5124,182.8 555.1999,173.4875 555.1999,162 Z' fill='none'  stroke="#A5A5A5" stroke-width="1.5"   stroke-dasharray="" stroke-opacity="1"     />
+<text id='text1ID4793804734568422170'    x='576' y='232.7759' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='20' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >6</text>
+<text id='text2ID4793804734568422170'    x='576' y='105.6724' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='20' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >12</text>
+<text id='text3ID4793804734568422170'    x='644.6266' y='169.2241' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='20' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >3</text>
+<text id='text3ID4793804734568422170'    x='507.3734' y='169.2241' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='20' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >9</text>
+<line  id='majorline0ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(0,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(6,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(12,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(18,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(24,576,162)'  />
+
+<line  id='majorline5ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(30,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(36,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(42,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(48,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(54,576,162)'  />
+
+<line  id='majorline10ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(60,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(66,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(72,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(78,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(84,576,162)'  />
+
+<line  id='majorline15ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(90,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(96,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(102,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(108,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(114,576,162)'  />
+
+<line  id='majorline20ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(120,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(126,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(132,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(138,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(144,576,162)'  />
+
+<line  id='majorline25ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(150,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(156,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(162,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(168,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(174,576,162)'  />
+
+<line  id='majorline30ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(180,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(186,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(192,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(198,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(204,576,162)'  />
+
+<line  id='majorline35ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(210,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(216,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(222,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(228,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(234,576,162)'  />
+
+<line  id='majorline40ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(240,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(246,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(252,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(258,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(264,576,162)'  />
+
+<line  id='majorline45ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(270,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(276,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(282,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(288,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(294,576,162)'  />
+
+<line  id='majorline50ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(300,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(306,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(312,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(318,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(324,576,162)'  />
+
+<line  id='majorline55ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(330,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(336,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(342,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(348,576,162)'  />
+
+<line  id='minnorlineID4793804734568422170'  fill='none'   x1='668' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(354,576,162)'  />
+
+<line  id='majorline60ID4793804734568422170'  fill='none'   x1='663' y1='162' x2='673' y2='162'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(360,576,162)'  />
+
+<line  id='secondlineID4793804734568422170'  fill='none' class='ioupdate'  x1='576' y1='162' x2='667.8' y2='162'  stroke="#008000" stroke-width="4"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(552,576,162)'  />
+
+<line  id='minutelineID4793804734568422170'  fill='none' class='ioupdate'  x1='576' y1='162' x2='647.4' y2='162'  stroke="#FF7F50" stroke-width="6"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(2778,576,162)'  />
+
+<line  id='hourlineID4793804734568422170'  fill='none' class='ioupdate'  x1='576' y1='162' x2='627' y2='162'  stroke="#D2691E" stroke-width="8"   stroke-dasharray="" stroke-opacity="1"   transform =' rotate(906,576,162)'  />
+
+</g>
+<g   data-rect='113,279,307,307'  id='shapeID5193805245855314862'  data-baseshape='SVG_IOShape'   data-shape='SVG_DashboardShape'      data-iovalue= '0028F89F632F,5235557621277692321,5435396161018621655,4646539790033100332,Value,2,,120,A4'   date-ioclass='SCADAFlow_Float'    data-rect='113,279,307,307'' data-startangle='130' data-sweepangle='280'  data-minvalue='0' data-maxvalue='100' data-displaymodel='Inner' data-valuetype='Absolute' data-indicatorcenter='10' data-indicatorangle='60' data-roundsize='5' data-offsetouter='20'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  id='arcID5193805245855314862'     data-rect='133,299,267,267'  d='M180.6879,534.7669 A133.5,133.5 0 1,1 352.3121,534.7669'      stroke="#2897FE" stroke-width="5"   stroke-dasharray="" stroke-opacity="1"   fill='none'  />
+
+<path  id='pieID5193805245855314862'   data-rect='143,309,247,247'  d='M266.5,432.5 L187.1157,527.1065 A123.5,123.5 0 1,1 345.8843,527.1065 L266.5,432.5'      fill='#196AA8'  />
+
+<path  id='arcID5193805245855314862'     data-rect='143,309,247,247'  d='M187.1157,527.1065 A123.5,123.5 0 1,1 345.8843,527.1065'      stroke="#196AA8" stroke-width="5"   stroke-dasharray="" stroke-opacity="1"   fill='none'  />
+
+<path  id='innerarcID5193805245855314862'  class='ioupdate'   data-rect='143,309,247,247'  d='M187.1157,527.1065 A123.5,123.5 0 1,1 365.3904,358.5206'      stroke="#008000" stroke-width="5"   stroke-dasharray="" stroke-opacity="1"   fill='none'  />
+
+<line  id='lineID5193805245855314862'  fill='none'   x1='199.9715' y1='511.7856' x2='190.3297' y2='523.2762'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='204.6582' y='522.6218' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >0</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='170.5365' y1='471.2718' x2='156.6287' y2='476.8909'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='177.0427' y='482.108' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >10</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='163.567' y1='421.6813' x2='148.6492' y2='420.1134'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='168.8728' y='432.5175' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >20</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='180.6946' y1='374.6235' x2='168.259' y2='366.2356'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='184.7999' y='385.4597' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >30</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='217.9097' y1='341.1149' x2='210.8676' y2='327.8707'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='220.8145' y='351.9511' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >40</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='266.5' y1='329' x2='266.5' y2='314'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='268.2044' y='339.8362' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >50</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='315.0903' y1='341.1149' x2='322.1324' y2='327.8707'  stroke="#FFFF00" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='315.5942' y='351.9511' alignment-baseline='middle' text-anchor='middle'  fill='#FFFF00'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >60</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='352.3054' y1='374.6235' x2='364.741' y2='366.2356'  stroke="#FF0000" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='351.6088' y='385.4597' alignment-baseline='middle' text-anchor='middle'  fill='#FF0000'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >70</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='369.433' y1='421.6813' x2='384.3508' y2='420.1134'  stroke="#FF0000" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='367.536' y='432.5175' alignment-baseline='middle' text-anchor='middle'  fill='#FF0000'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >80</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='362.4635' y1='471.2718' x2='376.3713' y2='476.8909'  stroke="#FF0000" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='359.366' y='482.108' alignment-baseline='middle' text-anchor='middle'  fill='#FF0000'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >90</text>
+<line  id='lineID5193805245855314862'  fill='none'   x1='333.0285' y1='511.7856' x2='342.6703' y2='523.2762'  stroke="#FF0000" stroke-width="3"   stroke-dasharray=" " stroke-opacity="1"     />
+
+<text id='textID5193805245855314862'    x='331.7505' y='522.6218' alignment-baseline='middle' text-anchor='middle'  fill='#FF0000'  font-weight='normal' font-size='10' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >100</text>
+<polygon points='343.5704,374.844 270.4394,423.3087 266.5,432.5 276.4297,431.3159 343.5704,374.844 '  class='ioupdate'   id='indicatorID5193805245855314862'       fill='#8080FF'   />
+
+<ellipse    id='ellipseID5193805245855314862' cx='266.5' cy='432.5' rx='66.75' ry='66.75'   fill='#168EFE'    />
+
+<text id='textID5193805245855314862'    x='266.5' y='432.5' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     ></text>
+<text id='textID5193805245855314862'    x='266.5' y='542.3561' alignment-baseline='middle' text-anchor='middle'  fill='#0000FF'  font-weight='normal' font-size='21.3' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >69/0~100</text>
+</g>
+<g    id='shapeID5022165918163409516' data-baseshape='SVG_IOShape'  data-batterystyle='Horizontal'    data-maxvalue='100'     data-shape='SVG_BatteryShape'       data-rect='489,424,228,125'  data-valuecolor='#FF0000' data-valuetype='Percent'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<ellipse    id='batterytopID5022165918163409516' cx='717' cy='486' rx='6.84' ry='63'  stroke="#000000" stroke-width="2"   stroke-dasharray=" " stroke-opacity="1"   fill='url(#5434797771958625236)'    />
+<defs><linearGradient id="5434797771958625236" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#8EC4D8;stop-opacity:1" /> </linearGradient> </defs>
+<rect  id='batterybodyID5022165918163409516'   x='482.16' y='423' width='234.84' height='126'   fill='url(#5488588631213575241)'     />
+<defs><linearGradient id="5488588631213575241" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#8EC4D8;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batterybottomID5022165918163409516' cx='717' cy='485' rx='6.84' ry='62'   fill='#8EC4D8'    />
+
+<rect  id='batteryelectric1ID5022165918163409516'   x='717' y='467.75' width='14.82' height='37.5'   fill='url(#5089476394937456518)'     />
+<defs><linearGradient id="5089476394937456518" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F5F5F5;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batteryelectric2ID5022165918163409516' cx='719.42' cy='471.5' rx='3.42' ry='3.75'   fill='url(#4630252020232188839)'    />
+<defs><linearGradient id="4630252020232188839" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color: ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#8EC4D8;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batterybottomID5022165918163409516' cx='717' cy='485' rx='6.84' ry='62'   fill='#8EC4D8'    />
+
+<rect  id='batteryelectric1ID5022165918163409516'   x='717' y='467.75' width='14.82' height='37.5'   fill='url(#5089476394937456518)'     />
+<defs><linearGradient id="5089476394937456518" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F5F5F5;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batteryelectric2ID5022165918163409516' cx='719.42' cy='471.5' rx='3.42' ry='3.75'   fill='url(#4630252020232188839)'    />
+<defs><linearGradient id="4630252020232188839" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:15" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse  class='ioupdate'  id='valuebottomID5022165918163409516' cx='482.16' cy='486' rx='6.84' ry='63'   fill='url(#4662649236434798748)'    />
+<defs><linearGradient id="4662649236434798748" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse  class='ioupdate'  id='valuetopID5022165918163409516' cx='552.0192' cy='485' rx='6.84' ry='62'   fill='#FF0000'    />
+
+<text id='textID5022165918163409516'    x='603' y='497.8069' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >24.0%</text>
+</g>
+
+<g     id='shapeID5187096405404868682'  data-shape='SVG_ProgressLineShape'  data-startangle='-90'  data-maxvalue='100' data-progressstyle='Vertical'  data-rect='90,586,176,154'   data-valuetype='Percent'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''       ><line  id='line1ID5187096405404868682'  fill='none'   x1='178' y1='740' x2='178' y2='586'  stroke="#D3D3D3" stroke-width="176"   stroke-dasharray="" stroke-opacity="1"     />
+<line  id='line2ID5187096405404868682'  fill='none' class='ioupdate'  x1='178' y1='740' x2='178' y2='663'  stroke="#FF6347" stroke-width="176"   stroke-dasharray="" stroke-opacity="1"     />
+<text id='textID5187096405404868682'    x='177.5' y='667.5569' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >50.0%</text></g>
+<g    id='shapeID5472626350711307112'  data-baseshape='SVG_IOShape'   data-shape='SVG_ConveyorShape'      data-speed='3000ms'  data-rect='350,648,342,108'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID5472626350711307112'  d=' M396,703 C396,714.0457 387.0457,723 376,723 364.9543,723 356,714.0457 356,703 356,691.9543 364.9543,683 376,683 387.0457,683 396,691.9543 396,703 Z' fill='url(#5277029127248759557)'     /><defs><radialGradient id="5277029127248759557"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </radialGradient> </defs>
+<path id='pathID5472626350711307112'  d=' M379,703 C379,704.6568 377.6568,706 376,706 374.3431,706 373,704.6568 373,703 373,701.3431 374.3431,700 376,700 377.6568,700 379,701.3431 379,703 Z' fill='#FFFFFF'     />
+<path id='pathID5472626350711307112'  d=' M686,703 C686,714.0457 677.0457,723 666,723 654.9543,723 646,714.0457 646,703 646,691.9543 654.9543,683 666,683 677.0457,683 686,691.9543 686,703 Z' fill='url(#4741882100966660615)'     /><defs><radialGradient id="4741882100966660615"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </radialGradient> </defs>
+<path id='pathID5472626350711307112'  d=' M669,703 C669,704.6568 667.6568,706 666,706 664.3431,706 663,704.6568 663,703 663,701.3431 664.3431,700 666,700 667.6568,700 669,701.3431 669,703 Z' fill='url(#5748823476228732657)'     /><defs><radialGradient id="5748823476228732657"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+<path id='pathID5472626350711307112'  d=' M376,724.9999 C363.8497,725 354,715.1503 354,703 354,690.8497 363.8497,681 376,680.9999 L665.9999,681 C678.1502,680.9999 687.9999,690.8497 687.9999,702.9999 688,715.1502 678.1503,724.9999 666,724.9999 666,724.9999 666,724.9999 666,724.9999 Z' fill='none'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"     />
+<path d=' M376,724.9999 C363.8497,725 354,715.1503 354,703 354,690.8497 363.8497,681 376,680.9999 L665.9999,681 C678.1502,680.9999 687.9999,690.8497 687.9999,702.9999 688,715.1502 678.1503,724.9999 666,724.9999 666,724.9999 666,724.9999 666,724.9999 Z' class='ioupdate'   fill="none"  opacity="1" stroke = "#FF0000"   stroke-width="4"  stroke-style="20 20" stroke-dasharray="12,12" stroke-dashoffset="0" > 
+<animate attributeName="stroke-dashoffset" from="0" to="100" dur="3000ms" repeatCount="indefinite" />
+</path>
+</g>
+</svg>
+
+--ENDVIEW
+

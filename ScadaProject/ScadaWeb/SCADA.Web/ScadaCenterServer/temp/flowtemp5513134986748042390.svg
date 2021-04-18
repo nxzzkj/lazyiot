@@ -1,0 +1,85 @@
+﻿
+--PROJ #5385021601299736664#1
+
+ 
+
+--VIEW #V_5535211366244109469#1#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5518559784797649149)'     />
+<defs><linearGradient id="5518559784797649149" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5490349381215759058' height = '698' width = '909' y = '-12' x = '159'  data-baseshape='SVG_CommonShape'  data-shape='SVG_LoginShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5490349381215759058'  height = '698' width = '909' y = '-12' x = '159' align = 'left' >
+<iframe scrolling='no' style='width:100%;height:100%;' frameborder='0' srcdoc="<!DOCTYPE HTML>
+<html>
+<head>
+<title> </title>
+<!-- Meta tag Keywords -->
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+ <link href='/Content/lib/layui/css/layui.css' rel='stylesheet' />
+<link href='/Content/css/okadmin.css' rel='stylesheet' />
+<link href='/Content/css/common.css' rel='stylesheet' />
+<script src='/Content/lib/layui/layui.js'></script>
+<script src='/Content/js/global.js'></script>
+<script src='/Content/js/jquery-3.4.1.js'></script>
+<script src='/Content/js/jquery.timers-1.2.js'></script>
+<scriptsrc='/Content/js/svg-pan-zoom.js'></script>
+<script src='/Content/js/SVG.js'></script>
+<script src='/Content/js/Scada.js'></script>
+
+<script src='/Content/js/zy.media.min.js'></script>
+
+<!-- Meta tag Keywords -->
+
+<!-- css files -->
+<link rel='stylesheet' href='/Content/Login/login6/css/style.css' type='text/css' media='all' /> <!-- Style-CSS --> 
+ 
+<!-- //css files -->
+</head>
+<body style='background-color:#FFFFFF;'>
+<!--header-->
+	<div class='header-w3l'>
+		<h1>Lazy Scada OS登录</h1>
+	</div>
+<!--//header-->
+
+<!--main-->
+<div class='main-content-agile'>
+	<div class='sub-main-w3'>	
+		<div class='wthree-pro'>
+			<img src='/Content/Login/login6/images/pro.jpg' alt='image'>
+			<h2>立即登录</h2>
+		</div>
+		<form  id='loginForm'  name='loginForm'>
+			<input placeholder='用户名' name='username' id='username' class='user' type='text' required=''>
+			<span class='icon1'><i class='fa fa-user' aria-hidden='true'></i></span><br><br>
+			<input  placeholder='密码' name='password' id='password'  class='pass' type='password' required=''>
+			<span class='icon2'><i class='fa fa-unlock' aria-hidden='true'></i></span><br>
+			<div class='sub-w3l'>
+		 
+				<div class='right-w3l'>
+					<input type='button' value='登 录' class='login-button'   onclick='SCADA.Login(0)'>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<div class='footer'>
+	<p>版权所有:宁夏众智科技有限公司</p>
+</div>
+<!--//footer-->
+
+</body>
+</html>
+"  ></iframe>
+</foreignObject>
+<g>
+</svg>
+
+--ENDVIEW
+

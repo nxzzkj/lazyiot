@@ -1,0 +1,16 @@
+E:\LazyScadaOS\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\NModbus.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.pdb
+E:\LazyScadaOS\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\NModbus.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\NModbus.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\bin\Release\Modbus.pdb
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\NModbus.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.dll
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\NModbus\obj\Release\Modbus.pdb

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{480EC5F0-F0F6-4909-B1FC-36D101E874B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModbusDevice</RootNamespace>
+    <AssemblyName>ModbusDevice</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConvertType.cs" />
+    <Compile Include="FunctionListItem.cs" />
+    <Compile Include="ModbusAnalysis.cs" />
+    <Compile Include="Modbus.cs" />
+    <Compile Include="ModbusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusControl.Designer.cs">
+      <DependentUpon>ModbusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusDeviceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusDeviceControl.Designer.cs">
+      <DependentUpon>ModbusDeviceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusRegisterFragment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DriverBase\IScadaDriver\IScadaDriver.csproj">
+      <Project>{212e09d3-a5ab-4141-8ad0-b9246381690e}</Project>
+      <Name>IScadaDriver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.Model\ZZSCADA.Model.csproj">
+      <Project>{53995DBB-9836-4647-AD22-865884FDEB9E}</Project>
+      <Name>ZZSCADA.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DriverBase\IOData\IO_Structure.csproj">
+      <Project>{ea7a9840-d2f5-44e3-a7f4-07430a305d34}</Project>
+      <Name>IO_Structure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModbusControl.resx">
+      <DependentUpon>ModbusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusDeviceControl.resx">
+      <DependentUpon>ModbusDeviceControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

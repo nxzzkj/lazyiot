@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1(主视图)</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'>
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5363607035132436138)'     />
+<defs><linearGradient id="5363607035132436138" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='#'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5370509250409328287' height = '541' width = '263' y = '92' x = '90'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  d=' M90,92 L353,92 L353,633 90,633 Z'   fill='#FFFFFF'>
+</path>
+<foreignObject id = 'svg_ID5370509250409328287'  height = '541' width = '263' y = '92' x = '90' align = 'left'>
+ <div id = 'treeID5370509250409328287' style='width: 263px; height: 541px; overflow: scroll; ' ></div>
+<style>.layui-tree-txt{color:'#000000', font-family:Microsoft YaHei;font-size:14px;font-style:normal;font-weight:normal;} </style>
+<script>
+    layui.use(['tree', 'util'], function(){
+                    var tree = layui.tree
+                    ,layer = layui.layer
+                    ,util = layui.util 
+  tree.render({
+    elem: '#treeID5370509250409328287'
+    ,showCheckbox:'false'
+    ,data: []
+    ,showLine:'false'
+    ,isJump:'false'
+    ,text: {
+  defaultNodeName: '未命名' //节点默认名称
+  ,none: '无数据' //数据为空时的提示文本
+   } 
+    ,accordion: true
+     ,click: function(obj){
+     if(obj.data.children.length<=0)
+      SCADA.OnTreeNodeEventService(obj.data);
+ 
+  }
+  });
+ 
+
+var nodes = document.getElementsByClassName('layui-tree-txt');
+                for (var i = 0; i < nodes.length; i++)
+                {
+                     nodes[i].style.color = '#000000';
+                }
+ });
+</script>
+</foreignObject>
+<g>
+</a><g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5095190005033733042' height = '659' width = '796' y = '70.5' x = '402'  data-baseshape='SVG_CommonShape'  data-shape='SVG_LoginShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5095190005033733042'  height = '659' width = '796' y = '70.5' x = '402' align = 'left' >
+<iframe scrolling='no' style='width:100%;height:100%;' frameborder='0' srcdoc="
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- For-Mobile-Apps -->
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+     <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+<link href='Content/css/okadmin.css' rel='stylesheet' />
+<link href='Content/css/common.css' rel='stylesheet' />
+<script src='Content/lib/layui/layui.js'></script>
+<script src='Content/js/global.js'></script>
+<script src='Content/js/jquery-3.4.1.js'></script>
+<script src='Content/js/jquery.timers-1.2.js'></script>
+<script src='Content/js/svg-pan-zoom.js'></script>
+<script src='Content/js/SVG.js'></script>
+<script src='Content/js/Scada.js'></script>
+
+<script src='Content/js/zy.media.min.js'></script>
+<link rel='stylesheet' href='Content/Login/login3/css/style.css' type='text/css' media='all' />
+</head>
+<body style='background-color:#FFFFFF;'>
+<div class='container'>
+<h1>Lazy Scada OS登录</h1>
+     <div class='contact-form'>
+	 <div class='profile-pic'>
+	 <img src='Content/Login/login3/images/1.png' alt='用户图标'/>
+	 </div>	 
+	 <div class='signin'>
+     <form  id='loginForm'  name='loginForm'>
+	      <input type='text' id='username' name='username' class='user' value='用户名' onfocus='this.value = '';' onblur='if (this.value == '') 
+
+{this.value = '用户名';}' />
+		  <input type='password' id='password' name='password' class='pass' value='密码' onfocus='this.value = '';' onblur='if (this.value 
+
+== '') {this.value = '密码';}' />	  
+     </form>
+	 </div>	 
+	      <input type='button' value='登录'  onclick=&quot;SCADA.Login({projId:'V_5689865273950719078',viewId:'0'})&quot; />
+	 </div>
+</div>
+<div class='footer'>
+     <p> 版权所有:宁夏众智科技有限公司</p>
+</div>
+</body>
+</html>
+"  ></iframe>
+</foreignObject>
+<g>
+</svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

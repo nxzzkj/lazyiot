@@ -1,0 +1,140 @@
+﻿@model ScadaWeb.Web.Areas.SysSet.Models.WebModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" class="page-fill">
+<head>
+    <meta charset="UTF-8">
+    <title>@Model.SiteName-登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="~/Content/css/oksub.css" />
+    <style type="text/css">
+        .copyright {
+            padding: 12px 0;
+            background: #1D1D21;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .copyright .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="page-fill">
+    <div style="position: absolute; z-index: 999; top: 20px; left: 20px; color: #fff; font-size: 13px; line-height: 22px;">
+        <strong style=" color: red; font-size: 14px; font-weight: bold;">Tip：普通用户只有菜单权限，测试用户啥都没有</strong><br>
+        普通用户账号：user 密码：123456<br>
+        测试用户账号：test 密码：123456<br>
+    </div>
+    <div class="page-fill" id="login">
+        <form class="layui-form">
+            <div class="login_face"><img src="~/Content/images/logo.jpg"></div>
+            <div class="layui-form-item input-item">
+                <label for="username">用户名</label>
+                <input type="text" lay-verify="required" name="username" placeholder="请输入账号" autocomplete="off" id="username" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="password">密码</label>
+                <input type="password" lay-verify="required|password" name="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item captcha-box">
+                <label for="captcha">验证码</label>
+                <input type="text" lay-verify="required|captcha" name="captcha" placeholder="请输入验证码" autocomplete="off" id="captcha" maxlength="4" class="layui-input">
+                <div class="img ok-none-select"><img id="imgcode" width="100%" height="100%" src="~/Login/GetAuthCode" alt="验证码" /></div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
+            </div>
+        </form>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="layui-row">
+                <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 text-center">
+                    <p>
+                        @Model.CopyRight | <a href="http://beian.miit.gov.cn" target="_blank" style="color:#fff;">赣ICP备19008895号</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--js逻辑-->
+    <script src="~/Content/lib/layui/layui.js"></script>
+    <script>
+        layui.use(["form", "okUtils", "okLayer"], function () {
+            let form = layui.form;
+            let $ = layui.jquery;
+            let okUtils = layui.okUtils;
+            let okLayer = layui.okLayer;
+            //退出登录时清空SessionStorage 切换不同账户登录后台会有Tab标签残留
+            sessionStorage.clear();
+            /**
+             * 数据校验
+             */
+            form.verify({
+                password: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"]
+            });
+
+            /**
+             * 表单提交
+             */
+            form.on("submit(login)", function (data) {
+                okUtils.ajax("/Login/LoginOn", "post", data.field, true).done(function (response) {
+                    okLayer.greenTickMsg(response.message, function () {
+                        window.location = "/Home";
+                    })
+                }).fail(function (error) {
+                    console.log(error)
+                    //刷新二维码
+                    $("#imgcode").click();
+                });
+                return false;
+            });
+            /**
+             * 切换二维码
+             */
+            $("#imgcode").click(function () {
+                $("#imgcode").attr("src", "/Login/GetAuthCode?time=" + Math.random());
+            });
+            /**
+             * 表单input组件单击时
+             */
+            $("#login .input-item .layui-input").click(function (e) {
+                e.stopPropagation();
+                $(this).addClass("layui-input-focus").find(".layui-input").focus();
+            });
+
+            /**
+             * 表单input组件获取焦点时
+             */
+            $("#login .layui-form-item .layui-input").focus(function () {
+                $(this).parent().addClass("layui-input-focus");
+            });
+
+            /**
+             * 表单input组件失去焦点时
+             */
+            $("#login .layui-form-item .layui-input").blur(function () {
+                $(this).parent().removeClass("layui-input-focus");
+                if ($(this).val() != "") {
+                    $(this).parent().addClass("layui-input-active");
+                } else {
+                    $(this).parent().removeClass("layui-input-active");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

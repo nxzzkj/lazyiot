@@ -1,0 +1,13 @@
+E:\LazyScadaOS\LazyScadaCode\Publish\IOStation\MQTTnet.dll
+E:\LazyScadaOS\LazyScadaCode\Publish\IOStation\MQTTnet.pdb
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.GasIODeviceCtrl.resources
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.IODeviceCtrl.resources
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.GasIOParaCtrl.resources
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.IOParaCtrl.resources
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.MQTTServerCtrl.resources
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnetDriver.csproj.GenerateResource.cache
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnetDriver.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnetDriver.csproj.CopyComplete
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.dll
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnet.pdb
+E:\LazyScadaOS\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Release\MQTTnetDriver.csprojAssemblyReference.cache

@@ -1,0 +1,15 @@
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\ModbusDevice.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\ModbusDevice.pdb
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\DeviceDriveBase.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\IO_Structure.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\ZZSCADA.Model.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\ScadaLogger.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\DeviceDriveBase.pdb
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\IO_Structure.pdb
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\bin\Release\ScadaLogger.pdb
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.csprojResolveAssemblyReference.cache
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.ModbusControl.resources
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.ModbusDeviceControl.resources
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.csproj.GenerateResource.Cache
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\ModbusDevice\obj\Release\ModbusDevice.pdb

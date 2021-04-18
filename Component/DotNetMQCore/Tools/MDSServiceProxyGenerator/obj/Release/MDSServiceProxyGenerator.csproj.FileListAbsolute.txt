@@ -1,0 +1,11 @@
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Release\MDSServiceProxyGenerator.exe.config
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Release\MDSServiceProxyGenerator.exe
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Release\MDSServiceProxyGenerator.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDS.Properties.Resources.resources
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDS.Tools.ProxyGenerator.ProxyGeneratorForm.resources
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.csproj.GenerateResource.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.csproj.CopyComplete
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.exe
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\Tools\MDSServiceProxyGenerator\obj\Release\MDSServiceProxyGenerator.pdb

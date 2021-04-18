@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<style type="text/css">
+    .div-collapse {
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        padding-left: 5px;
+    }
+</style>
+ <!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入标题" name="Title" autocomplete="off">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["treeGrid", "okLayer", "okUtils"], function () {
+        let treeGrid = layui.treeGrid;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+
+        treeGrid.render({
+            elem: "#tableId",
+            url: "/Permissions/ScadaTable/List",
+            page: false,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cellMinWidth: 100,
+            treeId: 'Id',   //树形id字段名称
+            treeUpId: 'ParentId',   //树形父id字段名称
+            treeShowName: 'FullName',   //以树形式显示的字段
+            cols: [[
+                { field: "Id", title: "ID", width: 60, sort: true },
+                { field: "Title", title: "名称", width: 120 },
+                { field: "ShowAlarms", title: "实时报警", width: 120, templet: "#ShowAlarmsTpl" },
+                { field: "ShowHistoryAlarms", title: "历史报警", width: 120, templet: "#ShowHistoryAlarmsTpl" },
+                { field: "ShowRealSeries", title: "实时曲线", width: 120, templet: "#ShowRealSeriesTpl" },
+                { field: "ShowHistory", title: "历史查询", width: 120, templet: "#ShowHistoryTpl" },
+                { field: "ShowHistorySeries", title: "历史曲线", width: 120, templet: "#ShowHistorySeriesTpl" },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 300, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]]
+        });
+
+        //add
+        $('#add').on('click', function () {
+            okLayer.open("添加二维表", "/Permissions/ScadaTable/Add", "100%", "100%", null, null);
+        });
+
+        treeGrid.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "add":
+                    add(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+                case "design":
+                    design(data.Id);
+                    break;
+            }
+        });
+        function edit(id) {
+            okLayer.open("添加二维表", "/Permissions/ScadaTable/Add/" + id, "100%", "100%", null, null);
+        }
+        function edit(id) {
+            okLayer.open("编辑二维表", "/Permissions/ScadaTable/Edit/" + id, "100%", "100%", null, null);
+        }
+        function design(id) {
+            okLayer.open("设计二维表", "/Permissions/ScadaTable/DesignTable/" + id, "100%", "100%", null, null);
+        }
+        
+        function del(id) {
+            okLayer.confirm("确定要删除二维表吗？", function () {
+                okUtils.ajax("/Permissions/ScadaTable/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                    //没开启分页，没确定按钮，手动刷新
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1500);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+    <label>程序访问网址：http://<span style="color:red">IP(域名)</span>/Scada/ScataTable/<span style="color:red">表ID</span></label>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+    <a class='layui-btn layui-btn-xs' href='javascript:;' lay-event='design' id='design'><i class='ok-icon'>&#xe610;</i>设计表</a>
+   
+</script>
+
+<script type="text/html" id="ShowAlarmsTpl">
+    {{#  if(d.ShowAlarms==1){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>不显示</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="ShowHistoryAlarmsTpl">
+    {{#  if(d.ShowHistoryAlarms==1){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>不显示</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="ShowRealSeriesTpl">
+    {{#  if(d.ShowRealSeries==1){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>不显示</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="ShowHistoryTpl">
+    {{#  if(d.ShowHistory==1){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>不显示</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="ShowHistorySeriesTpl">
+    {{#  if(d.ShowHistorySeries==1){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>不显示</span>
+    {{#  } }}
+</script>

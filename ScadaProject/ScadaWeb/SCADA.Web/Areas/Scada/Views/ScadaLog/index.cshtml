@@ -1,0 +1,242 @@
+﻿@model  ScadaWeb.Model.ScadaGreneralAlarmModel
+@{
+    ViewBag.Title = "命令下置日志";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search" lay-filter="formTest">
+        <input id="DeviceID" name="DeviceID" type="hidden" class="layui-input" lay-filter>
+        <input id="ServerID" name="ServerID" type="hidden" class="layui-input" lay-filter>
+     
+        <input id="CommunicateID" name="CommunicateID" type="hidden" class="layui-input" lay-filter>
+        <input id="Fields" name="Fields" type="hidden" class="layui-input" lay-filter>
+        <div class="layui-input-inline">
+            <input type="text" id="GroupId" name="GroupId" placeholder="设备分组" autocomplete="off" class="layui-input" style="width:100px;">
+        </div>
+        <div class="layui-input-inline">
+            <div id="DeviceList" style="width:100px;"></div>
+           
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartDate" id="StartDate" value="@Model.StartDate" style="width:140px;">
+
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="结束日期" autocomplete="off" name="EndDate" id="EndDate" value="@Model.EndDate" style="width:140px;">
+        </div>
+
+        @Html.SearchBtnHtml("查询")
+
+
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+
+<script>
+   
+    layui.config({ base: '/Content/lib/tablePlug/' }).use(["table", "form", "okLayer", "okUtils", "treeSelect", 'tablePlug',"laydate"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let treeSelect = layui.treeSelect;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        var tablePlug = layui.tablePlug;
+        let startdate = layui.laydate;
+        let enddate = layui.laydate;
+        var $ = layui.$;
+        var devices = xmSelect.render({
+            el: '#DeviceList',
+            filterable: true,
+            paging: true,
+            pageSize: 50,
+            radio: true,
+
+
+        });
+        startdate.render({
+            elem: '#StartDate'
+       , type: 'datetime'
+        });
+        enddate.render({
+            elem: '#EndDate'
+          , type: 'datetime'
+        });
+        tablePlug.smartReload.enable(true);//处理不闪动的关键代码
+        treeSelect.render({
+            elem: "#GroupId",
+            data: "/Scada/ScadaAlarm/GroupTreeListSelect",
+            type: "GET",
+            // 是否开启搜索功能：true/false，默认false
+            search: true,
+            // 占位符
+            placeholder: '请选择设备分组',  // 点击回调
+            click: function (d) {
+                //获取该组织机构下的所有井
+                $.get("/Scada/ScadaAlarm/GetGroupDevice?groupId=" + d.current.id, function (result) {
+                    devices = xmSelect.render({
+                        el: '#DeviceList',
+                        filterable: true,
+                        paging: true,
+                        pageSize: 50,
+                        radio: true,
+                        data: result,
+                        on: function (data) {
+                            var arr = data.change[0].id;
+                            var sid = data.change[0].value3;
+                            var cid = data.change[0].value2;
+                            var did = data.change[0].value1;
+                            var ios = data.change[0].value4;
+                            $("#DeviceID").val(did);
+                            $("#CommunicateID").val(cid);
+                            $("#ServerID").val(sid);
+                            $("#Fields").val(ios);
+              
+                        
+                        },
+                    })
+                });
+            },
+        });
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Scada/ScadaAlarm/GeneralQueryHistoryAlarm",
+            limit: 300,
+            limits: [100,200,300,500,600,800,1000,1500,2000,3000],
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            page: true,
+            loading: false,
+            id: 'WellHistoryAlarm',
+            toolbar: "#toolbarTpl",
+            jump: function (obj, first) {
+                if (!first) {
+                    layer.msg('第 ' + obj.curr + ' 页');
+                }
+            },
+            size: "sm",
+            smartReloadModel: true,
+            cols: [[
+                { field: 'zizeng', width: 60, title: '序号', fixed: 'left', templet: '#zizeng' },
+                { field: "COMMAND_ID", title: "命令ID", width: 140, fixed: 'left' },
+                { field: "COMMAND_VALUE", title: "命令值", width: 120 },
+                { field: "COMMAND_DATE", title: "下置时间", width: 140 },
+                { field: "COMMAND_RESULT", title: "下置结果", width: 120 },
+                { field: "COMMAND_USER", title: "报警级别", width: 120 },
+                { field: "IO_ALARM_VALUE", title: "报警值", width: 120 },
+                { field: "IO_ALARM_DISPOSALUSER", title: "处置人", width: 120, edit: 'text', style: 'font-size: 12px;background-color: #ff0000;'},
+                { field: "IO_ALARM_DISPOSALIDEA", title: "处置意见", width: 120, edit: 'text', style: 'font-size: 12px;background-color: #ff0000;' },
+            ]],
+            done: function (res, curr, count) {
+                setTableScoll(this.elem.next('.layui-table-view'), this.scroll);
+            }
+        });
+        //获取滚动条
+        function getTableScoll(tbView){
+            var scrollTop = tbView.find('.layui-table-body').scrollTop();
+            var scrollLeft= tbView.find('.layui-table-body').scrollLeft();
+            return {
+                scrollTop:scrollTop,scrollLeft:scrollLeft
+            }
+        };
+        //设置滚动条
+        function setTableScoll(tbView,scoll={scrollTop:0,scrollLeft:0})
+    {
+
+        tbView.find('.layui-table-body').scrollTop(scoll.scrollTop);
+        tbView.find('.layui-table-body').scrollLeft(scoll.scrollLeft);
+        table.resize('WellHistoryAlarm'); //重置表格尺寸
+    };
+
+
+    var $ = layui.$;
+    var scrollTop=0;
+    var layuiTable = $('.layui-table-main');
+    if(layuiTable!=null&&layuiTable.length>0){
+        scrollTop = layuiTable[0].scrollTop;
+    };
+
+        //监听单元格编辑
+        table.on('edit(tableFilter)', function (obj) {
+            var old = $(this).prev().text();//旧值
+
+
+
+            var value = obj.value //得到修改后的值
+            , data = obj.data //得到所在行所有键值
+            , field = obj.field; //得到字段
+
+            //用户设置了报警备注后进行后台记录
+            //加载报警级别
+            $.get("/Scada/ScadaAlarm/WriterScadaAlarmDisposal",obj.data, function (result) {
+                if(result)
+                {
+                    layer.msg('[ID: ' + data.IO_ALARM_NAME + '] ' + field + ' 字段更改为：' + value);
+                }
+                else {
+                    layer.msg('[ID: ' + data.IO_ALARM_NAME + '] ' + field + ' 字段值修改失败');
+                    $(this)[0].val(old);//重新掰回来
+                }
+            });
+        });
+        //数据表定时加载
+
+        form.on("submit(search)", function (data) {
+
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+
+
+        //加载报警级别
+        $.get("/Scada/ScadaAlarm/GetItemType?EnCode=ALARMTYPE", function (result) {
+            $("#IO_ALARM_TYPE").append("<option value='0'>全部</option>");
+
+            for (var i = 0; i < result.length; i++) {
+
+                $("#IO_ALARM_TYPE").append("<option value='" + result[i].name + "'>" + result[i].name + "</option>");
+            }
+
+            layui.form.render("select");
+
+        });
+        //加载报警级别
+        $.get("/Scada/ScadaAlarm/GetItemType?EnCode=ALARMLEVEL", function (result) {
+
+            $("#IO_ALARM_LEVEL").append("<option value='0'>全部</option>");
+            for (var i = 0; i < result.length; i++) {
+
+                $("#IO_ALARM_LEVEL").append("<option value='" + result[i].name + "'>" + result[i].name + "</option>");
+            }
+
+            layui.form.render("select");
+
+        });
+        //为了减少从数据库频率，直接一次将所有井的信息保存在页面中
+
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+
+    <label><i class="ok-icon" style="color:red;">&#xe670;</i>注意:漏掉的报警可在历史报警中进行查询并填写处置原因。</label>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+
+ 
+
+

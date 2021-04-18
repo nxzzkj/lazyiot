@@ -1,0 +1,50 @@
+﻿@model ScadaWeb.Web.Areas.SysSet.Models.DevModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSysSetPage.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">开发设置</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" action="/SysSet/DevSet/Index" method="post">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">初始化密码</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.InitUserPwd, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">上传文件大小</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.UploadFileSize, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|number" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">上传文件类型</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.UploadFileType, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登陆提供者模式</label>
+                            <div class="layui-input-inline">
+                                @Html.TextBoxFor(x => x.LoginProvider, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">默认用Cookie登录模式，修改成Session要在启动项目前配置文件中改</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit style="float:left;">确认保存</button>
+                                <div class="div-msg" style="float:left;">@ViewBag.Msg</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

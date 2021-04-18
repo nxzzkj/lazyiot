@@ -1,0 +1,423 @@
+﻿--PROJ #4783721079697755087#服务器测试
+ 
+--VIEW #V_5107540674995923287#我的视图#True
+ 
+<svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5403175658379729500)'     />
+<defs><linearGradient id="5403175658379729500" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g  id='shapeID5164496455946744318' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'     >
+<path id='borderID5164496455946744318'  d=' M0,0 L623,0 L623,393 0,393 Z' fill='url(#5532198305027240792)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stro--PROJ #4783721079697755087#服务器测试
+ 
+--VIEW #V_5107540674995923287#我的视图#True
+ 
+<svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5403175658379729500)'     />
+<defs><linearGradient id="5403175658379729500" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g  id='shapeID5164496455946744318' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'     >
+<path id='borderID5164496455946744318'  d=' M0,0 L623,0 L623,393 0,393 Z' fill='url(#5532198305027240792)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5532198305027240792" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='titleborderID5164496455946744318'  d=' M10,5 L613,5 L613,35.22754 10,35.22754 Z' fill='url(#5022259571928304923)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5022259571928304923" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<text id='titleID5164496455946744318'    x='311.5' y='25.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Micr/defs>
+<rect  id='legendID5164496455946744318'   x='20' y='348' width='10' height='10'   fill='#FF0000'     />
+
+<text id='legendserieID5164496455946744318'    x='45.76758' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图1</text>
+<rect  id='legendID5164496455946744318'   x='59.53516' y='348' width='10' height='10'   fill='#800080'     />
+
+<text id='legendserieID5164496455946744318'    x='85.30273' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图2</text>
+<rect  id='legendID5164496455946744318'   x='99.07031' y='348' width='10' height='10'   fill='#FFC0CB'     />
+
+<text id='legendserieID5164496455946744318'    x='124.8379' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图3</text>
+<rect  id='legendID5164496455946744318'   x='138.6055' y='348' width='10' height='10'   fill='#FA8072'     />
+
+<text id='legendserieID5164496455946744318'    x='164.373' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图4</text>
+<rect  id='legendID5164496455946744318'   x='178.1406' y='348' width='10' height='10'   fill='#F4A460'     />
+
+<text id='legendserieID5164496455946744318'    x='203.9082' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图5</text>
+<rect  id='legendID5164496455946744318'   x='217.6758' y='348' width='10' height='10'   fill='#87CEEB'     />
+
+<text id='legendserieID5164496455946744318'    x='243.4434' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图6</text>
+<rect  id='legendID5164496455946744318'   x='257.2109' y='348' width='10' height='10'   fill='#708090'     />
+
+<text id='legendserieID5164496455946744318'    x='282.9785' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图7</text>
+<rect  id='legendID5164496455946744318'   x='296.7461' y='348' width='10' height='10'   fill='#FFA500'     />
+
+<text id='legendserieID5164496455946744318'    x='322.5137' y='363.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图8</text>
+<g  id='shapepieID51644964559467443180'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443180'    x='396.3225' y='304.6044' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >255</text>
+<line  id='pieindexlineID51644964559467443180'  fill='none' class='ioupdate'  x1='373.1591' y1='286.9521' x2='381.3051' y2='299.5475'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443180' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L391.7847,271.8984 A113.5397,113.5397 0 0,1 351.7905,297.7643 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FF0000'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443181'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443181'    x='261.9469' y='320.4839' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >766</text>
+<line  id='pieindexlineID51644964559467443181'  fill='none' class='ioupdate'  x1='280.9944' y1='300.9786' x2='276.9643' y2='315.4271'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443181' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L351.7905,297.7643 A113.5397,113.5397 0 0,1 222.0833,261.5845 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#800080'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443182'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443182'    x='182.0304' y='255.1783' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >231</text>
+<line  id='pieindexlineID51644964559467443182'  fill='none' class='ioupdate'  x1='210.4039' y1='243.2938' x2='197.0478' y2='250.1214'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443182' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L222.0833,261.5845 A113.5397,113.5397 0 0,1 202.4178,223.115 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FFC0CB'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443183'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443183'    x='168.2378' y='187.9693' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >421</text>
+<line  id='pieindexlineID51644964559467443183'  fill='none' class='ioupdate'  x1='198.2208' y1='183.9278' x2='183.2552' y2='182.9124'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443183' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L202.4178,223.115 A113.5397,113.5397 0 0,1 207.6726,145.6667 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FA8072'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443184'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443184'    x='185.2128' y='132.3163' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >130</text>
+<line  id='pieindexlineID51644964559467443184'  fill='none' class='ioupdate'  x1='213.2149' y1='134.7692' x2='200.2302' y2='127.2594'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443184' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L207.6726,145.6667 A113.5397,113.5397 0 0,1 219.8968,124.5309 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#F4A460'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443185'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443185'    x='206.7281' y='104.6566' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >200</text>
+<line  id='pieindexlineID51644964559467443185'  fill='none' class='ioupdate'  x1='232.2195' y1='110.3373' x2='221.7455' y2='99.59972'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443185' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L219.8968,124.5309 A113.5397,113.5397 0 0,1 246.7151,98.37125 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#87CEEB'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443186'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443186'    x='335.1657' y='68.42224' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >814</text>
+<line  id='pieindexlineID51644964559467443186'  fill='none' class='ioupdate'  x1='319.1391' y1='78.33137' x2='320.1483' y2='63.36536'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443186' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L246.7151,98.37125 A113.5397,113.5397 0 0,1 388.2169,107.9133 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#708090'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51644964559467443187'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='197.9603,78.0741,227.0793,227.0793'       >
+<text id='pielabelID51644964559467443187'    x='455.0267' y='193.8747' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >974</text>
+<line  id='pieindexlineID51644964559467443187'  fill='none' class='ioupdate'  x1='425.0128' y1='189.1441' x2='440.0092' y2='188.8178'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51644964559467443187' class='ioupdate'  data-rect='197.9603,78.0741,227.0793,227.0793'  d='M311.5,191.6138 L388.2169,107.9133 A113.5397,113.5397 0 0,1 391.7847,271.8984 L311.5,191.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FFA500'  data-pie='1' />
+
+</g>
+</g>
+<g  id='shapeID5304473574588601043' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'    >
+<path id='borderID5304473574588601043'  d=' M63,420 L658,420 L658,666 63,666 Z' fill='url(#4634353107194837766)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="4634353107194837766" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='titleborderID5304473574588601043'  d=' M133,425 L618,425 L618,455.2275 133,455.2275 Z' fill='url(#5632876856813115346)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5632876856813115346" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<text id='titleID5304473574588601043'    x='375.5' y='445.1707' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >LAZY_OS 柱图</text>
+<path id='serieareaID5304473574588601043'  d=' M133,460.2275 L618,460.2275 L618,546 133,546 Z' fill='url(#4668780664901225750)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="4668780664901225750" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<line  id='xaxisID5304473574588601043'  fill='none'   x1='133' y1='546' x2='618' y2='546'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<g>
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='133' y1='542' x2='133' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='133' y1='546' x2='133' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='230' y1='542' x2='230' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='230' y1='546' x2='230' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='327' y1='542' x2='327' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='327' y1='546' x2='327' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='424' y1='542' x2='424' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='424' y1='546' x2='424' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='521' y1='542' x2='521' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='521' y1='546' x2='521' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorscalelineID5304473574588601043'  fill='none'   x1='618' y1='542' x2='618' y2='550'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxismajorgridlineID5304473574588601043'  fill='none'   x1='618' y1='546' x2='618' y2='460.2275'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='133' y1='543' x2='133' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='546' x2='133' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='157.25' y1='543' x2='157.25' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='157.25' y1='546' x2='157.25' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='181.5' y1='543' x2='181.5' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='181.5' y1='546' x2='181.5' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='205.75' y1='543' x2='205.75' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='205.75' y1='546' x2='205.75' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='230' y1='543' x2='230' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='230' y1='546' x2='230' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='254.25' y1='543' x2='254.25' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='254.25' y1='546' x2='254.25' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='278.5' y1='543' x2='278.5' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='278.5' y1='546' x2='278.5' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='302.75' y1='543' x2='302.75' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='302.75' y1='546' x2='302.75' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='327' y1='543' x2='327' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='327' y1='546' x2='327' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='351.25' y1='543' x2='351.25' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='351.25' y1='546' x2='351.25' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='375.5' y1='543' x2='375.5' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='375.5' y1='546' x2='375.5' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='399.75' y1='543' x2='399.75' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='399.75' y1='546' x2='399.75' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='424' y1='543' x2='424' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='424' y1='546' x2='424' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='448.25' y1='543' x2='448.25' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='448.25' y1='546' x2='448.25' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='472.5' y1='543' x2='472.5' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='472.5' y1='546' x2='472.5' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='496.75' y1='543' x2='496.75' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='496.75' y1='546' x2='496.75' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='521' y1='543' x2='521' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='521' y1='546' x2='521' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='545.25' y1='543' x2='545.25' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='545.25' y1='546' x2='545.25' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='569.5' y1='543' x2='569.5' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='569.5' y1='546' x2='569.5' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorscalelineID5304473574588601043'  fill='none'   x1='593.75' y1='543' x2='593.75' y2='549'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='xaxisminnorgridlineID5304473574588601043'  fill='none'   x1='593.75' y1='546' x2='593.75' y2='460.2275'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+</g>
+<g>
+<line  id='yaxisID5304473574588601043'  fill='none'   x1='133' y1='460.2275' x2='133' y2='546'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='546' x2='137' y2='546'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='546' x2='618' y2='546'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010430'    x='98' y='561.1707' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >0.0</text>
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='528.8455' x2='137' y2='528.8455'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='528.8455' x2='618' y2='528.8455'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010431'    x='98' y='544.0162' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >232.6</text>
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='511.691' x2='137' y2='511.691'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='511.691' x2='618' y2='511.691'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010432'    x='98' y='526.8617' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >465.3</text>
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='494.5366' x2='137' y2='494.5366'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='494.5366' x2='618' y2='494.5366'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010433'    x='98' y='509.7072' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >697.9</text>
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='477.3821' x2='137' y2='477.3821'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='477.3821' x2='618' y2='477.3821'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010434'    x='98' y='492.5527' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >930.5</text>
+<line  id='yaxismajorgscalelineID5304473574588601043'  fill='none'   x1='129' y1='460.2276' x2='137' y2='460.2276'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorggridlineID5304473574588601043'  fill='none'   x1='133' y1='460.2276' x2='618' y2='460.2276'  stroke="#808080" stroke-width="0.5"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='scalelabelID53044735745886010435'    x='98' y='475.3983' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-axisscale='1' >1163.2</text>
+</g>
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='546' x2='136' y2='546'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='546' x2='618' y2='546'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='542.5691' x2='136' y2='542.5691'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='542.5691' x2='618' y2='542.5691'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='539.1382' x2='136' y2='539.1382'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='539.1382' x2='618' y2='539.1382'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='535.7073' x2='136' y2='535.7073'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='535.7073' x2='618' y2='535.7073'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='532.2764' x2='136' y2='532.2764'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='532.2764' x2='618' y2='532.2764'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='528.8455' x2='136' y2='528.8455'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='528.8455' x2='618' y2='528.8455'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='525.4146' x2='136' y2='525.4146'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='525.4146' x2='618' y2='525.4146'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='521.9836' x2='136' y2='521.9836'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='521.9836' x2='618' y2='521.9836'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='518.5527' x2='136' y2='518.5527'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='518.5527' x2='618' y2='518.5527'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='515.1218' x2='136' y2='515.1218'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='515.1218' x2='618' y2='515.1218'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='511.6909' x2='136' y2='511.6909'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='511.6909' x2='618' y2='511.6909'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='508.26' x2='136' y2='508.26'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='508.26' x2='618' y2='508.26'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='504.8291' x2='136' y2='504.8291'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='504.8291' x2='618' y2='504.8291'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='501.3982' x2='136' y2='501.3982'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='501.3982' x2='618' y2='501.3982'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='497.9673' x2='136' y2='497.9673'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='497.9673' x2='618' y2='497.9673'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='494.5364' x2='136' y2='494.5364'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='494.5364' x2='618' y2='494.5364'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='491.1055' x2='136' y2='491.1055'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='491.1055' x2='618' y2='491.1055'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='487.6746' x2='136' y2='487.6746'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='487.6746' x2='618' y2='487.6746'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='484.2437' x2='136' y2='484.2437'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='484.2437' x2='618' y2='484.2437'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='480.8127' x2='136' y2='480.8127'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='480.8127' x2='618' y2='480.8127'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='477.3818' x2='136' y2='477.3818'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='477.3818' x2='618' y2='477.3818'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='473.9509' x2='136' y2='473.9509'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='473.9509' x2='618' y2='473.9509'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='470.52' x2='136' y2='470.52'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='470.52' x2='618' y2='470.52'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='467.0891' x2='136' y2='467.0891'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='467.0891' x2='618' y2='467.0891'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxismajorgridlineID5304473574588601043'  fill='none'   x1='130' y1='463.6582' x2='136' y2='463.6582'  stroke="#000000" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='yaxisminnorgridlineID5304473574588601043'  fill='none'   x1='133' y1='463.6582' x2='618' y2='463.6582'  stroke="#808080" stroke-width="0.2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<text id='xaxisnameID5304473574588601043'    x='375.5' y='556' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     ></text>
+<text id='xaxisnameID5304473574588601043'    x='123' y='503.1138' text-anchor='middle'   dominant-baseline='middle' transform =' rotate(90,123,503.1138)' fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     ></text>
+<g  id='shapebarID53044735745886010430' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010430' class='ioupdate'  x='153.3125' y='472.4807' width='20' height='72.51925'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5709075143425511978)'     data-bar='1'  />
+<defs><linearGradient id="5709075143425511978" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010430'    x='178.3299' y='457.6514' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >997</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='163.3125' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图1</text>
+</g>
+<g  id='shapebarID53044735745886010431' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010431' class='ioupdate'  x='213.9375' y='484.9429' width='20' height='60.05711'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5273176254779573455)'     data-bar='1'  />
+<defs><linearGradient id="5273176254779573455" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#800080;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#800080;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010431'    x='238.9549' y='470.1136' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >828</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='223.9375' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图2</text>
+</g>
+<g  id='shapebarID53044735745886010432' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010432' class='ioupdate'  x='274.5625' y='494.7504' width='20' height='50.24963'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5533345580572891757)'     data-bar='1'  />
+<defs><linearGradient id="5533345580572891757" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#FFC0CB;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFC0CB;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010432'    x='299.5799' y='479.921' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >695</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='284.5625' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图3</text>
+</g>
+<g  id='shapebarID53044735745886010433' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010433' class='ioupdate'  x='335.1875' y='498.8061' width='20' height='46.1939'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5712462011368757674)'     data-bar='1'  />
+<defs><linearGradient id="5712462011368757674" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#FA8072;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FA8072;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010433'    x='360.2049' y='483.9767' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >640</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='345.1875' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图4</text>
+</g>
+<g  id='shapebarID53044735745886010434' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010434' class='ioupdate'  x='395.8125' y='519.1584' width='20' height='25.84153'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5236908966368668076)'     data-bar='1'  />
+<defs><linearGradient id="5236908966368668076" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#F4A460;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F4A460;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010434'    x='420.8299' y='504.3291' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >364</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='405.8125' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图5</text>
+</g>
+<g  id='shapebarID53044735745886010435' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010435' class='ioupdate'  x='456.4375' y='485.3116' width='20' height='59.68841'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5471716470682420351)'     data-bar='1'  />
+<defs><linearGradient id="5471716470682420351" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#87CEEB;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#87CEEB;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010435'    x='481.4549' y='470.4822' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >823</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='466.4375' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图6</text>
+</g>
+<g  id='shapebarID53044735745886010436' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010436' class='ioupdate'  x='517.0625' y='487.0076' width='20' height='57.99238'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#5153926819119967696)'     data-bar='1'  />
+<defs><linearGradient id="5153926819119967696" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#708090;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#708090;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010436'    x='542.0799' y='472.1783' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >800</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='527.0625' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图7</text>
+</g>
+<g  id='shapebarID53044735745886010437' data-axisformat='1' data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_BarShape'  data-rect='133,460.2275,485,85.77246' data-majorinternal='5'     >
+<rect  id='barserieID53044735745886010437' class='ioupdate'  x='577.6875' y='531.1782' width='20' height='13.82184'  stroke="#808080" stroke-width="1"   stroke-dasharray="" stroke-opacity="1"   fill='url(#4926904465537989198)'     data-bar='1'  />
+<defs><linearGradient id="4926904465537989198" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#FFA500;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFA500;stop-opacity:1" /> </linearGradient> </defs>
+<text id='barlabelID53044735745886010437'    x='602.7049' y='516.3488' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-barlabel='1'  >201</text>
+<text id='xaxisscalelabelID5304473574588601043'    x='587.6875' y='574' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图8</text>
+</g>
+<path id='legendareaID5304473574588601043'  d=' M133,586 L618,586 L618,656 133,656 Z' fill='url(#4866191798802466045)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="4866191798802466045" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<rect  id='legendID5304473574588601043'   x='143' y='591' width='10' height='10'   fill='#FF0000'     />
+
+<text id='legendserieID5304473574588601043'    x='175.9761' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图1</text>
+<rect  id='legendID5304473574588601043'   x='196.9521' y='591' width='10' height='10'   fill='#800080'     />
+
+<text id='legendserieID5304473574588601043'    x='229.9282' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图2</text>
+<rect  id='legendID5304473574588601043'   x='250.9043' y='591' width='10' height='10'   fill='#FFC0CB'     />
+
+<text id='legendserieID5304473574588601043'    x='283.8804' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图3</text>
+<rect  id='legendID5304473574588601043'   x='304.8564' y='591' width='10' height='10'   fill='#FA8072'     />
+
+<text id='legendserieID5304473574588601043'    x='337.8325' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图4</text>
+<rect  id='legendID5304473574588601043'   x='358.8086' y='591' width='10' height='10'   fill='#F4A460'     />
+
+<text id='legendserieID5304473574588601043'    x='391.7847' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图5</text>
+<rect  id='legendID5304473574588601043'   x='412.7607' y='591' width='10' height='10'   fill='#87CEEB'     />
+
+<text id='legendserieID5304473574588601043'    x='445.7368' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图6</text>
+<rect  id='legendID5304473574588601043'   x='466.7129' y='591' width='10' height='10'   fill='#708090'     />
+
+<text id='legendserieID5304473574588601043'    x='499.689' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图7</text>
+<rect  id='legendID5304473574588601043'   x='520.665' y='591' width='10' height='10'   fill='#FFA500'     />
+
+<text id='legendserieID5304473574588601043'    x='553.6411' y='606.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >柱图8</text>
+</g>
+</svg>
+--ENDVIEW

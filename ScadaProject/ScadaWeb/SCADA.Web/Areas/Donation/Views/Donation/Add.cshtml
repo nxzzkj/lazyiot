@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<form class="layui-form layui-form-pane ok-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">捐赠人</label>
+        <div class="layui-input-block">
+            <input type="text" name="Name" placeholder="捐赠人" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">捐赠金额</label>
+        <div class="layui-input-block">
+            <input type="text" name="Price" placeholder="捐赠金额" autocomplete="off" class="layui-input" lay-verify="number" maxlength="8">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">捐赠方式</label>
+        <div class="layui-input-block">
+            <input type="text" name="Source" placeholder="捐赠方式" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <input type="text" name="Detail" placeholder="备注" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "okLayer", "okUtils"], function () {
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        form.on("submit(add)", function (data) {
+            okUtils.ajax("/Donation/Donation/Add", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>
+

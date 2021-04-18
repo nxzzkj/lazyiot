@@ -1,0 +1,93 @@
+﻿--PROJ #4978903642101081153#1
+--VIEW #V_5421996377021513956#1#True
+<svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5348484565920144043)'     />
+<defs><linearGradient id="5348484565920144043" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g  id='shapeID5119708103869519269' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'     >
+<path id='borderID5119708103869519269'  d=' M0,0 L587,0 L587,435 0,435 Z' fill='url(#5554625292171913212)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5554625292171913212" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='titleborderID5119708103869519269'  d=' M10,5 L577,5 L577,35.22754 10,35.22754 Z' fill='url(#5546172714009249631)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5546172714009249631" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<text id='titleID5119708103869519269'    x='293.5' y='25.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >LAZY_OS 饼图</text>
+<path id='serieareaID5119708103869519269'  d=' M10,40.22754 L577,40.22754 L577,385 10,385 Z' fill='url(#5154251039181200863)'  stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="5154251039181200863" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='legendareaID5119708103869519269'  d=' M10,385 L577,385 L577,425 10,425 Z' fill='url(#4881137975747957679)'     /><defs><linearGradient id="4881137975747957679" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<rect  id='legendID5119708103869519269'   x='20' y='390' width='10' height='10'   fill='#FF0000'     />
+
+<text id='legendserieID5119708103869519269'    x='45.76758' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图1</text>
+<rect  id='legendID5119708103869519269'   x='59.53516' y='390' width='10' height='10'   fill='#800080'     />
+
+<text id='legendserieID5119708103869519269'    x='85.30273' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图2</text>
+<rect  id='legendID5119708103869519269'   x='99.07031' y='390' width='10' height='10'   fill='#FFC0CB'     />
+
+<text id='legendserieID5119708103869519269'    x='124.8379' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图3</text>
+<rect  id='legendID5119708103869519269'   x='138.6055' y='390' width='10' height='10'   fill='#FA8072'     />
+
+<text id='legendserieID5119708103869519269'    x='164.373' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图4</text>
+<rect  id='legendID5119708103869519269'   x='178.1406' y='390' width='10' height='10'   fill='#F4A460'     />
+
+<text id='legendserieID5119708103869519269'    x='203.9082' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图5</text>
+<rect  id='legendID5119708103869519269'   x='217.6758' y='390' width='10' height='10'   fill='#87CEEB'     />
+
+<text id='legendserieID5119708103869519269'    x='243.4434' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图6</text>
+<rect  id='legendID5119708103869519269'   x='257.2109' y='390' width='10' height='10'   fill='#708090'     />
+
+<text id='legendserieID5119708103869519269'    x='282.9785' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图7</text>
+<rect  id='legendID5119708103869519269'   x='296.7461' y='390' width='10' height='10'   fill='#FFA500'     />
+
+<text id='legendserieID5119708103869519269'    x='322.5137' y='405.1707' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >图8</text>
+<g  id='shapepieID51197081038695192690'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192690'    x='395.4034' y='332.8676' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >156</text>
+<line  id='pieindexlineID51197081038695192690'  fill='none' class='ioupdate'  x1='371.3535' y1='315.8351' x2='380.386' y2='327.8107'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192690' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L384.9216,304.0354 A129.2897,129.2897 0 0,1 356.2795,325.6383 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FF0000'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192691'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192691'    x='354.4684' y='354.4479' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >205</text>
+<line  id='pieindexlineID51197081038695192691'  fill='none' class='ioupdate'  x1='334.674' y1='335.172' x2='339.4509' y2='349.391'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192691' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L356.2795,325.6383 A129.2897,129.2897 0 0,1 311.6948,340.6168 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#800080'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192692'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192692'    x='193.198' y='334.0582' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >867</text>
+<line  id='pieindexlineID51197081038695192692'  fill='none' class='ioupdate'  x1='217.0814' y1='316.9019' x2='208.2155' y2='329.0013'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192692' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L311.6948,340.6168 A129.2897,129.2897 0 0,1 165.963,233.8298 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FFC0CB'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192693'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192693'    x='160.5547' y='134.5291' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >873</text>
+<line  id='pieindexlineID51197081038695192693'  fill='none' class='ioupdate'  x1='187.8316' y1='138.1154' x2='175.5721' y2='129.4722'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192693' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L165.963,233.8298 A129.2897,129.2897 0 0,1 270.6358,85.36186 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FA8072'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192694'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192694'    x='387.3442' y='96.81598' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >847</text>
+<line  id='pieindexlineID51197081038695192694'  fill='none' class='ioupdate'  x1='364.1321' y1='104.3228' x2='372.3268' y2='91.75909'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192694' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L270.6358,85.36186 A129.2897,129.2897 0 0,1 419.1721,182.2439 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#F4A460'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192695'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192695'    x='446.4284' y='192.851' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >72</text>
+<line  id='pieindexlineID51197081038695192695'  fill='none' class='ioupdate'  x1='420.8626' y1='190.3743' x2='435.639' y2='187.7941'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192695' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L419.1721,182.2439 A129.2897,129.2897 0 0,1 422.0276,198.5965 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#87CEEB'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192696'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192696'    x='452.0316' y='232.61' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >238</text>
+<line  id='pieindexlineID51197081038695192696'  fill='none' class='ioupdate'  x1='422.0948' y1='226.0001' x2='437.0142' y2='227.5531'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192696' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L422.0276,198.5965 A129.2897,129.2897 0 0,1 416.3849,252.8023 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#708090'  data-pie='1' />
+
+</g>
+<g  id='shapepieID51197081038695192697'  data-valuetype='Absolute' data-startangle='45' data-sweepangle='0'  data-value='0' data-showlabel='True' data-basicshape='SVG_IOShape' data-shape='SVG_PieShape'  data-rect='164.2103,83.3241,258.5793,258.5793'       >
+<text id='pielabelID51197081038695192697'    x='431.4723' y='293.1797' text-anchor='middle'   dominant-baseline='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'    data-pielabel='1'  >263</text>
+<line  id='pieindexlineID51197081038695192697'  fill='none' class='ioupdate'  x1='403.6727' y1='280.2731' x2='416.4548' y2='288.1228'  stroke="#000000" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"    data-pieline='1'  />
+
+<path  id='pieID51197081038695192697' class='ioupdate'  data-rect='164.2103,83.3241,258.5793,258.5793'  d='M293.5,212.6138 L416.3849,252.8023 A129.2897,129.2897 0 0,1 384.9216,304.0353 L293.5,212.6138'     stroke="#FFFFFF" stroke-width="3"   stroke-dasharray="" stroke-opacity="1"   fill='#FFA500'  data-pie='1' />
+
+</g>
+</g>
+</svg>
+--ENDVIEW

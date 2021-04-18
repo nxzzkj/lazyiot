@@ -1,0 +1,204 @@
+ERROR 2020-10-26 15:56:05,317 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck, RegistrySecurity registrySecurity)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetStringValue(String registryName, String defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 132
+ERROR 2020-10-26 15:56:05,383 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck, RegistrySecurity registrySecurity)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetIntegerValue(String registryName, Int32 defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 98
+ERROR 2020-10-26 15:56:07,793 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck, RegistrySecurity registrySecurity)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-26 15:56:07,805 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck, RegistrySecurity registrySecurity)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-26 15:56:16,278 [1    ] anagement.GUI.MDSServers.ServerGraphForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 302
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.MDSServers.ServerGraphForm.GetGraphFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\MDSServers\ServerGraphForm.cs:行号 438
+ERROR 2020-10-26 15:56:30,074 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 302
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:04:45,005 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetStringValue(String registryName, String defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 132
+ERROR 2020-10-27 14:04:45,160 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetIntegerValue(String registryName, Int32 defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 98
+ERROR 2020-10-27 14:04:47,112 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-27 14:04:47,139 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-27 14:04:54,702 [1    ] anagement.GUI.MDSServers.ServerGraphForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.MDSServers.ServerGraphForm.GetGraphFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\MDSServers\ServerGraphForm.cs:行号 438
+ERROR 2020-10-27 14:05:02,146 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:06:34,101 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetStringValue(String registryName, String defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 132
+ERROR 2020-10-27 14:06:34,322 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetIntegerValue(String registryName, Int32 defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 98
+ERROR 2020-10-27 14:07:14,519 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-27 14:07:15,573 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-27 14:07:31,504 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:07:58,991 [1    ] anagement.GUI.MDSServers.ServerGraphForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.MDSServers.ServerGraphForm.GetGraphFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\MDSServers\ServerGraphForm.cs:行号 438
+ERROR 2020-10-27 14:09:03,620 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:10:19,136 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:11:01,255 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessageAndGetResponse(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 230
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.GetApplicationsFromServer() 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 247
+ERROR 2020-10-27 14:11:07,658 [1    ] I.ClientApplications.ApplicationListForm - Client's state is not connected. It can not send message.
+MDS.Exceptions.MDSException: Client's state is not connected. It can not send message.
+   在 MDS.Communication.Channels.TCPChannel.SendMessage(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Communication\Channels\TCPChannel.cs:行号 220
+   在 MDS.Management.MDSController.SendMessageInternal(MDSMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 300
+   在 MDS.Management.MDSController.SendMessage(ControlMessage message) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Management\MDSController.cs:行号 201
+   在 MDS.Management.GUI.ClientApplications.ApplicationListForm.btnAddApplication_Click(Object sender, EventArgs e) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSManager\Management\GUI\ClientApplications\ApplicationListForm.cs:行号 126
+ERROR 2020-10-27 15:59:07,373 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetStringValue(String registryName, String defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 132
+ERROR 2020-10-27 15:59:07,418 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.GetObjectFromRegistry(String name, Object defaultValue, Boolean createIfNeeded) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 222
+   在 MDS.Utils.RegistrySettings.GetIntegerValue(String registryName, Int32 defaultValue) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 98
+ERROR 2020-10-27 15:59:38,050 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164
+ERROR 2020-10-27 15:59:38,539 [1    ] MDS.Utils.RegistrySettings               - 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\Software\MDS\MDSManager”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 MDS.Utils.RegistrySettings.CreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 183
+   在 MDS.Utils.RegistrySettings.OpenOrCreateKey(String registryKey) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 199
+   在 MDS.Utils.RegistrySettings.SetObjectOnRegistry(String name, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 244
+   在 MDS.Utils.RegistrySettings.SetValue(String registryName, Object value) 位置 E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\Utils\RegistrySettings.cs:行号 164

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <DebugType>Full</DebugType>
+    <TargetFramework Condition=" '$(OS)' == 'Windows_NT' ">net461</TargetFramework>
+    <TargetFramework Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.1" />
+    <PackageReference Include="System.IO.Pipelines" Version="4.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\MQTTnet.AspnetCore\MQTTnet.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Source\MQTTnet\MQTTnet.csproj" />
+  </ItemGroup>
+
+</Project>

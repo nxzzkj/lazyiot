@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40CC940B-59F9-41B2-BDD3-45A84D6B2CFE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScadaCenterServer</RootNamespace>
+    <AssemblyName>ScadaCenterServer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\SCADA\CenterOS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Publish\IOCenter\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Publish\IOCenter\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>w28.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1AFE3D01F7F0C81315DA9311EC4BE1D5F4386E80</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ScadaCenterServer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\Lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\Lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\Lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture">
+      <HintPath>..\..\Lib\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\HistoryStaticsSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HistoryStaticsSearch.Designer.cs">
+      <DependentUpon>HistoryStaticsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IOTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HistoryAlarmSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HistoryAlarmSearch.Designer.cs">
+      <DependentUpon>HistoryAlarmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\InfluxdbBackupManager.cs" />
+    <Compile Include="Core\IOCenterIOProject.cs" />
+    <Compile Include="Core\IOCenterManager.cs" />
+    <Compile Include="Dialogs\PopBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PopBaseForm.Designer.cs">
+      <DependentUpon>PopBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SendCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SendCommandForm.Designer.cs">
+      <DependentUpon>SendCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOCenterLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOCenterLoading.Designer.cs">
+      <DependentUpon>IOCenterLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorForm.Designer.cs">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HsComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HsComboBox.designer.cs">
+      <DependentUpon>HsComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InfluxConfigBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IOParaSeries.cs" />
+    <Compile Include="Controls\IORealListViewItem.cs" />
+    <Compile Include="Controls\IoTreeNode.cs" />
+    <Compile Include="Controls\Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\IOCenterQueryFormManager.cs" />
+    <Compile Include="Core\QueryWorkType.cs" />
+    <Compile Include="Core\SimulatorManager.cs" />
+    <Compile Include="Core\ScadaCommunicate.cs" />
+    <Compile Include="Pages\DockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DockForm.Designer.cs">
+      <DependentUpon>DockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CenterServerConfig.cs" />
+    <Compile Include="IOCenterMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOCenterMainForm.Designer.cs">
+      <DependentUpon>IOCenterMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediator.cs" />
+    <Compile Include="Pages\AlarmConfigQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AlarmConfigQueryWorkForm.Designer.cs">
+      <DependentUpon>AlarmConfigQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HistoryStaticsQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HistoryStaticsQueryWorkForm.Designer.cs">
+      <DependentUpon>HistoryStaticsQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InfluxDBBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\InfluxDBBackupForm.Designer.cs">
+      <DependentUpon>InfluxDBBackupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IOServerAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\IOServerAdminForm.Designer.cs">
+      <DependentUpon>IOServerAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NetConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\NetConfigForm.Designer.cs">
+      <DependentUpon>NetConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SendCommandQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SendCommandQueryWorkForm.Designer.cs">
+      <DependentUpon>SendCommandQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HistoryAlarmQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HistoryAlarmQueryWorkForm.Designer.cs">
+      <DependentUpon>HistoryAlarmQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HistoryQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HistoryQueryWorkForm.Designer.cs">
+      <DependentUpon>HistoryQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InfluxConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\InfluxConfigForm.Designer.cs">
+      <DependentUpon>InfluxConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IOPropeitesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\IOPropeitesForm.Designer.cs">
+      <DependentUpon>IOPropeitesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IOTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\IOTreeForm.Designer.cs">
+      <DependentUpon>IOTreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OperatorLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OperatorLogForm.Designer.cs">
+      <DependentUpon>OperatorLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RealQueryWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\RealQueryWorkForm.Designer.cs">
+      <DependentUpon>RealQueryWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeriesWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SeriesWorkForm.Designer.cs">
+      <DependentUpon>SeriesWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SimulatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SimulatorForm.Designer.cs">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserAccountForm.Designer.cs">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabFactory.cs" />
+    <EmbeddedResource Include="Controls\HistoryStaticsSearch.resx">
+      <DependentUpon>HistoryStaticsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HistoryAlarmSearch.resx">
+      <DependentUpon>HistoryAlarmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SendCommandForm.resx">
+      <DependentUpon>SendCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOCenterLoading.resx">
+      <DependentUpon>IOCenterLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorForm.resx">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HsComboBox.resx">
+      <DependentUpon>HsComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InfluxConfigBox.resx">
+      <DependentUpon>InfluxConfigBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOCenterMainForm.resx">
+      <DependentUpon>IOCenterMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DockForm.resx">
+      <DependentUpon>DockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AlarmConfigQueryWorkForm.resx">
+      <DependentUpon>AlarmConfigQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HistoryStaticsQueryWorkForm.resx">
+      <DependentUpon>HistoryStaticsQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\InfluxDBBackupForm.resx">
+      <DependentUpon>InfluxDBBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IOServerAdminForm.resx">
+      <DependentUpon>IOServerAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NetConfigForm.resx">
+      <DependentUpon>NetConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SendCommandQueryWorkForm.resx">
+      <DependentUpon>SendCommandQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HistoryAlarmQueryWorkForm.resx">
+      <DependentUpon>HistoryAlarmQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HistoryQueryWorkForm.resx">
+      <DependentUpon>HistoryQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\InfluxConfigForm.resx">
+      <DependentUpon>InfluxConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IOPropeitesForm.resx">
+      <DependentUpon>IOPropeitesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IOTreeForm.resx">
+      <DependentUpon>IOTreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OperatorLogForm.resx">
+      <DependentUpon>OperatorLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RealQueryWorkForm.resx">
+      <DependentUpon>RealQueryWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SeriesWorkForm.resx">
+      <DependentUpon>SeriesWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SimulatorForm.resx">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserAccountForm.resx">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="influxdb\influxdb.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="influxdb\influxdbstart.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IOProject\IOCenterServer.station">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ScadaCenterServer_TemporaryKey.pfx" />
+    <Content Include="SqliteDB\MDS.s3db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BaseProject\Common\Scada.Common.csproj">
+      <Project>{e3d8759a-c5eb-402d-9f10-f5c6029a8d1a}</Project>
+      <Name>Scada.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BaseProject\DBUtility\Scada.DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>Scada.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\AsyncTcpClient\Scada.AsyncNetTcp.csproj">
+      <Project>{8de0ccc8-ec18-4982-9628-7ad84bd9e7b5}</Project>
+      <Name>Scada.AsyncNetTcp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\Logger\Scada.Logger.csproj">
+      <Project>{faca4c7e-b4c3-4738-b981-7a1b3d4d1d0a}</Project>
+      <Name>Scada.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\ScadaMakeAlarm\Scada.MakeAlarm.csproj">
+      <Project>{161ec259-4428-4547-878a-6d1edf861d46}</Project>
+      <Name>Scada.MakeAlarm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Component\SCADA_Controls\Scada.Controls.csproj">
+      <Project>{af32e163-c577-4cbc-a072-0dc1ce0e1da3}</Project>
+      <Name>Scada.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DriverBase\IOData\Scada.IOStructure.csproj">
+      <Project>{ea7a9840-d2f5-44e3-a7f4-07430a305d34}</Project>
+      <Name>Scada.IOStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InfluxDB\InfluxData.Net.Common\Temporal.Net.Common.csproj">
+      <Project>{977da0f2-0330-44b2-8118-40de63909d7b}</Project>
+      <Name>Temporal.Net.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InfluxDB\InfluxData.Net.InfluxDb\Temporal.Net.InfluxDb.csproj">
+      <Project>{411eb16c-eb13-49e2-bf95-431e3083a80a}</Project>
+      <Name>Temporal.Net.InfluxDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InfluxDB\InfluxData.Net.Kapacitor\Temporal.Net.Kapacitor.csproj">
+      <Project>{79dbd6da-9f99-47ec-ad42-1a308ab0eb37}</Project>
+      <Name>Temporal.Net.Kapacitor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InfluxDB\InfluxDbManager\Temporal.DbAPI.csproj">
+      <Project>{0e3987f1-459c-459f-8242-c377ce91f21d}</Project>
+      <Name>Temporal.DbAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.BLL\Scada.Business.csproj">
+      <Project>{38d7aa58-c95b-449b-86c6-a8073a56e11f}</Project>
+      <Name>Scada.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.DAL\Scada.Database.csproj">
+      <Project>{9fe00521-3a8b-42b1-814e-585e99407b2e}</Project>
+      <Name>Scada.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IOCenterServerBase\IOCenterServer.Model\Scada.Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Scada.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CenterServerConfig.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\influx.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\influxd.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\influx_inspect.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\influx_stress.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\influx_tsm.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="influxdb\说明.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\down %281%29.ico" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\play.ico" />
+    <None Include="Resources\app11.jpg" />
+    <None Include="Resources\MSN%2520Calendar.ico" />
+    <Content Include="w28.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

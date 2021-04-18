@@ -1,0 +1,26 @@
+﻿
+--PROJ #5247977947143107357#下置命令测试
+
+ 
+
+--VIEW #V_5379800186583266809#下置命令测试#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5370108116782085151)'     />
+<defs><linearGradient id="5370108116782085151" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='#'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''      id='shapeID4619059022775847394'  data-baseshape='SVG_IOShape' data-lampcolor='#F5F5F5'  data-truecolor='#008000' data-falsecolor='#FF0000'   data-shape='SVG_SwitchButtonShape'    data-rect='222,182,282,282'      data-event='单击事件'  data-event_servicetype='下置命令服务' data-event_title='下置命令'  onclick='SCADA.OnEventService()'  data-event_confirm='True' data-event_msg='是否要提交命令?'   data-event_valuetype='模拟量' data-event_msg='是否要提交命令?' data-event_writevalue='10' data-event_successresult='1' data-event_faultresult='0' data-event_returnresult='false' data-event_io='0028F89F632F,4698528021562134131,5547416729330815881,5381289005077576115'  data-event_return_io=',,,' data-event_timeout='20'    >
+<path id='pathID4619059022775847394'  d=' M499,323 C499,398.1107 438.1107,459 363,459 287.8893,459 227,398.1107 227,323 227,247.8893 287.8893,187 363,187 438.1107,187 499,247.8893 499,323 Z' fill='none'   stroke ="#000000"   stroke-width="5"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4619059022775847394'  d=' M484.9,323 C484.9,390.3235 430.3235,444.9 363,444.9 295.6765,444.9 241.1,390.3235 241.1,323 241.1,255.6765 295.6765,201.1 363,201.1 430.3235,201.1 484.9,255.6765 484.9,323 Z' fill='none'   stroke ="#000000"   stroke-width="28.2"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4619059022775847394'  d=' M470.8,323 C470.8,382.5363 422.5363,430.8 363,430.8 303.4637,430.8 255.2,382.5363 255.2,323 255.2,263.4637 303.4637,215.2 363,215.2 422.5363,215.2 470.8,263.4637 470.8,323 Z' fill='none'   stroke ="#666666"   stroke-width="5"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID4619059022775847394'  d=' M470.8,323 C470.8,382.5363 422.5363,430.8 363,430.8 303.4637,430.8 255.2,382.5363 255.2,323 255.2,263.4637 303.4637,215.2 363,215.2 422.5363,215.2 470.8,263.4637 470.8,323 Z' fill='url(#5293503234314507342)'   class='ioupdate'  /><defs><radialGradient id="5293503234314507342"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </radialGradient> </defs>
+</g>
+</a></svg>
+
+--ENDVIEW
+
+
+--USER #管理员#admin#123456#1#1
+
+
+--ENDUSER
+

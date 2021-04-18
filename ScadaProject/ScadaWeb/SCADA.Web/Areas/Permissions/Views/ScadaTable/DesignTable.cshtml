@@ -1,0 +1,380 @@
+﻿@model  ScadaWeb.Web.Areas.Permissions.Models.TableEditModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    #sltIcon {
+        height: 38px;
+        line-height: 38px;
+        margin-left: 40px;
+        float: left;
+        display: block;
+    }
+
+    #spnIcon {
+        font-size: 24px;
+        line-height: 38px;
+        float: left;
+        margin-left: 12px;
+    }
+</style>
+<style type="text/css">
+ 
+    .layui-table-cell {
+        height: 50px;
+        line-height: 28px;
+    }
+</style>
+<div id="tableContent" class="row">
+    <table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+</div>
+
+<script>
+    var Columns = [];
+    var widths = @MvcHtmlString.Create( Model.colwidthmodels);
+    var coltitles =@MvcHtmlString.Create(Model.coltitlesmodels);
+    for (var i = 0; i < coltitles.length; i++)
+    {
+        Columns.push({ field: SCADA.numToString(i), title: "<input id='coltb_"+i+"' placeholder='无列名' value='"+coltitles[i]+"' style='width:60%;height:100%;' onchange=\"colTitleChanged('"+i+"','coltb_"+i+"')\" /><input value='"+widths[i]+"'  style='width:40%;height:100%;' placeholder='宽度' id='widthtb_"+i+"' onchange=\"colWidthChanged('"+i+"','widthtb_"+i+"')\"  lay-verify='number' />", align: 'center', width: widths[i] ,event: 'setSign_' + SCADA.numToString(i),custitle:coltitles[i] });
+    }
+ 
+    function colTitleChanged(index,inputid)
+    {
+        Columns[index].custitle=$("#"+inputid).val();
+       
+    }
+    function colWidthChanged(index,inputid)
+    {
+        if($("#"+inputid).val()!="")
+            Columns[index].width=$("#"+inputid).val();
+        else
+            Columns[index].width=120;
+       
+    }
+    
+    var backcolors = [];
+    var fontcolors = [];
+    var fontsizes = [];
+    var fontweights = [];
+    var fontwidths = [];
+    layui.use(["form", "okLayer", "okUtils", 'element', "table"], function () {
+        //模拟数据
+      
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let layer = layui.layer;
+        let $ = layui.$;
+        let table = layui.table;
+        let element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    
+        let AllTable = table.render({
+            elem: "#tableId",
+            id:'tableId',
+            url: "/Permissions/ScadaTable/GetExcelData?id=@Model.TableId",
+            size: "sm",
+            width: document.body.clientWidth - 10,
+            height: 'full-40',
+            cellMinWidth: 50 ,//全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            cols: [Columns],
+            toolbar: "#toolbarTpl",
+            defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+                title: '提示'
+      ,layEvent: 'LAYTABLE_TIPS'
+      ,icon: 'layui-icon-tips'
+            }],
+            done: function (res, curr, count) {
+                backcolors = res.backcolors;
+                fontcolors = res.fontcolors;
+                fontsizes = res.fontsizes;
+                fontweights = res.fontweights;            
+                for (var i = 0; i < 26; i++)
+                {
+                    for(var j=0;j<res.data.length;j++)
+                    {
+                        Layui_SetDataTableTdProperties('tableContent', j, i, backcolors[j][i], fontcolors[j][i], fontsizes[j][i], fontweights[j][i])
+                    }
+                }
+               
+            }
+        });
+        ///设置单元格属性
+        function Layui_SetDataTableTdProperties(DivId, RowIndex, ColIndex, backColor, fontColor, fontSize, fontWeight)
+        {
+            try
+            {
+                var div = document.getElementById(DivId);
+                if(div != null) //找到对象了
+                {
+                    var table_main = div.getElementsByClassName('layui-table-main');   //通过class获取table_main
+                    if (table_main != null && table_main.length > 0)
+                    {
+                        var table = table_main[0].getElementsByClassName('layui-table');   //通过class获取table
+                        if (table != null && table.length > 0) {
+                            var trs = table[0].querySelectorAll("tr");
+                            if (trs != null && trs.length > 0) {
+                              
+                                var tds = trs[RowIndex].querySelectorAll("td");
+                                if (tds != null && tds.length > 0) {
+                                    if (fontColor != null && fontColor!="")
+                                        tds[ColIndex].style.color = fontColor;//字体颜色 
+                                    if (backColor != null && backColor != "")
+                                        tds[ColIndex].style.backgroundColor = backColor;//背景颜色
+                                    if (fontSize != null && fontSize != "")
+                                    tds[ColIndex].style.fontSize = fontSize;
+                                    if (fontWeight != null && fontWeight != "")
+                                        tds[ColIndex].style.fontWeight = fontWeight;
+                                   
+                                }
+
+                              
+                            }
+                        }
+                    }
+                
+                }
+            }
+            catch(e)
+            {
+                console.log(e.message);
+            }
+        }
+        ///获取某个单元格的属性
+        function Layui_GetDataTableTdProperties(DivId, RowIndex, ColIndex)
+        {
+            var res={backColor:"#ffffff",fontColor:"#000000",fontSize:12,fontWeight:"normal"};
+            try
+            {
+                var div = document.getElementById(DivId);
+                if(div != null) //找到对象了
+                {
+                    var table_main = div.getElementsByClassName('layui-table-main');   //通过class获取table_main
+                    if (table_main != null && table_main.length > 0)
+                    {
+                        var table = table_main[0].getElementsByClassName('layui-table');   //通过class获取table
+                        if (table != null && table.length > 0) {
+                            var trs = table[0].querySelectorAll("tr");
+                            if (trs != null && trs.length > 0) {
+                              
+                                var tds = trs[RowIndex].querySelectorAll("td");
+                                if (tds != null && tds.length > 0) {
+                                    if(tds[ColIndex].style.color!=undefined&&tds[ColIndex].style.color!="")
+                                     {
+                                     res.fontColor= "#"+SCADA.rgb2hex(tds[ColIndex].style.color);
+                                     }
+                                    if(tds[ColIndex].style.backgroundColor!=undefined&&tds[ColIndex].style.backgroundColor!="")
+                                    {
+                                        res.backColor="#"+SCADA.rgb2hex( tds[ColIndex].style.backgroundColor);
+                                    }
+                                    if(tds[ColIndex].style.fontSize!=undefined&&tds[ColIndex].style.fontSize!="")
+                                        res.fontSize= tds[ColIndex].style.fontSize;
+                                    if(tds[ColIndex].style.fontWeight!=undefined&&tds[ColIndex].style.fontWeight!="")
+                                    res.fontWeight= tds[ColIndex].style.fontWeight;  
+                                }
+
+                              
+                            }
+                        }
+                    }
+                
+                }
+            }
+            catch(e)
+            {
+                console.log(e.message);
+            }
+            return res;
+        }
+        function Layui_GetDataTableColumnWidth(DivId, RowIndex, ColIndex)
+        {
+            var res=120;
+            try
+            {
+                var div = document.getElementById(DivId);
+                if(div != null) //找到对象了
+                {
+                    var table_main = div.getElementsByClassName('layui-table-main');   //通过class获取table_main
+                    console.log(div.innerHTML);
+                    console.log(div.outerHTML);
+                    if (table_main != null && table_main.length > 0)
+                    {
+                        var table = table_main[0].getElementsByClassName('layui-table');   //通过class获取table
+                        if (table != null && table.length > 0) {
+                            var trs = table[0].querySelectorAll("tr");
+                      
+                            if (trs != null && trs.length > 0) {
+                              
+                                var tds = trs[RowIndex].querySelectorAll("td");
+                                if (tds != null && tds.length > 0) {
+                                    if(tds[ColIndex].style.color!=undefined&&tds[ColIndex].style.color!="")
+                                    {
+                                        res.fontColor= "#"+SCADA.rgb2hex(tds[ColIndex].style.color);
+                                    }
+                                    if(tds[ColIndex].style.backgroundColor!=undefined&&tds[ColIndex].style.backgroundColor!="")
+                                    {
+                                        res.backColor="#"+SCADA.rgb2hex( tds[ColIndex].style.backgroundColor);
+                                    }
+                                    if(tds[ColIndex].style.fontSize!=undefined&&tds[ColIndex].style.fontSize!="")
+                                        res.fontSize= tds[ColIndex].style.fontSize;
+                                    if(tds[ColIndex].style.fontWeight!=undefined&&tds[ColIndex].style.fontWeight!="")
+                                        res.fontWeight= tds[ColIndex].style.fontWeight;  
+                                }
+
+                              
+                            }
+                        }
+                    }
+                
+                }
+            }
+            catch(e)
+            {
+                console.log(e.message);
+            }
+            return res;
+        }
+      
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event.split('_')[0]) {
+                case "setSign":
+                    setSign(obj);
+                    break;
+                case "designSave":
+                    designSave(obj);
+                    break;
+              
+                    
+            }
+        });
+        //add
+        $('#designSave').on('click', function () {
+            designSave();
+        });
+        function setSign(data) {
+            var column = data.event.split('_')[1];
+            var ColIndex = SCADA.stringTonum(column);
+          
+            //设置单元格背景和字体颜色字体类型
+            var td = data.tr[0].cells[ColIndex];
+            if (td.style.color == undefined || td.style.color == null)
+                td.style.color = "#000000";
+            if (td.style.backgroundColor == undefined || td.style.backgroundColor == null)
+                td.style.backgroundColor = "#FFFFFF";
+            layer.open({
+                id:'ioedit'
+          ,type: 2 //此处以iframe举例
+         , title: '修改列' + column + '单元格的IO参数'
+        , area: ['700px', '460px']
+        , shade: 1
+        , maxmin: false
+        , offset: 'auto'
+        , content: '/Permissions/ScadaTable/IOEdit?column=' + column + '&value=' + data.data[column] + "&fontcolor=" + SCADA.rgb2hex(td.style.color) + "&backcolor=" + SCADA.rgb2hex(td.style.backgroundColor) + "&fontweight=" + td.style.fontWeight
+        , btn: ['确定', '取消'] //只是为了演示
+        , yes: function (index, layero) {
+            //这里一般是发送修改的Ajax请求
+            var row = window["layui-layer-iframe" + index].callbackdata();
+            data.data[column] = row.ReturnText;
+            //同步更新表格和缓存对应的值
+            data.update(data.data);
+            if (td != null && td!=undefined) {
+                if (row.FontColor != null && row.FontColor != "")
+                    td.style.color = row.FontColor;//字体颜色 
+                if (row.BackColor != null && row.BackColor != "")
+                    td.style.backgroundColor = row.BackColor;//背景颜色
+                if ( row.FontWeight != null &&row.FontWeight != "")
+                    td.style.fontWeight = row.FontWeight;
+                td.style.height = 200;
+            }
+            layer.closeAll();
+
+        }
+        , btn2: function () {
+            layer.closeAll();
+        }
+
+        , zIndex: layer.zIndex //重点1
+        , success: function (layero) {
+            layer.setTop(layero); //重点2
+        }
+            });
+
+
+        }
+        function designSave(data)
+        {
+        
+            var data = table.cache["tableId"];
+          
+            var fontsize=[];
+            var backcolor=[];
+            var fontcolor=[];
+            var fontweight=[];
+            var columnwidth="";
+            var columntitle="";
+            for(var i=0;i<Columns.length;i++)
+            {      
+                var test= Layui_GetDataTableColumnWidth('tableContent',0,j);
+                if(Columns[i].width==undefined)
+                {
+            
+                    columnwidth+="120,";
+                    columntitle+=",";
+                }
+                else{
+                    columnwidth+=Columns[i].width+",";
+                    columntitle+=Columns[i].custitle+",";
+                }
+            }
+            if(columnwidth!="")
+            {
+                columnwidth=columnwidth.substr(0,columnwidth.length-1);
+            }
+            if(columntitle!="")
+            {
+                columntitle=columntitle.substr(0,columnwidth.length-1);
+            }
+            for(var i=0;i<data.length;i++)
+            {
+                var fontsizearr=[];
+                var backcolorarr=[];
+                var fontcolorarr=[];
+                var fontweightarr=[];
+                 
+                for(var j=0;j<26;j++)
+                {
+                 
+                  var res=  Layui_GetDataTableTdProperties('tableContent',i,j);
+                  fontsizearr.push(res.fontSize);
+                  backcolorarr.push(res.backColor);
+                  fontcolorarr.push(res.fontColor);
+                  fontweightarr.push(res.fontWeight);
+                }
+                fontsize.push(fontsizearr);
+                backcolor.push(backcolorarr);
+                fontcolor.push(fontcolorarr);
+                fontweight.push(fontweightarr);
+            }
+            var uploadData={data:data,fontsize:fontsize,backcolor:backcolor,fontcolor:fontcolor,fontweight:fontweight,columnwidth:columnwidth,columntitle:columntitle};
+
+            $.ajax({
+                data:{data:JSON.stringify(uploadData),id:'@Model.TableId'},//json数据格式
+                url:'/Permissions/ScadaTable/TableDesignSave',
+                async:true,
+                type:'post',
+                dateType:'json',
+                success:function (data) {
+                    layer.msg(data);
+                }
+            });
+ 
+        }
+       
+    });
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    <button class='layui-btn layui-btn-sm' lay-event='designSave' id='designSave'>保存设计</button>
+</script>
+ 

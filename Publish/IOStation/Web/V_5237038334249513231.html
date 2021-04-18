@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#4865595966881990611)'     />
+<defs><linearGradient id="4865595966881990611" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shapeID5379857021264223175'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='307,73,26,399'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID5379857021264223175'  d=' M333,99 L333,446 L333,446 C333,460.3594 321.3594,472 307,472 L307,472 L307,73 L306.9999,73 C321.3593,72.99997 333,84.64055 333,98.99998 333,98.99999 333,99 333,99.00001 Z' fill='url(#5168739302078387608)'     /><defs><linearGradient id="5168739302078387608" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<path id='pathID5379857021264223175'  d=' M305.7731,87.00198 C312.9517,86.87666 318.8727,92.59449 318.998,99.77309 318.9993,99.84872 319,99.92435 319,99.99998 L318.998,444.7731 C319.1233,451.9517 313.4055,457.8727 306.2269,457.998 306.1513,457.9993 306.0756,458 306,458' fill='none'   stroke ="#000000"   stroke-width="13"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID5379857021264223175'  d=' M305.7731,87.00198 C312.9517,86.87666 318.8727,92.59449 318.998,99.77309 318.9993,99.84872 319,99.92435 319,99.99998 L318.998,444.7731 C319.1233,451.9517 313.4055,457.8727 306.2269,457.998 306.1513,457.9993 306.0756,458 306,458' fill='none'   stroke ="#000000"   stroke-width="9"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID5379857021264223175'  d=' M305.7731,87.00198 C312.9517,86.87666 318.8727,92.59449 318.998,99.77309 318.9993,99.84872 319,99.92435 319,99.99998 L318.998,444.7731 C319.1233,451.9517 313.4055,457.8727 306.2269,457.998 306.1513,457.9993 306.0756,458 306,458' fill='none'   stroke ="#000000"   stroke-width="5"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID5379857021264223175'  d=' M306.9999,73 C321.3593,72.99997 333,84.64055 333,98.99998 333,98.99999 333,99 333,99.00001' fill='none'   stroke ="#FFFFFF"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+<path id='pathID5379857021264223175'  d=' M333,446 C333,460.3594 321.3594,472 307,472' fill='none'   stroke ="#FFFFFF"   stroke-width="1"   stroke-dasharray="" stroke-opacity="1"     />
+<path class='ioupdate' d=' M305.7731,87.00198 C312.9517,86.87666 318.8727,92.59449 318.998,99.77309 318.9993,99.84872 319,99.92435 319,99.99998 L318.998,444.7731 C319.1233,451.9517 313.4055,457.8727 306.2269,457.998 306.1513,457.9993 306.0756,458 306,458' fill="none"  opacity="1" stroke = "#0000FF"   stroke-width="4" stroke-style="" stroke-dasharray="24,24" stroke-dashoffset="-1" > <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="3000ms" repeatCount="indefinite" /></path>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5646440659751204322' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,146,115.5)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#808080'  data-rect='113,77,66,77'>
+<path  data-originalfill='#efe0e8'   id='pathID5646440659751204322'  d=' M176.3464,154 L179,147.655 L177.7753,94.74442 L173.6247,88.50698 L152.3278,84.20531 L141.5773,84.20531 L120.2804,88.50698 L116.1299,94.74442 L114.9052,147.655 117.5588,154 Z' fill='#B7B0B4'   class='ioupdate'  />
+<path  data-originalfill='#f1e4eb'   id='pathID5646440659751204322'  d=' M152.3278,80.01117 L141.5773,80.01117 L141.5773,84.20531 152.3278,84.20531 Z' fill='#B8B2B5'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M152.3278,82.16201 L141.5773,82.16201' fill='none'   stroke ="#ccc000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='#e4cad7'   id='pathID5646440659751204322'  d=' M176.3464,154 L179,147.655 L114.9052,147.655 117.5588,154 Z' fill='#B2A5AB'   class='ioupdate'  />
+<path  data-originalfill='#f6eef2'   id='pathID5646440659751204322'  d=' M177.7753,94.74442 L146.9526,92.80866 L116.1299,94.74442 L120.2804,88.50698 L141.5773,84.20531 L152.3278,84.20531 173.6247,88.50698 Z' fill='#BBB7B9'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M176.3464,154 L179,147.655 L177.7753,94.74442 L173.6247,88.50698 L152.3278,84.20531 L141.5773,84.20531 L120.2804,88.50698 L116.1299,94.74442 L114.9052,147.655 L117.5588,154 L176.3464,154' fill='none'   stroke ="#000000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='#d8b2c5'   id='pathID5646440659751204322'  d=' M173.6247,97.00279 L120.2804,97.00279 L118.8515,145.5042 175.0536,145.5042 Z' fill='#AC99A2'   class='ioupdate'  />
+<path  data-originalfill='#d3a8be'   id='pathID5646440659751204322'  d=' M146.9526,120.1243 L172.332,97.00279 121.5732,97.00279 Z' fill='#A9949F'   class='ioupdate'  />
+<path  data-originalfill='#d3a8be'   id='pathID5646440659751204322'  d=' M146.9526,122.3827 L172.332,145.5042 121.5732,145.5042 Z' fill='#A9949F'   class='ioupdate'  />
+<path  data-originalfill='#d3a8be'   id='pathID5646440659751204322'  d=' M175.0536,143.4609 L149.6742,121.0922 173.6247,99.04609 Z' fill='#A9949F'   class='ioupdate'  />
+<path  data-originalfill='#d3a8be'   id='pathID5646440659751204322'  d=' M118.8515,143.4609 L144.2309,121.0922 120.1443,99.04609 Z' fill='#A9949F'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M175.0536,145.5042 L173.6247,97.00279 L120.2804,97.00279' fill='none'   stroke ="#7f7f7f"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M120.2804,97.00279 L118.8515,145.5042 L175.0536,145.5042' fill='none'   stroke ="#fff000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M152.3278,81.19414 L141.5773,81.19414' fill='none'   stroke ="#ccc000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M152.3278,83.23743 L141.5773,83.23743' fill='none'   stroke ="#ccc000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5646440659751204322'  d=' M152.3278,80.01117 L141.5773,80.01117 L141.5773,84.20531 L152.3278,84.20531 L152.3278,80.01117' fill='none'   stroke ="#000000"   stroke-width="0.3968518"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5003507192903779206' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,441,128.5)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#808080'  data-rect='423,109.5,36,38'>
+<path  data-originalfill='#7f003f'   id='pathID5003507192903779206'  d=' M459,119.8301 L450.2621,119.8301 L450.2621,110.6068 L432.7864,110.6068 L432.7864,119.8301 L424.0486,119.8301 L424.0486,138.2767 L432.7864,138.2767 L432.7864,147.5 L450.2621,147.5 L450.2621,138.2767 459,138.2767 Z' fill='#7F405F'   class='ioupdate'  />
+<path  data-originalfill='#993265'   id='pathID5003507192903779206'  d=' M459,121.0107 L449.1437,121.0107 L449.1437,110.6068 L433.835,110.6068 L433.835,121.0107 L424.0486,121.0107 L424.0486,137.0961 L433.835,137.0961 L433.835,147.5 L449.1437,147.5 L449.1437,137.0961 459,137.0961 Z' fill='#8C5972'   class='ioupdate'  />
+<path  data-originalfill='#b2648b'   id='pathID5003507192903779206'  d=' M459,122.9291 L447.3262,122.9291 L447.3262,110.6068 L435.6524,110.6068 L435.6524,122.9291 L424.0486,122.9291 L424.0486,135.1777 L435.6524,135.1777 L435.6524,147.5 L447.3262,147.5 L447.3262,135.1777 459,135.1777 Z' fill='#997285'   class='ioupdate'  />
+<path  data-originalfill='#cb98b2'   id='pathID5003507192903779206'  d=' M459,124.8476 L445.5087,124.8476 L445.5087,110.6068 L437.4699,110.6068 L437.4699,124.8476 L424.0486,124.8476 L424.0486,133.2592 L437.4699,133.2592 L437.4699,147.5 L445.5087,147.5 L445.5087,133.2592 459,133.2592 Z' fill='#A58C99'   class='ioupdate'  />
+<path  data-originalfill='#e4cad7'   id='pathID5003507192903779206'  d=' M459,126.3971 L444.0408,126.3971 L444.0408,110.6068 L438.9379,110.6068 L438.9379,126.3971 L424.0486,126.3971 L424.0486,131.7835 L438.9379,131.7835 L438.9379,147.5 L444.0408,147.5 L444.0408,131.7835 459,131.7835 Z' fill='#B2A5AB'   class='ioupdate'  />
+<path  data-originalfill='#fff000'   id='pathID5003507192903779206'  d=' M459,127.8728 L442.5728,127.8728 L442.5728,110.6068 L440.4058,110.6068 L440.4058,127.8728 L424.0486,127.8728 L424.0486,130.234 L440.4058,130.234 L440.4058,147.5 L442.5728,147.5 L442.5728,130.234 459,130.234 Z' fill='#BFB840'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5003507192903779206'  d=' M459,119.8301 L450.2621,119.8301 L450.2621,110.6068' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5003507192903779206'  d=' M432.7864,110.6068 L432.7864,119.8301 L424.0486,119.8301' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5003507192903779206'  d=' M424.0486,138.2767 L432.7864,138.2767 L432.7864,147.5' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5003507192903779206'  d=' M450.2621,147.5 L450.2621,138.2767 L459,138.2767' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4889980559813290345' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,616,128)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#808080'  data-rect='449,118,334,20'>
+<path  data-originalfill='#7f003f'   id='pathID4889980559813290345'  d=' M783.0001,120.027 L458.7281,120.027 L458.7281,138 783.0001,138 Z' fill='#7F405F'   class='ioupdate'  />
+<path  data-originalfill='#993265'   id='pathID4889980559813290345'  d=' M783.0001,121.2432 L458.7281,121.2432 L458.7281,136.9189 783.0001,136.9189 Z' fill='#8C5972'   class='ioupdate'  />
+<path  data-originalfill='#b2648b'   id='pathID4889980559813290345'  d=' M783.0001,123.1351 L458.7281,123.1351 L458.7281,135.027 783.0001,135.027 Z' fill='#997285'   class='ioupdate'  />
+<path  data-originalfill='#cb98b2'   id='pathID4889980559813290345'  d=' M783.0001,124.8919 L458.7281,124.8919 L458.7281,133.1351 783.0001,133.1351 Z' fill='#A58C99'   class='ioupdate'  />
+<path  data-originalfill='#e4cad7'   id='pathID4889980559813290345'  d=' M783.0001,126.3784 L458.7281,126.3784 L458.7281,131.6487 783.0001,131.6487 Z' fill='#B2A5AB'   class='ioupdate'  />
+<path  data-originalfill='#fff000'   id='pathID4889980559813290345'  d=' M783.0001,128 L458.7281,128 L458.7281,130.1622 783.0001,130.1622 Z' fill='#BFB840'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID4889980559813290345'  d=' M783.0001,138 L458.7281,138' fill='none'   stroke ="#000000"   stroke-width="0.7052236"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID4889980559813290345'  d=' M458.7281,120.027 L783.0001,120.027' fill='none'   stroke ="#000000"   stroke-width="0.7052236"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5059038676705126438' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,437,185)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#808080'  data-rect='419,166,36,38'>
+<path  data-originalfill='#7f003f'   id='pathID5059038676705126438'  d=' M455,176.3301 L446.2621,176.3301 L446.2621,167.1068 L428.7864,167.1068 L428.7864,176.3301 L420.0486,176.3301 L420.0486,194.7767 L428.7864,194.7767 L428.7864,204 L446.2621,204 L446.2621,194.7767 455,194.7767 Z' fill='#7F405F'   class='ioupdate'  />
+<path  data-originalfill='#993265'   id='pathID5059038676705126438'  d=' M455,177.5107 L445.1437,177.5107 L445.1437,167.1068 L429.835,167.1068 L429.835,177.5107 L420.0486,177.5107 L420.0486,193.5961 L429.835,193.5961 L429.835,204 L445.1437,204 L445.1437,193.5961 455,193.5961 Z' fill='#8C5972'   class='ioupdate'  />
+<path  data-originalfill='#b2648b'   id='pathID5059038676705126438'  d=' M455,179.4291 L443.3262,179.4291 L443.3262,167.1068 L431.6524,167.1068 L431.6524,179.4291 L420.0486,179.4291 L420.0486,191.6777 L431.6524,191.6777 L431.6524,204 L443.3262,204 L443.3262,191.6777 455,191.6777 Z' fill='#997285'   class='ioupdate'  />
+<path  data-originalfill='#cb98b2'   id='pathID5059038676705126438'  d=' M455,181.3476 L441.5087,181.3476 L441.5087,167.1068 L433.4699,167.1068 L433.4699,181.3476 L420.0486,181.3476 L420.0486,189.7592 L433.4699,189.7592 L433.4699,204 L441.5087,204 L441.5087,189.7592 455,189.7592 Z' fill='#A58C99'   class='ioupdate'  />
+<path  data-originalfill='#e4cad7'   id='pathID5059038676705126438'  d=' M455,182.8971 L440.0408,182.8971 L440.0408,167.1068 L434.9379,167.1068 L434.9379,182.8971 L420.0486,182.8971 L420.0486,188.2835 L434.9379,188.2835 L434.9379,204 L440.0408,204 L440.0408,188.2835 455,188.2835 Z' fill='#B2A5AB'   class='ioupdate'  />
+<path  data-originalfill='#fff000'   id='pathID5059038676705126438'  d=' M455,184.3728 L438.5728,184.3728 L438.5728,167.1068 L436.4058,167.1068 L436.4058,184.3728 L420.0486,184.3728 L420.0486,186.734 L436.4058,186.734 L436.4058,204 L438.5728,204 L438.5728,186.734 455,186.734 Z' fill='#BFB840'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5059038676705126438'  d=' M455,176.3301 L446.2621,176.3301 L446.2621,167.1068' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5059038676705126438'  d=' M428.7864,167.1068 L428.7864,176.3301 L420.0486,176.3301' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5059038676705126438'  d=' M420.0486,194.7767 L428.7864,194.7767 L428.7864,204' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID5059038676705126438'  d=' M446.2621,204 L446.2621,194.7767 L455,194.7767' fill='none'   stroke ="#000000"   stroke-width="0.754717"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4999978637862305962' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,612,184.5)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#808080'  data-rect='445,174.5,334,20'>
+<path  data-originalfill='#7f003f'   id='pathID4999978637862305962'  d=' M779.0001,176.527 L454.7281,176.527 L454.7281,194.5 779.0001,194.5 Z' fill='#7F405F'   class='ioupdate'  />
+<path  data-originalfill='#993265'   id='pathID4999978637862305962'  d=' M779.0001,177.7432 L454.7281,177.7432 L454.7281,193.4189 779.0001,193.4189 Z' fill='#8C5972'   class='ioupdate'  />
+<path  data-originalfill='#b2648b'   id='pathID4999978637862305962'  d=' M779.0001,179.6351 L454.7281,179.6351 L454.7281,191.527 779.0001,191.527 Z' fill='#997285'   class='ioupdate'  />
+<path  data-originalfill='#cb98b2'   id='pathID4999978637862305962'  d=' M779.0001,181.3919 L454.7281,181.3919 L454.7281,189.6351 779.0001,189.6351 Z' fill='#A58C99'   class='ioupdate'  />
+<path  data-originalfill='#e4cad7'   id='pathID4999978637862305962'  d=' M779.0001,182.8784 L454.7281,182.8784 L454.7281,188.1487 779.0001,188.1487 Z' fill='#B2A5AB'   class='ioupdate'  />
+<path  data-originalfill='#fff000'   id='pathID4999978637862305962'  d=' M779.0001,184.5 L454.7281,184.5 L454.7281,186.6622 779.0001,186.6622 Z' fill='#BFB840'   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID4999978637862305962'  d=' M779.0001,194.5 L454.7281,194.5' fill='none'   stroke ="#000000"   stroke-width="0.7052236"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+<path  data-originalfill='none'   id='pathID4999978637862305962'  d=' M454.7281,176.527 L779.0001,176.527' fill='none'   stroke ="#000000"   stroke-width="0.7052236"   stroke-dasharray="" stroke-opacity="1"   class='ioupdate'  />
+</g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

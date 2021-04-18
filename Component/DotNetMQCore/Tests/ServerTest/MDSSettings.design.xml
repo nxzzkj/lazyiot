@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MDSConfiguration>
+  <Servers>
+    <Server Name="测试Server" Location="14,15" />
+  </Servers>
+</MDSConfiguration>

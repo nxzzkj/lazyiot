@@ -1,0 +1,1370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fare</name>
+    </assembly>
+    <members>
+        <member name="T:Fare.Automaton">
+            <summary>
+            Finite-state automaton with regular expression operations.
+            <p>
+            Class invariants:
+            <ul>
+            <li>
+            An automaton is either represented explicitly (with State and Transition} objects)
+            or with a singleton string (see Singleton property ExpandSingleton() method) in case the
+            automaton is known to accept exactly one string. (Implicitly, all states and transitions of
+            an automaton are reachable from its initial state.)
+            </li>
+            <li>
+            Automata are always reduced (see method Rreduce()) and have no transitions to dead states
+            (see RemoveDeadTransitions() method).
+            </li>
+            <li>
+            If an automaton is non deterministic, then IsDeterministic property returns false (but the
+            converse is not required).
+            </li>
+            <li>
+            Automata provided as input to operations are generally assumed to be disjoint.
+            </li>
+            </ul>
+            </p>
+            If the states or transitions are manipulated manually, the RestoreInvariant() method and
+            SetDeterministic(bool) methods should be used afterwards to restore representation invariants
+            that are assumed by the built-in automata operations.
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.MinimizeHuffman">
+            <summary>
+            Minimize using Huffman's O(n<sup>2</sup>) algorithm.
+              This is the standard text-book algorithm.
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.MinimizeBrzozowski">
+            <summary>
+            Minimize using Brzozowski's O(2<sup>n</sup>) algorithm. 
+              This algorithm uses the reverse-determinize-reverse-determinize trick, which has a bad
+              worst-case behavior but often works very well in practice even better than Hopcroft's!).
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.MinimizeHopcroft">
+            <summary>
+            Minimize using Hopcroft's O(n log n) algorithm.
+              This is regarded as one of the most generally efficient algorithms that exist.
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.allowMutation">
+            <summary>
+            Selects whether operations may modify the input automata (default: <code>false</code>).
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.minimizeAlways">
+            <summary>
+            Minimize always flag.
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.hashCode">
+            <summary>
+            The hash code.
+            </summary>
+        </member>
+        <member name="F:Fare.Automaton.initial">
+            <summary>
+            The initial.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.Automaton"/> class that accepts the empty 
+              language. Using this constructor, automata can be constructed manually from 
+              <see cref="T:Fare.State"/> and <see cref="T:Fare.Transition"/> objects.
+            </summary>
+        </member>
+        <member name="P:Fare.Automaton.Minimization">
+            <summary>
+            Gets the minimization algorithm (default: 
+            <code>
+            MINIMIZE_HOPCROFT
+            </code>
+            ).
+            </summary>
+        </member>
+        <member name="P:Fare.Automaton.AllowMutation">
+            <summary>
+            Gets or sets a value indicating whether operations may modify the input automata (default:
+              <code>
+            false
+            </code>
+            ).
+            </summary>
+            <value>
+            <c>true</c> if [allow mutation]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fare.Automaton.IsDeterministic">
+            <summary>
+            Gets or sets a value indicating whether this automaton is definitely deterministic (i.e.,
+              there are no choices for any run, but a run may crash).
+            </summary>
+            <value>
+            <c>true</c> then this automaton is definitely deterministic (i.e., there are no 
+              choices for any run, but a run may crash)., <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fare.Automaton.Initial">
+            <summary>
+            Gets or sets the initial state of this automaton.
+            </summary>
+            <value>
+            The initial state of this automaton.
+            </value>
+        </member>
+        <member name="P:Fare.Automaton.Singleton">
+            <summary>
+            Gets or sets the singleton string for this automaton. An automaton that accepts exactly one
+             string <i>may</i> be represented in singleton mode. In that case, this method may be 
+            used to obtain the string.
+            </summary>
+            <value>The singleton string, null if this automaton is not in singleton mode.</value>
+        </member>
+        <member name="P:Fare.Automaton.IsSingleton">
+            <summary>
+            Gets or sets a value indicating whether this instance is singleton.
+            </summary>
+            <value>
+            <c>true</c> if this instance is singleton; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fare.Automaton.IsDebug">
+            <summary>
+            Gets or sets a value indicating whether this instance is debug.
+            </summary>
+            <value>
+            <c>true</c> if this instance is debug; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fare.Automaton.IsEmpty">
+            <summary>
+            Gets or sets a value indicating whether IsEmpty.
+            </summary>
+        </member>
+        <member name="P:Fare.Automaton.NumberOfStates">
+            <summary>
+            Gets the number of states in this automaton.
+            </summary>
+            Returns the number of states in this automaton.
+        </member>
+        <member name="P:Fare.Automaton.NumberOfTransitions">
+            <summary>
+            Gets the number of transitions in this automaton. This number is counted
+              as the total number of edges, where one edge may be a character interval.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.SetAllowMutate(System.Boolean)">
+            <summary>
+            Sets or resets allow mutate flag. If this flag is set, then all automata operations
+            may modify automata given as input; otherwise, operations will always leave input
+            automata languages unmodified. By default, the flag is not set.
+            </summary>
+            <param name="flag">if set to <c>true</c> then all automata operations may modify 
+            automata given as input; otherwise, operations will always leave input automata 
+            languages unmodified..</param>
+            <returns>The previous value of the flag.</returns>
+        </member>
+        <member name="M:Fare.Automaton.SetMinimizeAlways(System.Boolean)">
+            <summary>
+            Sets or resets minimize always flag. If this flag is set, then {@link #minimize()} 
+            will automatically be invoked after all operations that otherwise may produce 
+            non-minimal automata. By default, the flag is not set.
+            </summary>
+            <param name="flag">The flag if true, the flag is set.</param>
+        </member>
+        <member name="M:Fare.Automaton.SetStateNumbers(System.Collections.Generic.IEnumerable{Fare.State})">
+            <summary>
+            Assigns consecutive numbers to the given states.
+            </summary>
+            <param name="states">The states.</param>
+        </member>
+        <member name="M:Fare.Automaton.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.Automaton.CheckMinimizeAlways">
+            <summary>
+            The check minimize always.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.ClearHashCode">
+            <summary>
+            The clear hash code.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.Clone">
+            <summary>
+            Creates a shallow copy of the current Automaton.
+            </summary>
+            <returns>
+            A shallow copy of the current Automaton.
+            </returns>
+        </member>
+        <member name="M:Fare.Automaton.CloneExpanded">
+            <summary>
+            A clone of this automaton, expands if singleton.
+            </summary>
+            <returns>
+            Returns a clone of this automaton, expands if singleton.
+            </returns>
+        </member>
+        <member name="M:Fare.Automaton.CloneExpandedIfRequired">
+            <summary>
+            A clone of this automaton unless 
+            <code>
+            allowMutation
+            </code>
+            is set, expands if singleton.
+            </summary>
+            <returns>
+            Returns a clone of this automaton unless 
+            <code>
+            allowMutation
+            </code>
+            is set, expands if singleton.
+            </returns>
+        </member>
+        <member name="M:Fare.Automaton.CloneIfRequired">
+            <summary>
+            Returns a clone of this automaton, or this automaton itself if <code>allow_mutation</code>
+            flag is set.
+            </summary>
+            <returns>A clone of this automaton, or this automaton itself if <code>allow_mutation</code>
+            flag is set.</returns>
+        </member>
+        <member name="M:Fare.Automaton.ExpandSingleton">
+            <summary>
+            Expands singleton representation to normal representation.
+            Does nothing if not in singleton representation.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.GetAcceptStates">
+            <summary>
+            The set of reachable accept states.
+            </summary>
+            <returns>Returns the set of reachable accept states.</returns>
+        </member>
+        <member name="M:Fare.Automaton.GetLiveStates">
+            <summary>
+            Returns the set of live states. A state is "live" if an accept state is reachable from it.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.Automaton.GetStartPoints">
+            <summary>
+            The sorted array of all interval start points.
+            </summary>
+            <returns>Returns sorted array of all interval start points.</returns>
+        </member>
+        <member name="M:Fare.Automaton.GetStates">
+            <summary>
+            Gets the set of states that are reachable from the initial state.
+            </summary>
+            <returns>
+            The set of states that are reachable from the initial state.
+            </returns>
+        </member>
+        <member name="M:Fare.Automaton.Minimize">
+            <summary>
+            The minimize.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.RecomputeHashCode">
+            <summary>
+            Recomputes the hash code.
+              The automaton must be minimal when this operation is performed.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.Reduce">
+            <summary>
+            Reduces this automaton.
+            An automaton is "reduced" by combining overlapping and adjacent edge intervals with same 
+            destination.
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.RemoveDeadTransitions">
+            <summary>
+            Removes transitions to dead states and calls Reduce() and ClearHashCode().
+            (A state is "dead" if no accept state is reachable from it).
+            </summary>
+        </member>
+        <member name="M:Fare.Automaton.Totalize">
+            <summary>
+            Adds transitions to explicit crash state to ensure that transition function is total.
+            </summary>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeAnyChar">
+            <summary>
+            Returns a new (deterministic) automaton that accepts any single character.
+            </summary>
+            <returns>A new (deterministic) automaton that accepts any single character.</returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeAnyString">
+            <summary>
+            Returns a new (deterministic) automaton that accepts all strings.
+            </summary>
+            <returns>
+            A new (deterministic) automaton that accepts all strings.
+            </returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeChar(System.Char)">
+            <summary>
+            Returns a new (deterministic) automaton that accepts a single character of the given value.
+            </summary>
+            <param name="c">The c.</param>
+            <returns>A new (deterministic) automaton that accepts a single character of the given value.</returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeCharRange(System.Char,System.Char)">
+            <summary>
+            Returns a new (deterministic) automaton that accepts a single char whose value is in the
+            given interval (including both end points).
+            </summary>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>
+            A new (deterministic) automaton that accepts a single char whose value is in the
+            given interval (including both end points).
+            </returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeEmpty">
+            <summary>
+            Returns a new (deterministic) automaton with the empty language.
+            </summary>
+            <returns>
+            A new (deterministic) automaton with the empty language.
+            </returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeEmptyString">
+            <summary>
+            Returns a new (deterministic) automaton that accepts only the empty string.
+            </summary>
+            <returns>
+            A new (deterministic) automaton that accepts only the empty string.
+            </returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeInterval(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a new automaton that accepts strings representing decimal non-negative integers in
+            the given interval.
+            </summary>
+            <param name="min">The minimum value of interval.</param>
+            <param name="max">The maximum value of inverval (both end points are included in the 
+            interval).</param>
+            <param name="digits">If f >0, use fixed number of digits (strings must be prefixed by 0's 
+            to obtain the right length) otherwise, the number of digits is not fixed.</param>
+            <returns>A new automaton that accepts strings representing decimal non-negative integers 
+            in the given interval.</returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeString(System.String)">
+            <summary>
+            Returns a new (deterministic) automaton that accepts the single given string.
+            </summary>
+            <param name="s">The string.</param>
+            <returns>A new (deterministic) automaton that accepts the single given string.</returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.AnyOfRightLength(System.String,System.Int32)">
+            <summary>
+            Constructs sub-automaton corresponding to decimal numbers of length x.Substring(n).Length.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="n">The n.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.AtLeast(System.String,System.Int32,System.Collections.Generic.ICollection{Fare.State},System.Boolean)">
+            <summary>
+            Constructs sub-automaton corresponding to decimal numbers of value at least x.Substring(n)
+            and length x.Substring(n).Length.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="n">The n.</param>
+            <param name="initials">The initials.</param>
+            <param name="zeros">if set to <c>true</c> [zeros].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.AtMost(System.String,System.Int32)">
+            <summary>
+            Constructs sub-automaton corresponding to decimal numbers of value at most x.Substring(n)
+            and length x.Substring(n).Length.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="n">The n.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.Between(System.String,System.String,System.Int32,System.Collections.Generic.ICollection{Fare.State},System.Boolean)">
+            <summary>
+            Constructs sub-automaton corresponding to decimal numbers of value between x.Substring(n)
+            and y.Substring(n) and of length x.Substring(n).Length (which must be equal to 
+            y.Substring(n).Length).
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <param name="n">The n.</param>
+            <param name="initials">The initials.</param>
+            <param name="zeros">if set to <c>true</c> [zeros].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeCharSet(System.String)">
+            <summary>
+            Returns a new (deterministic) automaton that accepts a single character in the given set.
+            </summary>
+            <param name="set">The set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeStringUnion(System.Char[][])">
+            <summary>
+            Returns a new (deterministic and minimal) automaton that accepts the union of the given
+            set of strings. The input character sequences are internally sorted in-place, so the 
+            input array is modified. @see StringUnionOperations.
+            </summary>
+            <param name="strings">The strings.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeMaxInteger(System.String)">
+            <summary>
+            Constructs automaton that accept strings representing nonnegative integer that are not 
+            larger than the given value.
+            </summary>
+            <param name="n">The n string representation of maximum value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeMinInteger(System.String)">
+            <summary>
+            Constructs automaton that accept strings representing nonnegative integers that are not
+            less that the given value.
+            </summary>
+            <param name="n">The n string representation of minimum value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeTotalDigits(System.Int32)">
+            <summary>
+            Constructs automaton that accept strings representing decimal numbers that can be 
+            written with at most the given number of digits. Surrounding whitespace is permitted.
+            </summary>
+            <param name="i">The i max number of necessary digits.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeFractionDigits(System.Int32)">
+            <summary>
+            Constructs automaton that accept strings representing decimal numbers that can be 
+            written with at most the given number of digits in the fraction part. Surrounding
+            whitespace is permitted.
+            </summary>
+            <param name="i">The i max number of necessary fraction digits.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeIntegerValue(System.String)">
+            <summary>
+            Constructs automaton that accept strings representing the given integer. Surrounding 
+            whitespace is permitted.
+            </summary>
+            <param name="value">The value string representation of integer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeDecimalValue(System.String)">
+            <summary>
+            Constructs automaton that accept strings representing the given decimal number.
+            Surrounding whitespace is permitted.
+            </summary>
+            <param name="value">The value string representation of decimal number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicAutomata.MakeStringMatcher(System.String)">
+            <summary>
+            Constructs deterministic automaton that matches strings that contain the given substring.
+            </summary>
+            <param name="s">The s.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicOperations.AddEpsilons(Fare.Automaton,System.Collections.Generic.ICollection{Fare.StatePair})">
+            <summary>
+            Adds epsilon transitions to the given automaton. This method adds extra character interval
+            transitions that are equivalent to the given set of epsilon transitions.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="pairs">A collection of <see cref="T:Fare.StatePair"/> objects representing pairs of
+            source/destination states where epsilon transitions should be added.</param>
+        </member>
+        <member name="M:Fare.BasicOperations.Union(System.Collections.Generic.IList{Fare.Automaton})">
+            <summary>
+            Returns an automaton that accepts the union of the languages of the given automata.
+            </summary>
+            <param name="automatons">The l.</param>
+            <returns>
+            An automaton that accepts the union of the languages of the given automata.
+            </returns>
+            <remarks>
+            Complexity: linear in number of states.
+            </remarks>
+        </member>
+        <member name="M:Fare.BasicOperations.Complement(Fare.Automaton)">
+            <summary>
+            Returns a (deterministic) automaton that accepts the complement of the language of the 
+            given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>A (deterministic) automaton that accepts the complement of the language of the 
+            given automaton.</returns>
+            <remarks>
+            Complexity: linear in number of states (if already deterministic).
+            </remarks>
+        </member>
+        <member name="M:Fare.BasicOperations.Determinize(Fare.Automaton)">
+            <summary>
+            Determinizes the specified automaton.
+            </summary>
+            <remarks>
+            Complexity: exponential in number of states.
+            </remarks>
+            <param name="a">The automaton.</param>
+        </member>
+        <member name="M:Fare.BasicOperations.Determinize(Fare.Automaton,System.Collections.Generic.List{Fare.State})">
+            <summary>
+            Determinizes the given automaton using the given set of initial states.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="initialset">The initial states.</param>
+        </member>
+        <member name="M:Fare.BasicOperations.IsEmpty(Fare.Automaton)">
+            <summary>
+            Determines whether the given automaton accepts no strings.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>
+              <c>true</c> if the given automaton accepts no strings; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Fare.BasicOperations.IsEmptyString(Fare.Automaton)">
+            <summary>
+            Determines whether the given automaton accepts the empty string and nothing else.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>
+              <c>true</c> if the given automaton accepts the empty string and nothing else; otherwise,
+            <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Fare.BasicOperations.Intersection(Fare.Automaton,Fare.Automaton)">
+            <summary>
+            Returns an automaton that accepts the intersection of the languages of the given automata.
+            Never modifies the input automata languages.
+            </summary>
+            <param name="a1">The a1.</param>
+            <param name="a2">The a2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.BasicOperations.Optional(Fare.Automaton)">
+            <summary>
+            Returns an automaton that accepts the union of the empty string and the language of the 
+            given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <remarks>
+            Complexity: linear in number of states.
+            </remarks>
+            <returns>An automaton that accepts the union of the empty string and the language of the 
+            given automaton.</returns>
+        </member>
+        <member name="M:Fare.BasicOperations.Repeat(Fare.Automaton)">
+            <summary>
+            Accepts the Kleene star (zero or more concatenated repetitions) of the language of the
+            given automaton. Never modifies the input automaton language.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>
+            An automaton that accepts the Kleene star (zero or more concatenated repetitions)
+            of the language of the given automaton. Never modifies the input automaton language.
+            </returns>
+            <remarks>
+            Complexity: linear in number of states.
+            </remarks>
+        </member>
+        <member name="M:Fare.BasicOperations.Repeat(Fare.Automaton,System.Int32)">
+            <summary>
+            Accepts <code>min</code> or more concatenated repetitions of the language of the given 
+            automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="min">The minimum concatenated repetitions of the language of the given 
+            automaton.</param>
+            <returns>Returns an automaton that accepts <code>min</code> or more concatenated 
+            repetitions of the language of the given automaton.
+            </returns>
+            <remarks>
+            Complexity: linear in number of states and in <code>min</code>.
+            </remarks>
+        </member>
+        <member name="M:Fare.BasicOperations.Repeat(Fare.Automaton,System.Int32,System.Int32)">
+            <summary>
+            Accepts between <code>min</code> and <code>max</code> (including both) concatenated
+            repetitions of the language of the given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="min">The minimum concatenated repetitions of the language of the given
+            automaton.</param>
+            <param name="max">The maximum concatenated repetitions of the language of the given
+            automaton.</param>
+            <returns>
+            Returns an automaton that accepts between <code>min</code> and <code>max</code>
+            (including both) concatenated repetitions of the language of the given automaton.
+            </returns>
+            <remarks>
+            Complexity: linear in number of states and in <code>min</code> and <code>max</code>.
+            </remarks>
+        </member>
+        <member name="M:Fare.BasicOperations.Run(Fare.Automaton,System.String)">
+            <summary>
+            Returns true if the given string is accepted by the automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="s">The string.</param>
+            <returns></returns>
+            <remarks>
+            Complexity: linear in the length of the string.
+            For full performance, use the RunAutomaton class.
+            </remarks>
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.op_Equality(Fare.ListEqualityComparer{`0},Fare.ListEqualityComparer{`0})">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.op_Inequality(Fare.ListEqualityComparer{`0},Fare.ListEqualityComparer{`0})">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.Equals(System.Collections.Generic.List{`0},System.Collections.Generic.List{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.GetHashCode(System.Collections.Generic.List{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.Equals(Fare.ListEqualityComparer{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.ListEqualityComparer`1.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.MinimizationOperations.Minimize(Fare.Automaton)">
+            <summary>
+            Minimizes (and determinizes if not already deterministic) the given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+        </member>
+        <member name="M:Fare.MinimizationOperations.MinimizeBrzozowski(Fare.Automaton)">
+            <summary>
+            Minimizes the given automaton using Brzozowski's algorithm.
+            </summary>
+            <param name="a">The automaton.</param>
+        </member>
+        <member name="M:Fare.MinimizationOperations.MinimizeHuffman(Fare.Automaton)">
+            <summary>
+            Minimizes the given automaton using Huffman's algorithm.
+            </summary>
+            <param name="a">The automaton.</param>
+        </member>
+        <member name="T:Fare.RegExp">
+            <summary>
+            Regular Expression extension to Automaton.
+            </summary>
+        </member>
+        <member name="M:Fare.RegExp.#ctor">
+            <summary>
+              Prevents a default instance of the <see cref = "T:Fare.RegExp" /> class from being created.
+            </summary>
+        </member>
+        <member name="M:Fare.RegExp.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref = "T:Fare.RegExp" /> class from a string.
+            </summary>
+            <param name = "s">A string with the regular expression.</param>
+        </member>
+        <member name="M:Fare.RegExp.#ctor(System.String,Fare.RegExpSyntaxOptions)">
+            <summary>
+              Initializes a new instance of the <see cref = "T:Fare.RegExp" /> class from a string.
+            </summary>
+            <param name = "s">A string with the regular expression.</param>
+            <param name = "syntaxFlags">Boolean 'or' of optional syntax constructs to be enabled.</param>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton">
+            <summary>
+              Constructs new <code>Automaton</code> from this <code>RegExp</code>. 
+              Same as <code>toAutomaton(null)</code> (empty automaton map).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton(System.Boolean)">
+            <summary>
+            Constructs new <code>Automaton</code> from this <code>RegExp</code>.
+            Same as <code>toAutomaton(null,minimize)</code> (empty automaton map).
+            </summary>
+            <param name="minimize">if set to <c>true</c> [minimize].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton(Fare.IAutomatonProvider)">
+            <summary>
+              Constructs new <code>Automaton</code> from this <code>RegExp</code>. 
+              The constructed automaton is minimal and deterministic and has no 
+              transitions to dead states.
+            </summary>
+            <param name = "automatonProvider">The provider of automata for named identifiers.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton(Fare.IAutomatonProvider,System.Boolean)">
+            <summary>
+              Constructs new <code>Automaton</code> from this <code>RegExp</code>. 
+              The constructed automaton has no transitions to dead states.
+            </summary>
+            <param name = "automatonProvider">The provider of automata for named identifiers.</param>
+            <param name = "minimize">if set to <c>true</c> the automaton is minimized and determinized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton(System.Collections.Generic.IDictionary{System.String,Fare.Automaton})">
+            <summary>
+              Constructs new <code>Automaton</code> from this <code>RegExp</code>. 
+              The constructed automaton is minimal and deterministic and has no 
+              transitions to dead states.
+            </summary>
+            <param name = "automata">The a map from automaton identifiers to automata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.ToAutomaton(System.Collections.Generic.IDictionary{System.String,Fare.Automaton},System.Boolean)">
+            <summary>
+              Constructs new <code>Automaton</code> from this <code>RegExp</code>. 
+              The constructed automaton has no transitions to dead states.
+            </summary>
+            <param name = "automata">The map from automaton identifiers to automata.</param>
+            <param name = "minimize">if set to <c>true</c> the automaton is minimized and determinized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.RegExp.SetAllowMutate(System.Boolean)">
+            <summary>
+              Sets or resets allow mutate flag.
+              If this flag is set, then automata construction uses mutable automata,
+              which is slightly faster but not thread safe.
+            </summary>
+            <param name = "flag">if set to <c>true</c> the flag is set.</param>
+            <returns>The previous value of the flag.</returns>
+        </member>
+        <member name="M:Fare.RegExp.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.RegExp.GetIdentifiers">
+            <summary>
+            Returns the set of automaton identifiers that occur in this regular expression.
+            </summary>
+            <returns>The set of automaton identifiers that occur in this regular expression.</returns>
+        </member>
+        <member name="F:Fare.RegExpMatchingOptions.IgnoreCase">
+            <summary>
+            Uses case-insensitive matching.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpMatchingOptions.Singleline">
+            <summary>
+            Use single-line mode, where the period matches every character,
+            instead of every character except <code>\n</code>.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpMatchingOptions.Multiline">
+            <summary>
+            Use multiline mode, where <code>^</code> and <code>$</code> match
+            the beginning and end of each line, instead of the beginning and end of the input string.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpMatchingOptions.ExplicitCapture">
+            <summary>
+            Do not capture unnamed groups.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpMatchingOptions.IgnorePatternWhitespace">
+            <summary>
+            Exclude unescaped white space from the pattern
+            and enable comments after a hash sign <code>#</code>.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Intersection">
+            <summary>
+            Enables intersection.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Complement">
+            <summary>
+            Enables complement.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Empty">
+            <summary>
+            Enables empty language.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Anystring">
+            <summary>
+            Enables anystring.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Automaton">
+            <summary>
+            Enables named automata.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.Interval">
+            <summary>
+            Enables numerical intervals.
+            </summary>
+        </member>
+        <member name="F:Fare.RegExpSyntaxOptions.All">
+            <summary>
+            Enables all optional regexp syntax.
+            </summary>
+        </member>
+        <member name="T:Fare.SpecialOperations">
+            <summary>
+            Special automata operations.
+            </summary>
+        </member>
+        <member name="M:Fare.SpecialOperations.Reverse(Fare.Automaton)">
+            <summary>
+            Reverses the language of the given (non-singleton) automaton while returning the set of 
+            new initial states.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Overlap(Fare.Automaton,Fare.Automaton)">
+            <summary>
+            Returns an automaton that accepts the overlap of strings that in more than one way can be 
+            split into a left part being accepted by <code>a1</code> and a right part being accepted 
+            by <code>a2</code>.
+            </summary>
+            <param name="a1">The a1.</param>
+            <param name="a2">The a2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.SingleChars(Fare.Automaton)">
+            <summary>
+            Returns an automaton that accepts the single chars that occur in strings that are accepted
+            by the given automaton. Never modifies the input automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Trim(Fare.Automaton,System.String,System.Char)">
+            <summary>
+            Returns an automaton that accepts the trimmed language of the given automaton. The 
+            resulting automaton is constructed as follows: 1) Whenever a <code>c</code> character is
+            allowed in the original automaton, one or more <code>set</code> characters are allowed in
+            the new automaton. 2) The automaton is prefixed and postfixed with any number of <code>
+            set</code> characters.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="set">The set of characters to be trimmed.</param>
+            <param name="c">The canonical trim character (assumed to be in <code>set</code>).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Compress(Fare.Automaton,System.String,System.Char)">
+            <summary>
+            Returns an automaton that accepts the compressed language of the given automaton. 
+            Whenever a <code>c</code> character is allowed in the original automaton, one or more 
+            <code>set</code> characters are allowed in the new automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="set">The set of characters to be compressed.</param>
+            <param name="c">The canonical compress character (assumed to be in <code>set</code>).
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Subst(Fare.Automaton,System.Collections.Generic.IDictionary{System.Char,System.Collections.Generic.HashSet{System.Char}})">
+            <summary>
+            Returns an automaton where all transition labels have been substituted. 
+            <p> Each transition labeled <code>c</code> is changed to a set of transitions, one for 
+            each character in <code>map(c)</code>. If <code>map(c)</code> is null, then the 
+            transition is unchanged.
+            </p>
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="dictionary">The dictionary from characters to sets of characters (where 
+            characters are <code>char</code> objects).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.FindIndex(System.Char,System.Char[])">
+            <summary>
+            Rinds the largest entry whose value is less than or equal to c, or 0 if there is no
+            such entry.
+            </summary>
+            <param name="c">The c.</param>
+            <param name="points">The points.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Subst(Fare.Automaton,System.Char,System.String)">
+            <summary>
+            Returns an automaton where all transitions of the given char are replaced by a string.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="c">The c.</param>
+            <param name="s">The s.</param>
+            <returns>
+            A new automaton.
+            </returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.Homomorph(Fare.Automaton,System.Char[],System.Char[])">
+            <summary>
+            Returns an automaton accepting the homomorphic image of the given automaton using the
+            given function.
+            <p>
+            This method maps each transition label to a new value.
+            <code>source</code> and <code>dest</code> are assumed to be arrays of same length,
+            and <code>source</code> must be sorted in increasing order and contain no duplicates.
+            <code>source</code> defines the starting points of char intervals, and the corresponding
+            entries in <code>dest</code> define the starting points of corresponding new intervals.
+            </p>
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="source">The source.</param>
+            <param name="dest">The dest.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.ProjectChars(Fare.Automaton,System.Collections.Generic.HashSet{System.Char})">
+            <summary>
+            Returns an automaton with projected alphabet. The new automaton accepts all strings that
+            are projections of strings accepted by the given automaton onto the given characters
+            (represented by <code>Character</code>). If <code>null</code> is in the set, it abbreviates
+            the intervals u0000-uDFFF and uF900-uFFFF (i.e., the non-private code points). It is assumed
+            that all other characters from <code>chars</code> are in the interval uE000-uF8FF.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="chars">The chars.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.IsFinite(Fare.Automaton)">
+            <summary>
+            Returns true if the language of this automaton is finite.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>
+              <c>true</c> if the specified a is finite; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.IsFinite(Fare.State,System.Collections.Generic.HashSet{Fare.State},System.Collections.Generic.HashSet{Fare.State})">
+            <summary>
+            Checks whether there is a loop containing s. (This is sufficient since there are never
+            transitions to dead states).
+            </summary>
+            <param name="s">The s.</param>
+            <param name="path">The path.</param>
+            <param name="visited">The visited.</param>
+            <returns>
+              <c>true</c> if the specified s is finite; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.GetStrings(Fare.Automaton,System.Int32)">
+            <summary>
+            Returns the set of accepted strings of the given length.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.GetFiniteStrings(Fare.Automaton)">
+            <summary>
+            Returns the set of accepted strings, assuming this automaton has a finite language. If the
+            language is not finite, null is returned.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.GetFiniteStrings(Fare.Automaton,System.Int32)">
+            <summary>
+            Returns the set of accepted strings, assuming that at most <code>limit</code> strings are
+            accepted. If more than <code>limit</code> strings are accepted, null is returned. If
+            <code>limit</code>&lt;0, then this methods works like {@link #getFiniteStrings(Automaton)}.
+            </summary>
+            <param name="a">The automaton.</param>
+            <param name="limit">The limit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.GetFiniteStrings(Fare.State,System.Collections.Generic.HashSet{Fare.State},System.Collections.Generic.HashSet{System.String},System.Text.StringBuilder,System.Int32)">
+            <summary>
+            Returns the strings that can be produced from the given state, or false if more than
+            <code>limit</code> strings are found. <code>limit</code>&lt;0 means "infinite".
+            </summary>
+            <param name="s">The s.</param>
+            <param name="pathStates">The path states.</param>
+            <param name="strings">The strings.</param>
+            <param name="path">The path.</param>
+            <param name="limit">The limit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.GetCommonPrefix(Fare.Automaton)">
+            <summary>
+            Returns the longest string that is a prefix of all accepted strings and visits each state
+            at most once.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>
+            A common prefix.
+            </returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.PrefixClose(Fare.Automaton)">
+            <summary>
+            Prefix closes the given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+        </member>
+        <member name="M:Fare.SpecialOperations.HexCases(Fare.Automaton)">
+            <summary>
+            Constructs automaton that accepts the same strings as the given automaton but ignores upper/lower 
+            case of A-F.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>An automaton.</returns>
+        </member>
+        <member name="M:Fare.SpecialOperations.ReplaceWhitespace(Fare.Automaton)">
+            <summary>
+            Constructs automaton that accepts 0x20, 0x9, 0xa, and 0xd in place of each 0x20 transition
+            in the given automaton.
+            </summary>
+            <param name="a">The automaton.</param>
+            <returns>An automaton.</returns> 
+        </member>
+        <member name="T:Fare.State">
+            <summary>
+            <tt>Automaton</tt> state.
+            </summary>
+        </member>
+        <member name="M:Fare.State.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.State"/> class. Initially, the new state is a 
+              reject state.
+            </summary>
+        </member>
+        <member name="P:Fare.State.Id">
+            <summary>
+            Gets the id.
+            </summary>
+        </member>
+        <member name="P:Fare.State.Accept">
+            <summary>
+            Gets or sets a value indicating whether this State is Accept.
+            </summary>
+        </member>
+        <member name="P:Fare.State.Number">
+            <summary>
+            Gets or sets this State Number.
+            </summary>
+        </member>
+        <member name="P:Fare.State.Transitions">
+            <summary>
+            Gets or sets this State Transitions.
+            </summary>
+        </member>
+        <member name="M:Fare.State.op_Equality(Fare.State,Fare.State)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.State.op_Inequality(Fare.State,Fare.State)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.State.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.Equals(Fare.State)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.CompareTo(Fare.State)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.State.AddTransition(Fare.Transition)">
+            <summary>
+            Adds an outgoing transition.
+            </summary>
+            <param name="t">
+            The transition.
+            </param>
+        </member>
+        <member name="M:Fare.State.Step(System.Char)">
+            <summary>
+            Performs lookup in transitions, assuming determinism.
+            </summary>
+            <param name="c">
+            The character to look up.
+            </param>
+            <returns>
+            The destination state, null if no matching outgoing transition.
+            </returns>
+        </member>
+        <member name="M:Fare.State.Step(System.Char,System.Collections.Generic.List{Fare.State})">
+            <summary>
+            Performs lookup in transitions, allowing nondeterminism.
+            </summary>
+            <param name="c">
+            The character to look up.
+            </param>
+            <param name="dest">
+            The collection where destination states are stored.
+            </param>
+        </member>
+        <member name="M:Fare.State.GetSortedTransitions(System.Boolean)">
+            <summary>
+            Gets the transitions sorted by (min, reverse max, to) or (to, min, reverse max).
+            </summary>
+            <param name="toFirst">
+            if set to <c>true</c> [to first].
+            </param>
+            <returns>
+            The transitions sorted by (min, reverse max, to) or (to, min, reverse max).
+            </returns>
+        </member>
+        <member name="M:Fare.StateEqualityComparer.Equals(Fare.State,Fare.State)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type <paramref name="x"/> to compare.</param>
+            <param name="y">The second object of type <paramref name="y"/> to compare.</param>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Fare.StateEqualityComparer.GetHashCode(Fare.State)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures
+            like a hash table. 
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.
+              </exception>
+        </member>
+        <member name="T:Fare.StatePair">
+            <summary>
+            Pair of states.
+            </summary>
+        </member>
+        <member name="M:Fare.StatePair.#ctor(Fare.State,Fare.State,Fare.State)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.StatePair"/> class.
+            </summary>
+            <param name="s">The s.</param>
+            <param name="s1">The s1.</param>
+            <param name="s2">The s2.</param>
+        </member>
+        <member name="M:Fare.StatePair.#ctor(Fare.State,Fare.State)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.StatePair"/> class.
+            </summary>
+            <param name="s1">The first state.</param>
+            <param name="s2">The second state.</param>
+        </member>
+        <member name="P:Fare.StatePair.FirstState">
+            <summary>
+            Gets or sets the first component of this pair.
+            </summary>
+            <value>
+            The first state.
+            </value>
+        </member>
+        <member name="P:Fare.StatePair.SecondState">
+            <summary>
+            Gets or sets the second component of this pair.
+            </summary>
+            <value>
+            The second state.
+            </value>
+        </member>
+        <member name="M:Fare.StatePair.op_Equality(Fare.StatePair,Fare.StatePair)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.StatePair.op_Inequality(Fare.StatePair,Fare.StatePair)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.StatePair.Equals(Fare.StatePair)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.StatePair.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.StatePair.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Fare.Transition">
+            <summary>
+              <tt>Automaton</tt> transition. 
+              <p>
+                A transition, which belongs to a source state, consists of a Unicode character interval
+                and a destination state.
+              </p>
+            </summary>
+        </member>
+        <member name="M:Fare.Transition.#ctor(System.Char,Fare.State)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.Transition"/> class.
+            (Constructs a new singleton interval transition).
+            </summary>
+            <param name="c">The transition character.</param>
+            <param name="to">The destination state.</param>
+        </member>
+        <member name="M:Fare.Transition.#ctor(System.Char,System.Char,Fare.State)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.Transition"/> class.
+            (Both end points are included in the interval).
+            </summary>
+            <param name="min">The transition interval minimum.</param>
+            <param name="max">The transition interval maximum.</param>
+            <param name="to">The destination state.</param>
+        </member>
+        <member name="P:Fare.Transition.Min">
+            <summary>
+            Gets the minimum of this transition interval.
+            </summary>
+        </member>
+        <member name="P:Fare.Transition.Max">
+            <summary>
+            Gets the maximum of this transition interval.
+            </summary>
+        </member>
+        <member name="P:Fare.Transition.To">
+            <summary>
+            Gets the destination of this transition.
+            </summary>
+        </member>
+        <member name="M:Fare.Transition.op_Equality(Fare.Transition,Fare.Transition)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.Transition.op_Inequality(Fare.Transition,Fare.Transition)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Fare.Transition.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.Transition.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.Transition.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.Transition.Equals(Fare.Transition)">
+            <inheritdoc />
+        </member>
+        <member name="M:Fare.TransitionComparer.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.TransitionComparer"/> class.
+            </summary>
+            <param name="toFirst">if set to <c>true</c> [to first].</param>
+        </member>
+        <member name="M:Fare.TransitionComparer.Compare(Fare.Transition,Fare.Transition)">
+            <summary>
+            Compares by (min, reverse max, to) or (to, min, reverse max).
+            </summary>
+            <param name="t1">The first Transition.</param>
+            <param name="t2">The second Transition.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Fare.Xeger">
+            <summary>
+            An object that will generate text from a regular expression. In a way, 
+            it's the opposite of a regular expression matcher: an instance of this class
+            will produce text that is guaranteed to match the regular expression passed in.
+            </summary>
+        </member>
+        <member name="M:Fare.Xeger.#ctor(System.String,System.Random)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.Xeger"/> class.
+            </summary>
+            <param name="regex">The regex.</param>
+            <param name="random">The random.</param>
+        </member>
+        <member name="M:Fare.Xeger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fare.Xeger"/> class.
+            </summary>
+            <param name="regex">The regex.</param>
+        </member>
+        <member name="M:Fare.Xeger.Generate">
+            <summary>
+            Generates a random String that is guaranteed to match the regular expression passed to the constructor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fare.Xeger.GetRandomInt(System.Int32,System.Int32,System.Random)">
+            <summary>
+            Generates a random number within the given bounds.
+            </summary>
+            <param name="min">The minimum number (inclusive).</param>
+            <param name="max">The maximum number (inclusive).</param>
+            <param name="random">The object used as the randomizer.</param>
+            <returns>A random number in the given range.</returns>
+        </member>
+    </members>
+</doc>

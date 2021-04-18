@@ -1,0 +1,310 @@
+﻿@model ScadaWeb.Web.Areas.Permissions.Models.IOEditModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    #sltIcon {
+        height: 38px;
+        line-height: 38px;
+        margin-left: 40px;
+        float: left;
+        display: block;
+    }
+
+ 
+</style>
+<form class="layui-form layui-form-pane ok-form" lay-filter="formTest">
+    @*一些不需要更新的隐藏字段*@
+    @Html.HiddenFor(x => x.Column)
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入文本</label>
+        <div class="layui-input-block">
+            <input type="text" id="ColumnValue"  name="ColumnValue" placeholder="输入文本" autocomplete="off" class="layui-input"  value="@Model.Value">
+       
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">单元格背景</label>
+        <div class="layui-input-block" >
+           
+            <div class="layui-input-inline" style="width: 120px;">
+                <input type="text" value="@Model.BackColor"    placeholder="单元格背景" class="layui-input" id="backcolor-form-input">
+            </div>
+            <div class="layui-inline" style="left: -11px;">
+                <div  id="backcolor-form"></div>
+            </div>
+
+
+      
+        </div>
+      
+    </div>
+  
+    <div class="layui-form-item">
+        <label class="layui-form-label">文本颜色</label>
+        <div class="layui-input-block">
+
+            <div class="layui-input-inline" style="width: 120px;">
+                <input type="text" value="@Model.FontColor"  placeholder="文本颜色" class="layui-input" id="fontcolor-form-input">
+            </div>
+            <div class="layui-inline" style="left: -11px;">
+                <div id="fontcolor-form"></div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">字体粗细</label>
+        <div class="layui-input-block">
+          <select id="FontWeight" name="FontWeight"   class="layui-input" >
+              <option value="normal" selected></option>
+              <option value="bold" >粗</option>
+              <option value="bolder" >很粗</option>
+              <option value="lighter" >细</option>
+          </select>
+        </div>
+    </div>
+    @*增加的IO点参数*@
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备分组</label>
+        <div class="layui-input-block">
+            <input type="text" id="GroupId" name="GroupId" placeholder="设备分组" autocomplete="off" class="layui-input" lay-filter="GroupId" value="@Model.GroupId" style="width:150px;">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备列表</label>
+        <div class="layui-input-block">
+            <div id="DeviceList" style="width:150px;"></div>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">IO参数</label>
+        <div class="layui-input-block">
+            <div id="IoList" style="width:150px;"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">取值类型</label>
+        <div class="layui-input-block">
+            <select id="UnitType" name="UnitType" class="layui-input">
+                <option value="4" selected>固定文本</option>
+                <option value="1">设备状态</option>
+                <option value="2">IO采集值</option>
+                <option value="3">IO采集日期</option>
+            </select>
+     
+        </div>
+    </div>
+</form>
+<script>
+    var IOPath = '@Model.IOPath';
+    var ReturnText = "";
+    var FixdText = "";
+    var ReturnType = "4";
+    $("#FontWeight").val('@Model.FontWeight');
+    if("@Model.UnitType"=="value")
+    {
+        ReturnType="2";
+    }
+    else if("@Model.UnitType"=="status")
+    {
+        ReturnType="1";
+    }
+    else if("@Model.UnitType"=="time")
+    {
+        ReturnType="3";
+    }
+    
+    $("#UnitType").val(ReturnType);
+    var callbackdata = function () {
+
+        ReturnType=$('#UnitType').val();
+        if (ReturnType == "4")
+            ReturnText = $("#ColumnValue").val();
+        else
+        {
+                switch (ReturnType) {
+                    case "1":
+                        ReturnText = IOPath + "/status";
+                        break;
+                    case "2":
+                        ReturnText = IOPath + "/value";
+                        break;
+                    case "3":
+                        ReturnText = IOPath + "/time";
+                        break;
+                }
+
+        }
+        alert(ReturnText);
+        var result = { ReturnText: ReturnText, BackColor: $("#backcolor-form-input").val(), FontColor: $("#fontcolor-form-input").val(), GroupID: $("#GroupId").val(), UnitType: ReturnType, FontWeight: $("#FontWeight").val() }
+        return result;
+    }
+    layui.use(["table", "form", "okLayer", "okUtils", "treeSelect", 'colorpicker'], function () {
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let layer = layui.layer;
+        let $ = layui.$;
+        let treeSelect = layui.treeSelect;
+        colorpicker = layui.colorpicker;
+        //表单赋值
+        colorpicker.render({
+            elem: '#fontcolor-form'
+          , color: '@Model.FontColor'
+          , done: function (color) {
+              $('#fontcolor-form-input').val(color);
+          }
+        });
+
+        //表单赋值
+        colorpicker.render({
+            elem: '#backcolor-form'
+          , color: '@Model.BackColor'
+          , done: function (color) {
+              $('#backcolor-form-input').val(color);
+          }
+        });
+
+
+        var devices = xmSelect.render({
+            el: '#DeviceList',
+            filterable: true,
+            paging: true,
+            pageSize: 50,
+            radio: true,
+            clickClose: true,
+        });
+        var iolist = xmSelect.render({
+            el: '#IoList',
+            filterable: true,
+            paging: true,
+            clickClose: true,
+            pageSize: 10,
+            radio: true,
+        });
+
+        //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "FontWeight": "@Model.FontWeight",
+            "GroupId":"@Model.GroupId"
+
+        });
+        treeSelect.render({
+            elem: "#GroupId",
+            data: "/Scada/ScadaAlarm/GroupTreeListSelect",
+            type: "GET",
+            // 是否开启搜索功能：true/false，默认false
+            search: true,
+            // 占位符
+            placeholder: '请选择设备分组',  // 点击回调
+            click: function (d) {
+                //获取该分组下的所有设备
+                $.get("/Scada/ScadaAlarm/GetGroupDevice?groupId=" + d.current.id, function (result) {
+
+                    var group = d.current.id
+                    devices = xmSelect.render({
+                        el: '#DeviceList',
+                        filterable: true,
+                        paging: true,
+                        pageSize: 50,
+                        radio: true,
+                        clickClose: true,
+                        toolbar: {
+                            show: true,
+                        },
+                        data: result,
+                        on: function (groupdevice) {
+                            if (groupdevice.change.length < 0)
+                                return;
+                            $.get("/Scada/ScadaAlarm/GetGroupDevicePara?id=" + groupdevice.change[0].id + "&serverid=" + groupdevice.change[0].value3 + "&communicateid=" + groupdevice.change[0].value2 + "&deviceid=" + groupdevice.change[0].value1, function (groupresult) {
+                            //change, 此次选择变化的数据,数组
+                              iolist = xmSelect.render({
+                                el: '#IoList',
+                                filterable: true,
+                                paging: true,
+                                pageSize: 10,
+                                radio: true,
+                                clickClose: true,
+                                data: groupresult,
+                                on: function (iodata) {
+
+                                    IOPath = iodata.arr[0].value1;
+
+                                }
+                            });
+
+                            })
+
+                        },
+                    })
+
+
+                });
+            },
+            // 加载完成后的回调函数
+            success: function (d) {
+                //初始化数据
+                treeSelect.checkNode('GroupId', "@Model.GroupId",d.treeId);
+                $.get("/Scada/ScadaAlarm/GetGroupDevicePara?id= @Model.Id&serverid=@Model.ServerID&communicateid=@Model.CommunicateID&deviceid=@Model.DeviceID", function (groupresult) {
+                    //change, 此次选择变化的数据,数组
+                    iolist = xmSelect.render({
+                        el: '#IoList',
+                        filterable: true,
+                        paging: true,
+                        pageSize: 10,
+                        radio: true,
+                        clickClose: true,
+                        data: groupresult,
+                        on: function (iodata) {
+
+                            IOPath = iodata.arr[0].value1;
+
+                        }
+                    });
+                    iolist.setValue(['@Model.IOID']);
+                })
+                    $.get("/Scada/ScadaAlarm/GetGroupDevice?groupId=@Model.GroupId", function (result) {
+
+                        devices = xmSelect.render({
+                            el: '#DeviceList',
+                            filterable: true,
+                            paging: true,
+                            pageSize: 50,
+                            radio: true,
+                            clickClose: true,
+                            toolbar: {
+                                show: true,
+                            },
+                            data: result,
+
+                        })
+                        devices.setValue(['@Model.Id']);
+
+
+                    });
+
+
+                if("@Model.UnitType"=="value")
+                {
+                    ReturnType="2";
+                }
+                else if("@Model.UnitType"=="status")
+                {
+                    ReturnType="1";
+                }
+                else if("@Model.UnitType"=="time")
+                {
+                    ReturnType="3";
+                }
+                $("#unittype").val(ReturnType);
+            }
+        });
+    });
+</script>
+

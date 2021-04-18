@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "UserPwd";
+    Layout = "~/Views/Shared/_LayoutSysSetPage.cshtml";
+}
+<link href="~/Content/css/oksub.css" rel="stylesheet" />
+<div class="childrenBody seting-pass">
+    <form class="layui-form changePwd">
+        <div style="margin:0 0 15px 110px;color:#f00;">旧密码默认是“123456”，新密码必须两次输入一致才能提交</div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block">
+                <input type="text" name="UserName" value="@ViewBag.UserName" disabled class="layui-input layui-disabled">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">旧密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="OldPassword" placeholder="请输入旧密码" lay-verify="required" class="layui-input pwd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">新密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="Password" placeholder="请输入新密码" lay-verify="required|pass" id="oldPwd"
+                       class="layui-input pwd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">确认密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="Repassword" placeholder="请确认密码" lay-verify="required|confirmPwd" class="layui-input pwd">
+            </div>
+        </div>
+        <div class="layui-form-item" style="text-align:center;">
+            <button class="layui-btn" lay-submit="" lay-filter="changePwd">立即修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', "okLayer", "okUtils"], function () {
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+        //添加验证规则verify
+        form.verify({
+            pass: [
+                /^[\S]{6,16}$/
+                , '密码必须6到16位，且不能出现空格'
+            ],
+            confirmPwd: function (value, item) {
+                if ($("#oldPwd").val() != value) {
+                    return "两次输入密码不一致，请重新输入！";
+                }
+            }
+        });
+
+        //修改密码
+        form.on("submit(changePwd)", function (data) {
+            okUtils.ajax("/Permissions/User/ModifyUserPwd", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    location.reload(); // 父页面刷新
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>

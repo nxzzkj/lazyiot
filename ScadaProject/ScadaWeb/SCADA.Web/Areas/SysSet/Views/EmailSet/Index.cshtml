@@ -1,0 +1,78 @@
+﻿@model ScadaWeb.Web.Areas.SysSet.Models.EmailModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSysSetPage.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">邮件设置</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" lay-filter="EmailForm" action="/SysSet/EmailSet/Index" method="post">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP服务器</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.EmailSmtp, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SSL加密连接</label>
+                            <div class="layui-input-block">
+                                <select name="EmailSSL">
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP端口</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.EmailPort, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|number" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人地址</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.EmailFrom, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|email" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱账号</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.MailUserName, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|email" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱密码</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.MailPassword, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人昵称</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.MailName, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit style="float:left;">确认保存</button>
+                                <div class="div-msg" style="float:left;">@ViewBag.Msg</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    layui.use(['form'], function () {
+        var form = layui.form;
+        form.val("EmailForm",{
+            "EmailSSL":"@Model.EmailSSL"
+        });
+    })
+</script>

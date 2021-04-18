@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0988C62E-247F-471F-A183-DB509C7A3839}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Scada.DBUtility</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Scada.DBUtility</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Maticsoft.DBUtility/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Sybase.Data.AseClient">
+      <HintPath>..\..\..\..\LazyScadaCode\ScadaProject\ScadaWeb\SCADA.Web\bin\Sybase.Data.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysizCalculate\AnalyzeCalculate.cs" />
+    <Compile Include="AnalysizCalculate\FunctionItem.cs" />
+    <Compile Include="AnalysizCalculate\MathEx.cs" />
+    <Compile Include="ColorHexConvertor.cs" />
+    <Compile Include="ComputerInfo.cs" />
+    <Compile Include="CVT.cs" />
+    <Compile Include="DataBaseType.cs" />
+    <Compile Include="DateTimeConvert.cs" />
+    <Compile Include="DbHelperMySQL.cs" />
+    <Compile Include="DbHelperOra.cs" />
+    <Compile Include="DbHelperSQL.cs" />
+    <Compile Include="DbHelperSQLite.cs" />
+    <Compile Include="DbHelperSQLiteEx.cs" />
+    <Compile Include="DbHelperSyBase.cs" />
+    <Compile Include="FilterDropDownRecord.cs" />
+    <Compile Include="GUIDTo16.cs" />
+    <Compile Include="IPAddressSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPAddressSelector.Designer.cs">
+      <DependentUpon>IPAddressSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalIp.cs" />
+    <Compile Include="MySQL_Connection.cs" />
+    <Compile Include="ObjectSerialize.cs" />
+    <Compile Include="Oracle_Connection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommandInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DESEncrypt.cs" />
+    <Compile Include="PubConstant.cs" />
+    <Compile Include="ScadaConnectionBase.cs" />
+    <Compile Include="ScadaDBHelper.cs" />
+    <Compile Include="ScadaFlowRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScadaFlowRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SCADAFlow_DataBaseFilterRecord.cs" />
+    <Compile Include="SCADAFlow_DataBaseFilterType.cs" />
+    <Compile Include="SCADAFlow_DataBaseRecord.cs" />
+    <Compile Include="SCADAFlow_DataBaseRecordType.cs" />
+    <Compile Include="SCADAFlow_DataBaseType.cs" />
+    <Compile Include="SCADAFlow_MultiChartDataBaseView.cs" />
+    <Compile Include="SCADAFlow_MultiDataBaseUpdateType.cs" />
+    <Compile Include="SCADAFlow_MultiDataBaseView.cs" />
+    <Compile Include="SCADAFlow_MultiDataBaseViewFilter.cs" />
+    <Compile Include="SCADAFlow_MultiDataBaseViewPage.cs" />
+    <Compile Include="SCADAFlow_SingleDataBaseValue.cs" />
+    <Compile Include="ScadaJsonConvertor.cs" />
+    <Compile Include="ScadaTask.cs" />
+    <Compile Include="SQLHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SQLite_Connection.cs" />
+    <Compile Include="SqlServer_Connection.cs" />
+    <Compile Include="SyBase_Connection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\ZZSCADA.DBUtility.dll" />
+    <Content Include="bin\Debug\ZZSCADA.DBUtility.pdb" />
+    <Content Include="bin\Release\Scada.DBUtility.dll" />
+    <Content Include="bin\Release\SQLite.Interop.dll" />
+    <None Include="Resources\sqlserver.png" />
+    <None Include="Resources\sqlite.png" />
+    <None Include="Resources\oracle.png" />
+    <None Include="Resources\mysql.png" />
+    <None Include="Resources\sybase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IPAddressSelector.resx">
+      <DependentUpon>IPAddressSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScadaFlowRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ScadaFlowRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
