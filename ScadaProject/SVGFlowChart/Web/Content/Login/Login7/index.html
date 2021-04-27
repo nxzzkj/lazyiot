@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>炫酷CSS3动画登录表单特效 www.bootstrapmb.com</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+</head>
+<body>
+    <div class='container'>
+        <div class='main'>
+            <div class='bg'></div>
+            <form class='formone' action='/' method='get'>
+                <div class='title'>登录</div>
+                <div class='username'><input type='text' name='username' id='' v-model='username' value='' placeholder='请输入账号' /></div>
+                <div class='password'><input type='password' name='username' v-model='password' id='' value='' placeholder='请输入密码' /></div>
+                <div class='verification'>是否验证？</div>
+                <div class='loginbtn'>
+                    <div class='btnbg'>登录</div><button type='button'>登录</button>
+                </div>
+              
+            </form>
+            
+        </div>
+    </div>
+</body>
+<script type='text/javascript'>
+    let formone=document.querySelector('.formone');
+   
+    let resetbtn=document.querySelector('.resetbtn');
+     
+    resetbtn.addEventListener('click',()=>{
+        formone.style.display='flex';
+ 
+    })
+</script>
+</html>

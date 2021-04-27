@@ -1,0 +1,4 @@
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\ZZSCADA.Model.dll
+E:\中联公司项目\ZZSCADA\Model\bin\Debug\ZZSCADA.Model.pdb
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\ZZSCADA.Model.dll
+E:\中联公司项目\ZZSCADA\Model\obj\Debug\ZZSCADA.Model.pdb

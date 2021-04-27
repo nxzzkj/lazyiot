@@ -1,0 +1,15 @@
+E:\中联公司项目\ZZSCADA\Component\Logger\bin\Release\ScadaLogger.dll
+E:\中联公司项目\ZZSCADA\Component\Logger\bin\Release\ScadaLogger.pdb
+E:\中联公司项目\ZZSCADA\Component\Logger\obj\Release\ScadaLogger.dll
+E:\中联公司项目\ZZSCADA\Component\Logger\obj\Release\ScadaLogger.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\bin\Release\ScadaLogger.dll
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\bin\Release\ScadaLogger.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.dll
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\Logger\bin\Release\ScadaLogger.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\Logger\bin\Release\ScadaLogger.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\Component\Logger\obj\Release\ScadaLogger.pdb

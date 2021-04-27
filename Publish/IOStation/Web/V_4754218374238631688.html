@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 管道流程</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#4761312273137123872)'     />
+<defs><linearGradient id="4761312273137123872" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shapeID5487016478229162190'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='74,144,30,355'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID5487016478229162190'  d=' M104,174 L104,469 L104,469 C104,485.5685 90.56853,499 74,499 L74,499 L74,144 L73.99995,144 C90.56849,144 104,157.4314 104,174 104,174 104,174 104,174 Z' fill='url(#4863123260847348146)'     /><defs><linearGradient id="4863123260847348146" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shape5247782018528288029'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='33.5,252.5,372,24'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='path5247782018528288029'  d=' M33.5,252.5 L405.5,252.5 L405.5,276.5 L57.5,276.5 L57.50001,276.5 C44.24517,276.5 33.5,265.7548 33.5,252.5 Z' fill='url(#4893741241728277798)'     /><defs><linearGradient id="4893741241728277798" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shape5229375664732070713'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='79.5,477,415,30'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='path5229375664732070713'  d=' M109.5,477 L494.5,477 L494.5,507 L79.5,507 L79.49999,506 C79.49998,489.4315 92.93143,476 109.5,476 Z' fill='url(#5519114208965619676)'     /><defs><linearGradient id="5519114208965619676" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shape5028630392648590501'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='587,484,403,24'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='path5028630392648590501'  d=' M587,484 L990,484 L990,508 587,508 Z' fill='url(#5000895286598922789)'     /><defs><linearGradient id="5000895286598922789" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''     id='shapeID5495853705105899644' data-baseshape='SVG_IOShape'   data-radious='10'   data-shape='SVG_PotShape'    data-rect='995.9621,426.981,219.0379,142.019'         data-maxvalue='1000'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID5495853705105899644'  d=' M995.962,436.981 C995.962,431.4581 1000.439,426.981 1005.962,426.981 L1005.962,426.981 L1205,426.981 L1205,426.981 C1210.523,426.981 1215,431.4581 1215,436.981 1215,436.981 1215,436.981 1215,436.981 L1215,436.981 L1215,559 L1215,558.9999 C1215,564.5228 1210.523,568.9999 1205,568.9999 L1205,569 L1005.962,569 L1005.962,568.9999 C1000.439,569 995.9621,564.5228 995.9621,559 L995.9621,436.981' fill='url(#4745032816447613529)'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     /><defs><linearGradient id="4745032816447613529" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#696969;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='pathID5495853705105899644'  d=' M995.962,436.981 C995.962,431.4581 1000.439,426.981 1005.962,426.9809 L1005.962,426.981 L1005.962,569 L1005.962,568.9999 C1000.439,569 995.962,564.5228 995.962,559 Z' fill='#696969'     />
+<path id='pathID5495853705105899644'  d=' M1205,426.981 C1210.523,426.9809 1215,431.4581 1215,436.9809 1215,436.9809 1215,436.981 1215,436.981 L1215,436.981 L1215,559 L1215,558.9999 C1215,564.5228 1210.523,568.9999 1205,568.9999 Z' fill='#696969'     />
+<path id='pathID5495853705105899644'  d=' M987.962,487.9905 L997.962,487.9905 L997.962,507.9905 987.962,507.9905 Z' fill='url(#5749467174068806632)'     /><defs><linearGradient id="5749467174068806632" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#696969;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<path id='pathID5495853705105899644'  d=' M987.962,487.9905 L997.962,487.9905 L997.962,507.9905 987.962,507.9905 Z' fill='#696969'   stroke ="#696969"   stroke-width="3"   stroke-dasharray="" stroke-opacity="1"     />
+<line  id='pathID5495853705105899644'  fill='none'   x1='995.962' y1='574' x2='1215' y2='574'   stroke ="#696969"   stroke-width="10"   stroke-dasharray="" stroke-opacity="1"     />
+
+
+<rect  id='pathID5495853705105899644' class='ioupdate'  x='1005.962' y='526.3943' width='199.038' height='42.60571'   fill='#008000'     />
+
+
+<rect  id='pathID5495853705105899644'   x='1078.271' y='485.8767' width='54.41959' height='24.22754'   fill='#000000'     />
+
+
+<text id='textID5495853705105899644'    x='1105.481' y='503.0474' alignment-baseline='middle' text-anchor='middle'  fill='#FF0000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >300.00</text>
+</g>
+</a>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

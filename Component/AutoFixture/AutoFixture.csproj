@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF8462C8-0673-4C9A-8EFC-B1D084D66A51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoFixture</RootNamespace>
+    <AssemblyName>AutoFixture</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoPropertiesTarget.cs" />
+    <Compile Include="BehaviorRoot.cs" />
+    <Compile Include="BooleanSwitch.cs" />
+    <Compile Include="ByteSequenceGenerator.cs" />
+    <Compile Include="CharSequenceGenerator.cs" />
+    <Compile Include="CollectionFiller.cs" />
+    <Compile Include="CompositeCustomization.cs" />
+    <Compile Include="ConstrainedStringGenerator.cs" />
+    <Compile Include="ConstructorCustomization.cs" />
+    <Compile Include="CurrentDateTimeCustomization.cs" />
+    <Compile Include="CurrentDateTimeGenerator.cs" />
+    <Compile Include="CustomizationExtensions.cs" />
+    <Compile Include="CustomizationNode.cs" />
+    <Compile Include="DataAnnotations\DataAnnotationsSupportNode.cs" />
+    <Compile Include="DataAnnotations\EnumRangedRequestRelay.cs" />
+    <Compile Include="DataAnnotations\MinAndMaxLengthAttributeRelay.cs" />
+    <Compile Include="DataAnnotations\NoDataAnnotationsCustomization.cs" />
+    <Compile Include="DataAnnotations\NumericRangedRequestRelay.cs" />
+    <Compile Include="DataAnnotations\RangeAttributeRelay.cs" />
+    <Compile Include="DataAnnotations\RangedRequest.cs" />
+    <Compile Include="DataAnnotations\RegularExpressionAttributeRelay.cs" />
+    <Compile Include="DataAnnotations\StringLengthAttributeRelay.cs" />
+    <Compile Include="DataAnnotations\TimeSpanRangedRequestRelay.cs" />
+    <Compile Include="DecimalSequenceGenerator.cs" />
+    <Compile Include="DefaultEngineParts.cs" />
+    <Compile Include="DefaultPrimitiveBuilders.cs" />
+    <Compile Include="DefaultRelays.cs" />
+    <Compile Include="DictionaryFiller.cs" />
+    <Compile Include="DisposableTrackingCustomization.cs" />
+    <Compile Include="DomainName.cs" />
+    <Compile Include="DomainNameGenerator.cs" />
+    <Compile Include="DoubleSequenceGenerator.cs" />
+    <Compile Include="Dsl\CompositeNodeComposer.cs" />
+    <Compile Include="Dsl\CompositePostprocessComposer.cs" />
+    <Compile Include="Dsl\ICustomizationComposer.cs" />
+    <Compile Include="Dsl\IFactoryComposer.cs" />
+    <Compile Include="Dsl\IPostprocessComposer.cs" />
+    <Compile Include="Dsl\NodeComposer.cs" />
+    <Compile Include="Dsl\NullComposer.cs" />
+    <Compile Include="ElementsBuilder.cs" />
+    <Compile Include="EmailAddressLocalPart.cs" />
+    <Compile Include="EmailAddressLocalPartGenerator.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EnumGenerator.cs" />
+    <Compile Include="Fixture.cs" />
+    <Compile Include="FixtureFreezer.cs" />
+    <Compile Include="FixtureRegistrar.cs" />
+    <Compile Include="FixtureRepeater.cs" />
+    <Compile Include="FreezeOnMatchCustomization.cs" />
+    <Compile Include="FreezingCustomization.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="GuidGenerator.cs" />
+    <Compile Include="ICustomization.cs" />
+    <Compile Include="IFixture.cs" />
+    <Compile Include="IncrementingDateTimeCustomization.cs" />
+    <Compile Include="Int16SequenceGenerator.cs" />
+    <Compile Include="Int32SequenceGenerator.cs" />
+    <Compile Include="Int64SequenceGenerator.cs" />
+    <Compile Include="InvariantCultureGenerator.cs" />
+    <Compile Include="IParameterCustomizationSource.cs" />
+    <Compile Include="IRequestMemberTypeResolver.cs" />
+    <Compile Include="Kernel\AbstractTypeSpecification.cs" />
+    <Compile Include="Kernel\ActionSpecimenCommand.cs" />
+    <Compile Include="Kernel\AndRequestSpecification.cs" />
+    <Compile Include="Kernel\AnyTypeSpecification.cs" />
+    <Compile Include="Kernel\ArrayFavoringConstructorQuery.cs" />
+    <Compile Include="Kernel\ArrayRelay.cs" />
+    <Compile Include="Kernel\AutoPropertiesCommand.cs" />
+    <Compile Include="Kernel\BindingCommand.cs" />
+    <Compile Include="Kernel\CollectionRelay.cs" />
+    <Compile Include="Kernel\CollectionSpecification.cs" />
+    <Compile Include="Kernel\CompositeMethodQuery.cs" />
+    <Compile Include="Kernel\CompositeSpecimenBuilder.cs" />
+    <Compile Include="Kernel\CompositeSpecimenCommand.cs" />
+    <Compile Include="Kernel\ConstrainedStringRequest.cs" />
+    <Compile Include="Kernel\ConstructorMethod.cs" />
+    <Compile Include="Kernel\Criterion.cs" />
+    <Compile Include="Kernel\DelegateGenerator.cs" />
+    <Compile Include="Kernel\DelegateSpecification.cs" />
+    <Compile Include="Kernel\DictionaryRelay.cs" />
+    <Compile Include="Kernel\DictionarySpecification.cs" />
+    <Compile Include="Kernel\DirectBaseTypeSpecification.cs" />
+    <Compile Include="Kernel\DisposableTracker.cs" />
+    <Compile Include="Kernel\DisposableTrackingBehavior.cs" />
+    <Compile Include="Kernel\EnumerableFavoringConstructorQuery.cs" />
+    <Compile Include="Kernel\EnumerableRelay.cs" />
+    <Compile Include="Kernel\EnumeratorRelay.cs" />
+    <Compile Include="Kernel\EqualRequestSpecification.cs" />
+    <Compile Include="Kernel\ExactTypeSpecification.cs" />
+    <Compile Include="Kernel\ExpressionReflector.cs" />
+    <Compile Include="Kernel\FactoryMethodQuery.cs" />
+    <Compile Include="Kernel\FalseRequestSpecification.cs" />
+    <Compile Include="Kernel\FieldRequestRelay.cs" />
+    <Compile Include="Kernel\FieldSpecification.cs" />
+    <Compile Include="Kernel\FieldTypeAndNameCriterion.cs" />
+    <Compile Include="Kernel\FilteringSpecimenBuilder.cs" />
+    <Compile Include="Kernel\FiniteSequenceRelay.cs" />
+    <Compile Include="Kernel\FiniteSequenceRequest.cs" />
+    <Compile Include="Kernel\FixedBuilder.cs" />
+    <Compile Include="Kernel\GenericMethod.cs" />
+    <Compile Include="Kernel\GreedyConstructorQuery.cs" />
+    <Compile Include="Kernel\HashSetSpecification.cs" />
+    <Compile Include="Kernel\IllegalRequestException.cs" />
+    <Compile Include="Kernel\IMethod.cs" />
+    <Compile Include="Kernel\IMethodFactory.cs" />
+    <Compile Include="Kernel\IMethodQuery.cs" />
+    <Compile Include="Kernel\ImplementedInterfaceSpecification.cs" />
+    <Compile Include="Kernel\InstanceMethod.cs" />
+    <Compile Include="Kernel\IntPtrGuard.cs" />
+    <Compile Include="Kernel\InverseRequestSpecification.cs" />
+    <Compile Include="Kernel\IRecursionHandler.cs" />
+    <Compile Include="Kernel\IRequestSpecification.cs" />
+    <Compile Include="Kernel\ISpecifiedSpecimenCommand.cs" />
+    <Compile Include="Kernel\ISpecimenBuilder.cs" />
+    <Compile Include="Kernel\ISpecimenBuilderNode.cs" />
+    <Compile Include="Kernel\ISpecimenBuilderTransformation.cs" />
+    <Compile Include="Kernel\ISpecimenCommand.cs" />
+    <Compile Include="Kernel\ISpecimenContext.cs" />
+    <Compile Include="Kernel\ListFavoringConstructorQuery.cs" />
+    <Compile Include="Kernel\ListRelay.cs" />
+    <Compile Include="Kernel\ListSpecification.cs" />
+    <Compile Include="Kernel\MemberInfoEqualityComparer.cs" />
+    <Compile Include="Kernel\MethodInvoker.cs" />
+    <Compile Include="Kernel\MissingParametersSupplyingMethod.cs" />
+    <Compile Include="Kernel\MissingParametersSupplyingMethodFactory.cs" />
+    <Compile Include="Kernel\MissingParametersSupplyingStaticMethodFactory.cs" />
+    <Compile Include="Kernel\ModestConstructorQuery.cs" />
+    <Compile Include="Kernel\MultidimensionalArrayRelay.cs" />
+    <Compile Include="Kernel\MultipleRelay.cs" />
+    <Compile Include="Kernel\MultipleRequest.cs" />
+    <Compile Include="Kernel\MultipleToEnumerableRelay.cs" />
+    <Compile Include="Kernel\MutableValueTypeWarningThrower.cs" />
+    <Compile Include="Kernel\NoConstructorsSpecification.cs" />
+    <Compile Include="Kernel\NoSpecimen.cs" />
+    <Compile Include="Kernel\NoSpecimenOutputGuard.cs" />
+    <Compile Include="Kernel\NullableEnumRequestSpecification.cs" />
+    <Compile Include="Kernel\NullRecursionGuard.cs" />
+    <Compile Include="Kernel\NullRecursionHandler.cs" />
+    <Compile Include="Kernel\ObservableCollectionSpecification.cs" />
+    <Compile Include="Kernel\ObsoletedMemberShims.cs" />
+    <Compile Include="Kernel\OmitArrayParameterRequestRelay.cs" />
+    <Compile Include="Kernel\OmitEnumerableParameterRequestRelay.cs" />
+    <Compile Include="Kernel\OmitOnRecursionGuard.cs" />
+    <Compile Include="Kernel\OmitOnRecursionHandler.cs" />
+    <Compile Include="Kernel\OmitSpecimen.cs" />
+    <Compile Include="Kernel\Omitter.cs" />
+    <Compile Include="Kernel\OrRequestSpecification.cs" />
+    <Compile Include="Kernel\ParameterRequestRelay.cs" />
+    <Compile Include="Kernel\ParameterScore.cs" />
+    <Compile Include="Kernel\ParameterSpecification.cs" />
+    <Compile Include="Kernel\ParameterTypeAndNameCriterion.cs" />
+    <Compile Include="Kernel\Postprocessor.cs" />
+    <Compile Include="Kernel\PreserveInRequestPathAttribute.cs" />
+    <Compile Include="Kernel\PropertyRequestRelay.cs" />
+    <Compile Include="Kernel\PropertySpecification.cs" />
+    <Compile Include="Kernel\PropertyTypeAndNameCriterion.cs" />
+    <Compile Include="Kernel\RangedNumberRequest.cs" />
+    <Compile Include="Kernel\RangedSequenceRelay.cs" />
+    <Compile Include="Kernel\RangedSequenceRequest.cs" />
+    <Compile Include="Kernel\ReadOnlyCollectionRelay.cs" />
+    <Compile Include="Kernel\RecursionGuard.cs" />
+    <Compile Include="Kernel\RegularExpressionRequest.cs" />
+    <Compile Include="Kernel\RequestTraceEventArgs.cs" />
+    <Compile Include="Kernel\SeededFactory.cs" />
+    <Compile Include="Kernel\SeededRequest.cs" />
+    <Compile Include="Kernel\SeedIgnoringRelay.cs" />
+    <Compile Include="Kernel\SeedRequestSpecification.cs" />
+    <Compile Include="Kernel\SortedDictionarySpecification.cs" />
+    <Compile Include="Kernel\SortedListSpecification.cs" />
+    <Compile Include="Kernel\SortedSetSpecification.cs" />
+    <Compile Include="Kernel\SpecifiedNullCommand.cs" />
+    <Compile Include="Kernel\SpecimenBuilderNode.cs" />
+    <Compile Include="Kernel\SpecimenBuilderNodeFactory.cs" />
+    <Compile Include="Kernel\SpecimenContext.cs" />
+    <Compile Include="Kernel\SpecimenCreatedEventArgs.cs" />
+    <Compile Include="Kernel\SpecimenFactory.cs" />
+    <Compile Include="Kernel\StableFiniteSequenceRelay.cs" />
+    <Compile Include="Kernel\StaticMethod.cs" />
+    <Compile Include="Kernel\TemplateMethodQuery.cs" />
+    <Compile Include="Kernel\TerminatingSpecimenBuilder.cs" />
+    <Compile Include="Kernel\TerminatingWithPathSpecimenBuilder.cs" />
+    <Compile Include="Kernel\ThrowingRecursionGuard.cs" />
+    <Compile Include="Kernel\ThrowingRecursionHandler.cs" />
+    <Compile Include="Kernel\TraceWriter.cs" />
+    <Compile Include="Kernel\TracingBuilder.cs" />
+    <Compile Include="Kernel\TrueRequestSpecification.cs" />
+    <Compile Include="Kernel\TypeArgumentsCannotBeInferredException.cs" />
+    <Compile Include="Kernel\TypeEnvy.cs" />
+    <Compile Include="Kernel\TypeRelay.cs" />
+    <Compile Include="Kernel\UnspecifiedSpecimenCommand.cs" />
+    <Compile Include="Kernel\ValueTypeSpecification.cs" />
+    <Compile Include="LambdaExpressionGenerator.cs" />
+    <Compile Include="LazyRelay.cs" />
+    <Compile Include="MailAddressGenerator.cs" />
+    <Compile Include="MapCreateManyToEnumerable.cs" />
+    <Compile Include="MultipleCustomization.cs" />
+    <Compile Include="MutableValueTypeGenerator.cs" />
+    <Compile Include="NoAutoPropertiesCustomization.cs" />
+    <Compile Include="NullRecursionBehavior.cs" />
+    <Compile Include="NumericSequenceGenerator.cs" />
+    <Compile Include="NumericSequencePerTypeCustomization.cs" />
+    <Compile Include="ObjectCreationException.cs" />
+    <Compile Include="ObjectCreationExceptionWithPath.cs" />
+    <Compile Include="OmitOnRecursionBehavior.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomBooleanSequenceCustomization.cs" />
+    <Compile Include="RandomBooleanSequenceGenerator.cs" />
+    <Compile Include="RandomCharSequenceGenerator.cs" />
+    <Compile Include="RandomDateTimeSequenceGenerator.cs" />
+    <Compile Include="RandomNumericSequenceCustomization.cs" />
+    <Compile Include="RandomNumericSequenceGenerator.cs" />
+    <Compile Include="RandomRangedNumberCustomization.cs" />
+    <Compile Include="RandomRangedNumberGenerator.cs" />
+    <Compile Include="RangedNumberGenerator.cs" />
+    <Compile Include="RegularExpressionGenerator.cs" />
+    <Compile Include="RequestMemberTypeResolver.cs" />
+    <Compile Include="ResidueCollectorNode.cs" />
+    <Compile Include="SByteSequenceGenerator.cs" />
+    <Compile Include="SingleSequenceGenerator.cs" />
+    <Compile Include="SingletonSpecimenBuilderNodeStackAdapterCollection.cs" />
+    <Compile Include="SpecimenBuilderNodeAdapterCollection.cs" />
+    <Compile Include="SpecimenBuilderNodeEventArgs.cs" />
+    <Compile Include="SpecimenCommand.cs" />
+    <Compile Include="SpecimenFactory.cs" />
+    <Compile Include="SpecimenQuery.cs" />
+    <Compile Include="StableFiniteSequenceCustomization.cs" />
+    <Compile Include="StrictlyMonotonicallyIncreasingDateTimeGenerator.cs" />
+    <Compile Include="StringGenerator.cs" />
+    <Compile Include="StringSeedRelay.cs" />
+    <Compile Include="SupportMutableValueTypesCustomization.cs" />
+    <Compile Include="TaskGenerator.cs" />
+    <Compile Include="ThrowingRecursionBehavior.cs" />
+    <Compile Include="TracingBehavior.cs" />
+    <Compile Include="TypeGenerator.cs" />
+    <Compile Include="UInt16SequenceGenerator.cs" />
+    <Compile Include="UInt32SequenceGenerator.cs" />
+    <Compile Include="UInt64SequenceGenerator.cs" />
+    <Compile Include="UnwrapMemberRequest.cs" />
+    <Compile Include="UriGenerator.cs" />
+    <Compile Include="UriScheme.cs" />
+    <Compile Include="UriSchemeGenerator.cs" />
+    <Compile Include="Utf8EncodingGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

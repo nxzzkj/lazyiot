@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 我的视图</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#5567008361020005047)'     />
+<defs><linearGradient id="5567008361020005047" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4926410928766884670' height = '371.2275' width = '331' y = '75' x = '62'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TableShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='backrectID4926410928766884670'   x='62' y='75' width='331' height='371.2275'   fill='#FFFFFF'     />
+
+
+<rect  id='columnheadID4926410928766884670'   x='102' y='116.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='titleID4926410928766884670'    x='127' y='137.9821' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1</text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='116.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='titleID4926410928766884670'    x='177' y='137.9821' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >2</text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='116.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='titleID4926410928766884670'    x='243' y='137.9821' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >3</text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='116.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='titleID4926410928766884670'    x='309' y='137.9821' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >4</text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='116.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='titleID4926410928766884670'    x='363.5' y='137.9821' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >5</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='146.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapef5b2a238-676c-4df5-aada-14bc5c325b67'    x='127' y='161.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='146.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape52ec9a3b-4e55-426d-8fb3-5174c2e839c7'    x='177' y='161.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='146.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape87e687f5-141c-4f1d-a67d-9042d7f25159'    x='243' y='161.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='146.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape638e5c5e-737b-4993-b7d3-935b8ebff533'    x='309' y='161.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='146.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape570fd358-a295-42a8-860b-252dfcfcc0dc'    x='363.5' y='161.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='146.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='165.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='176.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFF00'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape773ff7b1-d3ea-454e-a516-fad1325a33ea'    x='127' y='191.2275' alignment-baseline='middle' text-anchor='middle'  fill='#FF8080'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='176.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape70aad91e-e521-4a89-bd54-31adc47ad5a7'    x='177' y='191.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='176.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapea3298abd-612d-45e9-95c0-9ba5feb08bfe'    x='243' y='191.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='176.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapeb4be1e7c-3ff1-4384-b213-c9d540a073e2'    x='309' y='191.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='176.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape990b04c1-6954-4b95-8cad-c12c574287ef'    x='363.5' y='191.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='176.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='195.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >2</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='206.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape5478ae4d-25f6-4c71-aa1e-bf61794bb5d7'    x='127' y='221.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='206.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FF00FF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapef460e08f-7d03-4d1a-ac66-5064ce151fce'    x='177' y='221.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='206.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape6aa6d2a3-30b6-4517-8caf-8f1caa1f0509'    x='243' y='221.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='206.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape6bb05378-6ba6-4495-8624-3146decbcd56'    x='309' y='221.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='206.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape57e4b1f0-6714-45da-8de3-2d4165120318'    x='363.5' y='221.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='206.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='225.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >3</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='236.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape52228aac-5363-4a12-8cfc-d99cd6a2462e'    x='127' y='251.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='236.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapeea920faa-9e1d-4bad-b93e-2d7467a6c3cc'    x='177' y='251.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='236.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#0000C0'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape83bbacab-3ac7-4b52-a945-620aa6d40690'    x='243' y='251.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='236.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shaped4f27cf1-83b2-42e6-b956-8813bfd65816'    x='309' y='251.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='236.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapefd4388a2-26ad-48c3-a0ed-e6fa38109e49'    x='363.5' y='251.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='236.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='255.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >4</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='266.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape4ea1c07f-22a9-4cf3-86be-fd86d135de85'    x='127' y='281.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='266.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape01cfe20a-de3b-4b9a-9ae6-d5ac3874c25d'    x='177' y='281.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='266.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapec1c7adb8-6fa2-4f15-bc5f-e7ceaf34f43b'    x='243' y='281.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='266.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#00FF00'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapea044dfb0-8815-4716-9080-5035541e1fca'    x='309' y='281.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='266.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape6d51c5d6-16c9-4aef-96be-ccfec639583f'    x='363.5' y='281.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='266.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='285.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >5</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='296.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape6f1e730b-a6ae-473d-9c58-3cc8e50932df'    x='127' y='311.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='296.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapef629793a-99e2-4164-82ae-63ecec1f6312'    x='177' y='315.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >压力:</text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='296.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape020222cf-7240-47f8-84d3-2e961f0976ce'    x='243' y='311.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='296.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape7d7821f2-fad0-42ca-81da-eb5ce2897861'    x='309' y='311.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='296.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape006dfe31-08d0-438a-ac84-dca70c17ddbe'    x='363.5' y='311.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='296.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='315.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >6</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='326.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapeca6ecdf2-4d06-4304-a47b-4daf92320b4b'    x='127' y='341.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='326.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapef8e81924-c342-45ac-b201-f5aee012cd49'    x='177' y='341.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='326.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapefe201a70-1397-48f2-8ad9-b674d62e3441'    x='243' y='341.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='326.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapec355024e-70b0-4636-aff6-4c467578a567'    x='309' y='341.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='326.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape7112d449-4884-4686-94b7-8f3afcf08c74'    x='363.5' y='341.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='326.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='345.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >7</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='356.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape060eca2b-73ef-49aa-8d4f-da9aa376650a'    x='127' y='371.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='356.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapeed3e2ff8-11a2-42b7-b749-24e8a06e57cb'    x='177' y='371.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='356.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapebdf806f2-d487-46db-acbe-6c9bb94571f9'    x='243' y='371.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='356.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape87ce05cc-1e9c-4933-b6df-0afd31710f12'    x='309' y='371.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='356.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape67b72383-d52f-4127-8e8d-c006e67425ab'    x='363.5' y='371.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='356.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='375.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >8</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='386.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape0fa51921-3e15-4b41-bd28-e3704cdfffd0'    x='127' y='401.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='386.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape5a45ffba-a1f0-4a86-af7a-021a5fa1ec52'    x='177' y='401.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='386.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape3632f10f-d945-4a37-81b3-406d02fb5ac5'    x='243' y='401.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='386.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapefba8a5ec-8940-47f6-8fe5-5caac7573be6'    x='309' y='401.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='386.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapee983410c-9dd4-4da1-b855-89897543fac5'    x='363.5' y='401.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='386.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='405.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >9</text>
+<rect  id='columnheadID4926410928766884670'   x='102' y='416.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape64c43a96-1bc0-4946-862b-0def5f56d7d1'    x='127' y='431.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='152' y='416.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape147c25dc-2886-47a3-8875-a52b299c2acf'    x='177' y='431.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='202' y='416.2275' width='82' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape6184a659-d7a0-417e-b7a9-de039d9637bc'    x='243' y='431.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='284' y='416.2275' width='50' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shapee7ea9894-7961-4daa-9415-14be3ca9a7cb'    x='309' y='431.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='columnheadID4926410928766884670'   x='334' y='416.2275' width='59' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#FFFFFF'     />
+
+
+<text       data-baseshape = 'SVG_IOShape'   data-shape = 'SVG_TableCellShape' id='shape7a18646a-35a4-464b-ba28-a9dd2f4cba41'    x='363.5' y='431.2275' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    ></text>
+<rect  id='rowheadID4926410928766884670'   x='62' y='416.2275' width='40' height='30'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<text id='rowindexID4926410928766884670'    x='82' y='435.562' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >10</text>
+<rect  id='borderrectID4926410928766884670'   x='62' y='75' width='331' height='371.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='none'     />
+
+
+<rect  id='backtitleID4926410928766884670'   x='62' y='75' width='331' height='41.22754'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='#F5F5F5'     />
+
+
+<text id='titleID4926410928766884670'    x='227.5' y='100.6707' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >二维表实例</text>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4656521397503059879' data-pagecolor='#000000' data-ioalarm='1'  data-baseshape='SVG_CommonShape'  data-shape='SVG_AlarmListShape'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF' data-pagesize='10' data-pageindex='1'><path  d=' M397,71 L1063,71 L1063,426 397,426 Z'    stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"  fill='#FFFFFF'></path><path  d=' M397,71 L1063,71 L1063,91.22754 397,91.22754 Z'  fill='url(#5441773197065244543)'></path><defs><linearGradient id="5441773197065244543" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#808080;stop-opacity:1" /> </linearGradient> </defs><text id='column'    x='426.5' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警ID</text><text id='column'    x='485.5' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警名称</text><text id='column'    x='557.5' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警类型</text><text id='column'    x='636' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警级别</text><text id='column'    x='706' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警值</text><text id='column'    x='822' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >报警时间</text><text id='column'    x='956.5' y='86.17065' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >设备</text><line  id='vgrid'  fill='none'   x1='456' y1='71' x2='456' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='515' y1='71' x2='515' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='600' y1='71' x2='600' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='672' y1='71' x2='672' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='740' y1='71' x2='740' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='904' y1='71' x2='904' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='vgrid'  fill='none'   x1='1009' y1='71' x2='1009' y2='405.7725'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='91.22754' x2='1063' y2='91.22754'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='116.2275' x2='1063' y2='116.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='141.2275' x2='1063' y2='141.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='166.2275' x2='1063' y2='166.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='191.2275' x2='1063' y2='191.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='216.2275' x2='1063' y2='216.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='241.2275' x2='1063' y2='241.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='266.2275' x2='1063' y2='266.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='291.2275' x2='1063' y2='291.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<line  id='hgrid'  fill='none'   x1='397' y1='316.2275' x2='1063' y2='316.2275'   stroke ="#000000"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+
+<g class='alarmtable'><g class='alarmrows'><text id='alarmidID46565213975030598790'    x='426.5' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598790'    x='485.5' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598790'    x='557.5' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598790'    x='636' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598790'    x='706' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598790'    x='822' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598790'    x='956.5' y='109.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598791'    x='426.5' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598791'    x='485.5' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598791'    x='557.5' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598791'    x='636' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598791'    x='706' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598791'    x='822' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598791'    x='956.5' y='134.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598792'    x='426.5' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598792'    x='485.5' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598792'    x='557.5' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598792'    x='636' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598792'    x='706' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598792'    x='822' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598792'    x='956.5' y='159.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598793'    x='426.5' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598793'    x='485.5' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598793'    x='557.5' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598793'    x='636' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598793'    x='706' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598793'    x='822' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598793'    x='956.5' y='184.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598794'    x='426.5' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598794'    x='485.5' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598794'    x='557.5' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598794'    x='636' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598794'    x='706' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598794'    x='822' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598794'    x='956.5' y='209.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598795'    x='426.5' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598795'    x='485.5' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598795'    x='557.5' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598795'    x='636' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598795'    x='706' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598795'    x='822' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598795'    x='956.5' y='234.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598796'    x='426.5' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598796'    x='485.5' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598796'    x='557.5' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598796'    x='636' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598796'    x='706' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598796'    x='822' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598796'    x='956.5' y='259.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598797'    x='426.5' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598797'    x='485.5' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598797'    x='557.5' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598797'    x='636' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598797'    x='706' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598797'    x='822' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598797'    x='956.5' y='284.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598798'    x='426.5' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598798'    x='485.5' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598798'    x='557.5' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598798'    x='636' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598798'    x='706' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598798'    x='822' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598798'    x='956.5' y='309.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g><g class='alarmrows'><text id='alarmidID46565213975030598799'    x='426.5' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmnameID46565213975030598799'    x='485.5' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmtypeID46565213975030598799'    x='557.5' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmlevelID46565213975030598799'    x='636' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmvalueID46565213975030598799'    x='706' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdateID46565213975030598799'    x='822' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >1111</text><text id='alarmdeviceID46565213975030598799'    x='956.5' y='334.9775' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >111</text></g></g><path  d=' M397,405.7725 L1063,405.7725 L1063,426 397,426 Z'  fill='#808080'></path><defs><linearGradient id="4856255785226562623" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#808080;stop-opacity:1" /> </linearGradient> </defs><g class='pager'><g class='pagebutton'  ><rect  id='pagerback1'   x='397' y='405.7725' width='47.91309' height='20.22754'   fill='#FFFFFF'     />
+
+ <a xlink: href ='#' id='Afirst'ID4656521397503059879><text id='pager1'    x='420.9565' y='420.9431' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >首页</text>  </a></g><g class='pagebutton'  ><rect  id='pagerback2'   x='449.9131' y='405.7725' width='47.91309' height='20.22754'   fill='#FFFFFF'     />
+
+ <a xlink: href ='#' id='Bfirst'ID4656521397503059879><text id='pager2'    x='473.8696' y='420.9431' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >下一页</text>  </a></g><g class='pagebutton' ><rect  id='pagerback3'   x='502.8262' y='405.7725' width='47.91309' height='20.22754'   fill='#FFFFFF'     />
+
+ <a xlink: href ='#' id='Cfirst'ID4656521397503059879><text id='pager3'    x='526.7827' y='420.9431' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >上一页</text>  </a></g><g class='pagebutton'  ><rect  id='pagerback4'   x='555.7393' y='405.7725' width='47.91309' height='20.22754'   fill='#FFFFFF'     />
+
+ <a xlink: href ='#' id='Dfirst'ID4656521397503059879><text id='pager4'    x='579.6958' y='420.9431' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >尾页</text>  </a></g><g class='pagebutton' ><rect  id='pagerback5'   x='608.6523' y='405.7725' width='208.2227' height='20.22754'   fill='#FFFFFF'     />
+
+<text id='pager5'    x='712.7637' y='420.9431' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     ></text></g></g></g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

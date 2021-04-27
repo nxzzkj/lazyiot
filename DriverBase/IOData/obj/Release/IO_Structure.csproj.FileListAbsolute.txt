@@ -1,0 +1,15 @@
+E:\中联公司项目\ZZSCADA\DriverBase\IOData\bin\Release\IO_Structure.dll
+E:\中联公司项目\ZZSCADA\DriverBase\IOData\bin\Release\IO_Structure.pdb
+E:\中联公司项目\ZZSCADA\DriverBase\IOData\obj\Release\IO_Structure.dll
+E:\中联公司项目\ZZSCADA\DriverBase\IOData\obj\Release\IO_Structure.pdb
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\bin\Release\IO_Structure.dll
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\bin\Release\IO_Structure.pdb
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.dll
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.pdb
+E:\LazyScadaOS\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\DriverBase\IOData\bin\Release\IO_Structure.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\DriverBase\IOData\bin\Release\IO_Structure.pdb
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\DriverBase\IOData\obj\Release\IO_Structure.pdb

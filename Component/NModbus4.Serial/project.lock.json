@@ -1,0 +1,36 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "NModbus4/3.0.0-alpha2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x86": {
+      "NModbus4/3.0.0-alpha2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x64": {
+      "NModbus4/3.0.0-alpha2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      }
+    }
+  },
+  "libraries": {
+    "NModbus4/3.0.0-alpha2": {
+      "type": "project",
+      "path": "../NModbus4/project.json"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "NModbus4 >= 3.0.0-*"
+    ],
+    ".NETFramework,Version=v4.5": []
+  }
+}

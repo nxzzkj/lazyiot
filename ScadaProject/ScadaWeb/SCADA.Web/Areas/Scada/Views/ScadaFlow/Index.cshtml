@@ -1,0 +1,15 @@
+﻿@model  ScadaWeb.Web.Areas.Scada.Models.ScadaFlowModel
+@{
+    ViewBag.Title = Model.Project.Title;
+    Layout = "~/Views/Shared/_LayoutFlow.cshtml";
+}
+
+@MvcHtmlString.Create(Model.MainView.ViewSVG)
+<script>
+    SCADA.FlowUsers = eval(@(MvcHtmlString.Create(Model.Project.FlowUser)))
+</script>
+ 
+
+ 
+ 
+

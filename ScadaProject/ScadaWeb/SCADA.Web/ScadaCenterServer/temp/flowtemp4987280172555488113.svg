@@ -1,0 +1,117 @@
+﻿
+--PROJ #5574517201627090570#1
+
+ 
+
+--VIEW #V_5067119406126819199#登录#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4988341711383997363)'     />
+<defs><linearGradient id="4988341711383997363" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5419545086684343962' height = '701' width = '823' y = '49.5' x = '388.5'  data-baseshape='SVG_CommonShape'  data-shape='SVG_LoginShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5419545086684343962'  height = '701' width = '823' y = '49.5' x = '388.5' align = 'left' >
+<iframe scrolling='no' style='width:100%;height:100%;' frameborder='0' srcdoc="
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- For-Mobile-Apps -->
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+     <link href='/Content/lib/layui/css/layui.css' rel='stylesheet' />
+<link href='/Content/css/okadmin.css' rel='stylesheet' />
+<link href='/Content/css/common.css' rel='stylesheet' />
+<script src='/Content/lib/layui/layui.js'></script>
+<script src='/Content/js/global.js'></script>
+<script src='/Content/js/jquery-3.4.1.js'></script>
+<script src='/Content/js/jquery.timers-1.2.js'></script>
+<script src='/Content/js/svg-pan-zoom.js'></script>
+<script src='/Content/js/SVG.js'></script>
+<script src='/Content/js/Scada.js'></script>
+
+<script src='/Content/js/zy.media.min.js'></script>
+<link rel='stylesheet' href='/Content/Login/login3/css/style.css' type='text/css' media='all' />
+</head>
+<body style='background-color:#FFFFFF;'>
+<div class='container'>
+<h1>Lazy Scada OS登录</h1>
+     <div class='contact-form'>
+	 <div class='profile-pic'>
+	 <img src='/Content/Login/login3/images/1.png' alt='用户图标'/>
+	 </div>	 
+	 <div class='signin'>
+     <form  id='loginForm'  name='loginForm'>
+	      <input type='text' id='username' name='username' class='user' value='用户名' onfocus='this.value = '';' onblur='if (this.value == '') 
+
+{this.value = '用户名';}' />
+		  <input type='password' id='password' name='password' class='pass' value='密码' onfocus='this.value = '';' onblur='if (this.value 
+
+== '') {this.value = '密码';}' />	  
+     </form>
+	 </div>	 
+	      <input type='button' value='登录'  onclick=&quot;SCADA.Login({viewId:'V_5067119406126819199',ReturnViewId:'0'})&quot; />
+	 </div>
+</div>
+<div class='footer'>
+     <p> 版权所有:宁夏众智科技有限公司</p>
+</div>
+</body>
+</html>
+"  ></iframe>
+</foreignObject>
+<g>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5038060485849744626#监控界面#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4805735310290354198)'     />
+<defs><linearGradient id="4805735310290354198" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5432281805529682112'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TabPanelShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<g data-filter='head'>
+<path id='tabPageHeadID5432281805529682112'  d=' M189,70 L1006,70 L1006,107.3379 189,107.3379 Z' fill='url(#4877825079638128090)'     /><defs><linearGradient id="4877825079638128090" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#F0F8FF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F0F8FF;stop-opacity:1" /> </linearGradient> </defs>
+<g data-filter = 'headitem' onclick="SCADA.TabShape_PageChanged('shapeID5432281805529682112','tabcontentID54322818055296821120','0')">
+<path id='tabHeadItemPathID5432281805529682112'  d=' M525.3408,82 C525.3408,76.47716 529.8179,72 535.3408,71.99999 L557.5224,72 C563.0453,71.99998 567.5224,76.47713 567.5224,81.99999 567.5224,81.99999 567.5224,82 567.5224,82 L567.5224,95.33788 C567.5224,100.8607 563.0453,105.3379 557.5225,105.3379 L535.3408,105.3379 C529.8179,105.3379 525.3408,100.8607 525.3408,95.33789 Z' fill='url(#4844770808701638767)'   stroke ="#FFFF00"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     data-filter='headitempath' data-tab='tabcontentID54322818055296821120'  data-startcolor='#808080' data-endcolor='#FFFFFF' /><defs><radialGradient id="4844770808701638767"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+<text id='tabHeadItemTitleID5432281805529682112'    x='546.4316' y='93.00342' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >Title 1</text>
+</g>
+<g data-filter = 'headitem' onclick="SCADA.TabShape_PageChanged('shapeID5432281805529682112','tabcontentID54322818055296821121','1')">
+<path id='tabHeadItemPathID5432281805529682112'  d=' M575.5224,82 C575.5224,76.47716 579.9996,72 585.5224,71.99999 L608.5908,72 C614.1136,71.99998 618.5908,76.47713 618.5908,81.99999 618.5908,81.99999 618.5908,82 618.5908,82 L618.5908,95.33788 C618.5908,100.8607 614.1136,105.3379 608.5908,105.3379 L585.5225,105.3379 C579.9996,105.3379 575.5225,100.8607 575.5225,95.33789 Z' fill='url(#5315024712700314531)'   stroke ="#FFFF00"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     data-filter='headitempath' data-tab='tabcontentID54322818055296821121'  data-startcolor='#808080' data-endcolor='#FFFFFF' /><defs><radialGradient id="5315024712700314531"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+<text id='tabHeadItemTitleID5432281805529682112'    x='597.0566' y='93.00342' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >未命名</text>
+</g>
+<g data-filter = 'headitem' onclick="SCADA.TabShape_PageChanged('shapeID5432281805529682112','tabcontentID54322818055296821122','2')">
+<path id='tabHeadItemPathID5432281805529682112'  d=' M626.5908,82 C626.5908,76.47716 631.0679,72 636.5908,71.99999 L659.6591,72 C665.182,71.99998 669.6591,76.47713 669.6591,81.99999 669.6591,81.99999 669.6591,82 669.6591,82 L669.6591,95.33788 C669.6591,100.8607 665.182,105.3379 659.6592,105.3379 L636.5908,105.3379 C631.0679,105.3379 626.5908,100.8607 626.5908,95.33789 Z' fill='url(#5085078384993983789)'   stroke ="#FFFF00"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     data-filter='headitempath' data-tab='tabcontentID54322818055296821122'  data-startcolor='#808080' data-endcolor='#FFFFFF' /><defs><radialGradient id="5085078384993983789"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+<text id='tabHeadItemTitleID5432281805529682112'    x='648.125' y='93.00342' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='12' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >未命名</text>
+</g>
+</g>
+<g data-filter='pagecontent'>
+<g data-filter='pagecontentitem' id='tabcontentID54322818055296821120'   sytle='visibility:visible;' data-elements=''>
+<path id='tabPageContentPathID5432281805529682112'  d=' M189,107.3379 L1006,107.3379 L1006,144.6758 L1006,583.9999 C1006,595.0457 997.0457,603.9999 986,603.9999 L986,604 L209,604 L209,603.9999 C197.9543,604 189,595.0457 189,584 L189,604 L189,107.3379' fill='url(#5424452267487559045)'     /><defs><radialGradient id="5424452267487559045"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+</g>
+<g data-filter='pagecontentitem' id='tabcontentID54322818055296821121'   sytle='visibility:hidden;' data-elements=''>
+<path id='tabPageContentPathID5432281805529682112'  d=' M189,107.3379 L1006,107.3379 L1006,144.6758 L1006,583.9999 C1006,595.0457 997.0457,603.9999 986,603.9999 L986,604 L209,604 L209,603.9999 C197.9543,604 189,595.0457 189,584 L189,604 L189,107.3379' fill='url(#4986277603157396853)'     /><defs><radialGradient id="4986277603157396853"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+</g>
+<g data-filter='pagecontentitem' id='tabcontentID54322818055296821122'   sytle='visibility:hidden;' data-elements=''>
+<path id='tabPageContentPathID5432281805529682112'  d=' M189,107.3379 L1006,107.3379 L1006,144.6758 L1006,583.9999 C1006,595.0457 997.0457,603.9999 986,603.9999 L986,604 L209,604 L209,603.9999 C197.9543,604 189,595.0457 189,584 L189,604 L189,107.3379' fill='url(#4868998739138352995)'     /><defs><radialGradient id="4868998739138352995"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </radialGradient> </defs>
+</g>
+<path id='tabBorderID5432281805529682112'  d=' M189,107.3379 L1006,107.3379 L1006,144.6758 L1006,583.9999 C1006,595.0457 997.0457,603.9999 986,603.9999 L986,604 L209,604 L209,603.9999 C197.9543,604 189,595.0457 189,584 L189,604 L189,107.3379' fill='none'   stroke ="#808080"   stroke-width="2"   stroke-dasharray="" stroke-opacity="1"     />
+</g>
+</g>
+</svg>
+
+--ENDVIEW
+
+
+--USER #管理员#admin#123456#1#1
+
+
+--ENDUSER
+
+
+--USER ####0#0
+
+
+--ENDUSER
+

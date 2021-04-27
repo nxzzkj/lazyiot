@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "DeviceGroup";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    .div-collapse {
+        float: left;
+        height: 18px;
+        line-height: 18px;
+        padding-left: 5px;
+    }
+
+    .layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+        top: -1px;
+        padding-left: 25px; /* 覆盖layui padding */
+    }
+</style>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+  
+        table.render({
+            elem: "#tableId",
+            url: "/Scada/ScadaGroup/DeviceGroupList?groupId=@ViewData["GroupId"]",
+            limit: 10000,
+   
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            paging: false,
+            loading: true,
+            id: 'deviceGrid',
+            toolbar: "#toolbarTpl",
+            cols: [[
+                 { type: 'checkbox' },
+                { field: "IOServerName", title: "采集站", width: 200 },
+                { field: "IOCommunicateName", title: "通道", width: 200 },
+                { field: "IODeviceName", title: "设备", width: 200 },
+                { field: "UpdateCycle", title: "更新周期", width: 200 },
+                { field: "ALIASNAME", title: "设备名称", width: 200,edit:'text',style: 'font-size: 12px;background-color: #ff0000;' },
+                { field: "IOPARATITLES", title: "设备IO", width: 200 },
+                { field: "SerieType", title: "曲线标识", width: 200,edit:'text',style: 'font-size: 12px;background-color: #ff0000;' },
+                
+            ]],
+            done:function(res,curr,count)
+            {
+                SCADA.AlarmTableRowSpan("IOServerName", 1);
+                SCADA.AlarmTableRowSpan("IOCommunicateName", 1);
+
+            }
+        });
+
+        //关闭页面
+        function CloseWin() {
+            parent.location.reload(); // 父页面刷新
+            parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+        }
+
+        
+        //保存设置
+        $("#btnSave").on('click', function () {
+            var GroupId = @ViewData["GroupId"];
+            //ViewBag.GroupId;
+  
+            var _list = [];
+            var index = parent.layer.getFrameIndex(window.name);
+
+            var checkStatus = table.checkStatus('deviceGrid');
+            for(var i=0;i<checkStatus.data.length;i++)
+            {
+
+         
+            _list.push({
+                GroupId:checkStatus.data[i].GroupId,
+                IO_SERVER_ID:checkStatus.data[i].IO_SERVER_ID,
+                IO_COMM_ID:checkStatus.data[i].IO_COMM_ID,
+                IO_DEVICE_ID:checkStatus.data[i].IO_DEVICE_ID,
+                ALIASNAME:checkStatus.data[i].ALIASNAME,
+                IOPARATITLES:checkStatus.data[i].IOPARATITLES,
+                IOPARAS:checkStatus.data[i].IOPARAS,
+                SerieType:checkStatus.data[i].SerieType,
+                UpdateCycle:checkStatus.data[i].UpdateCycle
+                
+            });
+            }
+            okUtils.ajax("/Scada/ScadaGroup/SaveGroupSet", "post", { "list": _list, groupId: GroupId }, true).done(function (response) {
+                okUtils.tableSuccessMsg(response.message);
+ 
+            }).fail(function (error) {
+                console.log(error)
+            });
+        });
+
+        
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+ 
+    <button class='layui-btn layui-btn-sm' id='btnSave'><i class='ok-icon'>&#xe68a;</i>保存设置</button>
+</script>
+ 

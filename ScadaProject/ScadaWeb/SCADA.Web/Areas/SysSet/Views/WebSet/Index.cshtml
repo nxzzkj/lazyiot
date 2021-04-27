@@ -1,0 +1,98 @@
+﻿@model ScadaWeb.Web.Areas.SysSet.Models.WebModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSysSetPage.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">网站设置</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" action="/SysSet/WebSet/Index" method="post">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站名称</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.SiteName, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站域名</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.SiteDomain, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|url" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">公司名称</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Corporate, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">公司地址</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Address, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">公司座机</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Tel, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">联系电话</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Phone, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|phone" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">电子邮箱</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Email, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required|email" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">首页标题</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.HomeTitle, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">META关键词</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.MetaKey, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">META描述</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.MetaDescribe, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站备案号</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Record, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">版权信息</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.CopyRight, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit style="float:left;">确认保存</button>
+                                <div class="div-msg" style="float:left;">@ViewBag.Msg</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

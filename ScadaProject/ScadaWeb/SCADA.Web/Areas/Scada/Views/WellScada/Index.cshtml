@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "单井实时数据监控";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入井号" id="WellName" name="WellName" autocomplete="off">
+        </div>
+       
+            <div class="layui-input-inline">
+                <!-- treeSelect渲染会给input自动加上style="display: none;"，导致jquery无法给input赋值，type text要改为hidden，但会存在渲染的过程 -->
+                <input id="OrganizeId" name="OrganizeId" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <!-- treeSelect渲染会给input自动加上style="display: none;"，导致jquery无法给input赋值，type text要改为hidden，但会存在渲染的过程 -->
+                <select id="WellType" name="WellType" placeholder="井类型" class="layui-input"></select>
+            </div>
+
+            @Html.SearchBtnHtml("查询")
+
+</form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script type="text/html" id="deviceStatus">
+    {{#  if(d.WellStatus == '1'){ }}
+  <img src="../../Content/images/wifi.png" width="20px"  title="通讯正常"/>
+    {{#  } else { }}
+    <img src="../../Content/images/wifi2.png"   width="20px"   title="通讯异常"/>
+    {{#  } }}
+</script>
+<script>
+ 
+    layui.config({ base: '/Content/lib/tablePlug/' }).use(["table", "form", "okLayer", "okUtils", "treeSelect", 'tablePlug'], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let treeSelect = layui.treeSelect;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        var tablePlug = layui.tablePlug;
+        var $ = layui.$;
+        tablePlug.smartReload.enable(true);//处理不闪动的关键代码
+        treeSelect.render({
+            elem: "#OrganizeId",
+            data: "/Scada/WellScada/GetOrganizeTreeSelect",
+            type: "GET"
+        });
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Scada/WellScada/WellGridReal",
+            limit: 100,
+            limits: [20,50,100,200,300,500,800,1000,1500,2000],
+            width:  document.body.clientWidth-10,
+            height: 'full-80',
+            page: true,
+            loading: false,
+            id: 'wellRealGrid',
+            toolbar: "#toolbarTpl",
+            jump: function(obj, first){
+                if(!first){
+                    layer.msg('第 '+ obj.curr +' 页');
+                }},
+            size: "sm",
+            smartReloadModel:true,
+            cols: [[
+                { type: "radio", fixed: 'left'},
+                { field: "WellName", title: "井号", width: 80, sort: true, fixed: 'left',height:60},
+                { field: "FullName", title: "部门", width: 120, fixed: 'left' },
+                { field: "WellStatus", title: "通讯", width: 60, fixed: 'left', templet: '#deviceStatus' },
+                { field: "IO_DDLY", title: "井底流压", width: 80 },
+                { field: "IO_DYM", title: "动液面", width: 80 },
+                { field: "IO_JKTY", title: "井口套压", width: 80 },
+                { field: "IO_DDLY", title: "井底流压", width: 80 },
+                { field: "IO_XTYL", title: "系统压力", width: 80 },
+                { field: "IO_LJCQL", title: "累产气量", width: 80 },
+                { field: "IO_SSCQL", title: "瞬产气量", width: 80 },
+                { field: "IO_QTWD", title: "气体温度", width: 80 },
+                { field: "IO_LJCSL", title: "累产水量", width: 80 },
+                { field: "IO_SSCSL", title: "瞬产水量", width: 80 },
+                { field: "IO_GTCC", title: "冲次", width: 80 },
+                { field: "IO_GTCC1", title: "冲程", width: 80 },
+                { field: "IO_GTZH", title: "功图载荷", width: 80 },
+                { field: "IO_SXDY", title: "三相电压", width: 80 },
+                { field: "IO_SXDL", title: "三相电流", width: 80 },
+                { field: "IO_SXGL", title: "三相功率", width: 80 },
+                { field: "IO_YDL", title: "用电量", width: 80 },
+                { field: "IO_BPQPL", title: "变频器频率", width: 80 },
+                { field: "IO_DJGZDL", title: "电机电流", width: 80 },
+                { field: "IO_DJNJ", title: "电机扭矩", width: 80 },
+                { field: "IO_DJGZDY", title: "电机电压", width: 80 },
+                { field: "WellType", title: "井类型", width: 80 },
+                { field: "Contractor", title: "承包商", width: 120 },
+               { field: "DateStampTime", title: "采集时间", width: 130,fixed: 'right' },
+            ]],
+            done: function (res, curr, count) {
+                setTableScoll(this.elem.next('.layui-table-view'), this.scroll);
+            }
+        });
+        //获取滚动条
+        function getTableScoll(tbView){
+            var scrollTop = tbView.find('.layui-table-body').scrollTop();
+            var scrollLeft= tbView.find('.layui-table-body').scrollLeft();
+            return {
+                scrollTop:scrollTop,scrollLeft:scrollLeft
+            }
+        };
+        //设置滚动条
+        function setTableScoll(tbView,scoll={scrollTop:0,scrollLeft:0})
+    {
+ 
+        tbView.find('.layui-table-body').scrollTop(scoll.scrollTop);
+        tbView.find('.layui-table-body').scrollLeft(scoll.scrollLeft);
+        table.resize('wellRealGrid'); //重置表格尺寸
+    };
+  
+
+
+      
+        var scrollTop=0;
+        var layuiTable = $('.layui-table-main');
+        if(layuiTable!=null&&layuiTable.length>0){
+            scrollTop = layuiTable[0].scrollTop;  
+        }
+        function reload() {
+                //执行重载
+                var wellRealGrid = $('#wellRealGrid');
+          
+                table.reload('wellRealGrid', {
+                    page: {
+                        curr: $(".layui-laypage-em").next().html()
+                    }
+                    ,scroll:getTableScoll($('#tableId').next('.layui-table-view'))
+                
+                }, 'data');
+                
+            }
+        //数据表定时加载
+
+    
+        SCADA.RealDataTimer(reload);
+        //加载井类型
+        $.get("/Scada/WellScada/GetWellType?EnCode=WellType", function (result) {
+
+
+            for (var i = 0; i < result.length; i++) {
+
+                $("#WellType").append("<option value='" + result[i].id + "'>" + result[i].name + "</option>");
+            }
+
+            layui.form.render("select");
+
+            //重新渲染select
+            form.render('select');
+        });
+        
+        form.on("submit(search)", function (data) {
+          
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+        table.on("toolbar(tableFilter)", function (obj) {
+       
+                WellMonitor(obj);
+  
+        });
+    
+        function WellMonitor(obj) {
+            var checkStatus = table.checkStatus(obj.config.id); //获取选中行状态
+            switch(obj.event){
+                case 'Well_RealSeries':
+                    var data = checkStatus.data;  //获取选中行数据
+                    okLayer.open(checkStatus.data[0].WellName+"井实时曲线", "/Scada/WellScada/SingleWellRealChart?wellid="+checkStatus.data[0].Id+'&updatecycle='+checkStatus.data[0].UpdateCycle, "100%", "100%", null, null);
+            
+                    break;
+                case 'Well_HistorySeries':
+                    var data = checkStatus.data;  //获取选中行数据
+                    okLayer.open(checkStatus.data[0].WellName+"井历史曲线", "/Scada/WellScada/SingleWellHistoryChart?wellid="+checkStatus.data[0].Id+'&updatecycle='+checkStatus.data[0].UpdateCycle, "100%", "100%", null, null);
+                    break;
+                case 'Well_HistoryData':
+                    var data = checkStatus.data;  //获取选中行数据
+                    okLayer.open(checkStatus.data[0].WellName+"井历史数据", "/Scada/WellScada/SingleWellHistoryGrid?wellid="+checkStatus.data[0].Id, "100%", "100%", null, null);
+                    break;
+                case 'Well_HistoryStatics':
+                    var data = checkStatus.data;  //获取选中行数据
+                    okLayer.open(checkStatus.data[0].WellName+"井历史汇总数据", "/Scada/WellScada/SingleWellHistorySummary?wellid="+checkStatus.data[0].Id, "100%", "100%", null, null);
+                    break;
+                case 'Well_HistoryStaticsSeries':
+                    var data = checkStatus.data;  //获取选中行数据
+                    okLayer.open(checkStatus.data[0].WellName+"井历史曲线", "/Scada/WellScada/SingleWellHistorySummaryChart?wellid="+checkStatus.data[0].Id+'&updatecycle='+checkStatus.data[0].UpdateCycle, "100%", "100%", null, null);
+                    break;
+
+                    
+            };
+
+        
+        }
+        function WellHistorySeries() {
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, null);
+        }
+
+        function WellHistoryData() {
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, null);
+        }
+
+        function Well_HistoryAlarm() {
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, null);
+        }
+
+
+      
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+ 
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>

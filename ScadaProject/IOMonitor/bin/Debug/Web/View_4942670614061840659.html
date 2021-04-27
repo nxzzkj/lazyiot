@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='Content/css/okadmin.css' rel='stylesheet' />
+    <link href='Content/css/common.css' rel='stylesheet' />
+    <script src='Content/lib/layui/layui.js'></script>
+    <script src='Content/js/global.js'></script>
+    <script src='Content/js/jquery-3.4.1.js'></script>
+    <script src='Content/js/jquery.timers-1.2.js'></script>
+    <script  src='Content/js/svg-pan-zoom.js'></script>
+    <script src='Content/js/SVG.js'></script>
+    <script src='Content/js/Scada.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#808080;'>
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1024' height='800' viewBox='0 0 1024 800' ><rect  id='map'   x='0' y='0' width='1024' height='800'   fill='url(#5291712890721590836)'     />
+<defs><linearGradient id="5291712890721590836" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#B0C4DE;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+<g id='shapeID4819957610932086340' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,275,275)'   data-event='无' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''            data-changcolor='#FF0000' data-sourcecolor='#800000'  data-rect='200,200,150,150'>
+</g>
+<g id='shapeID4902782032670969845'  data-baseshape='SVG_CommonShape'  data-shape='SVG_RoundRectShape'     data-event='无' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''           data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'><path  d=' M192.9998,161.9997 C192.9998,150.954 201.9541,141.9997 212.9998,141.9997 L212.9998,141.9997 L536.9997,141.9997 L536.9996,141.9997 C548.0453,141.9997 556.9996,150.954 556.9996,161.9997 556.9996,161.9997 556.9996,161.9997 556.9996,161.9997 L556.9997,161.9997 L556.9997,355 L556.9996,355 C556.9996,366.0457 548.0453,375 536.9997,375 L536.9997,375 L212.9998,375 L212.9998,375 C201.9542,375 192.9998,366.0457 192.9998,355 L192.9998,161.9997'   fill='#FFFFFF'   stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   ></path>
+</svg>
+    </div>
+ <script>
+ adjustToFreezeAll(document.getElementById('scada_svg'));
+   window.onload = function() {
+     window.zoomTiger = svgPanZoom('#scada_svg', 
+      {    
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+     center: true,
+ dblClickZoomEnabled:false
+ 
+       });  
+    
+ }
+$('#container').height($(window).height());
+ 
+   </script>
+
+</body>
+</html>

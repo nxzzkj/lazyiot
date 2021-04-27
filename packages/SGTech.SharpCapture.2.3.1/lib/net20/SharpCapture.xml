@@ -1,0 +1,3410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpCapture</name>
+    </assembly>
+    <members>
+        <member name="T:SharpCapture.Internal.DuiChengJiaMi">
+            <summary>
+            本类是对称加密
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.DuiChengJiaMi.Encrypt(System.String)">
+            <summary>
+            使用内部的安全key来加密Input字符串
+            </summary>
+            <param name="input">待加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.DuiChengJiaMi.Decrypt(System.String)">
+            <summary>
+            使用默认安全Key进行解密
+            </summary>
+            <param name="input">待解密的字符串</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.WaveFormatCustomMarshaler">
+            <summary>
+            Custom marshaller for WaveFormat structures
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.GetInstance(System.String)">
+            <summary>
+            Gets the instance of this marshaller
+            </summary>
+            <param name="cookie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.CleanUpManagedData(System.Object)">
+            <summary>
+            Clean up managed data
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.CleanUpNativeData(System.IntPtr)">
+            <summary>
+            Clean up native data
+            </summary>
+            <param name="pNativeData"></param>
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.GetNativeDataSize">
+            <summary>
+            Get native data size
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.MarshalManagedToNative(System.Object)">
+            <summary>
+            Marshal managed to native
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.WaveFormatCustomMarshaler.MarshalNativeToManaged(System.IntPtr)">
+            <summary>
+            Marshal Native to Managed
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMediaBuffer">
+            <summary>
+            IMediaBuffer Interface
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaBuffer.SetLength(System.Int32)">
+            <summary>
+            Set Length
+            </summary>
+            <param name="length">Length</param>
+            <returns>HRESULT</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaBuffer.GetMaxLength(System.Int32@)">
+            <summary>
+            Get Max Length
+            </summary>
+            <param name="maxLength">Max Length</param>
+            <returns>HRESULT</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaBuffer.GetBufferAndLength(System.IntPtr,System.IntPtr)">
+            <summary>
+            Get Buffer and Length
+            </summary>
+            <param name="bufferPointerPointer">Pointer to variable into which to write the Buffer Pointer </param>
+            <param name="validDataLengthPointer">Pointer to variable into which to write the Valid Data Length</param>
+            <returns>HRESULT</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IMediaObject">
+            <summary>
+            defined in mediaobj.h
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMediaParamInfo">
+            <summary>
+            defined in Medparam.h
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.ResamplerMediaComObject">
+            <summary>
+            From wmcodecsdp.h
+            Implements:
+            - IMediaObject 
+            - IMFTransform (Media foundation - we will leave this for now as there is loads of MF stuff)
+            - IPropertyStore 
+            - IWMResamplerProps 
+            Can resample PCM or IEEE
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.WindowsMediaMp3DecoderComObject">
+            <summary>
+            implements IMediaObject  (DirectX Media Object)
+            implements IMFTransform (Media Foundation Transform)
+            On Windows XP, it is always an MM (if present at all)
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.Class112.MFTEnumEx(System.Guid,SharpCapture.Internal._MFT_ENUM_FLAG,SharpCapture.Internal.MFT_REGISTER_TYPE_INFO,SharpCapture.Internal.MFT_REGISTER_TYPE_INFO,System.IntPtr@,System.Int32@)">
+            <summary>
+            Gets a list of Microsoft Media Foundation transforms (MFTs) that match specified search criteria. 
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal._MFT_ENUM_FLAG">
+            <summary>
+            Contains flags for registering and enumeration Media Foundation transforms (MFTs).
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_SYNCMFT">
+            <summary>
+            The MFT performs synchronous data processing in software. 
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_ASYNCMFT">
+            <summary>
+            The MFT performs asynchronous data processing in software.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_HARDWARE">
+            <summary>
+            The MFT performs hardware-based data processing, using either the AVStream driver or a GPU-based proxy MFT. 
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_FIELDOFUSE">
+            <summary>
+            The MFT that must be unlocked by the application before use.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_LOCALMFT">
+            <summary>
+            For enumeration, include MFTs that were registered in the caller's process.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_TRANSCODE_ONLY">
+            <summary>
+            The MFT is optimized for transcoding rather than playback.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER">
+            <summary>
+            For enumeration, sort and filter the results.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal._MFT_ENUM_FLAG.MFT_ENUM_FLAG_ALL">
+            <summary>
+            Bitwise OR of all the flags, excluding MFT_ENUM_FLAG_SORTANDFILTER.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.MFT_REGISTER_TYPE_INFO">
+            <summary>
+            Contains media type information for registering a Media Foundation transform (MFT). 
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal.MFT_REGISTER_TYPE_INFO.guidMajorType">
+            <summary>
+            The major media type.
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal.MFT_REGISTER_TYPE_INFO.guidSubtype">
+            <summary>
+            The Media Subtype
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.MMDeviceEnumeratorComObject">
+            <summary>
+            implements IMMDeviceEnumerator
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.CircleCache`1">
+            <summary>
+            CircleCache 循环缓存。循环使用缓存中的每个对象。线程安全。
+            </summary>  
+        </member>
+        <member name="T:SharpCapture.Internal.Circle`1">
+            <summary>
+            Circle 圈结构。非线程安全。
+            </summary>
+            <typeparam name="T">圈的每个节点存储的对象的类型</typeparam>
+        </member>
+        <member name="T:SharpCapture.Internal.CircleQueue`1">
+            <summary>
+            内部使用Circle的固定大小的Queue，当装满后，再加入对象，则将最老的那个对象替换掉。该类的实现是线程安全的。
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SharpCapture.Internal.CircleQueue`1.MaxCount">
+            <summary>
+            历史中最大的元素个数。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Internal.CircleQueue`1.Size">
+            <summary>
+            最大容量。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Internal.CircleQueue`1.Count">
+            <summary>
+            队列中的元素个数。
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.CircleQueue`1.Enqueue(`0)">
+            <summary>
+            当装满后，再加入对象，则将最老的那个对象覆盖掉。
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.CircleQueue`1.Peek">
+            <summary>
+            查看队列首部的元素，但是不从队列中移除。
+            </summary>       
+        </member>
+        <member name="M:SharpCapture.Internal.CircleQueue`1.PeekAt(System.Int32)">
+            <summary>
+            查看指定位置的元素，但是不从队列中移除。
+            </summary>       
+        </member>
+        <member name="M:SharpCapture.Internal.CircleQueue`1.ChangeSize(System.Int32)">
+            <summary>
+            更改大小。如果当前队列中元素个数大于新的尺寸，则丢弃部分老的元素。
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.ConvertToGrey(System.Drawing.Image)">
+            <summary>
+            将图像转化为灰度图像。
+            </summary>      
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.Convert(System.Byte[])">
+            <summary>
+            从字节数组中加载图片。
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.CopyImageDeeply(System.Drawing.Image)">
+            <summary>
+            深度复制图片。
+            </summary>      
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.Convert(System.Drawing.Image)">
+            <summary>
+            将图像使用JPEG格式存储。
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.ReviseRGB24Data(System.Byte[],System.Drawing.Size,System.Drawing.Size)">
+            <summary>
+            截取RGB24图像的一部分（从左上角开始）。
+            </summary>
+            <param name="origin">原始位图的核心数据</param>
+            <param name="originSize">位图大小</param>
+            <param name="newSize">要截取的大小</param>
+            <returns>被截的部分图像的RGB24数据</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.GetPart(System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>
+            抠取原图的一部分形成一个新的位图。
+            </summary>
+            <param name="origin">原始图像</param>
+            <param name="rect">要抠取的区域</param>        
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.RoundSizeByNumber(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            将图像的长和宽裁剪为N的整数倍。
+            </summary>
+            <param name="origin">原始图像</param>   
+            <param name="number">整数倍的基数</param>   
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.Zoom(System.Drawing.Image,System.Single)">
+            <summary>
+            缩放图片。
+            </summary>       
+        </member>
+        <member name="M:SharpCapture.Internal.ImageHelper.Zoom(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            缩放图片。
+            </summary>       
+        </member>
+        <member name="T:SharpCapture.Internal.KeybdEventFlag">
+            <summary>
+            KeybdEventFlag 模拟键盘点击的相关标志。
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.MouseEventFlag">
+            <summary>
+            MouseEventFlag 模拟鼠标点击的相关标志。
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.DoWindowsEvents">
+            <summary>
+            DoWindowsEvents 在UI线程中调用该方法将使UI线程处理windows事件。
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.GetStartupDirectoryPath">
+            <summary>
+            GetStartupDirectoryPath 获取当前应用程序所在的目录
+            </summary>        
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.MouseEvent(SharpCapture.Internal.MouseEventFlag,System.Int32,System.Int32,System.UInt32,System.UIntPtr)">
+            <summary>
+            MouseEvent 模拟鼠标点击
+            </summary>       
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.SetCursorPos(System.Int32,System.Int32)">
+            <summary>
+            SetCursorPos 设置光标的绝对位置
+            </summary>  
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.GetSystemIconByFileType(System.String,System.Boolean)">
+            <summary>
+            根据扩展名获取系统图标。
+            </summary> 
+            <param name="fileType">文件类型，使用扩展名表示，如".txt"</param>      
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.SetForegroundWindow(System.Windows.Forms.Form)">
+            <summary>
+            设置目标窗体为活动窗体。将其TopLevel在最前。
+            </summary>     
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.FlashWindow(System.Windows.Forms.Form)">
+            <summary>
+            闪动窗口
+            </summary>
+            <param name="form">要闪动的窗口</param>
+        </member>
+        <member name="M:SharpCapture.Internal.WindowsHelper.GetCurrentCursor">
+            <summary>
+            获取当前的鼠标光标（图像）。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IAMStreamConfig">
+            <summary>
+            This interface sets the output format on certain capture and compression filters,
+            for both audio and video.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IAMStreamConfig.GetNumberOfCapabilities(System.Int32@,System.Int32@)">
+             <summary>
+             Retrieve the number of format capabilities that this pin supports.
+             </summary>
+            
+             <param name="count">Variable that receives the number of format capabilities.</param>
+             <param name="size">Variable that receives the size of the configuration structure in bytes.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IBaseFilter">
+            <summary>
+            The IBaseFilter interface provides methods for controlling a filter.
+            All DirectShow filters expose this interface
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.GetClassID(System.Guid@)">
+             <summary>
+             Returns the class identifier (CLSID) for the component object.
+             </summary>
+            
+             <param name="ClassID">Points to the location of the CLSID on return.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.Stop">
+             <summary>
+             Stops the filter.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.Pause">
+             <summary>
+             Pauses the filter.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.Run(System.Int64)">
+             <summary>
+             Runs the filter.
+             </summary>
+            
+             <param name="start">Reference time corresponding to stream time 0.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.GetState(System.Int32,System.Int32@)">
+             <summary>
+             Retrieves the state of the filter (running, stopped, or paused).
+             </summary>
+            
+             <param name="milliSecsTimeout">Time-out interval, in milliseconds.</param>
+             <param name="filterState">Pointer to a variable that receives filter's state.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.SetSyncSource(System.IntPtr)">
+             <summary>
+             Sets the reference clock for the filter or the filter graph.
+             </summary>
+            
+             <param name="clock">Pointer to the clock's <b>IReferenceClock</b> interface, or NULL. </param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.GetSyncSource(System.IntPtr@)">
+             <summary>
+             Retrieves the current reference clock.
+             </summary>
+            
+             <param name="clock">Address of a variable that receives a pointer to the clock's IReferenceClock interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.EnumPins(SharpCapture.Internal.IEnumPins@)">
+             <summary>
+             Enumerates the pins on this filter.
+             </summary>
+            
+             <param name="enumPins">Address of a variable that receives a pointer to the IEnumPins interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.FindPin(System.String,SharpCapture.Internal.IPin@)">
+             <summary>
+             Retrieves the pin with the specified identifier.
+             </summary>
+            
+             <param name="id">Pointer to a constant wide-character string that identifies the pin.</param>
+             <param name="pin">Address of a variable that receives a pointer to the pin's IPin interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.JoinFilterGraph(SharpCapture.Internal.IFilterGraph,System.String)">
+             <summary>
+             Notifies the filter that it has joined or left the filter graph.
+             </summary>
+            
+             <param name="graph">Pointer to the Filter Graph Manager's <b>IFilterGraph</b> interface, or NULL
+             if the filter is leaving the graph.</param>
+             <param name="name">String that specifies a name for the filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IBaseFilter.QueryVendorInfo(System.String@)">
+             <summary>
+             Retrieves a string containing vendor information.
+             </summary>
+            
+             <param name="vendorInfo">Receives a string containing the vendor information.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.ICaptureGraphBuilder2">
+            <summary>
+            This interface builds capture graphs and other custom filter graphs. 
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.SetFiltergraph(SharpCapture.Internal.IGraphBuilder)">
+             <summary>
+             Specify filter graph for the capture graph builder to use.
+             </summary>
+            
+             <param name="graphBuilder">Filter graph's interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.GetFiltergraph(SharpCapture.Internal.IGraphBuilder@)">
+             <summary>
+             Retrieve the filter graph that the builder is using.
+             </summary>
+            
+             <param name="graphBuilder">Filter graph's interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.SetOutputFileName(System.Guid,System.String,SharpCapture.Internal.IBaseFilter@,System.IntPtr@)">
+             <summary>
+             Create file writing section of the filter graph.
+             </summary>
+            
+             <param name="type">GUID that represents either the media subtype of the output or the
+             class identifier (CLSID) of a multiplexer filter or file writer filter.</param>
+             <param name="fileName">Output file name.</param>
+             <param name="baseFilter">Receives the multiplexer's <see cref="T:MxyCap.Engine.DShow.Core.IBaseFilter" /> interface.</param>
+             <param name="fileSinkFilter">Receives the file writer's IFileSinkFilter interface. Can be NULL.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.FindInterface(System.Guid,System.Guid,SharpCapture.Internal.IBaseFilter,System.Guid,System.Object@)">
+             <summary>
+             Searche the graph for a specified interface, starting from a specified filter.
+             </summary>
+            
+             <param name="category">GUID that specifies the search criteria.</param>
+             <param name="type">GUID that specifies the major media type of an output pin, or NULL.</param>
+             <param name="baseFilter"><see cref="T:MxyCap.Engine.DShow.Core.IBaseFilter" /> interface of the filter. The method begins searching from this filter.</param>
+             <param name="interfaceID">Interface identifier (IID) of the interface to locate.</param>
+             <param name="retInterface">Receives found interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.RenderStream(System.Guid,System.Guid,System.Object,SharpCapture.Internal.IBaseFilter,SharpCapture.Internal.IBaseFilter)">
+             <summary>
+             Connect an output pin on a source filter to a rendering filter, optionally through a compression filter.
+             </summary>
+            
+             <param name="category">Pin category.</param>
+             <param name="mediaType">Major-type GUID that specifies the media type of the output pin.</param>
+             <param name="source">Starting filter for the connection.</param>
+             <param name="compressor">Interface of an intermediate filter, such as a compression filter. Can be NULL.</param>
+             <param name="renderer">Sink filter, such as a renderer or mux filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.ControlStream(System.Guid,System.Guid,SharpCapture.Internal.IBaseFilter,System.Int64,System.Int64,System.Int16,System.Int16)">
+             <summary>
+             Set the start and stop times for one or more streams of captured data.
+             </summary>
+            
+             <param name="category">Pin category.</param>
+             <param name="mediaType">Major-type GUID that specifies the media type.</param>
+             <param name="filter"><see cref="T:MxyCap.Engine.DShow.Core.IBaseFilter" /> interface that specifies which filter to control.</param>
+             <param name="start">Start time.</param>
+             <param name="stop">Stop time.</param>
+             <param name="startCookie">Value that is sent as the second parameter of the
+             EC_STREAM_CONTROL_STARTED event notification.</param>
+             <param name="stopCookie">Value that is sent as the second parameter of the
+             EC_STREAM_CONTROL_STOPPED event notification.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.AllocCapFile(System.String,System.Int64)">
+             <summary>
+             Preallocate a capture file to a specified size.
+             </summary>
+            
+             <param name="fileName">File name to create or resize.</param>
+             <param name="size">Size of the file to allocate, in bytes.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ICaptureGraphBuilder2.CopyCaptureFile(System.String,System.String,System.Boolean,System.IntPtr)">
+             <summary>
+             Copy the valid media data from a capture file.
+             </summary>
+            
+             <param name="oldFileName">Old file name.</param>
+             <param name="newFileName">New file name.</param>
+             <param name="allowEscAbort">Boolean value that specifies whether pressing the ESC key cancels the copy operation.</param>
+             <param name="callback">IAMCopyCaptureFileProgress interface to display progress information, or NULL.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.ICreateDevEnum">
+            <summary>
+            The <b>ICreateDevEnum</b> interface creates an enumerator for devices within a particular category,
+            such as video capture devices, audio capture devices, video compressors, and so forth.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.ICreateDevEnum.CreateClassEnumerator(System.Guid@,System.Runtime.InteropServices.ComTypes.IEnumMoniker@,System.Int32)">
+             <summary>
+             Creates a class enumerator for a specified device category.
+             </summary>
+            
+             <param name="type">Specifies the class identifier of the device category.</param>
+             <param name="enumMoniker">Address of a variable that receives an <b>IEnumMoniker</b> interface pointer</param>
+             <param name="flags">Bitwise combination of zero or more flags. If zero, the method enumerates every filter in the category.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IEnumFilters">
+            <summary>
+            This interface is used by applications or other filters to determine
+            what filters exist in the filter graph.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumFilters.Next(System.Int32,SharpCapture.Internal.IBaseFilter[],System.Int32@)">
+             <summary>
+             Retrieves the specified number of filters in the enumeration sequence.
+             </summary>
+            
+             <param name="cFilters">Number of filters to retrieve.</param>
+             <param name="filters">Array in which to place <see cref="T:MxyCap.Engine.DShow.Core.IBaseFilter" /> interfaces.</param>
+             <param name="filtersFetched">Actual number of filters placed in the array.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumFilters.Skip(System.Int32)">
+             <summary>
+             Skips a specified number of filters in the enumeration sequence.
+             </summary>
+            
+             <param name="cFilters">Number of filters to skip.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumFilters.Reset">
+             <summary>
+             Resets the enumeration sequence to the beginning.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumFilters.Clone(SharpCapture.Internal.IEnumFilters@)">
+             <summary>
+             Makes a copy of the enumerator with the same enumeration state.
+             </summary>
+            
+             <param name="enumFilters">Duplicate of the enumerator.</param>
+            
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IEnumPins">
+            <summary>
+            Enumerates pins on a filter.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumPins.Next(System.Int32,SharpCapture.Internal.IPin[],System.Int32@)">
+             <summary>
+             Retrieves a specified number of pins.
+             </summary>
+            
+             <param name="cPins">Number of pins to retrieve.</param>
+             <param name="pins">Array of size <b>cPins</b> that is filled with <b>IPin</b> pointers.</param>
+             <param name="pinsFetched">Receives the number of pins retrieved.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumPins.Skip(System.Int32)">
+             <summary>
+             Skips a specified number of pins in the enumeration sequence.
+             </summary>
+            
+             <param name="cPins">Number of pins to skip.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumPins.Reset">
+             <summary>
+             Resets the enumeration sequence to the beginning.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IEnumPins.Clone(SharpCapture.Internal.IEnumPins@)">
+             <summary>
+             Makes a copy of the enumerator with the same enumeration state. 
+             </summary>
+            
+             <param name="enumPins">Duplicate of the enumerator.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IFileSourceFilter">
+            <summary>
+            The interface is exposed by source filters to set the file name and media type of the media file that they are to render.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IFilterGraph">
+            <summary>
+            The interface provides methods for building a filter graph. An application can use it to add filters to
+            the graph, connect or disconnect filters, remove filters, and perform other basic operations. 
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.AddFilter(SharpCapture.Internal.IBaseFilter,System.String)">
+             <summary>
+             Adds a filter to the graph and gives it a name.
+             </summary>
+            
+             <param name="filter">Filter to add to the graph.</param>
+             <param name="name">Name of the filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.RemoveFilter(SharpCapture.Internal.IBaseFilter)">
+             <summary>
+             Removes a filter from the graph.
+             </summary>
+            
+             <param name="filter">Filter to be removed from the graph.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.EnumFilters(System.IntPtr@)">
+             <summary>
+             Provides an enumerator for all filters in the graph.
+             </summary>
+            
+             <param name="enumerator">Filter enumerator.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.FindFilterByName(System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+             Finds a filter that was added with a specified name.
+             </summary>
+            
+             <param name="name">Name of filter to search for.</param>
+             <param name="filter">Interface of found filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.Reconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Breaks the existing pin connection and reconnects it to the same pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect and reconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.Disconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Disconnects a specified pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph.SetDefaultSyncSource">
+             <summary>
+             Sets the reference clock to the default clock.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IFilterGraph2">
+            <summary>
+            This interface extends the <see cref="T:MxyCap.Engine.DShow.Core.IFilterGraph" /> and <see cref="T:MxyCap.Engine.DShow.Core.IGraphBuilder" />
+            interfaces, which contain methods for building filter graphs.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.AddFilter(SharpCapture.Internal.IBaseFilter,System.String)">
+             <summary>
+             Adds a filter to the graph and gives it a name.
+             </summary>
+            
+             <param name="filter">Filter to add to the graph.</param>
+             <param name="name">Name of the filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.RemoveFilter(SharpCapture.Internal.IBaseFilter)">
+             <summary>
+             Removes a filter from the graph.
+             </summary>
+            
+             <param name="filter">Filter to be removed from the graph.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.EnumFilters(SharpCapture.Internal.IEnumFilters@)">
+             <summary>
+             Provides an enumerator for all filters in the graph.
+             </summary>
+            
+             <param name="enumerator">Filter enumerator.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.FindFilterByName(System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+             Finds a filter that was added with a specified name.
+             </summary>
+            
+             <param name="name">Name of filter to search for.</param>
+             <param name="filter">Interface of found filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.Reconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Breaks the existing pin connection and reconnects it to the same pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect and reconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.Disconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Disconnects a specified pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.SetDefaultSyncSource">
+             <summary>
+             Sets the reference clock to the default clock.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.Connect(SharpCapture.Internal.IPin,SharpCapture.Internal.IPin)">
+             <summary>
+             Connects two pins. If they will not connect directly, this method connects them with intervening transforms.
+             </summary>
+            
+             <param name="pinOut">Output pin.</param>
+             <param name="pinIn">Input pin.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.Render(SharpCapture.Internal.IPin)">
+             <summary>
+             Adds a chain of filters to a specified output pin to render it.
+             </summary>
+            
+             <param name="pinOut">Output pin.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.RenderFile(System.String,System.String)">
+             <summary>
+             Builds a filter graph that renders the specified file.
+             </summary>
+            
+             <param name="file">Specifies a string that contains file name or device moniker.</param>
+             <param name="playList">Reserved.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.AddSourceFilter(System.String,System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+             Adds a source filter to the filter graph for a specific file.
+             </summary>
+            
+             <param name="fileName">Specifies the name of the file to load.</param>
+             <param name="filterName">Specifies a name for the source filter.</param>
+             <param name="filter">Variable that receives the interface of the source filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.SetLogFile(System.IntPtr)">
+             <summary>
+             Sets the file for logging actions taken when attempting to perform an operation.
+             </summary>
+            
+             <param name="hFile">Handle to the log file.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.Abort">
+             <summary>
+             Requests that the graph builder return as soon as possible from its current task.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.ShouldOperationContinue">
+             <summary>
+             Queries whether the current operation should continue.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.AddSourceFilterForMoniker(System.Runtime.InteropServices.ComTypes.IMoniker,System.Runtime.InteropServices.ComTypes.IBindCtx,System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+            
+             </summary>
+            
+             <param name="moniker">Moniker interface.</param>
+             <param name="bindContext">Bind context interface.</param>
+             <param name="filterName">Name for the filter.</param>
+             <param name="filter"> Receives source filter's IBaseFilter interface.
+             The caller must release the interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IFilterGraph2.RenderEx(SharpCapture.Internal.IPin,System.Int32,System.IntPtr)">
+             <summary>
+             Render an output pin, with an option to use existing renderers only.
+             </summary>
+            
+             <param name="outputPin">Interface of the output pin.</param>
+             <param name="flags">Flag that specifies how to render the pin.</param>
+             <param name="context">Reserved.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IGraphBuilder">
+            <summary>
+            This interface provides methods that enable an application to build a filter graph.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.AddFilter(SharpCapture.Internal.IBaseFilter,System.String)">
+             <summary>
+             Adds a filter to the graph and gives it a name.
+             </summary>
+            
+             <param name="filter">Filter to add to the graph.</param>
+             <param name="name">Name of the filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.RemoveFilter(SharpCapture.Internal.IBaseFilter)">
+             <summary>
+             Removes a filter from the graph.
+             </summary>
+            
+             <param name="filter">Filter to be removed from the graph.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.EnumFilters(SharpCapture.Internal.IEnumFilters@)">
+             <summary>
+             Provides an enumerator for all filters in the graph.
+             </summary>
+            
+             <param name="enumerator">Filter enumerator.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.FindFilterByName(System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+             Finds a filter that was added with a specified name.
+             </summary>
+            
+             <param name="name">Name of filter to search for.</param>
+             <param name="filter">Interface of found filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.Reconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Breaks the existing pin connection and reconnects it to the same pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect and reconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.Disconnect(SharpCapture.Internal.IPin)">
+             <summary>
+             Disconnects a specified pin.
+             </summary>
+            
+             <param name="pin">Pin to disconnect.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.SetDefaultSyncSource">
+             <summary>
+             Sets the reference clock to the default clock.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.Connect(SharpCapture.Internal.IPin,SharpCapture.Internal.IPin)">
+             <summary>
+             Connects two pins. If they will not connect directly, this method connects them with intervening transforms.
+             </summary>
+            
+             <param name="pinOut">Output pin.</param>
+             <param name="pinIn">Input pin.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.Render(SharpCapture.Internal.IPin)">
+             <summary>
+             Adds a chain of filters to a specified output pin to render it.
+             </summary>
+            
+             <param name="pinOut">Output pin.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.RenderFile(System.String,System.String)">
+             <summary>
+             Builds a filter graph that renders the specified file.
+             </summary>
+            
+             <param name="file">Specifies a string that contains file name or device moniker.</param>
+             <param name="playList">Reserved.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.AddSourceFilter(System.String,System.String,SharpCapture.Internal.IBaseFilter@)">
+             <summary>
+             Adds a source filter to the filter graph for a specific file.
+             </summary>
+            
+             <param name="fileName">Specifies the name of the file to load.</param>
+             <param name="filterName">Specifies a name for the source filter.</param>
+             <param name="filter">Variable that receives the interface of the source filter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.SetLogFile(System.IntPtr)">
+             <summary>
+             Sets the file for logging actions taken when attempting to perform an operation.
+             </summary>
+            
+             <param name="hFile">Handle to the log file.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.Abort">
+             <summary>
+             Requests that the graph builder return as soon as possible from its current task.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IGraphBuilder.ShouldOperationContinue">
+             <summary>
+             Queries whether the current operation should continue.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IMediaControl">
+            <summary>
+            The interface provides methods for controlling the flow of data through the filter graph.
+            It includes methods for running, pausing, and stopping the graph.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.Run">
+             <summary>
+             Runs all the filters in the filter graph.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.Pause">
+             <summary>
+             Pauses all filters in the filter graph.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.Stop">
+             <summary>
+             Stops all the filters in the filter graph.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.GetState(System.Int32,System.Int32@)">
+             <summary>
+             Retrieves the state of the filter graph.
+             </summary>
+            
+             <param name="timeout">Duration of the time-out, in milliseconds, or INFINITE to specify an infinite time-out.</param>
+             <param name="filterState">蘟riable that receives a member of the <b>FILTER_STATE</b> enumeration.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.RenderFile(System.String)">
+             <summary>
+             Builds a filter graph that renders the specified file.
+             </summary>
+            
+             <param name="fileName">Name of the file to render</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.AddSourceFilter(System.String,System.Object@)">
+             <summary>
+             Adds a source filter to the filter graph, for a specified file.
+             </summary>
+            
+             <param name="fileName">Name of the file containing the source video.</param>
+             <param name="filterInfo">Receives interface of filter information object.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaControl.StopWhenReady">
+             <summary>
+             Pauses the filter graph, allowing filters to queue data, and then stops the filter graph.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IMediaEventEx">
+            <summary>
+            The interface inherits contains methods for retrieving event notifications and for overriding the
+            filter graph's default handling of events.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.GetEventHandle(System.IntPtr@)">
+             <summary>
+             Retrieves a handle to a manual-reset event that remains signaled while the queue contains event notifications.
+             </summary>
+             <param name="hEvent">Pointer to a variable that receives the event handle.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.WaitForCompletion(System.Int32,System.Int32@)">
+             <summary>
+             Waits for the filter graph to render all available data.
+             </summary>
+            
+             <param name="msTimeout">Time-out interval, in milliseconds. Pass zero to return immediately.</param>
+             <param name="pEvCode">Pointer to a variable that receives an event code.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.CancelDefaultHandling(System.Int32)">
+             <summary>
+             Cancels the Filter Graph Manager's default handling for a specified event.
+             </summary>
+            
+             <param name="lEvCode">Event code for which to cancel default handling.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.RestoreDefaultHandling(System.Int32)">
+             <summary>
+             Restores the Filter Graph Manager's default handling for a specified event.
+             </summary>
+             <param name="lEvCode">Event code for which to restore default handling.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.SetNotifyWindow(System.IntPtr,System.Int32,System.IntPtr)">
+             <summary>
+             Registers a window to process event notifications.
+             </summary>
+            
+             <param name="hwnd">Handle to the window, or <see cref="F:System.IntPtr.Zero" /> to stop receiving event messages.</param>
+             <param name="lMsg">Window message to be passed as the notification.</param>
+             <param name="lInstanceData">Value to be passed as the <i>lParam</i> parameter for the <i>lMsg</i> message.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.SetNotifyFlags(System.Int32)">
+             <summary>
+             Enables or disables event notifications.
+             </summary>
+            
+             <param name="lNoNotifyFlags">Value indicating whether to enable or disable event notifications.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IMediaEventEx.GetNotifyFlags(System.Int32@)">
+             <summary>
+             Determines whether event notifications are enabled.
+             </summary>
+            
+             <param name="lplNoNotifyFlags">Variable that receives current notification status.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IPin">
+            <summary>
+            This interface is exposed by all input and output pins of DirectShow filters.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.Disconnect">
+             <summary>
+             Breaks the current pin connection.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.ConnectedTo(SharpCapture.Internal.IPin@)">
+             <summary>
+             Returns a pointer to the connecting pin.
+             </summary>
+            
+             <param name="pin">Receives <b>IPin</b> interface of connected pin (if any).</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.QueryId(System.String@)">
+             <summary>
+             Retrieves an identifier for the pin.
+             </summary>
+            
+             <param name="id">Pin identifier.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.EnumMediaTypes(System.IntPtr)">
+             <summary>
+             Provides an enumerator for this pin's preferred media types.
+             </summary>
+            
+             <param name="enumerator">Address of a variable that receives a pointer to the <b>IEnumMediaTypes</b> interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.QueryInternalConnections(System.IntPtr,System.Int32@)">
+             <summary>
+             Provides an array of the pins to which this pin internally connects.
+             </summary>
+            
+             <param name="apPin">Address of an array of <b>IPin</b> pointers.</param>
+             <param name="nPin">On input, specifies the size of the array. When the method returns,
+             the value is set to the number of pointers returned in the array.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.EndOfStream">
+             <summary>
+             Notifies the pin that no additional data is expected.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.BeginFlush">
+             <summary>
+             Begins a flush operation.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.EndFlush">
+             <summary>
+             Ends a flush operation.
+             </summary>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPin.NewSegment(System.Int64,System.Int64,System.Double)">
+             <summary>
+             Specifies that samples following this call are grouped as a segment with a given start time, stop time, and rate.
+             </summary>
+            
+             <param name="start">Start time of the segment, relative to the original source, in 100-nanosecond units.</param>
+             <param name="stop">End time of the segment, relative to the original source, in 100-nanosecond units.</param>
+             <param name="rate">Rate at which this segment should be processed, as a percentage of the original rate.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.IPropertyBag">
+            <summary>
+            The <b>IPropertyBag</b> interface provides an object with a property bag in
+            which the object can persistently save its properties. 
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IPropertyBag.Read(System.String,System.Object@,System.IntPtr)">
+             <summary>
+             Read a property from property bag.
+             </summary>
+            
+             <param name="propertyName">Property name to read.</param>
+             <param name="pVar">Property value.</param>
+             <param name="pErrorLog">Caller's error log.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IPropertyBag.Write(System.String,System.Object@)">
+             <summary>
+             Write property to property bag.
+             </summary>
+            
+             <param name="propertyName">Property name to read.</param>
+             <param name="pVar">Property value.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.ISampleGrabber">
+            <summary>
+            The interface is exposed by the Sample Grabber Filter. It enables an application to retrieve
+            individual media samples as they move through the filter graph.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabber.SetOneShot(System.Boolean)">
+             <summary>
+             Specifies whether the filter should stop the graph after receiving one sample.
+             </summary>
+            
+             <param name="oneShot">Boolean value specifying whether the filter should stop the graph after receiving one sample.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabber.SetBufferSamples(System.Boolean)">
+             <summary>
+             Specifies whether to copy sample data into a buffer as it goes through the filter.
+             </summary>
+            
+             <param name="bufferThem">Boolean value specifying whether to buffer sample data.
+             If <b>true</b>, the filter copies sample data into an internal buffer.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabber.GetCurrentBuffer(System.Int32@,System.IntPtr)">
+             <summary>
+             Retrieves a copy of the sample that the filter received most recently.
+             </summary>
+            
+             <param name="bufferSize">Pointer to the size of the buffer. If pBuffer is NULL, this parameter receives the required size.</param>
+             <param name="buffer">Pointer to a buffer to receive a copy of the sample, or NULL.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabber.GetCurrentSample(System.IntPtr)">
+             <summary>
+             Not currently implemented.
+             </summary>
+            
+             <param name="sample"></param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabber.SetCallback(SharpCapture.Internal.ISampleGrabberCB,System.Int32)">
+             <summary>
+             Specifies a callback method to call on incoming samples.
+             </summary>
+            
+             <param name="callback"><see cref="T:MxyCap.Engine.DShow.Core.ISampleGrabberCB" /> interface containing the callback method, or NULL to cancel the callback.</param>
+             <param name="whichMethodToCallback">Index specifying the callback method.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.ISampleGrabberCB">
+            <summary>
+            The interface provides callback methods for the <see cref="M:MxyCap.Engine.DShow.Core.ISampleGrabber.SetCallback(MxyCap.Engine.DShow.Core.ISampleGrabberCB,System.Int32)" /> method.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabberCB.SampleCB(System.Double,System.IntPtr)">
+             <summary>
+             Callback method that receives a pointer to the media sample.
+             </summary>
+            
+             <param name="sampleTime">Starting time of the sample, in seconds.</param>
+             <param name="sample">Pointer to the sample's <b>IMediaSample</b> interface.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.ISampleGrabberCB.BufferCB(System.Double,System.IntPtr,System.Int32)">
+             <summary>
+             Callback method that receives a pointer to the sample buffer?
+             </summary>
+            
+             <param name="sampleTime">Starting time of the sample, in seconds.</param>
+             <param name="buffer">Pointer to a buffer that contains the sample data.</param>
+             <param name="bufferLen">Length of the buffer pointed to by <b>buffer</b>, in bytes</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.ISpecifyPropertyPages">
+            <summary>
+            The interface indicates that an object supports property pages.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IVideoWindow">
+            <summary>
+            The interface sets properties on the video window.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Caption(System.String)">
+             <summary>
+             Sets the video window caption.
+             </summary>
+            
+             <param name="caption">Caption.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_WindowStyle(System.Int32)">
+             <summary>
+             Sets the window style on the video window.
+             </summary>
+            
+             <param name="windowStyle">Window style flags.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_WindowStyleEx(System.Int32)">
+             <summary>
+             Sets the extended window style on the video window.
+             </summary>
+            
+             <param name="windowStyleEx">Window extended style flags.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_AutoShow(System.Boolean)">
+             <summary>
+             Specifies whether the video renderer automatically shows the video window when it receives video data.
+             </summary>
+            
+             <param name="autoShow">Specifies whether the video renderer automatically shows the video window.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_WindowState(System.Int32)">
+             <summary>
+             Shows, hides, minimizes, or maximizes the video window.
+             </summary>
+            
+             <param name="windowState">Window state.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_BackgroundPalette(System.Boolean)">
+             <summary>
+             Specifies whether the video window realizes its palette in the background.
+             </summary>
+            
+             <param name="backgroundPalette">Value that specifies whether the video renderer realizes it palette in the background.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Visible(System.Boolean)">
+             <summary>
+             Shows or hides the video window.
+             </summary>
+            
+             <param name="visible">Value that specifies whether to show or hide the window.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Left(System.Int32)">
+             <summary>
+             Sets the video window's x-coordinate.
+             </summary>
+            
+             <param name="left">Specifies the x-coordinate, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Width(System.Int32)">
+             <summary>
+             Sets the width of the video window.
+             </summary>
+            
+             <param name="width">Specifies the width, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Top(System.Int32)">
+             <summary>
+             Sets the video window's y-coordinate.
+             </summary>
+            
+             <param name="top">Specifies the y-coordinate, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Height(System.Int32)">
+             <summary>
+             Sets the height of the video window.
+             </summary>
+            
+             <param name="height">Specifies the height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_Owner(System.IntPtr)">
+             <summary>
+             Specifies a parent window for the video window?
+             </summary>
+            
+             <param name="owner">Specifies a handle to the parent window.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_MessageDrain(System.IntPtr)">
+             <summary>
+             Specifies a window to receive mouse and keyboard messages from the video window.
+             </summary>
+            
+             <param name="drain">Specifies a handle to the window.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_BorderColor(System.Int32)">
+             <summary>
+             Sets the color that appears around the edges of the destination rectangle.
+             </summary>
+            
+             <param name="color">Specifies the border color.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.put_FullScreenMode(System.Boolean)">
+             <summary>
+             Enables or disables full-screen mode.
+             </summary>
+            
+             <param name="fullScreenMode">Boolean value that specifies whether to enable or disable full-screen mode.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.SetWindowForeground(System.Int32)">
+             <summary>
+             Places the video window at the top of the Z order.
+             </summary>
+            
+             <param name="focus">Value that specifies whether to give the window focus.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.NotifyOwnerMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+             <summary>
+             Forwards a message to the video window.
+             </summary>
+            
+             <param name="hwnd">Handle to the window.</param>
+             <param name="msg">Specifies the message.</param>
+             <param name="wParam">Message parameter.</param>
+             <param name="lParam">Message parameter.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.SetWindowPosition(System.Int32,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Sets the position of the video window?
+             </summary>
+            
+             <param name="left">Specifies the x-coordinate, in pixels.</param>
+             <param name="top">Specifies the y-coordinate, in pixels.</param>
+             <param name="width">Specifies the width, in pixels.</param>
+             <param name="height">Specifies the height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.GetWindowPosition(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+             <summary>
+             Retrieves the position of the video window.
+             </summary>
+            
+             <param name="left">x-coordinate, in pixels.</param>
+             <param name="top">y-coordinate, in pixels.</param>
+             <param name="width">Width, in pixels.</param>
+             <param name="height">Height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.GetMinIdealImageSize(System.Int32@,System.Int32@)">
+             <summary>
+             Retrieves the minimum ideal size for the video image.
+             </summary>
+            
+             <param name="width">Receives the minimum ideal width, in pixels.</param>
+             <param name="height">Receives the minimum ideal height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.GetMaxIdealImageSize(System.Int32@,System.Int32@)">
+             <summary>
+             Retrieves the maximum ideal size for the video image.
+             </summary>
+            
+             <param name="width">Receives the maximum ideal width, in pixels.</param>
+             <param name="height">Receives the maximum ideal height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.GetRestorePosition(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+             <summary>
+             Retrieves the restored window position.
+             </summary>
+            
+             <param name="left">x-coordinate, in pixels.</param>
+             <param name="top">y-coordinate, in pixels.</param>
+             <param name="width">Width, in pixels.</param>
+             <param name="height">Height, in pixels.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.HideCursor(System.Boolean)">
+             <summary>
+             Hides the cursor.
+             </summary>
+            
+             <param name="hideCursor">Specifies whether to hide or display the cursor.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="M:SharpCapture.Internal.IVideoWindow.IsCursorHidden(System.Boolean@)">
+             <summary>
+             Queries whether the cursor is hidden.
+             </summary>
+            
+             <param name="hideCursor">Specifies if cursor is hidden or not.</param>
+            
+             <returns>Return's <b>HRESULT</b> error code.</returns>
+        </member>
+        <member name="T:SharpCapture.Internal.MediaSubType">
+            <summary>
+            DirectShow media subtypes.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.MFReadWriteClassFactory">
+            <summary>
+            CLSID_MFReadWriteClassFactory
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFSourceReader">
+            <summary>
+            IMFSourceReader interface
+            http://msdn.microsoft.com/en-us/library/windows/desktop/dd374655%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.GetStreamSelection(System.Int32,System.Boolean@)">
+            <summary>
+            Queries whether a stream is selected.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.SetStreamSelection(System.Int32,System.Boolean)">
+            <summary>
+            Selects or deselects one or more streams.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.GetNativeMediaType(System.Int32,System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Gets a format that is supported natively by the media source.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.GetCurrentMediaType(System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Gets the current media type for a stream.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.SetCurrentMediaType(System.Int32,System.IntPtr,SharpCapture.Internal.IMFMediaType)">
+            <summary>
+            Sets the media type for a stream.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.Flush(System.Int32)">
+            <summary>
+            Flushes one or more streams.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSourceReader.GetServiceForStream(System.Int32,System.Guid,System.Guid,System.IntPtr@)">
+            <summary>
+            Queries the underlying media source or decoder for an interface.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFTransform">
+            <summary>
+            IMFTransform, defined in mftransform.h
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetStreamLimits(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Retrieves the minimum and maximum number of input and output streams.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetStreamLimits( 
+                /* [out] */ __RPC__out DWORD *pdwInputMinimum,
+                /* [out] */ __RPC__out DWORD *pdwInputMaximum,
+                /* [out] */ __RPC__out DWORD *pdwOutputMinimum,
+                /* [out] */ __RPC__out DWORD *pdwOutputMaximum) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetStreamCount(System.Int32@,System.Int32@)">
+            <summary>
+            Retrieves the current number of input and output streams on this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetStreamCount( 
+                /* [out] */ __RPC__out DWORD *pcInputStreams,
+                /* [out] */ __RPC__out DWORD *pcOutputStreams) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetStreamIds(System.Int32,System.Int32[],System.Int32,System.Int32[])">
+            <summary>
+            Retrieves the stream identifiers for the input and output streams on this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetStreamIDs( 
+                DWORD dwInputIDArraySize,
+                /* [size_is][out] */ __RPC__out_ecount_full(dwInputIDArraySize) DWORD *pdwInputIDs,
+                DWORD dwOutputIDArraySize,
+                /* [size_is][out] */ __RPC__out_ecount_full(dwOutputIDArraySize) DWORD *pdwOutputIDs) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetAttributes(SharpCapture.Internal.IMFAttributes@)">
+            <summary>
+            Gets the global attribute store for this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+             virtual HRESULT STDMETHODCALLTYPE GetAttributes( 
+                /* [out] */ __RPC__deref_out_opt IMFAttributes **pAttributes) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetInputStreamAttributes(System.Int32,SharpCapture.Internal.IMFAttributes@)">
+            <summary>
+            Retrieves the attribute store for an input stream on this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetInputStreamAttributes( 
+                DWORD dwInputStreamID,
+                /* [out] */ __RPC__deref_out_opt IMFAttributes **pAttributes) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetOutputStreamAttributes(System.Int32,SharpCapture.Internal.IMFAttributes@)">
+            <summary>
+            Retrieves the attribute store for an output stream on this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetOutputStreamAttributes( 
+                DWORD dwOutputStreamID,
+                /* [out] */ __RPC__deref_out_opt IMFAttributes **pAttributes) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.DeleteInputStream(System.Int32)">
+            <summary>
+            Removes an input stream from this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE DeleteInputStream( 
+                DWORD dwStreamID) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.AddInputStreams(System.Int32,System.Int32[])">
+            <summary>
+            Adds one or more new input streams to this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE AddInputStreams( 
+                DWORD cStreams,
+                /* [in] */ __RPC__in DWORD *adwStreamIDs) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetInputAvailableType(System.Int32,System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Gets an available media type for an input stream on this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetInputAvailableType( 
+                DWORD dwInputStreamID,
+                DWORD dwTypeIndex,
+                /* [out] */ __RPC__deref_out_opt IMFMediaType **ppType) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetOutputAvailableType(System.Int32,System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Retrieves an available media type for an output stream on this MFT.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetOutputAvailableType( 
+                DWORD dwOutputStreamID,
+                DWORD dwTypeIndex,
+                /* [out] */ __RPC__deref_out_opt IMFMediaType **ppType) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetInputCurrentType(System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Gets the current media type for an input stream on this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetInputCurrentType( 
+                DWORD dwInputStreamID,
+                /* [out] */ __RPC__deref_out_opt IMFMediaType **ppType) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.GetOutputCurrentType(System.Int32,SharpCapture.Internal.IMFMediaType@)">
+            <summary>
+            Gets the current media type for an output stream on this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetOutputCurrentType( 
+                DWORD dwOutputStreamID,
+                /* [out] */ __RPC__deref_out_opt IMFMediaType **ppType) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.SetOutputBounds(System.Int64,System.Int64)">
+            <summary>
+            Sets the range of time stamps the client needs for output. 
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE SetOutputBounds( 
+                LONGLONG hnsLowerBound,
+                LONGLONG hnsUpperBound) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.ProcessEvent(System.Int32,SharpCapture.Internal.IMFMediaEvent)">
+            <summary>
+            Sends an event to an input stream on this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE ProcessEvent( 
+                DWORD dwInputStreamID,
+                /* [in] */ __RPC__in_opt IMFMediaEvent *pEvent) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFTransform.ProcessInput(System.Int32,SharpCapture.Internal.IMFSample,System.Int32)">
+            <summary>
+            Delivers data to an input stream on this Media Foundation transform (MFT). 
+            </summary>
+            <remarks>
+            virtual /* [local] */ HRESULT STDMETHODCALLTYPE ProcessInput( 
+                DWORD dwInputStreamID,
+                IMFSample *pSample,
+                DWORD dwFlags) = 0;
+            </remarks>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFSinkWriter">
+            <summary>
+            Implemented by the Microsoft Media Foundation sink writer object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.AddStream(SharpCapture.Internal.IMFMediaType,System.Int32@)">
+            <summary>
+            Adds a stream to the sink writer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.SetInputMediaType(System.Int32,SharpCapture.Internal.IMFMediaType,SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Sets the input format for a stream on the sink writer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.BeginWriting">
+            <summary>
+            Initializes the sink writer for writing.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.WriteSample(System.Int32,SharpCapture.Internal.IMFSample)">
+            <summary>
+            Delivers a sample to the sink writer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.SendStreamTick(System.Int32,System.Int64)">
+            <summary>
+            Indicates a gap in an input stream.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.PlaceMarker(System.Int32,System.IntPtr)">
+            <summary>
+            Places a marker in the specified stream.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.NotifyEndOfSegment(System.Int32)">
+            <summary>
+            Notifies the media sink that a stream has reached the end of a segment.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.Flush(System.Int32)">
+            <summary>
+            Flushes one or more streams.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.DoFinalize">
+            <summary>
+            (Finalize) Completes all writing operations on the sink writer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSinkWriter.GetServiceForStream(System.Int32,System.Guid@,System.Guid@,System.IntPtr@)">
+            <summary>
+            Queries the underlying media sink or encoder for an interface.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFSample">
+            <summary>
+            http://msdn.microsoft.com/en-gb/library/windows/desktop/ms702192%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetItemType(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the data type of the value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.CompareItem(System.Guid,System.IntPtr,System.Boolean@)">
+            <summary>
+            Queries whether a stored attribute value equals a specified PROPVARIANT.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.Compare(SharpCapture.Internal.IMFAttributes,System.Int32,System.Boolean@)">
+            <summary>
+            Compares the attributes on this object with the attributes on another object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetDouble(System.Guid,System.Double@)">
+            <summary>
+            Retrieves a double value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetGUID(System.Guid,System.Guid@)">
+            <summary>
+            Retrieves a GUID value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetStringLength(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a string value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetString(System.Guid,System.Text.StringBuilder,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetAllocatedString(System.Guid,System.String@,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key. This method allocates the memory for the string.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetBlobSize(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetBlob(System.Guid,System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetAllocatedBlob(System.Guid,System.IntPtr@,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key. This method allocates the memory for the array.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetUnknown(System.Guid,System.Guid,System.Object@)">
+            <summary>
+            Retrieves an interface pointer associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetItem(System.Guid,System.IntPtr)">
+            <summary>
+            Associates an attribute value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.DeleteItem(System.Guid)">
+            <summary>
+            Removes a key/value pair from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.DeleteAllItems">
+            <summary>
+            Removes all key/value pairs from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetDouble(System.Guid,System.Double)">
+            <summary>
+            Associates a double value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetGUID(System.Guid,System.Guid)">
+            <summary>
+            Associates a GUID value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetString(System.Guid,System.String)">
+            <summary>
+            Associates a wide-character string with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetBlob(System.Guid,System.Byte[],System.Int32)">
+            <summary>
+            Associates a byte array with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetUnknown(System.Guid,System.Object)">
+            <summary>
+            Associates an IUnknown pointer with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.LockStore">
+            <summary>
+            Locks the attribute store so that no other thread can access it.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.UnlockStore">
+            <summary>
+            Unlocks the attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetCount(System.Int32@)">
+            <summary>
+            Retrieves the number of attributes that are set on this object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.CopyAllItems(SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Copies all of the attributes from this object into another attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetSampleFlags(System.Int32@)">
+            <summary>
+            Retrieves flags associated with the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetSampleFlags(System.Int32)">
+            <summary>
+            Sets flags associated with the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetSampleTime(System.Int64@)">
+            <summary>
+            Retrieves the presentation time of the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetSampleTime(System.Int64)">
+            <summary>
+            Sets the presentation time of the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetSampleDuration(System.Int64@)">
+            <summary>
+            Retrieves the duration of the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.SetSampleDuration(System.Int64)">
+            <summary>
+            Sets the duration of the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetBufferCount(System.Int32@)">
+            <summary>
+            Retrieves the number of buffers in the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetBufferByIndex(System.Int32,SharpCapture.Internal.IMFMediaBuffer@)">
+            <summary>
+            Retrieves a buffer from the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.ConvertToContiguousBuffer(SharpCapture.Internal.IMFMediaBuffer@)">
+            <summary>
+            Converts a sample with multiple buffers into a sample with a single buffer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.AddBuffer(SharpCapture.Internal.IMFMediaBuffer)">
+            <summary>
+             Adds a buffer to the end of the list of buffers in the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.RemoveBufferByIndex(System.Int32)">
+            <summary>
+            Removes a buffer at a specified index from the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.RemoveAllBuffers">
+            <summary>
+            Removes all buffers from the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.GetTotalLength(System.Int32@)">
+            <summary>
+            Retrieves the total length of the valid data in all of the buffers in the sample.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFSample.CopyToBuffer(SharpCapture.Internal.IMFMediaBuffer)">
+            <summary>
+            Copies the sample data to a buffer.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFReadWriteClassFactory">
+            <summary>
+            Creates an instance of either the sink writer or the source reader.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFReadWriteClassFactory.CreateInstanceFromURL(System.Guid,System.String,SharpCapture.Internal.IMFAttributes,System.Guid,System.Object@)">
+            <summary>
+            Creates an instance of the sink writer or source reader, given a URL.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFReadWriteClassFactory.CreateInstanceFromObject(System.Guid,System.Object,SharpCapture.Internal.IMFAttributes,System.Guid,System.Object@)">
+            <summary>
+            Creates an instance of the sink writer or source reader, given an IUnknown pointer. 
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFMediaType">
+            <summary>
+            Represents a description of a media format. 
+            http://msdn.microsoft.com/en-us/library/windows/desktop/ms704850%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetItemType(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the data type of the value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.CompareItem(System.Guid,System.IntPtr,System.Boolean@)">
+            <summary>
+            Queries whether a stored attribute value equals a specified PROPVARIANT.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.Compare(SharpCapture.Internal.IMFAttributes,System.Int32,System.Boolean@)">
+            <summary>
+            Compares the attributes on this object with the attributes on another object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetDouble(System.Guid,System.Double@)">
+            <summary>
+            Retrieves a double value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetGUID(System.Guid,System.Guid@)">
+            <summary>
+            Retrieves a GUID value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetStringLength(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a string value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetString(System.Guid,System.Text.StringBuilder,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetAllocatedString(System.Guid,System.String@,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key. This method allocates the memory for the string.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetBlobSize(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetBlob(System.Guid,System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetAllocatedBlob(System.Guid,System.IntPtr@,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key. This method allocates the memory for the array.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetUnknown(System.Guid,System.Guid,System.Object@)">
+            <summary>
+            Retrieves an interface pointer associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetItem(System.Guid,System.IntPtr)">
+            <summary>
+            Associates an attribute value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.DeleteItem(System.Guid)">
+            <summary>
+            Removes a key/value pair from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.DeleteAllItems">
+            <summary>
+            Removes all key/value pairs from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetDouble(System.Guid,System.Double)">
+            <summary>
+            Associates a double value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetGUID(System.Guid,System.Guid)">
+            <summary>
+            Associates a GUID value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetString(System.Guid,System.String)">
+            <summary>
+            Associates a wide-character string with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetBlob(System.Guid,System.Byte[],System.Int32)">
+            <summary>
+            Associates a byte array with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.SetUnknown(System.Guid,System.Object)">
+            <summary>
+            Associates an IUnknown pointer with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.LockStore">
+            <summary>
+            Locks the attribute store so that no other thread can access it.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.UnlockStore">
+            <summary>
+            Unlocks the attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetCount(System.Int32@)">
+            <summary>
+            Retrieves the number of attributes that are set on this object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.CopyAllItems(SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Copies all of the attributes from this object into another attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetMajorType(System.Guid@)">
+            <summary>
+            Retrieves the major type of the format.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.IsCompressedFormat(System.Boolean@)">
+            <summary>
+            Queries whether the media type is a compressed format.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.IsEqual(SharpCapture.Internal.IMFMediaType,System.Int32@)">
+            <summary>
+            Compares two media types and determines whether they are identical.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.GetRepresentation(System.Guid,System.IntPtr@)">
+            <summary>
+            Retrieves an alternative representation of the media type.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaType.FreeRepresentation(System.Guid,System.IntPtr)">
+            <summary>
+            Frees memory that was allocated by the GetRepresentation method.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFMediaEvent">
+            <summary>
+            IMFMediaEvent - Represents an event generated by a Media Foundation object. Use this interface to get information about the event.
+            http://msdn.microsoft.com/en-us/library/windows/desktop/ms702249%28v=vs.85%29.aspx
+            Mfobjects.h
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetItemType(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the data type of the value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.CompareItem(System.Guid,System.IntPtr,System.Boolean@)">
+            <summary>
+            Queries whether a stored attribute value equals a specified PROPVARIANT.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.Compare(SharpCapture.Internal.IMFAttributes,System.Int32,System.Boolean@)">
+            <summary>
+            Compares the attributes on this object with the attributes on another object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetDouble(System.Guid,System.Double@)">
+            <summary>
+            Retrieves a double value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetGUID(System.Guid,System.Guid@)">
+            <summary>
+            Retrieves a GUID value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetStringLength(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a string value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetString(System.Guid,System.Text.StringBuilder,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetAllocatedString(System.Guid,System.String@,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key. This method allocates the memory for the string.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetBlobSize(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetBlob(System.Guid,System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetAllocatedBlob(System.Guid,System.IntPtr@,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key. This method allocates the memory for the array.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetUnknown(System.Guid,System.Guid,System.Object@)">
+            <summary>
+            Retrieves an interface pointer associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetItem(System.Guid,System.IntPtr)">
+            <summary>
+            Associates an attribute value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.DeleteItem(System.Guid)">
+            <summary>
+            Removes a key/value pair from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.DeleteAllItems">
+            <summary>
+            Removes all key/value pairs from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetDouble(System.Guid,System.Double)">
+            <summary>
+            Associates a double value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetGUID(System.Guid,System.Guid)">
+            <summary>
+            Associates a GUID value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetString(System.Guid,System.String)">
+            <summary>
+            Associates a wide-character string with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetBlob(System.Guid,System.Byte[],System.Int32)">
+            <summary>
+            Associates a byte array with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.SetUnknown(System.Guid,System.Object)">
+            <summary>
+            Associates an IUnknown pointer with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.LockStore">
+            <summary>
+            Locks the attribute store so that no other thread can access it.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.UnlockStore">
+            <summary>
+            Unlocks the attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetCount(System.Int32@)">
+            <summary>
+            Retrieves the number of attributes that are set on this object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.CopyAllItems(SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Copies all of the attributes from this object into another attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetExtendedType(System.Guid@)">
+            <summary>
+            Retrieves the extended type of the event.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetExtendedType( 
+                /* [out] */ __RPC__out GUID *pguidExtendedType) = 0;
+            </remarks>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaEvent.GetStatus(System.Int32@)">
+            <summary>
+            Retrieves an HRESULT that specifies the event status.
+            </summary>
+            <remarks>
+            virtual HRESULT STDMETHODCALLTYPE GetStatus( 
+                /* [out] */ __RPC__out HRESULT *phrStatus) = 0;
+            </remarks>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFMediaBuffer">
+            <summary>
+            IMFMediaBuffer
+            http://msdn.microsoft.com/en-gb/library/windows/desktop/ms696261%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaBuffer.Lock(System.IntPtr@,System.Int32@,System.Int32@)">
+            <summary>
+            Gives the caller access to the memory in the buffer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaBuffer.Unlock">
+            <summary>
+            Unlocks a buffer that was previously locked.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaBuffer.GetCurrentLength(System.Int32@)">
+            <summary>
+            Retrieves the length of the valid data in the buffer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaBuffer.SetCurrentLength(System.Int32)">
+            <summary>
+            Sets the length of the valid data in the buffer.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFMediaBuffer.GetMaxLength(System.Int32@)">
+            <summary>
+            Retrieves the allocated size of the buffer.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFCollection">
+            <summary>
+            Represents a generic collection of IUnknown pointers. 
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.GetElementCount(System.Int32@)">
+            <summary>
+            Retrieves the number of objects in the collection.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.GetElement(System.Int32,System.Object@)">
+            <summary>
+            Retrieves an object in the collection.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.AddElement(System.Object)">
+            <summary>
+            Adds an object to the collection.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.RemoveElement(System.Int32,System.Object@)">
+            <summary>
+            Removes an object from the collection.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.InsertElementAt(System.Int32,System.Object)">
+            <summary>
+            Removes an object from the collection.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFCollection.RemoveAllElements">
+            <summary>
+            Removes all items from the collection.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFByteStream">
+            <summary>
+            IMFByteStream 
+            http://msdn.microsoft.com/en-gb/library/windows/desktop/ms698720%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.GetCapabilities(System.Int32@)">
+            <summary>
+            Retrieves the characteristics of the byte stream. 
+            virtual HRESULT STDMETHODCALLTYPE GetCapabilities(/*[out]*/ __RPC__out DWORD *pdwCapabilities) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.GetLength(System.Int64@)">
+            <summary>
+            Retrieves the length of the stream. 
+            virtual HRESULT STDMETHODCALLTYPE GetLength(/*[out]*/ __RPC__out QWORD *pqwLength) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.SetLength(System.Int64)">
+            <summary>
+            Sets the length of the stream. 
+            virtual HRESULT STDMETHODCALLTYPE SetLength(/*[in]*/ QWORD qwLength) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.GetCurrentPosition(System.Int64@)">
+            <summary>
+            Retrieves the current read or write position in the stream. 
+            virtual HRESULT STDMETHODCALLTYPE GetCurrentPosition(/*[out]*/ __RPC__out QWORD *pqwPosition) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.SetCurrentPosition(System.Int64)">
+            <summary>
+            Sets the current read or write position. 
+            virtual HRESULT STDMETHODCALLTYPE SetCurrentPosition(/*[in]*/ QWORD qwPosition) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.IsEndOfStream(System.Boolean@)">
+            <summary>
+            Queries whether the current position has reached the end of the stream. 
+            virtual HRESULT STDMETHODCALLTYPE IsEndOfStream(/*[out]*/ __RPC__out BOOL *pfEndOfStream) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.Read(System.IntPtr,System.Int32,System.Int32@)">
+            <summary>
+            Reads data from the stream. 
+            virtual HRESULT STDMETHODCALLTYPE Read(/*[size_is][out]*/ __RPC__out_ecount_full(cb) BYTE *pb, /*[in]*/ ULONG cb, /*[out]*/ __RPC__out ULONG *pcbRead) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.BeginRead(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            Begins an asynchronous read operation from the stream. 
+            virtual /*[local]*/ HRESULT STDMETHODCALLTYPE BeginRead(/*[out]*/ _Out_writes_bytes_(cb)  BYTE *pb, /*[in]*/ ULONG cb, /*[in]*/ IMFAsyncCallback *pCallback, /*[in]*/ IUnknown *punkState) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.EndRead(System.IntPtr,System.Int32@)">
+            <summary>
+            Completes an asynchronous read operation. 
+            virtual /*[local]*/ HRESULT STDMETHODCALLTYPE EndRead(/*[in]*/ IMFAsyncResult *pResult, /*[out]*/ _Out_  ULONG *pcbRead) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.Write(System.IntPtr,System.Int32,System.Int32@)">
+            <summary>
+            Writes data to the stream. 
+            virtual HRESULT STDMETHODCALLTYPE Write(/*[size_is][in]*/ __RPC__in_ecount_full(cb) const BYTE *pb, /*[in]*/ ULONG cb, /*[out]*/ __RPC__out ULONG *pcbWritten) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.BeginWrite(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            Begins an asynchronous write operation to the stream. 
+            virtual /*[local]*/ HRESULT STDMETHODCALLTYPE BeginWrite(/*[in]*/ _In_reads_bytes_(cb)  const BYTE *pb, /*[in]*/ ULONG cb, /*[in]*/ IMFAsyncCallback *pCallback, /*[in]*/ IUnknown *punkState) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.EndWrite(System.IntPtr,System.Int32@)">
+            <summary>
+            Completes an asynchronous write operation. 
+            virtual /*[local]*/ HRESULT STDMETHODCALLTYPE EndWrite(/*[in]*/ IMFAsyncResult *pResult, /*[out]*/ _Out_  ULONG *pcbWritten) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.Seek(System.Int32,System.Int64,System.Int32,System.Int64@)">
+            <summary>
+            Moves the current position in the stream by a specified offset. 
+            virtual HRESULT STDMETHODCALLTYPE Seek(/*[in]*/ MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, /*[in]*/ LONGLONG llSeekOffset, /*[in]*/ DWORD dwSeekFlags, /*[out]*/ __RPC__out QWORD *pqwCurrentPosition) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.Flush">
+            <summary>
+            Clears any internal buffers used by the stream. 
+            virtual HRESULT STDMETHODCALLTYPE Flush( void) = 0;
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFByteStream.Close">
+            <summary>
+            Closes the stream and releases any resources associated with the stream. 
+            virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFAttributes">
+            <summary>
+            Provides a generic way to store key/value pairs on an object.
+            http://msdn.microsoft.com/en-gb/library/windows/desktop/ms704598%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetItemType(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the data type of the value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.CompareItem(System.Guid,System.IntPtr,System.Boolean@)">
+            <summary>
+            Queries whether a stored attribute value equals a specified PROPVARIANT.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.Compare(SharpCapture.Internal.IMFAttributes,System.Int32,System.Boolean@)">
+            <summary>
+            Compares the attributes on this object with the attributes on another object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetDouble(System.Guid,System.Double@)">
+            <summary>
+            Retrieves a double value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetGUID(System.Guid,System.Guid@)">
+            <summary>
+            Retrieves a GUID value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetStringLength(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a string value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetString(System.Guid,System.Text.StringBuilder,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetAllocatedString(System.Guid,System.String@,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key. This method allocates the memory for the string.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetBlobSize(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetBlob(System.Guid,System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetAllocatedBlob(System.Guid,System.IntPtr@,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key. This method allocates the memory for the array.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetUnknown(System.Guid,System.Guid,System.Object@)">
+            <summary>
+            Retrieves an interface pointer associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetItem(System.Guid,System.IntPtr)">
+            <summary>
+            Associates an attribute value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.DeleteItem(System.Guid)">
+            <summary>
+            Removes a key/value pair from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.DeleteAllItems">
+            <summary>
+            Removes all key/value pairs from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetDouble(System.Guid,System.Double)">
+            <summary>
+            Associates a double value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetGUID(System.Guid,System.Guid)">
+            <summary>
+            Associates a GUID value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetString(System.Guid,System.String)">
+            <summary>
+            Associates a wide-character string with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetBlob(System.Guid,System.Byte[],System.Int32)">
+            <summary>
+            Associates a byte array with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.SetUnknown(System.Guid,System.Object)">
+            <summary>
+            Associates an IUnknown pointer with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.LockStore">
+            <summary>
+            Locks the attribute store so that no other thread can access it.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.UnlockStore">
+            <summary>
+            Unlocks the attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.GetCount(System.Int32@)">
+            <summary>
+            Retrieves the number of attributes that are set on this object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFAttributes.CopyAllItems(SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Copies all of the attributes from this object into another attribute store.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.IMFActivate">
+            <summary>
+            IMFActivate, defined in mfobjects.h
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetItemType(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the data type of the value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.CompareItem(System.Guid,System.IntPtr,System.Boolean@)">
+            <summary>
+            Queries whether a stored attribute value equals a specified PROPVARIANT.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.Compare(SharpCapture.Internal.IMFAttributes,System.Int32,System.Boolean@)">
+            <summary>
+            Compares the attributes on this object with the attributes on another object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetDouble(System.Guid,System.Double@)">
+            <summary>
+            Retrieves a double value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetGUID(System.Guid,System.Guid@)">
+            <summary>
+            Retrieves a GUID value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetStringLength(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a string value associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetString(System.Guid,System.Text.StringBuilder,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetAllocatedString(System.Guid,System.String@,System.Int32@)">
+            <summary>
+            Retrieves a wide-character string associated with a key. This method allocates the memory for the string.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetBlobSize(System.Guid,System.Int32@)">
+            <summary>
+            Retrieves the length of a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetBlob(System.Guid,System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetAllocatedBlob(System.Guid,System.IntPtr@,System.Int32@)">
+            <summary>
+            Retrieves a byte array associated with a key. This method allocates the memory for the array.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetUnknown(System.Guid,System.Guid,System.Object@)">
+            <summary>
+            Retrieves an interface pointer associated with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetItem(System.Guid,System.IntPtr)">
+            <summary>
+            Associates an attribute value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.DeleteItem(System.Guid)">
+            <summary>
+            Removes a key/value pair from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.DeleteAllItems">
+            <summary>
+            Removes all key/value pairs from the object's attribute list.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetDouble(System.Guid,System.Double)">
+            <summary>
+            Associates a double value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetGUID(System.Guid,System.Guid)">
+            <summary>
+            Associates a GUID value with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetString(System.Guid,System.String)">
+            <summary>
+            Associates a wide-character string with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetBlob(System.Guid,System.Byte[],System.Int32)">
+            <summary>
+            Associates a byte array with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.SetUnknown(System.Guid,System.Object)">
+            <summary>
+            Associates an IUnknown pointer with a key.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.LockStore">
+            <summary>
+            Locks the attribute store so that no other thread can access it.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.UnlockStore">
+            <summary>
+            Unlocks the attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.GetCount(System.Int32@)">
+            <summary>
+            Retrieves the number of attributes that are set on this object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.CopyAllItems(SharpCapture.Internal.IMFAttributes)">
+            <summary>
+            Copies all of the attributes from this object into another attribute store.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.ActivateObject(System.Guid,System.Object@)">
+            <summary>
+            Creates the object associated with this activation object. 
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.ShutdownObject">
+            <summary>
+            Shuts down the created object.
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.IMFActivate.DetachObject">
+            <summary>
+            Detaches the created object from the activation object.
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Internal.ProductTypeEnum">
+            <summary>
+            产品类型
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal.SNHelper.productType">
+            <summary>
+            本库所属产品类型
+            </summary>
+        </member>
+        <member name="F:SharpCapture.Internal.SNHelper.bPass">
+            <summary>
+            是否通过激活码校验
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Internal.SNHelper.IsTrailVersion">
+            <summary>
+            是否是试用版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.Internal.SNHelper.CheckKey(System.String)">
+            <summary>
+            检查给定的key是否合法
+            </summary>
+            <param name="strSingleKey">四合一的key，分别是Keyone，keytwo,项目名称，时间 中间用@分割</param>
+        </member>
+        <member name="M:SharpCapture.Internal.SNHelper.GetCodeTwo(System.String)">
+            <summary>
+            计算keytwo
+            </summary>
+            <param name="keyOne"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.Internal.SNHelper.GetLibName">
+            <summary>
+            得到使用本库的项目名称，带exe,或者vhost.exe的
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SharpCapture.CaptureFactory">
+            <summary>
+            工厂类，提供返回本类库各个接口的实现。
+            </summary>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetCameraCapture(System.Int32,System.Drawing.Size)">
+            <summary>
+            得到摄像头采集器接口实例
+            </summary>
+            <param name="cameraIndex">摄像头的索引</param>
+            <param name="videoSize">摄像头的分辨率</param>        
+            <returns>摄像头采集器</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetCameraCapture(System.Int32,System.Drawing.Size,System.Int32)">
+            <summary>
+            得到摄像头采集器接口实例，允许指定采集时的帧频
+            </summary>
+            <param name="cameraIndex">摄像头的索引</param>
+            <param name="videoSize">摄像头的分辨率</param>
+            <param name="fps">采集的帧频</param>
+            <returns>摄像头采集器</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetScreenCapture(System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            得到屏幕画面采集器接口实例
+            </summary>
+            <param name="fps">采集的帧频</param>
+            <param name="showMouseCursor">采集的图像中是否显示鼠标的光标</param>
+            <param name="screenIndex">要采集的屏幕设备的索引</param>
+            <returns>屏幕画面采集器接口</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetScreenCapture(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            得到屏幕画面采集器接口实例
+            </summary>
+            <param name="fps">采集的帧频</param>
+            <param name="showMouseCursor">采集的图像中是否显示鼠标的光标</param>
+            <param name="useMultiThread">是否开启多线程采集（建议开启），如果为false，则视机器性能差异，采集的频率会动态变化。</param>
+            <returns>屏幕画面采集器接口</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetScreenCapture(System.Int32,System.Boolean)">
+            <summary>
+            得到屏幕画面采集器接口实例
+            </summary>
+            <param name="fps">采集的帧频</param>
+            <param name="showMouseCursor">采集的图像中是否显示鼠标的光标</param>
+            <returns>屏幕画面采集器接口</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetScreenCapture(System.Int32,System.Boolean,System.Nullable{System.Drawing.Rectangle})">
+            <summary>
+            得到屏幕画面采集器接口实例
+            </summary>
+            <param name="fps">采集的帧频</param>
+            <param name="showMouseCursor">采集的图像中是否显示鼠标的光标</param>
+            <param name="capturedRect">要采集的屏幕区域</param>
+            <returns>屏幕画面采集器接口</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetAudioMixter(SharpCapture.Interface.IMicrophoneCapture,SharpCapture.Interface.ISoundcardCapture,SharpCapture.SoundcardMixMode,System.Boolean)">
+            <summary>
+            得到混音器接口实例（将麦克风采集的数据与声卡采集的数据进行混音，混音的目的是为了能同时录制麦克风和声卡声音）
+            </summary>
+            <param name="microphoneCapture">麦克风采集器</param>
+            <param name="soundcardCapture">声卡采集器。要求声卡的SampleRate必须为48000</param>
+            <param name="mode">声卡混音模式，建议为双声道模式，效果最佳</param>
+            <param name="output2Channel">混音结果是否采用双声道。建议为true，此时声卡和麦克风数据分别占据一个声道，有利于对结果数据做更多处理，比如人声消除等功能</param>
+            <returns>混音器接口实例</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetAudioMixter(SharpCapture.Interface.IMicrophoneCapture,SharpCapture.Interface.ISoundcardCapture)">
+            <summary>
+            创建混音器接口实例。（将麦克风采集的数据与声卡采集的数据进行混音。）
+            </summary>
+            <param name="microphoneCapture">麦克风采集器</param>
+            <param name="soundcardCapture">声卡采集器。要求声卡的SampleRate必须为48000。</param>       
+            <returns>混音器接口实例，本实例将默认采用双声道声卡混音模式且混音结果也为双声道</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetSoundcardCapture">
+            <summary>
+            得到声卡采集器接口实例（采样位数：16bit）
+            </summary>        
+            <returns>声卡采集器接口实例</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetMicrophoneCapture(System.Int32)">
+            <summary>
+            得到麦克风采集器接口实例，（采样位数：16bit，采样频率：16000，声道数：1）。
+            </summary>
+            <param name="microphoneIndex">麦克风的索引</param>
+            <returns>麦克风采集器</returns>
+        </member>
+        <member name="M:SharpCapture.CaptureFactory.GetMicrophoneCapture(System.Int32,SharpCapture.WaveSampleRate)">
+            <summary>
+            得到麦克风采集器接口实例，（采样位数：16bit，声道数：1）,允许指定采样频率
+            </summary>
+            <param name="microphoneIndex">麦克风的索引</param>
+            <param name="sr">采样频率</param>
+            <returns>麦克风采集器</returns>
+        </member>
+        <member name="T:SharpCapture.Interface.ICameraCapture">
+            <summary>
+            摄像头画面采集器，可以采集到摄像头的帧图片
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.ICameraCapture.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.ICameraCapture.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ICameraCapture.IsCapturing">
+            <summary>
+            是否在采集中
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ICameraCapture.FrameSize">
+            <summary>
+            摄像头画面的大小（宽和高）
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ICameraCapture.FrameRate">
+            <summary>
+            帧频，单位：帧每秒
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.ICameraCapture.FrameImageCaptured">
+            <summary>
+            当采集到一帧图像时，触发该事件，当该视频帧使用完毕后，必须立即调用其Dispose释放内存，否则会导致内存泄露
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.ICameraCapture.ErrorOccured">
+            <summary>
+            记录过程中发生错误，将触发此事件，采集将终止
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Interface.IScreenCapture">
+            <summary>
+            屏幕画面采集器,可以实现屏幕录像效果的功能
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.IScreenCapture.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.IScreenCapture.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IScreenCapture.IsCapturing">
+            <summary>
+            是否在采集中
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IScreenCapture.FrameSize">
+            <summary>
+            屏幕画面的大小（宽和高）
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IScreenCapture.FrameRate">
+            <summary>
+            采集的帧频,单位：帧每秒
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IScreenCapture.ZoomSize">
+            <summary>
+            采集到的图片缩放设置。null表示不缩放，非null为缩放后的大小，默认为不缩放
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.IScreenCapture.FrameImageCaptured">
+            <summary>
+            当采集到一帧图像时，触发该事件，当该视频帧使用完毕后，要立即调用其Dispose方法，否则会导致内存泄露
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.IScreenCapture.ErrorOccured">
+            <summary>
+            发生错误，将触发此事件，采集将终止
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Interface.IMicrophoneCapture">
+            <summary>
+            麦克风音频采集器
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.IMicrophoneCapture.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.IMicrophoneCapture.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IMicrophoneCapture.ChannelCount">
+            <summary>
+            声道数。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IMicrophoneCapture.SampleRate">
+            <summary>
+            采样频率。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IMicrophoneCapture.IsCapturing">
+            <summary>
+            是否在采集中
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.IMicrophoneCapture.ErrorOccured">
+            <summary>
+            发生错误，将触发此事件，采集将终止
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.IMicrophoneCapture.AudioDataCaptured">
+            <summary>
+            当采集到一帧声音数据时，触发该事件，返回采集到的声音数据,调用方可以保存或者传输
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Interface.IMixer">
+            <summary>
+            混音器，实现声卡数据和麦克风数据的混音。混音的作用是将两个不同的声源采集到的数据混成一路，从而方便存储和传输。
+            在类似直播等需要同时录制或传输麦克风和电脑的声音时，必须进行混音才可以。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IMixer.OutputChannelCount">
+            <summary>
+            输出的混音结果声道数
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.IMixer.OutputSampleRate">
+            <summary>
+            输出的混音结果的声音采样频率
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.IMixer.AudioMixed">
+            <summary>
+            完成一帧声音数据的混音时，触发该事件，返回混音结果数据
+            </summary>
+        </member>
+        <member name="T:SharpCapture.Interface.ISoundcardCapture">
+            <summary>
+            声卡录制器，采集声卡的数据流，采样率16bit
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.ISoundcardCapture.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SharpCapture.Interface.ISoundcardCapture.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ISoundcardCapture.ChannelCount">
+            <summary>
+            声道数。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ISoundcardCapture.SampleRate">
+            <summary>
+            采样频率。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Interface.ISoundcardCapture.IsCapturing">
+            <summary>
+            是否在采集中
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.ISoundcardCapture.ErrorOccured">
+            <summary>
+            发生错误，将触发此事件，采集将终止
+            </summary>
+        </member>
+        <member name="E:SharpCapture.Interface.ISoundcardCapture.AudioDataCaptured">
+            <summary>
+            当采集到一帧声音数据时，触发该事件，采样率为16bit
+            </summary>
+        </member>
+        <member name="T:SharpCapture.FileHelper">
+            <summary>
+            进行文本格式文件的内容追加，判断两个文件是否相同（通过哈希值）
+            </summary>
+        </member>
+        <member name="M:SharpCapture.FileHelper.DeleteDir(System.String)">
+            <summary> 
+            直接删除指定目录下的所有文件及文件夹(保留目录)
+            </summary>
+            <param name="strPath">文件夹路径</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.CopyDir(System.String,System.String,System.Boolean)">
+            <summary>
+            拷贝文件夹,遇到同名文件将自动覆盖
+            </summary>
+            <param name="srcdir"></param>
+            <param name="desdir"></param>
+            <param name="bIsFirst">true表示是主调方调的，false为自行递归调用的，主调方可以忽略本参数</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.WriteAppend(System.String,System.String)">
+            <summary>
+            追加内容到指定文件中
+            </summary>
+            <param name="filePath"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.WriteAppend(System.String,System.String[])">
+            <summary>
+            追加指定的内容到指定文件中
+            </summary>
+            <param name="filePath">目标文件</param>
+            <param name="contents">字符串数组，本方法将把每一个字符串放到一个新行</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.CompareFiles(System.String,System.String)">
+            <summary>
+            判断两个文件的哈希值是否一致
+            </summary>
+            <param name="fileName1"></param>
+            <param name="fileName2"></param>
+            <returns>true表示两个文件哈希值相同，false表示不同</returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.ClearDirectory(System.String)">
+            <summary>
+            清空一个文件夹，删除该文件夹下所有文件和文件夹，但保留本身
+            </summary>
+            <param name="dirPath"></param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.Copy(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            拷贝多个文件和文件夹。
+            </summary>
+            <param name="sourceParentDirectoryPath">被拷贝的文件和文件夹所处的父目录路径</param>
+            <param name="filesBeCopyed">被复制的文件名称的集合</param>
+            <param name="directoriesCopyed">被复制的文件夹名称的集合</param>
+            <param name="destParentDirectoryPath">目标目录的路径</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.CopyDirectoryAndFiles(System.String,System.String,System.String,System.String)">
+            <summary>
+            将指定的文件夹整体拷贝到另外一个目录下
+            </summary>
+            <param name="sourceParentDirectoryPath">被拷贝的文件夹所处的父目录路径</param>
+            <param name="dirBeCopyed">被复制的文件夹名称</param>
+            <param name="destParentDirectoryPath">目标文件夹路径</param>
+            <param name="newDirName">新文件夹名称</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.DeleteDirectory(System.String)">
+            <summary>
+            递归删除文件夹本身及其内部的所有文件以及子文件夹（即使存在只读文件夹，也会被删除）
+            </summary>
+            <param name="dirPath">文件夹的绝对路径</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.DeleteFile(System.String)">
+            <summary>
+            删除指定的文件
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.EnsureDirectoryExist(System.String)">
+            <summary>
+            确保文件路径中的每个文件夹都存在，如果不存在，则创建。
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.EnsureExtendName(System.String,System.String)">
+            <summary>
+            EnsureExtendName 确保扩展名正确，如果不正确，就在该文件路径后边加上指定的扩展名
+            </summary>
+            <param name="origin_path">文件的路径</param>
+            <param name="extend_name">如exe</param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GenerateFile(System.String,System.String)">
+            <summary>
+            GenerateFile 将字符串写成文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetDirectorySize(System.String)">
+            <summary>
+            获取某个文件夹的文件数量，包含其子文件夹中的文件
+            </summary>
+            <param name="dirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetExtendName(System.String)">
+            <summary>
+            得到一个文件名或者文件全路径的文件扩展名，不包括.
+            </summary>
+            <param name="fileNameOrPath"></param>
+            <returns>如exe</returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetFileContent(System.String)">
+            <summary>
+            读取文本文件的内容,直接返回全部的文本
+            </summary>
+            <param name="file_path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetFileDirectory(System.String)">
+            <summary>
+            获取文件所在的目录路径
+            </summary>
+            <param name="filePath">文件全路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetFileNameNoPath(System.String)">
+            <summary>
+            获取没有路径信息的文件名，带扩展名
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetFileSize(System.String)">
+            <summary>
+            得到文件的大小
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.GetOffspringFiles(System.String)">
+            <summary>
+            获取目标目录下以及其子目录下的所有文件（采用相对路径）。如 \\test.jpg    \\subdir\\test.jpg
+            </summary>
+            <param name="dirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.Move(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            将某个文件夹下的多个文件和子文件夹移到另外一个目录中。
+            </summary>
+            <param name="oldParentDirectoryPath">移动之前文件和子文件夹所处的父目录路径</param>
+            <param name="filesBeMoved">被移动的文件名称的集合</param>
+            <param name="directoriesBeMoved">被移动的文件夹名称的集合</param>
+            <param name="newParentDirectoryPath">移往的目标文件夹路径</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.ReadFileData(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            从文件流中读取指定大小的内容
+            </summary>
+            <param name="fs">文件流</param>
+            <param name="buff">读取的内容存放的buffer</param>
+            <param name="count">字节数</param>
+            <param name="offset">字节偏移，从0开始</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.ReadFileReturnBytes(System.String)">
+            <summary>
+            从文件中读取二进制数据
+            </summary>
+            <param name="filePath">文件路径</param>
+            <returns>读取到的二进制数据</returns>
+        </member>
+        <member name="M:SharpCapture.FileHelper.WriteBuffToFile(System.Byte[],System.String)">
+            <summary>
+            将字节数组写到二进制文件中，放到指定的路径
+            </summary>
+            <param name="buff">待写入的字节数组</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="M:SharpCapture.FileHelper.WriteBuffToFile(System.Byte[],System.Int32,System.Int32,System.String)">
+            <summary>
+            将字节数组的部分写入二进制文件
+            </summary>
+            <param name="buff">待写入的字节数组</param>
+            <param name="offset">偏移</param>
+            <param name="len">长度</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="T:SharpCapture.LogHelper">
+            <summary>
+            日志保存类
+            </summary>
+        </member>
+        <member name="M:SharpCapture.LogHelper.GetLogPath(System.String,SharpCapture.LogLevel)">
+            <summary>
+            获得日志要保存的路径
+            </summary>
+            <param name="name"></param>
+            <param name="logType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SharpCapture.LogHelper.Write(SharpCapture.LogLevel,System.String,System.String)">
+            <summary>
+            保存日志文件，追加模式
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="log">日志内容</param>
+            <param name="name">日志名字，它将出现在文件名上，用来区分日志文件</param>
+        </member>
+        <member name="M:SharpCapture.LogHelper.Write(System.Exception,System.String)">
+            <summary>
+            保存日志文件追加模式，写入异常，自动记录错误信息和错误堆栈
+            </summary>
+            <param name="ex">要记录的异常</param>
+            <param name="name">日志名字，它将出现在文件名上，用来区分日志文件</param>
+        </member>
+        <member name="M:SharpCapture.LogHelper.Write(System.Exception,System.String,System.String)">
+            <summary>
+            保存日志文件追加模式，写入异常，自动记录错误信息和错误堆栈
+            </summary>
+            <param name="ex">要记录的异常</param>
+            <param name="memo">额外的说明</param>
+            <param name="name">日志名字，它将出现在文件名上，用来区分日志文件</param>
+        </member>
+        <member name="M:SharpCapture.LogHelper.Write(SharpCapture.LogLevel,System.Text.StringBuilder,System.String)">
+            <summary>
+            保存日志文件，追加模式
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="sb">日志内容</param>
+            <param name="name">日志名字，它将出现在文件名上，用来区分日志文件</param>
+        </member>
+        <member name="T:SharpCapture.LogLevel">
+            <summary>
+            日志的级别
+            </summary>
+        </member>
+        <member name="T:SharpCapture.KeyMgr">
+            <summary>
+            设置授权Key，在使用本库之前必须调用，否则无法使用本库功能
+            </summary>
+        </member>
+        <member name="M:SharpCapture.KeyMgr.SetKey(System.String)">
+            <summary>
+            设置授权信息
+            </summary>
+            <param name="strKey">您的授权key。试用时请传入Test</param>
+        </member>
+        <member name="T:SharpCapture.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:SharpCapture.Properties.Resources.RCursor">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:SharpCapture.WaveSampleRate">
+            <summary>
+            声音采样率。
+            </summary>
+        </member>
+        <member name="T:SharpCapture.SoundcardMixMode">
+            <summary>
+            声卡采集的结果通常是双声道的，混音时需要指定混音模式
+            </summary>
+        </member>
+        <member name="F:SharpCapture.SoundcardMixMode.DoubleChannel">
+            <summary>左右声道都参与混音</summary>
+        </member>
+        <member name="F:SharpCapture.SoundcardMixMode.LeftChannel">
+            <summary>只有左声道参与混音</summary>
+        </member>
+        <member name="F:SharpCapture.SoundcardMixMode.RightChannel">
+            <summary>只有右声道参与混音</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<svg id='scada_svg'  style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' >
+  <rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5411202590861205417)'     />
+  <defs>
+    <linearGradient id="5411202590861205417" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" />
+      <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+ 
+  <a xlink:href='#'>
+    <g id='shapeID5190003547447698703'   data-baseshape='SVG_CommonShape'   data-shape='SVG_CircleShape'  data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''            data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'>
+      <path     fill='#FFFFFF'   stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   ></path>
+    </g>
+  </a>
+  <a xlink:href='#'>
+    <g id='shapeID5368895411261715741'  data-baseshape='SVG_CommonShape' data-shape='SVG_PolygonShape'    data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'>
+      <path  d=' M691,157 L655,226 L659,321 L743,359 L830,319 L855,269 L842,207 L782,176 762,159 Z'   fill='#FFFFFF'   stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   ></path>
+    </g>
+  </a>
+  <a xlink:href='#'>
+    <g id='shapeID5281916018944021245'   data-baseshape='SVG_CommonShape'  data-shape='SVG_RectangleShape'    data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'>
+      <path     stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"  fill='#FFFFFF'></path>
+    </g>
+  </a>
+  <a xlink:href='#'>
+    <g id='shapeID5589759227572624359'  data-baseshape='SVG_CommonShape'  data-shape='SVG_RoundRectShape'     data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'>
+      <path     fill='#FFFFFF'   stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   ></path>
+    </g>
+  </a>
+  <a xlink:href='#'>
+    <g id='shapeID5335435905943467776'  data-baseshape='SVG_CommonShape'  data-shape='SVG_CubeShape'   data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000'>
+      <path     stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='url(#)'></path>
+      <defs></defs>
+      <path     stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='url(#)'></path>
+      <defs></defs>
+      <path     stroke="#000000" stroke-width="2"   stroke-dasharray="" stroke-opacity="1"   fill='url(#)'></path>
+      <defs></defs>
+    </g>
+  </a>
+  <a xlink:href='#'>
+    <g id='shapeID4767986704387147879'   data-baseshape='SVG_CommonShape' data-shape='SVG_ThreedimensionalColumnShape'    data-event='无' onload='SetCursorByID()' data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000'>
+      <path  d=' M253,334 C253,354 439,354 439,334 L439,543 L439,334 L439,543 C439,563 253,563 253,543 L253,334'   stroke="#000000" stroke-width="2"   stroke-dasharray=" " stroke-opacity="1"  fill='url(#5549968110925612795)'></path>
+      <path  d=' M253,334 C253,314 439,314 439,334 439,354 253,354 253,334'   stroke="#000000" stroke-width="2"   stroke-dasharray=" " stroke-opacity="1"  fill='url(#5549968110925612795)'></path>
+      <path  d=' M253,543 C253,523 439,523 439,543'   stroke="#000000" stroke-width="2"   stroke-dasharray="5 5" stroke-opacity="1"  fill='url(#5549968110925612795)'></path>
+    </g>
+    <defs>
+      <linearGradient id="5549968110925612795" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset ="0%" style ="stop-color:#808080;stop-opacity:1" />
+        <stop offset ="100%" style ="stop-color:#F5F5F5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </a>
+</svg>

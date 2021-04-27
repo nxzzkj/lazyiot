@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 1</title>
+    <link href=' http://39.105.48.206/scada/Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada/Content/css/okadmin.css' rel='stylesheet' />
+    <link href='  http://39.105.48.206/scada//Content/css/common.css' rel='stylesheet' />
+    <script src='  http://39.105.48.206/scada//Content/lib/layui/layui.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/global.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery-3.4.1.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/jquery.timers-1.2.js'></script>
+    <script  src='  http://39.105.48.206/scada//Content/js/svg-pan-zoom.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/SVG.js'></script>
+    <script src='  http://39.105.48.206/scada//Content/js/Scada.js'></script>
+
+    <script src='  http://39.105.48.206/scada/Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#4775251039610033888)'     >
+
+</rect>
+<defs><linearGradient id="4775251039610033888" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4911947089129457837'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='rectID4911947089129457837'   x='241.811' y='198' width='51.37796' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;241.811;267.5'
+          dur ='5s'
+          begin = '3.921982s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;51.37796;1'
+          dur ='5s'
+          begin = '3.921982s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='214.279' y='206' width='106.442' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;214.279;267.5'
+          dur ='5s'
+          begin = '8.125345s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;106.442;1'
+          dur ='5s'
+          begin = '8.125345s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='264.9915' y='214' width='5.016936' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;264.9915;267.5'
+          dur ='5s'
+          begin = '0.3829722s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;5.016936;1'
+          dur ='5s'
+          begin = '0.3829722s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='212.3082' y='222' width='110.3836' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;212.3082;267.5'
+          dur ='5s'
+          begin = '8.426229s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;110.3836;1'
+          dur ='5s'
+          begin = '8.426229s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='237.8857' y='230' width='59.22869' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;237.8857;267.5'
+          dur ='5s'
+          begin = '4.521275s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;59.22869;1'
+          dur ='5s'
+          begin = '4.521275s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='218.3679' y='238' width='98.26428' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;218.3679;267.5'
+          dur ='5s'
+          begin = '7.50109s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;98.26428;1'
+          dur ='5s'
+          begin = '7.50109s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='256.4121' y='246' width='22.17575' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;256.4121;267.5'
+          dur ='5s'
+          begin = '1.692805s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;22.17575;1'
+          dur ='5s'
+          begin = '1.692805s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='206.6253' y='254' width='121.7494' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;206.6253;267.5'
+          dur ='5s'
+          begin = '9.293843s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;121.7494;1'
+          dur ='5s'
+          begin = '9.293843s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='248.7406' y='262' width='37.51886' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;248.7406;267.5'
+          dur ='5s'
+          begin = '2.864035s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;37.51886;1'
+          dur ='5s'
+          begin = '2.864035s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='239.6619' y='270' width='55.67612' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;239.6619;267.5'
+          dur ='5s'
+          begin = '4.250085s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;55.67612;1'
+          dur ='5s'
+          begin = '4.250085s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='208.5388' y='278' width='117.9224' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;208.5388;267.5'
+          dur ='5s'
+          begin = '9.001708s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;117.9224;1'
+          dur ='5s'
+          begin = '9.001708s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='244.663' y='286' width='45.67403' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;244.663;267.5'
+          dur ='5s'
+          begin = '3.486567s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;45.67403;1'
+          dur ='5s'
+          begin = '3.486567s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='204.3627' y='294' width='126.2746' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;204.3627;267.5'
+          dur ='5s'
+          begin = '9.639281s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;126.2746;1'
+          dur ='5s'
+          begin = '9.639281s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='253.0399' y='302' width='28.92022' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;253.0399;267.5'
+          dur ='5s'
+          begin = '2.20765s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;28.92022;1'
+          dur ='5s'
+          begin = '2.20765s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='265.1536' y='310' width='4.692802' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;265.1536;267.5'
+          dur ='5s'
+          begin = '0.3582291s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;4.692802;1'
+          dur ='5s'
+          begin = '0.3582291s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='218.6713' y='318' width='97.65733' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;218.6713;267.5'
+          dur ='5s'
+          begin = '7.454758s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;97.65733;1'
+          dur ='5s'
+          begin = '7.454758s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='210.7917' y='326' width='113.4166' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;210.7917;267.5'
+          dur ='5s'
+          begin = '8.657756s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;113.4166;1'
+          dur ='5s'
+          begin = '8.657756s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='259.6841' y='334' width='15.63179' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;259.6841;267.5'
+          dur ='5s'
+          begin = '1.193266s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;15.63179;1'
+          dur ='5s'
+          begin = '1.193266s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='217.3799' y='342' width='100.2402' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;217.3799;267.5'
+          dur ='5s'
+          begin = '7.651925s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;100.2402;1'
+          dur ='5s'
+          begin = '7.651925s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='206.1115' y='350' width='122.777' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;206.1115;267.5'
+          dur ='5s'
+          begin = '9.372291s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;122.777;1'
+          dur ='5s'
+          begin = '9.372291s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='245.7127' y='358' width='43.57459' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;245.7127;267.5'
+          dur ='5s'
+          begin = '3.326305s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;43.57459;1'
+          dur ='5s'
+          begin = '3.326305s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='220.0881' y='366' width='94.82381' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;220.0881;267.5'
+          dur ='5s'
+          begin = '7.238459s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;94.82381;1'
+          dur ='5s'
+          begin = '7.238459s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='235.6428' y='374' width='63.71434' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;235.6428;267.5'
+          dur ='5s'
+          begin = '4.86369s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;63.71434;1'
+          dur ='5s'
+          begin = '4.86369s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='245.4127' y='382' width='44.17458' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;245.4127;267.5'
+          dur ='5s'
+          begin = '3.372105s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;44.17458;1'
+          dur ='5s'
+          begin = '3.372105s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='267.3641' y='390' width='0.2717299' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;267.3641;267.5'
+          dur ='5s'
+          begin = '0.02074274s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;0.2717299;1'
+          dur ='5s'
+          begin = '0.02074274s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='227.3395' y='398' width='80.321' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;227.3395;267.5'
+          dur ='5s'
+          begin = '6.131374s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;80.321;1'
+          dur ='5s'
+          begin = '6.131374s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='260.9056' y='406' width='13.18881' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;260.9056;267.5'
+          dur ='5s'
+          begin = '1.006779s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;13.18881;1'
+          dur ='5s'
+          begin = '1.006779s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='262.8563' y='414' width='9.287343' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;262.8563;267.5'
+          dur ='5s'
+          begin = '0.7089575s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;9.287343;1'
+          dur ='5s'
+          begin = '0.7089575s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='203.8058' y='422' width='127.3883' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;203.8058;267.5'
+          dur ='5s'
+          begin = '9.724298s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;127.3883;1'
+          dur ='5s'
+          begin = '9.724298s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='223.2855' y='430' width='88.42905' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;223.2855;267.5'
+          dur ='5s'
+          begin = '6.750309s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;88.42905;1'
+          dur ='5s'
+          begin = '6.750309s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='207.7968' y='438' width='119.4064' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;207.7968;267.5'
+          dur ='5s'
+          begin = '9.114994s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;119.4064;1'
+          dur ='5s'
+          begin = '9.114994s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='251.3481' y='446' width='32.30379' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;251.3481;267.5'
+          dur ='5s'
+          begin = '2.465938s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;32.30379;1'
+          dur ='5s'
+          begin = '2.465938s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='246.3313' y='454' width='42.33737' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;246.3313;267.5'
+          dur ='5s'
+          begin = '3.23186s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;42.33737;1'
+          dur ='5s'
+          begin = '3.23186s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='253.7426' y='462' width='27.51484' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;253.7426;267.5'
+          dur ='5s'
+          begin = '2.10037s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;27.51484;1'
+          dur ='5s'
+          begin = '2.10037s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='240.0262' y='470' width='54.94769' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;240.0262;267.5'
+          dur ='5s'
+          begin = '4.19448s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;54.94769;1'
+          dur ='5s'
+          begin = '4.19448s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='230.5869' y='478' width='73.8261' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;230.5869;267.5'
+          dur ='5s'
+          begin = '5.63558s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;73.8261;1'
+          dur ='5s'
+          begin = '5.63558s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='233.9039' y='486' width='67.19216' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;233.9039;267.5'
+          dur ='5s'
+          begin = '5.129172s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;67.19216;1'
+          dur ='5s'
+          begin = '5.129172s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='208.0623' y='494' width='118.8755' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;208.0623;267.5'
+          dur ='5s'
+          begin = '9.074462s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;118.8755;1'
+          dur ='5s'
+          begin = '9.074462s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='248.344' y='502' width='38.31208' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;248.344;267.5'
+          dur ='5s'
+          begin = '2.924587s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;38.31208;1'
+          dur ='5s'
+          begin = '2.924587s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='260.95' y='510' width='13.10012' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;260.95;267.5'
+          dur ='5s'
+          begin = '1.000009s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;13.10012;1'
+          dur ='5s'
+          begin = '1.000009s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='217.9276' y='518' width='99.14479' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;217.9276;267.5'
+          dur ='5s'
+          begin = '7.568305s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;99.14479;1'
+          dur ='5s'
+          begin = '7.568305s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='202.6125' y='526' width='129.7751' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;202.6125;267.5'
+          dur ='5s'
+          begin = '9.906496s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;129.7751;1'
+          dur ='5s'
+          begin = '9.906496s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='202.9416' y='534' width='129.1167' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;202.9416;267.5'
+          dur ='5s'
+          begin = '9.856239s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;129.1167;1'
+          dur ='5s'
+          begin = '9.856239s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='239.6261' y='542' width='55.74788' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;239.6261;267.5'
+          dur ='5s'
+          begin = '4.255563s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;55.74788;1'
+          dur ='5s'
+          begin = '4.255563s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='232.471' y='550' width='70.05801' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;232.471;267.5'
+          dur ='5s'
+          begin = '5.34794s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;70.05801;1'
+          dur ='5s'
+          begin = '5.34794s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='206.3608' y='558' width='122.2783' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;206.3608;267.5'
+          dur ='5s'
+          begin = '9.334225s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;122.2783;1'
+          dur ='5s'
+          begin = '9.334225s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='266.0151' y='566' width='2.969771' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;266.0151;267.5'
+          dur ='5s'
+          begin = '0.2267001s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;2.969771;1'
+          dur ='5s'
+          begin = '0.2267001s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='262.7149' y='574' width='9.570144' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;262.7149;267.5'
+          dur ='5s'
+          begin = '0.7305453s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;9.570144;1'
+          dur ='5s'
+          begin = '0.7305453s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='247.9929' y='582' width='39.01421' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;247.9929;267.5'
+          dur ='5s'
+          begin = '2.978184s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;39.01421;1'
+          dur ='5s'
+          begin = '2.978184s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='251.5937' y='590' width='31.81269' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;251.5937;267.5'
+          dur ='5s'
+          begin = '2.428449s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;31.81269;1'
+          dur ='5s'
+          begin = '2.428449s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='229.2989' y='598' width='76.40224' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;229.2989;267.5'
+          dur ='5s'
+          begin = '5.832232s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;76.40224;1'
+          dur ='5s'
+          begin = '5.832232s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='205.374' y='606' width='124.2521' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;205.374;267.5'
+          dur ='5s'
+          begin = '9.484889s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;124.2521;1'
+          dur ='5s'
+          begin = '9.484889s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='203.6482' y='614' width='127.7036' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;203.6482;267.5'
+          dur ='5s'
+          begin = '9.748366s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;127.7036;1'
+          dur ='5s'
+          begin = '9.748366s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='261.4944' y='622' width='12.01114' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;261.4944;267.5'
+          dur ='5s'
+          begin = '0.9168808s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;12.01114;1'
+          dur ='5s'
+          begin = '0.9168808s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='235.1806' y='630' width='64.63873' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;235.1806;267.5'
+          dur ='5s'
+          begin = '4.934254s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;64.63873;1'
+          dur ='5s'
+          begin = '4.934254s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='223.7229' y='638' width='87.55415' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;223.7229;267.5'
+          dur ='5s'
+          begin = '6.683523s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;87.55415;1'
+          dur ='5s'
+          begin = '6.683523s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='246.1362' y='646' width='42.72769' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;246.1362;267.5'
+          dur ='5s'
+          begin = '3.261656s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;42.72769;1'
+          dur ='5s'
+          begin = '3.261656s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='221.5788' y='654' width='91.84236' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;221.5788;267.5'
+          dur ='5s'
+          begin = '7.010867s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;91.84236;1'
+          dur ='5s'
+          begin = '7.010867s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='212.4441' y='662' width='110.1119' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;212.4441;267.5'
+          dur ='5s'
+          begin = '8.405486s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;110.1119;1'
+          dur ='5s'
+          begin = '8.405486s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='212.5462' y='670' width='109.9077' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;212.5462;267.5'
+          dur ='5s'
+          begin = '8.3899s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;109.9077;1'
+          dur ='5s'
+          begin = '8.3899s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4911947089129457837'   x='224.9623' y='678' width='85.07547' height='5'   fill='#FFFF00'     >
+  <animate
+          attributeName = 'x'
+          values = '267.5;224.9623;267.5'
+          dur ='5s'
+          begin = '6.494311s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'width'
+          values = '1;85.07547;1'
+          dur ='5s'
+          begin = '6.494311s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+</g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "IO配置";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+ 
+        <input type="hidden" id="DeviceID" name="DeviceID"  class="layui-input"  lay-filter/>
+        <input type="hidden" id="ServerID" name="ServerID"  class="layui-input"  lay-filter/>
+        <input type="hidden" id="CommunicateID" name="CommunicateID"  class="layui-input"  lay-filter      />
+    <input type="hidden" id="UpdateCycle" name="UpdateCycle" class="layui-input" lay-filter />
+        <div class="layui-input-inline">
+       <label>请选择设备:</label>
+        </div>
+        <div class="layui-input-inline">
+           <div id="DeviceList" style="width:250px;"></div>
+        </div>
+ 
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+ 
+<script>
+
+
+    layui.use(["table", "form", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+        devices = xmSelect.render({
+            el: '#DeviceList',
+            filterable: true,
+            paging: false,
+            radio: true,
+            clickClose: true,
+            pageSize: 50,
+            on: function (data) {
+                //执行用户选择的项目
+                AllTable.reload({
+                    where: data.field,
+                    page: { curr: 1 }
+                });
+            },
+        })
+      
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Scada/ScadaGroup/GetDevicePara?DeviceID=" + $("#DeviceID").val() + "&ServerID=" + $("#ServerID").val() + "&CommunicateID=" + $("#CommunicateID").val() + "&GroupID=@ViewData["GroupId"]",
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            page: false,
+            loading: true,
+            limit: 10000,
+            id: 'paraGrid',
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                    { type: 'checkbox', fixed: true },
+                { field: 'zizeng', width: 60, title: '序号', templet: '#zizeng' },
+                { field: "IO_ID", title: "ID", width: 130,  },
+                { field: "IO_NAME", title: "IO名称", width: 150 },
+                { field: "IO_LABEL", title: "IO标注", width: 150 },
+                { field: "IO_ALIASNAME", title: "别名", width: 150, edit: "text", style: "background-color:greenyellow" },
+
+            ]],
+            done: function (res, curr, count) {
+            }
+        });
+        //获取该组织机构下的所有井
+        $.get("/Scada/ScadaGroup/GetGroupDevice?Id=@ViewData["GroupId"]", function (result) {
+            devices = xmSelect.render({
+                el: '#DeviceList',
+                filterable: true,
+                paging: false,
+                radio: true,
+                clickClose: true,
+                pageSize: 50,
+                data: result,
+                on: function (data) 
+                {
+                    $("#DeviceID").val(data.change[0].DeviceID);
+                    $("#ServerID").val(data.change[0].ServerID);
+                    $("#CommunicateID").val(data.change[0].CommunicateID);
+                    $("#UpdateCycle").val(data.change[0].UpdateCycle);
+                    AllTable.reload({
+                        where: data.field,
+                        url: "/Scada/ScadaGroup/GetDevicePara?DeviceID=" + $("#DeviceID").val() + "&ServerID=" + $("#ServerID").val() + "&CommunicateID=" + $("#CommunicateID").val() + "&GroupID=@ViewData["GroupId"]",
+                    });
+
+                    //保存设置
+                    $("#btnParaSave").on('click', function () {
+     
+                        var GroupId = @ViewData["GroupId"];
+                        //ViewBag.GroupId;
+                        var _list = [];
+                        var checkStatus = table.checkStatus('paraGrid');
+                        for(var i=0;i<checkStatus.data.length;i++)
+                        {
+                            _list.push({
+                                IO_ID:checkStatus.data[i].IO_ID,
+                                IO_SERVER_ID: $("#ServerID").val(),
+                                IO_COMM_ID: $("#CommunicateID").val(),
+                                IO_DEVICE_ID:  $("#DeviceID").val(),
+                                IO_NAME:  checkStatus.data[i].IO_NAME,
+                                IO_ALIASNAME:checkStatus.data[i].IO_ALIASNAME
+
+                            });
+                        }
+                        if(_list.length<=0)
+                        {
+                            layer.msg('请选择该模型下的设备IO参数', {
+                                time: 5000, //20s后自动关闭
+
+                            });
+                        }
+                        else{
+                            var deviceid=     $("#DeviceID").val();
+                            var serverid=     $("#ServerID").val();
+                            var communicateid   =   $("#CommunicateID").val();
+                            okUtils.ajax("/Scada/ScadaGroup/SaveGroupDevicePara", "post", { "list": _list, groupId: GroupId,deviceid:deviceid,communicateid:communicateid,serverid:serverid }, true).done(function (response) {
+                                okUtils.tableSuccessMsg(response.message);
+
+                            }).fail(function (error) {
+                                console.log(error)
+                            });
+                        }
+
+                    });
+                 },
+        })
+    });
+        //数据表定时加载
+
+        form.on("submit(search)", function (data) {
+
+            table.reload({
+                where: data.field,
+            
+            });
+            return false;
+        });
+
+
+
+       
+   
+
+    });
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+    <button type="button" class='layui-btn layui-btn-sm' id='btnParaSave' name="btnSave"><i class='ok-icon'>&#xe68a;</i>保存设置</button>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+ <script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>

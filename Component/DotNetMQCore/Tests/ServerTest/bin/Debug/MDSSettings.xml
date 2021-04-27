@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MDSConfiguration>
+  
+  <Settings>
+    <Setting Key="ThisServerName" Value="测试Server" />
+    <Setting Key="StorageType" Value="SQLite" />
+  </Settings>
+  
+  <Servers>
+    <Server Name="测试Server" IpAddress="192.168.43.121" Port="10905" Adjacents="" />
+  </Servers>
+  
+  <Applications>
+  </Applications>
+  
+  <Routes>    
+  </Routes>
+  
+</MDSConfiguration>

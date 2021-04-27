@@ -1,0 +1,9 @@
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\bin\Release\MDSCommonLib.XML
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\bin\Release\MDSCommonLib.dll
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\bin\Release\MDSCommonLib.pdb
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\bin\Release\log4net.dll
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\bin\Release\log4net.xml
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\obj\Release\MDSCommonLib.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\obj\Release\MDSCommonLib.csproj.CopyComplete
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\obj\Release\MDSCommonLib.dll
+E:\LazyScadaOS\LazyScadaCode\Component\DotNetMQCore\MDSCommonLib\obj\Release\MDSCommonLib.pdb

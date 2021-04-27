@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="renderer" content="webkit|ie-comp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome =1">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/lib/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/css/common.css" rel="stylesheet" />
+    <script src="~/Content/lib/layui/layui.js"></script>
+    <style type="text/css">
+
+        .layui-form-label {
+            width: 100px;
+        }
+
+        .layui-input-block {
+            margin-left: 130px;
+        }
+
+        .layui-textarea {
+            min-height: 90px;
+        }
+
+        .div-msg {
+            font-weight: 400;
+            line-height: 20px;
+            padding: 9px 15px;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="ok-body">
+        <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
+            <img src="~/Content/images/ajax-loader.gif" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+        </div>
+        @RenderBody()
+    </div>
+    <script type="text/javascript">
+        layui.use(['form'], function () {
+            var $ = layui.jquery;
+            $(function () {
+                $('#ajax-loader').fadeOut();
+            })
+        })
+    </script>
+</body>
+</html>

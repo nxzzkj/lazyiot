@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MDSConfiguration>
+  <Settings>
+    <Setting Key="ThisServerName" Value="IoCenterServer" />
+    <Setting Key="StorageType" Value="SQLite" />
+  </Settings>
+  <Servers>
+    <Server Name="Station_0028F89F632F" IpAddress="192.168.1.6" Port="10905" Adjacents="IoCenterServer" />
+    <Server Name="ScadaWebMDS" IpAddress="192.168.1.6" Port="10905" Adjacents="IoCenterServer" />
+    <Server Name="IoCenterServer" IpAddress="192.168.1.6" Port="10905" Adjacents="Station_0028F89F632F,ScadaWebMDS" />
+  </Servers>
+  <Applications>
+    <Application Name="0028F89F632F" />
+    <Application Name="ScadaWebMDS" />
+    <Application Name="ScadaCenterServer" />
+    <Application Name="0028F89F632F" />
+    <Application Name="0028F89F632F" />
+  </Applications>
+</MDSConfiguration>

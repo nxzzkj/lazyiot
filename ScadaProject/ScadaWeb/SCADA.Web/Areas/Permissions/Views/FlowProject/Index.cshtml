@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "流程图管理";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="请输入名称" name="Title" autocomplete="off">
+        </div>
+    
+      
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "laydate", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+    
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+      
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Permissions/FlowProject/List",
+            limit: 10,
+            page: true,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                { type: "checkbox" },
+                { field: "Id", title: "ID", width: 80, sort: true },
+                { field: "ProjectId", title: "工程识别号", width: 120 },
+                { field: "Title", title: "流程图名称", width: 120 },
+                { field: "ServerID", title: "采集站编码", width: 120 },
+                { field: "ServerName", title: "采集站名称", width: 120 },
+                { field: "ServerIP", title: "采集站IP", width: 120 },
+                { field: "CreateTime", title: "发布日期", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]],
+            done: function (res, curr, count) {
+                console.log(res, curr, count);
+            }
+        });
+
+        form.on("submit(search)", function (data) {
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+              
+            }
+        });
+
+      
+ 
+
+        function edit(id) {
+            okLayer.open("编辑标题", "/Permissions/User/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除吗？", function () {
+                okUtils.ajax("/Permissions/FlowProject/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+       
+
+    })
+</script>
+ <!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    <label>流程站外网址：http://<span style="color:red">IP(域名)</span>/Scada/ScataFlow/<span style="color:red">Id号</span></label>
+    <label>流程站内网址：/Scada/ScataFlow/<span style="color:red">Id号</span></label>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+ 

@@ -1,0 +1,18 @@
+/*
+ * Windows WebOS
+ * WEB 桌面风格，基于Layui-打造的Windows WebOS桌面风格，实现了右键、开始菜单、返回桌面等一些列功能。窗口全部由 layer 完成
+
+html, body.desktop-bg { height: 100%; position: relative; background: url(../images/main.jpg) center no-repeat; /*background-size: 100% 100%*/ }
+/*系统所需图标*/
+@font-face { font-family: "iconfont"; src: url('fonts/iconfont.eot?t=1480683923713'); /* IE9*/ src: url('fonts/iconfont.eot?t=1480683923713#iefix') format('embedded-opentype'), /* IE6-IE8 */  url('fonts/iconfont.woff?t=1480683923713') format('woff'), /* chrome, firefox */  url('fonts/iconfont.ttf?t=1480683923713') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/  url('fonts/iconfont.svg?t=1480683923713#iconfont') format('svg'); /* iOS 4.1- */ }
+.iconfont { font-family: "iconfont" !important; font-size: 16px;  font-style: normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; color: #fff; }
+ 
+
+/*桌面图标通用样式*/.desktopContainer { margin: 1%; width: 98%; height: 98%; position: relative }
+.desktop-app { height: 88px; padding:3px; width:88px; border:1px solid transparent; position: absolute; cursor:pointer }
+.desktop-app:hover { border: solid 1px #7da2ce; -moz-border-radius: 3px; -webkit-border-radius: 3px; box-shadow: inset 0 0 1px #fff; -moz-box-shadow: inset 0 0 1px #fff; -webkit-box-shadow: inset 0 0 1px #fff; background: #cfe3fd; background: -moz-linear-gradient(top, #dcebfd, #c2dcfd); background: -webkit-gradient(linear, center top, center bottom, from(#dcebfd), to(#c2dcfd)); opacity:.9;filter: alpha(Opacity=90);  }
+.desktop-app i.layui-icon{display: block; width: 60px; height: 60px; margin: 0 auto; text-align: center; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 50px; color:#fff;}
+.desktop-app i.iconfont { display: block; width: 60px; height: 60px; margin: 0 auto; text-align: center; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 50px;  }
+.desktop-app span.desktop-title { width: 68px; height: 21px; display: block; margin: 5px auto 0; line-height: 21px; text-align: center;/* background-color: rgba(0, 0, 0, 0.6); */-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 12px; color: #fff;background:url(../images/rgba00006.png) repeat \9;  }
+
+ 

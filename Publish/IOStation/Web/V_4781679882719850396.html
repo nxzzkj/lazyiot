@@ -1,0 +1,1958 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 地图</title>
+    <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='Content/css/okadmin.css' rel='stylesheet' />
+    <link href='Content/css/common.css' rel='stylesheet' />
+    <script src='Content/lib/layui/layui.js'></script>
+    <script src='Content/js/global.js'></script>
+    <script src='Content/js/jquery-3.4.1.js'></script>
+    <script src='Content/js/jquery.timers-1.2.js'></script>
+    <script  src='Content/js/svg-pan-zoom.js'></script>
+    <script src='Content/js/SVG.js'></script>
+    <script src='Content/js/Scada.js'></script>
+
+    <script src='Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#5426150869124446339)'     >
+
+</rect>
+<defs><linearGradient id="5426150869124446339" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5560734512771196124'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVBorderShape4'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<polyline points='318.3011,252.5 233.35,252.5 209.0875,243.5 209.0875,146 233.35,135.5 322.3125,135.5 338.4875,140 784.1411,140 ' fill='none'     id='border1ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='397.041,253.7 230.115,253.7 212.3225,247.1 212.3225,224 ' fill='none'     id='border2ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='206.6936,242 206.6936,231.5 ' fill='none'     id='border3ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='223.645,141.2 211.5461,146.3 211.5461,153.2 ' fill='none'     id='border4ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='205.0761,147.5 205.0761,176 ' fill='none'     id='border5ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='212.3225,156.5 212.3225,188 ' fill='none'     id='border6ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='245.5136,137.3 319.9186,137.3 336.0936,141.8 403.1875,141.8 ' fill='none'     id='border7ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='328.7825,135.5 340.9461,138.8 ' fill='none'     id='border8ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='362.75,137.3 788.1525,137.3 ' fill='none'     id='border9ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='512.4011,139.1 788.1525,139.1 ' fill='none'     id='border10ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='730.6989,135.5 815.65,135.5 839.9125,144.5 839.9125,242 815.65,252.5 726.6875,252.5 710.5125,248 264.8589,248 ' fill='none'     id='border1ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='651.959,134.3 818.885,134.3 836.6775,140.9 836.6775,164 ' fill='none'     id='border2ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='842.3064,146 842.3064,156.5 ' fill='none'     id='border3ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='825.355,246.8 837.4539,241.7 837.4539,234.8 ' fill='none'     id='border4ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='843.9239,240.5 843.9239,212 ' fill='none'     id='border5ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='836.6775,231.5 836.6775,200 ' fill='none'     id='border6ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='803.4864,250.7 729.0814,250.7 712.9064,246.2 645.8125,246.2 ' fill='none'     id='border7ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='720.2175,252.5 708.0539,249.2 ' fill='none'     id='border8ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='686.25,250.7 260.8475,250.7 ' fill='none'     id='border9ID5560734512771196124'     stroke ="#FF0000"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+<polyline points='536.5989,248.9 260.8475,248.9 ' fill='none'     id='border10ID5560734512771196124'     stroke ="#0000FF"   stroke-opacity="1"  stroke-width="3"   stroke-dasharray=""     >
+
+</polyline>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4723206865364304819'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVBorderShape1'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#4fd2dd'>
+<polygon points='225.16,365.64 225.16,331.72 240.32,327.48 255.48,327.48 270.64,323.24 278.22,323.24 285.8,325.36 300.96,325.36 308.54,323.24 422.24,323.24 414.66,325.36 399.5,325.36 394.952,323.9502 313.088,323.9502 305.508,326.208 270.64,326.208 240.32,333.84 240.32,335.96 232.74,338.08 232.74,355.04 229.708,357.16 229.708,363.52 '     id='poly1ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='279.736,322.392 307.024,322.392 299.444,324.512 287.316,324.512 '     id='poly2ID4723206865364304819'       fill='#235fa7' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='232.74,357.16 232.74,363.52 228.192,365.64 228.192,372 229.708,374.12 229.708,396.7298 231.224,396.7298 231.224,365.64 234.256,365.64 234.256,357.16 '     id='poly3ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='225.16,484.36 225.16,518.28 240.32,522.52 255.48,522.52 270.64,526.76 278.22,526.76 285.8,524.64 300.96,524.64 308.54,526.76 422.24,526.76 414.66,524.64 399.5,524.64 394.952,526.0498 313.088,526.0498 305.508,523.792 270.64,523.792 240.32,516.16 240.32,514.04 232.74,511.92 232.74,494.96 229.708,492.84 229.708,486.48 '     id='poly1ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='279.736,527.608 307.024,527.608 299.444,525.488 287.316,525.488 '     id='poly2ID4723206865364304819'       fill='#235fa7' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='232.74,492.84 232.74,486.48 228.192,484.36 228.192,478 229.708,475.88 229.708,453.2702 231.224,453.2702 231.224,484.36 234.256,484.36 234.256,492.84 '     id='poly3ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='952.84,365.64 952.84,331.72 937.68,327.48 922.52,327.48 907.36,323.24 899.78,323.24 892.2,325.36 877.04,325.36 869.46,323.24 755.76,323.24 763.34,325.36 778.5,325.36 783.048,323.9502 864.912,323.9502 872.492,326.208 907.36,326.208 937.68,333.84 937.68,335.96 945.26,338.08 945.26,355.04 948.292,357.16 948.292,363.52 '     id='poly1ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='898.264,322.392 870.976,322.392 878.556,324.512 890.684,324.512 '     id='poly2ID4723206865364304819'       fill='#235fa7' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='945.26,357.16 945.26,363.52 949.808,365.64 949.808,372 948.292,374.12 948.292,396.7298 946.776,396.7298 946.776,365.64 943.744,365.64 943.744,357.16 '     id='poly3ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='952.84,484.36 952.84,518.28 937.68,522.52 922.52,522.52 907.36,526.76 899.78,526.76 892.2,524.64 877.04,524.64 869.46,526.76 755.76,526.76 763.34,524.64 778.5,524.64 783.048,526.0498 864.912,526.0498 872.492,523.792 907.36,523.792 937.68,516.16 937.68,514.04 945.26,511.92 945.26,494.96 948.292,492.84 948.292,486.48 '     id='poly1ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='898.264,527.608 870.976,527.608 878.556,525.488 890.684,525.488 '     id='poly2ID4723206865364304819'       fill='#235fa7' opacity='1'   >
+
+</polygon>
+
+
+<polygon points='945.26,492.84 945.26,486.48 949.808,484.36 949.808,478 948.292,475.88 948.292,453.2702 946.776,453.2702 946.776,484.36 943.744,484.36 943.744,492.84 '     id='poly3ID4723206865364304819'       fill='#4fd2dd' opacity='1'   >
+
+</polygon>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5292398043991242191'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID5292398043991242191' cx='525.5' cy='409.5' r='106.5'     stroke ="#1E90FF"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 525.5 409.5;-360 525.5 409.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5292398043991242191' cx='525.5' cy='409.5' r='106.5'     stroke ="#00BFFF"   stroke-opacity="0.5"  stroke-width="19"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 525.5 409.5;360 525.5 409.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5292398043991242191' cx='525.5' cy='409.5' r='85.5'     stroke ="#87CEFA"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="20 10"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 525.5 409.5;360 525.5 409.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5292398043991242191' cx='525.5' cy='409.5' r='72'     stroke ="#0000CD"   stroke-opacity="0.5"  stroke-width="15"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 525.5 409.5;-360 525.5 409.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+<circle    id='ellipseID5292398043991242191' cx='525.5' cy='409.5' r='60.5'     stroke ="#4169E1"   stroke-opacity="0.5"  stroke-width="4"   stroke-dasharray="3 2"    fill='none'    >
+  <animateTransform
+          attributeName = 'transform'
+          values = '0 525.5 409.5;360 525.5 409.5'
+          dur ='25s'
+          begin = '0s'   type='rotate'
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5115500007439776196'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='rectID5115500007439776196'   x='109' y='608.7434' width='15' height='9.513231'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '609.7434;613.5;609.7434'
+          dur ='4s'
+          begin = '0.9609325s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '9.513231;1;9.513231'
+          dur ='4s'
+          begin = '0.9609325s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='127' y='586.8842' width='15' height='53.23175'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '587.8842;613.5;587.8842'
+          dur ='4s'
+          begin = '5.376944s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '53.23175;1;53.23175'
+          dur ='4s'
+          begin = '5.376944s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='145' y='602.8287' width='15' height='21.34252'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '603.8287;613.5;603.8287'
+          dur ='4s'
+          begin = '2.15581s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '21.34252;1;21.34252'
+          dur ='4s'
+          begin = '2.15581s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='163' y='581.6013' width='15' height='63.79734'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '582.6013;613.5;582.6013'
+          dur ='4s'
+          begin = '6.444176s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '63.79734;1;63.79734'
+          dur ='4s'
+          begin = '6.444176s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='181' y='569.5333' width='15' height='87.9333'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '570.5333;613.5;570.5333'
+          dur ='4s'
+          begin = '8.882151s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '87.9333;1;87.9333'
+          dur ='4s'
+          begin = '8.882151s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='199' y='604.4612' width='15' height='18.07765'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '605.4612;613.5;605.4612'
+          dur ='4s'
+          begin = '1.826026s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '18.07765;1;18.07765'
+          dur ='4s'
+          begin = '1.826026s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='217' y='591.1111' width='15' height='44.77779'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '592.1111;613.5;592.1111'
+          dur ='4s'
+          begin = '4.523009s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '44.77779;1;44.77779'
+          dur ='4s'
+          begin = '4.523009s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='235' y='582.9725' width='15' height='61.05505'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '583.9725;613.5;583.9725'
+          dur ='4s'
+          begin = '6.167177s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '61.05505;1;61.05505'
+          dur ='4s'
+          begin = '6.167177s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='253' y='612.7395' width='15' height='1.521031'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '613.7395;613.5;613.7395'
+          dur ='4s'
+          begin = '0.1536395s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '1.521031;1;1.521031'
+          dur ='4s'
+          begin = '0.1536395s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='271' y='606.2689' width='15' height='14.46227'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '607.2689;613.5;607.2689'
+          dur ='4s'
+          begin = '1.460836s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '14.46227;1;14.46227'
+          dur ='4s'
+          begin = '1.460836s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='289' y='566.0677' width='15' height='94.86463'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '567.0677;613.5;567.0677'
+          dur ='4s'
+          begin = '9.582286s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '94.86463;1;94.86463'
+          dur ='4s'
+          begin = '9.582286s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='307' y='609.9224' width='15' height='7.15532'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '610.9224;613.5;610.9224'
+          dur ='4s'
+          begin = '0.7227596s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '7.15532;1;7.15532'
+          dur ='4s'
+          begin = '0.7227596s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='325' y='585.4977' width='15' height='56.00451'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '586.4977;613.5;586.4977'
+          dur ='4s'
+          begin = '5.657021s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '56.00451;1;56.00451'
+          dur ='4s'
+          begin = '5.657021s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='343' y='606.0825' width='15' height='14.8349'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '607.0825;613.5;607.0825'
+          dur ='4s'
+          begin = '1.498475s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '14.8349;1;14.8349'
+          dur ='4s'
+          begin = '1.498475s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='361' y='577.666' width='15' height='71.66808'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '578.666;613.5;578.666'
+          dur ='4s'
+          begin = '7.2392s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '71.66808;1;71.66808'
+          dur ='4s'
+          begin = '7.2392s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='379' y='579.8881' width='15' height='67.22372'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '580.8881;613.5;580.8881'
+          dur ='4s'
+          begin = '6.790275s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '67.22372;1;67.22372'
+          dur ='4s'
+          begin = '6.790275s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='397' y='587.8365' width='15' height='51.32703'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '588.8365;613.5;588.8365'
+          dur ='4s'
+          begin = '5.184548s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '51.32703;1;51.32703'
+          dur ='4s'
+          begin = '5.184548s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='415' y='580.1105' width='15' height='66.77905'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '581.1105;613.5;581.1105'
+          dur ='4s'
+          begin = '6.745358s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '66.77905;1;66.77905'
+          dur ='4s'
+          begin = '6.745358s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='433' y='611.0968' width='15' height='4.80645'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '612.0968;613.5;612.0968'
+          dur ='4s'
+          begin = '0.4855s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '4.80645;1;4.80645'
+          dur ='4s'
+          begin = '0.4855s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='451' y='565.2975' width='15' height='96.40491'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '566.2975;613.5;566.2975'
+          dur ='4s'
+          begin = '9.737869s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '96.40491;1;96.40491'
+          dur ='4s'
+          begin = '9.737869s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='469' y='585.5427' width='15' height='55.91454'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '586.5427;613.5;586.5427'
+          dur ='4s'
+          begin = '5.647933s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '55.91454;1;55.91454'
+          dur ='4s'
+          begin = '5.647933s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='487' y='607.8582' width='15' height='11.28352'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '608.8582;613.5;608.8582'
+          dur ='4s'
+          begin = '1.13975s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '11.28352;1;11.28352'
+          dur ='4s'
+          begin = '1.13975s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='505' y='573.7554' width='15' height='79.48917'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '574.7554;613.5;574.7554'
+          dur ='4s'
+          begin = '8.02921s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '79.48917;1;79.48917'
+          dur ='4s'
+          begin = '8.02921s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='523' y='586.737' width='15' height='53.52604'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '587.737;613.5;587.737'
+          dur ='4s'
+          begin = '5.40667s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '53.52604;1;53.52604'
+          dur ='4s'
+          begin = '5.40667s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='541' y='570.6734' width='15' height='85.65319'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '571.6734;613.5;571.6734'
+          dur ='4s'
+          begin = '8.651837s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '85.65319;1;85.65319'
+          dur ='4s'
+          begin = '8.651837s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='559' y='576.4828' width='15' height='74.03431'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '577.4828;613.5;577.4828'
+          dur ='4s'
+          begin = '7.478213s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '74.03431;1;74.03431'
+          dur ='4s'
+          begin = '7.478213s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='577' y='598.7665' width='15' height='29.46695'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '599.7665;613.5;599.7665'
+          dur ='4s'
+          begin = '2.976459s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '29.46695;1;29.46695'
+          dur ='4s'
+          begin = '2.976459s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='595' y='596.1224' width='15' height='34.75521'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '597.1224;613.5;597.1224'
+          dur ='4s'
+          begin = '3.510628s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '34.75521;1;34.75521'
+          dur ='4s'
+          begin = '3.510628s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='613' y='605.3325' width='15' height='16.33494'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '606.3325;613.5;606.3325'
+          dur ='4s'
+          begin = '1.649994s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '16.33494;1;16.33494'
+          dur ='4s'
+          begin = '1.649994s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='631' y='594.8517' width='15' height='37.2965'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '595.8517;613.5;595.8517'
+          dur ='4s'
+          begin = '3.767323s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '37.2965;1;37.2965'
+          dur ='4s'
+          begin = '3.767323s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='649' y='592.7161' width='15' height='41.56786'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '593.7161;613.5;593.7161'
+          dur ='4s'
+          begin = '4.198774s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '41.56786;1;41.56786'
+          dur ='4s'
+          begin = '4.198774s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='667' y='569.8535' width='15' height='87.29295'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '570.8535;613.5;570.8535'
+          dur ='4s'
+          begin = '8.81747s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '87.29295;1;87.29295'
+          dur ='4s'
+          begin = '8.81747s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5115500007439776196'   x='685' y='604.4432' width='15' height='18.11361'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'y'
+          values = '605.4432;613.5;605.4432'
+          dur ='4s'
+          begin = '1.829657s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />    <animate
+          attributeName = 'height'
+          values = '18.11361;1;18.11361'
+          dur ='4s'
+          begin = '1.829657s'  keyTimes=0;0.5;1 calcMode=spline  keySplines=0.42,0,0.58,1;0.42,0,0.58,1
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5202047932459725923'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape1'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='rectID5202047932459725923'   x='210' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='234' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='246' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='258' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='282' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='294' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='306' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='330' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='342' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='378' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='402' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='426' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='450' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='474' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='498' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='510' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='546' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='558' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='570' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='606' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='630' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='654' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='666' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='678' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='690' y='41' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='210' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='222' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='234' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='246' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='258' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='270' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='282' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='294' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='306' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='330' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='342' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='354' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='366' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='402' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='426' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='438' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='450' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='462' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='498' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='522' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='534' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='546' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='558' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='570' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='594' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='642' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='666' y='53' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='210' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='222' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='246' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='258' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='270' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='282' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='294' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='342' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='378' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='402' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='450' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='462' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='498' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='546' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='582' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='606' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='618' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='630' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='642' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='666' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='690' y='65' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='258' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='270' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='282' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='306' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='318' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='330' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='354' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='378' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='402' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='414' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='438' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='450' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='474' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='486' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='546' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='570' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='582' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='594' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='630' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='642' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='654' y='77' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='210' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='234' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='282' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='294' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='306' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='318' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='342' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='354' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='3s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='366' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='378' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='402' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='414' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='426' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='438' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='486' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='498' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='522' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='534' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='558' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='570' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='594' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='606' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='618' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='630' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='642' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='654' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='666' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='2s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='678' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#ffffff'
+          dur ='1s'
+          begin = '0s'
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='690' y='89' width='4' height='4'   fill='#4fd2dd' opacity='1'     >
+
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='449' y='69' width='119.5' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'width'
+          values = '0;119.5;0'
+          dur ='3s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID5202047932459725923'   x='628.25' y='69' width='55.75' height='4'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'height'
+          values = '0;4;0'
+          dur ='3s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4729937851503536798'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<rect  id='rectID4729937851503536798'   x='271' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.4804662s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='289' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.688472s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='307' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '1.077905s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='325' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.222088s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='343' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '4.441075s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='361' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.9130128s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='379' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.261504s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='397' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.083589s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='415' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.07681976s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='433' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.7304178s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='451' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '4.791143s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='469' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.3613798s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='487' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.828511s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='505' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.7492374s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='523' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.6196s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='541' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.395137s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='559' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.592274s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='577' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.372679s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='595' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.24275s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='613' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '4.868935s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='631' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.823967s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='649' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.569875s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='667' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '4.014605s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='685' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.703335s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='703' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '4.325919s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='721' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '3.739107s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='739' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '1.48823s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='757' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '1.755314s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='775' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '0.8249968s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='793' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '1.883662s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+<rect  id='rectID4729937851503536798'   x='811' y='155' width='15' height='49'   fill='#4fd2dd' opacity='1'     >
+  <animate
+          attributeName = 'fill'
+          values = '#4fd2dd;#FFD700'
+          dur ='4s'
+          begin = '2.099387s'     
+          repeatCount = 'indefinite'   />
+</rect>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5001153843972925043'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID5001153843972925043' cx='939' cy='171' r='36'     fill='#FFFF00' opacity='0.1960784'    >
+  <animate
+          attributeName = 'r'
+          values = '0;36'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />   <animate
+          attributeName = 'opacity'
+          values = '0.8;0'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5109008896863642516'   data-baseshape='SVG_CommonShape'  data-shape='SVG_DataVDecorationShape5'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<circle    id='ellipseID5109008896863642516' cx='1019' cy='310' r='31'     fill='#00FF00' opacity='0.1960784'    >
+  <animate
+          attributeName = 'r'
+          values = '0;31'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />   <animate
+          attributeName = 'opacity'
+          values = '0.8;0'
+          dur ='2s'
+          begin = '0s'     
+          repeatCount = 'indefinite'   />
+</circle>
+
+
+</g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

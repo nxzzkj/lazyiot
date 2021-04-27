@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqttNetServer", "MqttNetServer\MqttNetServer.csproj", "{B0C01277-BBF1-4A23-B700-4E4B6954A3B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqttNetClient", "MqttNetClient\MqttNetClient.csproj", "{0CCD1198-FD33-48E7-8B5A-506135EAF0E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0C01277-BBF1-4A23-B700-4E4B6954A3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C01277-BBF1-4A23-B700-4E4B6954A3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C01277-BBF1-4A23-B700-4E4B6954A3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C01277-BBF1-4A23-B700-4E4B6954A3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCD1198-FD33-48E7-8B5A-506135EAF0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCD1198-FD33-48E7-8B5A-506135EAF0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCD1198-FD33-48E7-8B5A-506135EAF0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCD1198-FD33-48E7-8B5A-506135EAF0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E37268A-53FA-4F12-8CC2-3763A411C11E}
+	EndGlobalSection
+EndGlobal

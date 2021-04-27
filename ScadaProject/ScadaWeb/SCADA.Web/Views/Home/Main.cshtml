@@ -1,0 +1,81 @@
+﻿@model ScadaWeb.Web.Areas.SysSet.Models.WebModel
+@{
+    ViewBag.Title = Model.SiteName;
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="main">
+<head>
+    <meta charset="utf-8">
+    <title>我的视图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+ 
+    <script src="~/Content/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="~/Content/css/oksub.css" media="all" /> 
+</head>
+<body class="main">
+
+    <!--主桌面-->
+    <div class="desktop-container small-click main"  id="login">
+
+        @foreach (ScadaWeb.Model.TopButtonModel model in (IEnumerable<ScadaWeb.Model.TopButtonModel>)ViewData["SystemTopButtonList"])
+        {
+
+            <div class="desktop-app">
+                <a target="_blank" href='@MvcHtmlString.Create(model.Url.ToString())' title='@MvcHtmlString.Create(model.FullName.ToString())'>
+                    <i class="layui-icon " style="background-color:@(MvcHtmlString.Create(model.ButtonColor))">@MvcHtmlString.Create(model.Icon)</i>
+                    <span class="desktop-title layui-elip">@(model.FullName)</span>
+                </a>
+            </div>
+
+        }
+
+
+
+    </div>
+
+    <script>
+
+        InitDeskApp();
+        function InitDeskApp() {
+            var apprect = {
+                x: 50,
+                y: 50,
+                bottom: 65,
+                width: 96,
+                height: 96,
+                parent: {
+                    height: 0,
+                    width: 0
+                },
+                padding: {
+                    top: 10,
+                    left: 10,
+                    right: 0,
+                    bottom: 10
+                }
+            };
+            var desktopContainer = $(".desktop-container");
+            apprect.parent.height = desktopContainer.height() - 40;
+            apprect.parent.width = desktopContainer.width();
+            desktopContainer.find(".desktop-app").each(function (a, b) {
+                $(b).css("top", apprect.y + "px");
+                $(b).css("left", apprect.x + "px");
+                apprect.height = $(b).height();
+                apprect.width = $(b).width();
+                apprect.y = apprect.y + apprect.height + apprect.padding.bottom + apprect.padding.bottom;
+                if (apprect.y >= apprect.parent.height - apprect.bottom) {
+                    apprect.y = 50;
+                    apprect.x = apprect.x + apprect.width + apprect.padding.left;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+
+/*-- reset --*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/*-- start editing from here --*/
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*-- end reset --*/
+/*--main-content-starts-here--*/
+body {
+font-family:Verdana;
+	 'Oxygen', sans-serif;
+    width: 100%;
+    text-transform: uppercase;
+    background:#285ca7;
+	background-size: cover;
+}
+
+
+.login-form  {
+    width: 28%;
+    margin: 0 auto;
+	background: url('../images/form.jpg')no-repeat 0px 0px;
+    background-size: cover;
+    padding: 30px 33px 67px;
+    border-top: 6px solid #ffd900;
+    -webkit-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
+-moz-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
+box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
+}
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-bottom: 35px;
+	color:#ffffff;
+}
+form {
+    margin: 0 auto;
+}
+.login-form h2 {
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 24px;
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.97);
+}
+form p {
+    font-size: 15px;
+    margin-top: 44px;
+	 padding: 0.3px;
+	 color: #c7c8ca;
+}
+.login-form form input[type="text"], input[type="password"] {
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+	padding: 15px 10px;
+    margin: 0 auto;
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid #DCCBCF;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+}
+.login-form form input[type="button"] {
+   width:100%;
+	outline:none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding: 13px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #ffd900;
+    border: none;
+    color: #ffffff;
+	cursor:pointer;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.login-button{
+	width:100%;
+	outline:none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding: 13px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #ffd900;
+    border: none;
+    color: #ffffff;
+	cursor:pointer;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+input[type=‘button’] {
+	width:100%;
+	outline:none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding: 13px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #ffd900;
+    border: none;
+    color: #ffffff;
+	cursor:pointer;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+	
+}
+input[type="button"]:hover {
+    background: #DEBF0D;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.login-form a {
+	display:block;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 31px;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.login-form a:hover {
+    color: #ffd900;
+	 transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+/*--main-content-ends-here--*/
+/*--copy-right-starts-here--*/
+.copyright {
+    margin: 0 auto;
+    text-align: center;
+    margin: 39px;
+	color: #ffffff;
+	text-transform: none;
+}
+.copyright a {
+    color: #011D35;
+    font-weight: bold;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.copyright a:hover{
+    color: #ffd900;
+	transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+/*--copy-right-ends-here--*/
+/*--responsive-design-starts-here--*/
+@media(max-width:1360px){
+	.login-form.w3-agile {
+		width: 33%;
+    }
+}
+@media(max-width:1280px){
+	.login-form.w3-agile {
+		width: 34%;
+	}
+}
+@media(max-width:1024px){
+	.login-form.w3-agile {
+		width: 43%;
+	}
+}
+@media(max-width:800px){
+	.login-form.w3-agile {
+		width: 57%;
+	}
+	h1{
+		font-size: 33px;
+	}
+	form h2 {
+		font-size: 33px;
+	}
+	input[type="button"]{
+		font-size: 18px;
+	}
+}
+@media(max-width:736px){
+	.login-form.w3-agile {
+		width: 52%;
+	}
+	.login-form form input[type="text"], input[type="password"] {
+		width: 90.5%;
+	}
+	.login-form h2 {
+		font-size: 29px;
+	}
+	form p {
+		font-size: 13px;
+	}
+	input[type="button"] {
+		font-size: 17px;
+	}
+	.login-form a{
+		font-size: 14px;
+	}
+	.copyright.w3-agile p {
+		font-size: 14px;
+	}
+}
+@media(max-width:667px){
+	.login-form.w3-agile {
+		width: 60%;
+	}
+	.login-form h2 {
+		font-size: 26px;
+	}
+	h1 {
+		font-size: 32px;
+		word-spacing: 5px;
+		letter-spacing: 2px;
+	}
+}
+@media(max-width:600px){
+	.login-form.w3-agile {
+		width: 66%;
+	}
+	.login-form h2 {
+		font-size: 23px;
+	}
+	.login-form a {
+		font-size: 12px;
+	}
+	input[type="button"] {
+		font-size: 15px;
+	}
+	h1 {
+    font-size: 30px;
+	}
+}
+@media(max-width:480px){
+	h1 {
+		font-size: 26px;
+	}
+	.login-form.w3-agile {
+		width: 75%;
+	}
+	.login-form h2 {
+		font-size: 21px;
+	}
+	form p {
+		margin-top: 33px;
+		font-size: 13px;
+    }
+	.copyright.w3-agile p {
+		font-size: 14px;
+		line-height: 31px;
+	}
+	.copyright {
+		margin: 31px 10px;
+	}
+}
+@media(max-width:414px){
+	h1 {
+		font-size: 27px;
+	}
+	.login-form.w3-agile {
+		width: 77%;
+	}
+	.login-form h2 {
+		font-size: 19px;
+		margin-top: 11px;
+	}
+	.login-form form input[type="text"], input[type="password"] {
+		padding: 6px 10px;
+	}
+}
+@media(max-width:384px){
+	h1 {
+		font-size: 21px;
+	}
+	.login-form.w3-agile {
+		width: 78%;
+	}
+	.login-form h2 {
+		font-size: 17px;
+    }
+	form p {
+		font-size: 12px;
+	}
+	input[type="button"] {
+		font-size: 15px;
+	}
+	.login-form a {
+		font-size: 11px;
+	}
+}
+@media(max-width:375px){
+	input[type="button"] {
+		font-size: 12px;
+	}
+	h1 {
+		font-size: 20px;
+		margin: 24px 0px;
+	}
+	form p {
+		margin-left: 5px;
+	}
+}
+@media(max-width:320px){
+	h1 {
+		margin: 13px 0px;
+	}
+	 .login-form.w3-agile {
+		width: 82%;
+		padding: 20px 20px 30px;
+	}
+	.copyright {
+		margin: 17px 10px;
+	}
+	.copyright.w3-agile p {
+		line-height: 25px;
+	}
+}
+/*--responsive-design-ends-here--*/

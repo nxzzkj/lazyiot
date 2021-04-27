@@ -1,0 +1,124 @@
+﻿
+--PROJ #5199775147311924023#1
+
+ 
+
+--VIEW #V_5032083211199995235#登录界面1#True
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4846001825628238239)'     />
+<defs><linearGradient id="4846001825628238239" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5450841035943314792' height = '415' width = '468' y = '106' x = '262'  data-baseshape='SVG_CommonShape'  data-shape='SVG_HTMLShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5450841035943314792'  height = '415' width = '468' y = '106' x = '262' align = 'left' >
+<iframe  style='width:100%;height:100%;' frameborder='0' src='' ></iframe>>
+</foreignObject>
+<g>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5627108017120663998#登录界面2#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4716184643328772938)'     />
+<defs><linearGradient id="4716184643328772938" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5404412175191185644'  data-baseshape='SVG_CommonShape'  data-shape='SVG_HTMLShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5404412175191185644'  height = '439' width = '528' y = '136' x = '203' align = 'center' >
+<style type='text/css'>
+.modelView{background-color:#DDDDDD;opacity:0.7;height: 100%;width: 100%;position: relative;}
+    .playvideo{ padding-top: auto;z-index: 999999;  position: relative; }
+	.zy_media{ z-index: 999999999;  position: relative;}
+    </style>
+ 
+<div class='playvideo'>
+	<div class='zy_media'>
+    	<video poster = 'https://r1.ykimg.com/05420408584A363C6A0A47047DD24931' 
+data-config='{'mediaTitle': '视频'}' webkit-playsinline='' playsinline='' x5-playsinline='' x-webkit-airplay='allow'  style='width:528;height:439;'>
+            <source src = 'http://www.w3cschool.cc/try/demo_source/mov_bbb.mp4' type='video/mp4'/>
+      	  您的浏览器不支持HTML5视频
+        </video>
+
+	</div>
+ 
+	</div>
+ 
+<script>
+//document.documentElement.style.overflow='hidden';
+ document.body.style.overflow='hidden';
+    zymedia('video',{'autoplay': 'true','preload': 'auto'});
+    var screenheight = 439;
+    $('#modelViewID5404412175191185644').width(528);
+    $('#modelViewID5404412175191185644').height(439);
+        var videoheight = $('.zy_media').height();
+    var padding_top = screenheight - videoheight;
+    $('.playvideo').css({ 'top':padding_top});
+    $('#modelViewID5404412175191185644').css({ 'margin-top':-1 * (padding_top +$('.zy_media').height())});
+
+</script>
+</foreignObject>
+<g>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5591735746043500081#登录界面3#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4809469067038158561)'     />
+<defs><linearGradient id="4809469067038158561" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5744395220744054876#登录界面4#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5499372863785403148)'     />
+<defs><linearGradient id="5499372863785403148" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_4709483994559475181#登录界面5#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5179173802925070077)'     />
+<defs><linearGradient id="5179173802925070077" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5473058118616281793#登录界面6#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#4674750393839729385)'     />
+<defs><linearGradient id="4674750393839729385" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5088673683086920061#登录界面7#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5235203317039237649)'     />
+<defs><linearGradient id="5235203317039237649" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+
+
+--VIEW #V_5343108195395543948#登录界面8#False
+
+ 
+<svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='1600' height='800' viewBox='0 0 1600 800' ><rect  id='map'   x='0' y='0' width='1600' height='800'   fill='url(#5135621083693482672)'     />
+<defs><linearGradient id="5135621083693482672" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</svg>
+
+--ENDVIEW
+

@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Assign";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<style type="text/css">
+    .div-collapse {
+        float: left;
+        height: 18px;
+        line-height: 18px;
+        padding-left: 5px;
+    }
+
+    .layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+        top: -1px;
+        padding-left: 25px;  /* 覆盖layui padding */
+    }
+</style>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["treeGrid", "form", "okUtils"], function () {
+        let treeGrid = layui.treeGrid;
+        let form = layui.form;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+
+        treeGrid.render({
+            elem: "#tableId",
+            url: "/Permissions/Module/ModuleButtonList?roleId=@ViewBag.RoleId",
+            page: false,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cellMinWidth: 100,
+            treeId: 'Id',   //树形id字段名称
+            treeUpId: 'ParentId',   //树形父id字段名称
+            treeShowName: 'FullName',   //以树形式显示的字段
+            cols: [[
+                { field: "Id", title: "ID", width: 80, sort: true },
+                { field: "FullName", title: "菜单名称", width: 200 ,type:'checkbox_txt' },
+                { field: "ModuleButtonHtml", title: "按钮权限" },
+                { field: "Icon", title: "菜单图标", width: 80, templet: '<span>{{showIcon(d.Icon)}}<span>' },
+                { field: "SortCode", title: "排序码", width: 80 },
+                { title: "操作", width: 120, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]]
+        });
+
+        //关闭页面
+        function CloseWin() {
+            parent.location.reload(); // 父页面刷新
+            parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+        }
+
+        //折叠展开
+        $("#btnFold").on('click', function () {
+            $(".div-collapse.root .layui-tree-head").click();
+        });
+
+        //保存设置
+        $("#btnSave").on('click', function () {
+            var _roleId = @ViewBag.RoleId;
+            var cbxs = $(".layui-table").find('tbody input[type="checkbox"]');
+            var _list = [];
+            cbxs.each(function (index, item) {
+                if (item.checked == true) {
+                    var _row = { RoleId: 0, ModuleId: 0, ButtonId: 0 };
+                    var _name = item.name;//chx_2
+                    if (_name.indexOf('cbx_') > -1) {
+                        _name = _name.replace('cbx_', '');
+                    } else {
+                        _name = item.getAttribute('tag');
+                        if (_name.indexOf('cbx_') > -1) {
+                            _name = _name.replace('cbx_', '');
+                        }
+                    }
+                    _row.RoleId = _roleId;
+                    _row.ModuleId = _name;
+                    _row.ButtonId = item.value == "on" ? null : item.value;
+                    _list.push(_row);
+                }
+            });
+            okUtils.ajax("/Permissions/RoleAuthorize/InsertBatch", "post", { "list": _list, roleId: _roleId }, true).done(function (response) {
+                okUtils.tableSuccessMsg(response.message);
+                //没开启分页，没确定按钮，手动刷新
+                setTimeout(CloseWin, 1500);
+            }).fail(function (error) {
+                console.log(error)
+            });
+        });
+
+        treeGrid.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            if (obj.event === 'selectAll') {  //全选
+                $("input[name='cbx_" + data.Id + "']").prop("checked", true);
+            } else if (obj.event === 'cancleSelectAll') {//反选
+                $("input[name='cbx_" + data.Id + "']").prop("checked", false);
+            }
+            form.render('checkbox');
+        });
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    <button class='layui-btn layui-btn-sm' id='btnFold'><i class='ok-icon'>&#xe6d9;</i>全部折叠/展开</button>
+    <button class='layui-btn layui-btn-sm' id='btnSave'><i class='ok-icon'>&#xe68a;</i>保存设置</button>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    {{# if(d.ModuleButtonHtml!=""){}}
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="selectAll">全选</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="cancleSelectAll">反选</a>
+    {{# } }}
+</script>
+

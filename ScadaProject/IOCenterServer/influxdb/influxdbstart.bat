@@ -1,0 +1,1 @@
+ influxd -config influxdb.conf

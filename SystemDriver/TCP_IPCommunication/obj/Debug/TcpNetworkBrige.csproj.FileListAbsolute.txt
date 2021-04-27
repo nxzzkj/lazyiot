@@ -1,0 +1,7 @@
+E:\中联公司项目\ZZSCADA\SystemDriver\TCP_IPCommunication\obj\Debug\TcpNetworkBrige.csprojResolveAssemblyReference.cache
+E:\中联公司项目\ZZSCADA\SystemDriver\TCP_IPCommunication\obj\Debug\TcpNetworkBrige.csproj.GenerateResource.Cache
+E:\中联公司项目\ZZSCADA\SystemDriver\TCP_IPCommunication\obj\Debug\TcpNetworkBrige.Properties.Resources.resources
+E:\bin\Debug\TcpNetworkBrige.dll
+E:\bin\Debug\TcpNetworkBrige.pdb
+E:\中联公司项目\ZZSCADA\SystemDriver\TCP_IPCommunication\obj\Debug\TcpNetworkBrige.dll
+E:\中联公司项目\ZZSCADA\SystemDriver\TCP_IPCommunication\obj\Debug\TcpNetworkBrige.pdb

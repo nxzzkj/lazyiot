@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+<style type="text/css">
+    .div-collapse {
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        padding-left: 5px;
+    }
+</style>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["treeGrid", "okLayer", "okUtils"], function () {
+        let treeGrid = layui.treeGrid;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let $ = layui.$;
+
+        treeGrid.render({
+            elem: "#tableId",
+            url: "/Permissions/Organize/List",
+            page: false,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cellMinWidth: 100,
+            treeId: 'Id',   //树形id字段名称
+            treeUpId: 'ParentId',   //树形父id字段名称
+            treeShowName: 'FullName',   //以树形式显示的字段
+            cols: [[
+                { field: "Id", title: "ID", sort: true },
+                { field: "FullName", title: "机构名称" },
+                { field: "EnCode", title: "机构编码" },
+                { field: "CategoryName", title: "分类" },
+                { field: "SortCode", title: "排序码", width: 120 },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]]
+        });
+
+        //treeGrid 监听不了toolbar
+        //treeGrid.on("toolbar(tableFilter)", function (obj) {
+        //    switch (obj.event) {
+        //        case "add":
+        //            add();
+        //            break;
+        //    }
+        //});
+
+        //add
+        $('#add').on('click', function () {
+            okLayer.open("添加机构", "/Permissions/Organize/Add", "100%", "100%", null, null);
+        });
+
+        treeGrid.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+            }
+        });
+
+        //function add() {
+        //    okLayer.open("添加机构", "/Permissions/Organize/Add", "100%", "100%", null, null);
+        //}
+
+        function edit(id) {
+            okLayer.open("编辑机构", "/Permissions/Organize/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除吗？", function () {
+                okUtils.ajax("/Permissions/Organize/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                    //没开启分页，没确定按钮，手动刷新
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1500);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+

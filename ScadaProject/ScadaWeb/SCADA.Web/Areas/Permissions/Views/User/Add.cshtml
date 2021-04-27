@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    .fr {
+        float: right;
+    }
+
+    .img-headshot {
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        top: -30px;
+        border: medium none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+<form class="layui-form layui-form-pane ok-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" name="Account" placeholder="用户名" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="RealName" placeholder="姓名" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    @Html.GenderRadioHtml()
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-inline">
+            <input name="HeadIcon" readonly id="HeadShot" placeholder="图片地址" value="" class="layui-input">
+        </div>
+        <div class="layui-input-inline layui-btn-container" style="width: auto;">
+            <button type="button" class="layui-btn layui-btn-primary" id="btnUpload">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div id="layer-photos-demo" class="fr">
+                <img class="img-headshot" id="imgHeadShot" layer-pid="HeadShot" layer-src="~/Content/images/timg.jpg" src="~/Content/images/timg.jpg" alt="头像预览">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号码</label>
+        <div class="layui-input-block">
+            <input type="text" name="MobilePhone" placeholder="手机号码" autocomplete="off" class="layui-input" maxlength="11">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">微信</label>
+        <div class="layui-input-block">
+            <input type="password" name="WeChat" placeholder="微信" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+            <input type="text" name="Email" placeholder="邮箱" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="Birthday" id="birthday" placeholder="请选择出生日期" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">部门</label>
+        <div class="layui-input-block">
+            @Html.DropDownList("DepartmentId", (IEnumerable<SelectListItem>)ViewBag.OrganizeList, "请选择部门", new Dictionary<string, object> { { "lay-verify", "required" } })
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-block">
+            @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RoleList, "请选择角色", new Dictionary<string, object> { { "lay-verify", "required" } })
+        </div>
+    </div>
+    @Html.EnabledMarkRadioHtml()
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "laydate", "okLayer", "okUtils", "upload", "layer"], function () {
+        let form = layui.form;
+        let laydate = layui.laydate;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let upload = layui.upload;
+        let layer = layui.layer;
+        let $ = layui.$;
+        laydate.render({ elem: "#birthday" });
+        upload.render({
+            elem: '#btnUpload',
+            url: '/Home/ExportFile',
+            size: '@ViewBag.UploadFileSize',
+            exts: '@ViewBag.UploadFileType',
+            done: function (res) {
+                if (res.code == 0) {
+                    $("#HeadShot").val(res.src);
+                    $("#imgHeadShot").attr("src", res.src);
+                    $("#imgHeadShot").attr("layer-src", res.src)
+                }
+            }
+        });
+        layer.photos({
+            photos: '#layer-photos-demo',
+            anim: 1
+        });
+        form.on("submit(add)", function (data) {
+            okUtils.ajax("/Permissions/User/Add", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>

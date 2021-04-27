@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand|e-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome =1">
+ 
+    <title></title>
+</head>
+<body>
+ 
+    <svg  onload="ss(evt)">
+        <defs>
+            <menu id='menu1'>
+                <header>Menu utilisateur</header>
+                <item id='Menu1.1' onactivate='Toto()'>工作1</item>
+                <item id='Menu1.2' onactivate='Titi(2)'>工作2</item>
+                <item id='Menu2.0' />
+                <item id='Menu2.1' action="ZoomIn"> 缩小 </item>
+                <item id='Menu2.2' action='ViewSource'>浏览源代码</item>
+            </menu>
+        </defs>
+      
+    </svg>
+    <script>
+
+        function ss(evt){
+        var svgdoc = evt.getTarget().getOwnerDocument();
+        var newMenuRoot=parseXML(printNode(svgdoc.getElementById('menu1')),contextMenu);
+        contextMenu.replaceChild(newMenuRoot,contextMenu.firstChild);
+        }
+        function Toto(){
+        alert('你点的是工作1')
+        }
+        function Titi(strParam){
+        alert('你点的是工作2，而且还传递了一个参数： ' + strParam)
+        }
+
+    </script>
+</body>
+</html>

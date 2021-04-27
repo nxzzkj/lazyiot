@@ -1,0 +1,72 @@
+﻿@model ScadaWeb.Model.ScadaFlowProjectModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<style type="text/css">
+    .fr {
+        float: right;
+    }
+
+    .img-headshot {
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        top: -30px;
+        border: medium none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+<form class="layui-form layui-form-pane ok-form" lay-filter="formTest">
+    @*一些不需要更新的隐藏字段*@
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreateTime)
+    @Html.HiddenFor(x => x.CreateUserId)
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" name="Title" placeholder="工程名称" autocomplete="off" class="layui-input" lay-verify="required">
+        </div>
+    </div>
+   
+ 
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "laydate", "okLayer", "okUtils", "upload", "layer"], function () {
+        let form = layui.form;
+
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+
+        let layer = layui.layer;
+        let $ = layui.$;
+
+        //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "Title": "@Model.Title"
+           
+        });
+        form.render(); //更新全部
+        form.on("submit(add)", function (data) {
+            okUtils.ajax("/Permissions/FlowProject/Edit", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>
+

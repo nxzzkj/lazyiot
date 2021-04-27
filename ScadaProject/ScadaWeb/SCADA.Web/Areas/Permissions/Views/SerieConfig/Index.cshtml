@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search">
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="曲线名称" id="SerieTitle" name="SerieTitle" autocomplete="off">
+      
+        </div>
+        <div class="layui-input-inline">
+           
+            <input class="layui-input" placeholder="曲线分类" id="SerieClassify" name="SerieClassify" autocomplete="off">
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+<script>
+    layui.use(["table", "form", "okLayer", "okUtils"], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Permissions/SerieConfig/List",
+            limit: 10,
+            page: true,
+            toolbar: "#toolbarTpl",
+            size: "sm",
+            cols: [[
+                { type: "checkbox" },
+                { field: "Id", title: "ID", width: 50, sort: true },
+                { field: "SerieName", title: "曲线名称", width: 100 },
+                { field: "SerieTitle", title: "中文名称", width: 100 },
+                { field: "SerieWidth", title: "曲线宽度", width: 100 },
+                { field: "SerieType", title: "曲线样式", width: 100 },
+                { field: "SerieColor", title: "曲线颜色", width: 100 },
+                { field: "SymbolSize", title: "点符号大小", width: 100 },
+                { field: "SymbolType", title: "点符号样式", width: 100 },
+                { field: "SymbolColor", title: "点符号颜色", width: 100 },
+                { field: "SymbolStep", title: "点符号间隔", width: 100 },
+                { field: "ShowSymbol", title: "显示点符号", width: 100, templet: "#SymbolTpl" },
+                { field: "ShowLegend", title: "显示图例", width: 100, templet: "#legendTpl" },
+                { field: "SerieClassify", title: "分类", width: 100 },
+               
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
+            ]],
+            done: function (res, curr, count) {
+                console.log(res, curr, count);
+            }
+        });
+
+        form.on("submit(search)", function (data) {
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+
+        table.on("toolbar(tableFilter)", function (obj) {
+            switch (obj.event) {
+                case "add":
+                    add();
+                    break;
+                case "batchDel":
+                    batchDel();
+                    break;
+            }
+        });
+
+        table.on("tool(tableFilter)", function (obj) {
+            let data = obj.data;
+            switch (obj.event) {
+                case "edit":
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
+                    break;
+                case "del":
+                    del(data.Id);
+                    break;
+                case "pwdReset":
+                    pwdReset(data.Id);
+                    break;
+            }
+        });
+
+        function add() {
+            okLayer.open("添加曲线配置", "/Permissions/SerieConfig/Add", "100%", "100%", null, null);
+        }
+
+        function batchDel() {
+            okLayer.confirm("确定要批量删除吗？", function (index) {
+                layer.close(index);
+                let idsStr = okUtils.tableBatchCheck(table);
+                if (idsStr) {
+                    okUtils.ajax("/Permissions/SerieConfig/BatchDel", "get", { idsStr: idsStr }, true).done(function (response) {
+                        okUtils.tableSuccessMsg(response.message);
+                    }).fail(function (error) {
+                        console.log(error)
+                    });
+                }
+            });
+        }
+
+        function edit(id) {
+            okLayer.open("编辑曲线", "/Permissions/SerieConfig/Edit/" + id, "100%", "100%", null, null);
+        }
+
+        function del(id) {
+            okLayer.confirm("确定要删除曲线配置吗？", function () {
+                okUtils.ajax("/Permissions/SerieConfig/Delete", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
+       
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+<!-- 显示点符号的模板 -->
+<script type="text/html" id="SymbolTpl">
+    {{#  if(d.ShowSymbol=="1"){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>隐藏</span>
+    {{#  } }}
+</script>
+<!-- 显示图例的模板 -->
+<script type="text/html" id="legendTpl">
+    {{#  if(d.ShowLegend=="1"){ }}
+    <span>显示</span>
+    {{#  } else{ }}
+    <span>隐藏</span>
+    {{#  } }}
+</script>

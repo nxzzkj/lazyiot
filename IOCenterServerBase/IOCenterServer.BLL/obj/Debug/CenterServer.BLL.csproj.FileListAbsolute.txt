@@ -1,0 +1,17 @@
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.BLL.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.BLL.pdb
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.DAL.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.Model.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\ZZSCADA.Common.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\OpenSmtp.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\Excel.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\COM.Excel.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\ZZSCADA.DBUtility.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\System.Data.SQLite.dll
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\ZZSCADA.Common.pdb
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.DAL.pdb
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\CenterServer.Model.pdb
+E:\中联公司项目\ZZSCADA\BLL\bin\Debug\ZZSCADA.DBUtility.pdb
+E:\中联公司项目\ZZSCADA\BLL\obj\Debug\CenterServer.BLL.csprojResolveAssemblyReference.cache
+E:\中联公司项目\ZZSCADA\BLL\obj\Debug\CenterServer.BLL.dll
+E:\中联公司项目\ZZSCADA\BLL\obj\Debug\CenterServer.BLL.pdb

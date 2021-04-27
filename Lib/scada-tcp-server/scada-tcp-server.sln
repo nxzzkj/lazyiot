@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scada_tcp_server", "xx-tcp-server\scada_tcp_server.csproj", "{71788668-78F0-4ADF-8A3F-6120A8C0D97D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scada-tcp-test", "xx-tcp-test\scada-tcp-test.csproj", "{579E9B5C-469E-45D4-BAF3-4BD1D64EEF6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scada-udp-server", "xx-udp-server\scada-udp-server.csproj", "{9C6938A7-3946-419B-8B71-3E4075762966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scada-udp-test", "xx-udp-test\scada-udp-test.csproj", "{021C4493-1856-4D01-9497-A42A8E8CD0B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71788668-78F0-4ADF-8A3F-6120A8C0D97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71788668-78F0-4ADF-8A3F-6120A8C0D97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71788668-78F0-4ADF-8A3F-6120A8C0D97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71788668-78F0-4ADF-8A3F-6120A8C0D97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579E9B5C-469E-45D4-BAF3-4BD1D64EEF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579E9B5C-469E-45D4-BAF3-4BD1D64EEF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579E9B5C-469E-45D4-BAF3-4BD1D64EEF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579E9B5C-469E-45D4-BAF3-4BD1D64EEF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6938A7-3946-419B-8B71-3E4075762966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6938A7-3946-419B-8B71-3E4075762966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6938A7-3946-419B-8B71-3E4075762966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6938A7-3946-419B-8B71-3E4075762966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021C4493-1856-4D01-9497-A42A8E8CD0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021C4493-1856-4D01-9497-A42A8E8CD0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021C4493-1856-4D01-9497-A42A8E8CD0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021C4493-1856-4D01-9497-A42A8E8CD0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

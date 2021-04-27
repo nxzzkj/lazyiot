@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NModbus4.Serial</name>
+    </assembly>
+    <members>
+        <member name="T:Modbus.Serial.SerialPortAdapter">
+            <summary>
+                Concrete Implementor - http://en.wikipedia.org/wiki/Bridge_Pattern
+            </summary>
+        </member>
+    </members>
+</doc>

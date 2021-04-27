@@ -1,0 +1,155 @@
+﻿@model ScadaWeb.Model.ScadaTableModel
+
+@{
+    ViewBag.Title = "创建二维表";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+<style type="text/css">
+    #sltIcon {
+        height: 38px;
+        line-height: 38px;
+        margin-left: 40px;
+        float: left;
+        display: block;
+    }
+
+    #spnIcon {
+        font-size: 24px;
+        line-height: 38px;
+        float: left;
+        margin-left: 12px;
+    }
+</style>
+<form class="layui-form layui-form-pane ok-form"  lay-filter="formTest">
+
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.CreateTime)
+    @Html.HiddenFor(x => x.CreateUserId)
+    <div class="layui-form-item">
+        <label class="layui-form-label">二维表名称</label>
+        <div class="layui-input-block">
+            <input type="text" id="Title" name="Title" placeholder="二维表名称" autocomplete="off" class="layui-input"  value="@Model.Title"  lay-verify="required">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">历史查询</label>
+        <div class="layui-input-block">
+            <select name="ShowHistory" id="ShowHistory">
+                <option value="0" selected>不显示</option>
+                <option value="1">显示</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">实时曲线</label>
+        <div class="layui-input-block">
+            <select name="ShowRealSeries" id="ShowRealSeries">
+                <option value="0" selected>不显示</option>
+                <option value="1">显示</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">实时报警</label>
+        <div class="layui-input-block">
+            <select name="ShowAlarms" id="ShowAlarms">
+                <option value="0" selected>不显示</option>
+                <option value="1">显示</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">报警查询</label>
+        <div class="layui-input-block">
+            <select name="ShowHistoryAlarms" id="ShowHistoryAlarms">
+                <option value="0" selected>不显示</option>
+                <option value="1">显示</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序码</label>
+        <div class="layui-input-block">
+            <input type="text" id="SortCode" name="SortCode" placeholder="排序码" autocomplete="off" class="layui-input" lay-verify="number" maxlength="2">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">权限配置</label>
+        <div class="layui-input-block">
+            <div id="tableRole" class="demo-transfer"></div>
+            <input type="hidden" id="RoleUserID" name="RoleUserID" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(["form", "okLayer", "okUtils", 'transfer', 'element'], function () {
+        let form = layui.form;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        let layer = layui.layer;
+        let $ = layui.$;
+
+        let element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+        let transfer = layui.transfer;
+        var transferdata =@MvcHtmlString.Create(ViewData["Users"].ToString());
+        var uservalue=@MvcHtmlString.Create(ViewData["PrivateUsers"].ToString());
+
+        //基础效果
+        transfer.render({
+            elem: '#tableRole'
+            ,id: 'tableRole' //定义唯一索引
+            ,title: ['现有用户', '权限用户']  //自定义标题
+            ,data: transferdata
+            ,value:uservalue
+             ,showSearch: true
+            ,onchange: function(obj, index){
+                var roleuser=transfer.getData('tableRole');
+                var str="";
+                for(var i=0;i<roleuser.length;i++)
+                {
+                    str+=roleuser[i].value+",";
+                }
+                if(str!="")
+                {
+                    str=str.substr(0,str.length-1);
+                }
+        
+                $("#RoleUserID").val(str);
+            }
+        });
+        //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "Title": "@Model.Title",
+            "ShowHistory": "@Model.ShowHistory",
+            "ShowRealSeries": "@Model.ShowRealSeries",
+            "ShowAlarms": "@Model.ShowAlarms",
+            "ShowHistoryAlarms": "@Model.ShowHistoryAlarms",
+            "RoleUserID": "@Model.RoleUserID",
+            "SortCode": "@Model.SortCode"
+
+        });
+        form.on("submit(add)", function (data) {
+        
+            okUtils.ajax("/Permissions/ScadaTable/EditTable", "post", data.field, true).done(function (response) {
+                okLayer.greenTickMsg(response.message, function () {
+                    parent.location.reload(); // 父页面刷新
+                    parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
+                });
+            }).fail(function (error) {
+                console.log(error)
+            });
+            return false;
+        });
+    });
+</script>

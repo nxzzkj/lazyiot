@@ -1,0 +1,278 @@
+﻿@model  ScadaWeb.Model.ScadaGreneralAlarmModel
+@{
+    ViewBag.Title = "通用实时报警";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search"  lay-filter="formTest" name="formTest" id="formTest">
+        
+        <input id="DeviceIDString" name="DeviceIDString"  type="hidden" class="layui-input">
+        <input id="GroupIDString" name="GroupIDString" type="hidden" class="layui-input" >
+         
+        <div class="layui-input-inline">
+            <input type="text" id="GroupId" name="GroupId" placeholder="设备分组"   autocomplete="off" class="layui-input"  lay-filter="GroupId" >
+        </div>
+        <div class="layui-input-inline">
+            <div id="DeviceList" style="width:150px;"></div>
+ 
+        </div>
+        <div class="layui-input-inline">
+            <select id="IO_ALARM_TYPE" name="IO_ALARM_TYPE" placeholder="报警类型" class="layui-input"  lay-filter="" ></select>
+        </div>
+        <div class="layui-input-inline">
+            <select id="IO_ALARM_LEVEL" name="IO_ALARM_LEVEL" placeholder="报警级别" class="layui-input"  lay-filter="" ></select>
+        </div>
+            @Html.SearchBtnHtml("确定")
+      
+
+</form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+ 
+<script>
+
+    layui.config({ base: '/Content/lib/tablePlug/' }).use([ "form", "okLayer", "okUtils", "treeSelect", 'tablePlug'], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let treeSelect = layui.treeSelect;
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        var tablePlug = layui.tablePlug;
+        var DeviceIDString="";
+        var $ = layui.$;
+        var devices = xmSelect.render({
+            el: '#DeviceList',
+            filterable: true,
+            paging: true,
+            pageSize: 50,
+
+        });
+        var sub = [];
+        function getsub( obj )
+        {
+      
+            if( obj.children!=undefined&&obj.children!=null&&obj.children.length > 0 ){
+
+                $.each( obj.children, function(k, v)
+                {
+
+                    sub.push( v.id );
+                    getsub( v );
+                });
+            }
+
+            return sub;
+        };
+
+        tablePlug.smartReload.enable(true);//处理不闪动的关键代码
+        treeSelect.render({
+            elem: "#GroupId",
+            data: "/Scada/ScadaAlarm/GroupTreeListSelect",
+            type: "GET",
+            // 是否开启搜索功能：true/false，默认false
+            search: true,
+            // 占位符
+            placeholder: '请选择设备分组',  // 点击回调
+            click: function (d) {
+                //获取该分组下的所有设备
+                $.get("/Scada/ScadaAlarm/GetGroupDevice?groupId=" + d.current.id, function (result) {
+
+                    DeviceIDString="";
+                    sub = [];
+                    var groupdata=getsub(d.current);
+                    var groupstr=d.current.id;
+                    for(var i=0;i<groupdata.length;i++)
+                    {
+                        groupstr+=","+groupdata[i];
+                    }
+                    $("#GroupIDString").val(groupstr);
+                    $("#DeviceIDString").val(DeviceIDString);
+                    devices = xmSelect.render({
+                        el: '#DeviceList',
+                        filterable: true,
+                        paging: true,
+                        pageSize: 50,
+                        toolbar: {
+                            show: true,
+                        },
+                        data: result,
+                        on: function (data) {
+                            //arr:  当前多选已选中的数据
+                            if(data.arr.length>0)
+                            {
+                                var didstr="1";
+                                for(var i=0;i<data.arr.length;i++)
+                                {
+                                    didstr+=","+data.arr[i].value1;
+                                }
+                                DeviceIDString=didstr;
+
+                            }
+                            else{
+
+                                didstr="";
+                                DeviceIDString=didstr;
+                            }
+
+                            $("#DeviceIDString").val(DeviceIDString);
+
+
+                        },
+                    })
+                });
+            },
+            // 加载完成后的回调函数
+            success: function (d) {
+                 
+                treeSelect.checkNode('GroupId', @Model.GroupId,d.treeId);
+              
+            }
+        });
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Scada/ScadaAlarm/GeneralRealAlarm",
+            limit: 300,
+            limits: [100,200,300,500,600,800,1000,1500,2000,3000],
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            page: true,
+            loading: false,
+            id: 'RealAlarm',
+            toolbar: "#toolbarTpl",
+            jump: function (obj, first) {
+                if (!first) {
+                    layer.msg('第 ' + obj.curr + ' 页');
+                }
+            },
+            size: "sm",
+            smartReloadModel: true,
+            cols: [[
+                { field: 'zizeng', width: 60, title: '序号', fixed: 'left', templet: '#zizeng' },
+                { field: "IO_ID", title: "报警ID", width: 140, fixed: 'left' },
+                { field: "IO_LABEL", title: "名称", width: 100},
+                { field: "IO_ALARM_DATE", title: "报警时间", width: 140 },
+                { field: "IO_ALARM_TYPE", title: "报警类型", width: 100 },
+                { field: "IO_ALARM_LEVEL", title: "报警级别", width: 100 },
+                { field: "IO_ALARM_VALUE", title: "报警值", width: 100 },
+                { field: "IO_ALARM_DISPOSALUSER", title: "处置人", width: 120, edit: 'text', style: 'font-size: 12px;background-color: #ff0000;'},
+                { field: "IO_ALARM_DISPOSALIDEA", title: "处置意见", width: 120, edit: 'text', style: 'font-size: 12px;background-color: #ff0000;' },
+            ]],
+           
+            done: function (res, curr, count) {
+                setTableScoll(this.elem.next('.layui-table-view'), this.scroll);
+            }
+        });
+        //获取滚动条
+   function getTableScoll(tbView){
+            var scrollTop = tbView.find('.layui-table-body').scrollTop();
+            var scrollLeft= tbView.find('.layui-table-body').scrollLeft();
+            return {
+                scrollTop:scrollTop,scrollLeft:scrollLeft
+            }
+        };
+        //设置滚动条
+    function setTableScoll(tbView,scoll= {scrollTop:0,scrollLeft:0})
+    {
+
+        tbView.find('.layui-table-body').scrollTop(scoll.scrollTop);
+        tbView.find('.layui-table-body').scrollLeft(scoll.scrollLeft);
+        table.resize('RealAlarm'); //重置表格尺寸
+    };
+    var scrollTop=0;
+    var layuiTable = $('.layui-table-main');
+    if(layuiTable!=null&&layuiTable.length>0){
+        scrollTop = layuiTable[0].scrollTop;
+    };
+    function reload() {
+        //执行重载
+        var wellRealGrid = $('#RealAlarm');
+
+        table.reload('RealAlarm', {
+            page: {
+                curr: $(".layui-laypage-em").next().html()
+            },
+
+            scroll:getTableScoll($('#tableId').next('.layui-table-view'))
+
+        }, 'data');
+
+    };
+    //数据表定时加载
+    SCADA.RealDataCustumTimer(reload,20);
+    //监听单元格编辑
+    table.on('edit(tableFilter)', function (obj) {
+        var old = $(this).prev().text();//旧值
+
+
+
+        var value = obj.value //得到修改后的值
+        , data = obj.data //得到所在行所有键值
+        , field = obj.field; //得到字段
+
+        //用户设置了报警备注后进行后台记录
+        //加载报警级别
+        $.get("/Scada/ScadaAlarm/WriterScadaAlarmDisposal",obj.data, function (result) {
+            if(result)
+            {
+                layer.msg('[ID: ' + data.IO_ALARM_NAME + '] ' + field + ' 字段更改为：' + value);
+            }
+            else {
+                layer.msg('[ID: ' + data.IO_ALARM_NAME + '] ' + field + ' 字段值修改失败');
+                $(this)[0].val(old);//重新掰回来
+            }
+        });
+    });
+    //数据表定时加
+    form.on("submit(search)", function (data) {
+
+        AllTable.reload({
+            where: data.field,
+            page: { curr: 1 }
+        });
+        return false;
+    });
+    //加载报警级别
+    $.get("/Scada/ScadaAlarm/GetItemType?EnCode=ALARMTYPE", function (result) {
+        $("#IO_ALARM_TYPE").append("<option value='0'>全部</option>");
+
+        for (var i = 0; i < result.length; i++) {
+
+            $("#IO_ALARM_TYPE").append("<option value='" + result[i].name + "'>" + result[i].name + "</option>");
+        }
+
+        layui.form.render("select");
+
+    });
+    //加载报警级别
+    $.get("/Scada/ScadaAlarm/GetItemType?EnCode=ALARMLEVEL", function (result) {
+
+        $("#IO_ALARM_LEVEL").append("<option value='0'>全部</option>");
+        for (var i = 0; i < result.length; i++) {
+
+            $("#IO_ALARM_LEVEL").append("<option value='" + result[i].name + "'>" + result[i].name + "</option>");
+        }
+
+        layui.form.render("select");
+
+    });
+})
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    <label><i class="ok-icon" style="color:red;">&#xe670;</i>注意:请及时排查系统报警信息，并在<span style="color:red;">红色单元格区域</span>填写报警处置原因及报警处置人员姓名。</label>
+    <br />
+    <label><i class="ok-icon" style="color:red;">&#xe670;</i>注意:漏掉的报警可在历史报警中进行查询并填写处置原因。</label>
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+ <script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
+ 
+ 

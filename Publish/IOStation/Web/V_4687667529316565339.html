@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset = utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='renderer' content='webkit|ie-comp'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome =1'>
+    <title> 数据展示</title>
+    <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+    <link href='Content/css/okadmin.css' rel='stylesheet' />
+    <link href='Content/css/common.css' rel='stylesheet' />
+    <script src='Content/lib/layui/layui.js'></script>
+    <script src='Content/js/global.js'></script>
+    <script src='Content/js/jquery-3.4.1.js'></script>
+    <script src='Content/js/jquery.timers-1.2.js'></script>
+    <script  src='Content/js/svg-pan-zoom.js'></script>
+    <script src='Content/js/SVG.js'></script>
+    <script src='Content/js/Scada.js'></script>
+
+    <script src='Content/js/zy.media.min.js'></script>
+</head>
+<body style='margin: 0;padding: 0;background-color:#008080;'  >
+    <div id='container' class='layui-layout-body'  style='width:100%; height:100%'>
+        <svg id='scada_svg' style='display: inline; width: inherit; min-width: inherit; max-width: inherit; height: inherit; min-height: inherit; max-height: inherit; ' width='2400' height='1200' viewBox='0 0 2400 1200' ><rect  id='map'   x='0' y='0' width='2400' height='1200'   fill='url(#5517935751964462953)'     >
+
+</rect>
+<defs><linearGradient id="5517935751964462953" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#4682B4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''   id='shapeID5362691762109650339'   data-baseshape='SVG_CommonShape'   data-shape='SVG_CircleShape'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''            data-changcolor='#FF0000' data-sourcecolor='#00FF00'><path  d=' M477,188.5 C477,232.9589 436.034,269 385.5,269 334.9659,269 294,232.9589 294,188.5 294,144.0411 334.9659,108 385.5,108 436.034,108 477,144.0411 477,188.5 Z'   fill='url(#5175712873880916996)'    stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""    ></path><defs><linearGradient id="5175712873880916996" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset ="0%" style ="stop-color:#00FF00;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FF8080;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#00FF00;stop-opacity:1" /> </linearGradient> </defs></g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''    id='shapeID4789698745752863350'  data-baseshape='SVG_IOShape'  data-liquiddirection='Forward'     data-speed='3000ms'     data-shape='SVG_ConduitShape'       data-rect='454,321,390,68'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<path id='pathID4789698745752863350'  d=' M844,389 L454,389 L454,321 L776,321 L775.9999,320 C813.5552,319.9999 843.9999,350.4445 843.9999,388 843.9999,388 843.9999,388 843.9999,388 Z' fill='url(#5279706188363388942)'     ></path><defs><linearGradient id="5279706188363388942" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#000000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#000000;stop-opacity:1" /> </linearGradient> </defs>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''     id='shapeID5075318550209431550'   data-baseshape='SVG_IOShape'  data-minvalue='-50' data-maxvalue='100'    data-shape='SVG_ThermometerShape'    data-rect='66.99543,177.9909,132.9954,431.9908'      data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path id='pathID5075318550209431550'  d=' M66.99542,187.9909 C66.99542,182.468 71.47257,177.9909 76.99541,177.9908 L76.99543,177.9909 L189.9908,177.9909 L189.9908,177.9909 C195.5137,177.9908 199.9908,182.468 199.9908,187.9908 199.9908,187.9908 199.9908,187.9909 199.9908,187.9909 L199.9908,187.9909 L199.9908,599.9817 L199.9908,599.9816 C199.9908,605.5045 195.5137,609.9816 189.9908,609.9816 L189.9908,609.9817 L76.99543,609.9817 L76.99543,609.9816 C71.47258,609.9817 66.99543,605.5045 66.99543,599.9817 L66.99543,187.9909' fill='#D3D3D3' opacity='1.645161'   stroke ="#FFD700"   stroke-opacity="1"  stroke-width="4"   stroke-dasharray=""      ></path>
+<path id='pathID5075318550209431550'  d=' M66.99542,187.9909 C66.99542,182.468 71.47257,177.9909 76.99541,177.9908 L76.99543,177.9909 L189.9908,177.9909 L189.9908,177.9909 C195.5137,177.9908 199.9908,182.468 199.9908,187.9908 199.9908,187.9908 199.9908,187.9909 199.9908,187.9909 L199.9908,187.9909 L199.9908,599.9817 L199.9908,599.9816 C199.9908,605.5045 195.5137,609.9816 189.9908,609.9816 L189.9908,609.9817 L76.99543,609.9817 L76.99543,609.9816 C71.47258,609.9817 66.99543,605.5045 66.99543,599.9817 L66.99543,187.9909' fill='none'   stroke ="#FFE766"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      ></path>
+<path id='pathID5075318550209431550'  d=' M116.8687,576.7328 L116.8687,227.8641 L116.8687,227.8641 C116.8687,218.6827 124.3117,211.2397 133.4931,211.2397 142.6745,211.2397 150.1175,218.6827 150.1176,227.8641 150.1176,227.8641 150.1176,227.8641 150.1176,227.8641 L150.1176,227.8641 150.1176,576.7328 Z' fill='#6FD3D3' opacity='1.645161'     ></path>
+<ellipse    id='pathID5075318550209431550' cx='133.4931' cy='574.7328' rx='33.24886' ry='33.24886'   fill='#6FD3D3' opacity='1'    >
+
+</ellipse>
+
+
+<ellipse    id='pathID5075318550209431550' cx='133.4931' cy='574.7328' rx='29.24886' ry='29.24886'   fill='#FF4D3B' opacity='1'    >
+
+</ellipse>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='526.8596' x2='114.8687' y2='526.8596'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='80.90542' y='515.7458' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-50</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='526.8596' x2='199.9908' y2='526.8596'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='185.0808' y='515.7458' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-50</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='511.9098' x2='114.8687' y2='511.9098'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='511.9098' x2='152.1176' y2='511.9098'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='496.96' x2='114.8687' y2='496.96'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='80.90542' y='485.8463' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-35</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='496.96' x2='199.9908' y2='496.96'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='185.0808' y='485.8463' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-35</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='482.0103' x2='114.8687' y2='482.0103'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='482.0103' x2='152.1176' y2='482.0103'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='467.0605' x2='114.8687' y2='467.0605'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='80.90542' y='455.9467' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-20</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='467.0605' x2='199.9908' y2='467.0605'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='185.0808' y='455.9467' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-20</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='452.1107' x2='114.8687' y2='452.1107'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='452.1107' x2='152.1176' y2='452.1107'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='437.1609' x2='114.8687' y2='437.1609'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='76.67739' y='426.0471' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-5</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='437.1609' x2='199.9908' y2='437.1609'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='189.3089' y='426.0471' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >-5</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='422.2112' x2='114.8687' y2='422.2112'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='422.2112' x2='152.1176' y2='422.2112'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='407.2614' x2='114.8687' y2='407.2614'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='396.1476' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >10</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='407.2614' x2='199.9908' y2='407.2614'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='396.1476' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >10</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='392.3116' x2='114.8687' y2='392.3116'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='392.3116' x2='152.1176' y2='392.3116'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='377.3618' x2='114.8687' y2='377.3618'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='366.2481' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >25</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='377.3618' x2='199.9908' y2='377.3618'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='366.2481' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >25</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='362.4121' x2='114.8687' y2='362.4121'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='362.4121' x2='152.1176' y2='362.4121'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='347.4623' x2='114.8687' y2='347.4623'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='336.3485' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >40</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='347.4623' x2='199.9908' y2='347.4623'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='336.3485' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >40</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='332.5125' x2='114.8687' y2='332.5125'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='332.5125' x2='152.1176' y2='332.5125'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='317.5628' x2='114.8687' y2='317.5628'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='306.449' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >55</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='317.5628' x2='199.9908' y2='317.5628'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='306.449' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >55</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='302.613' x2='114.8687' y2='302.613'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='302.613' x2='152.1176' y2='302.613'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='287.6632' x2='114.8687' y2='287.6632'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='276.5494' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >70</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='287.6632' x2='199.9908' y2='287.6632'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='276.5494' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >70</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='272.7134' x2='114.8687' y2='272.7134'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='272.7134' x2='152.1176' y2='272.7134'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='257.7637' x2='114.8687' y2='257.7637'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='77.78481' y='246.6499' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >85</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='257.7637' x2='199.9908' y2='257.7637'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='188.2014' y='246.6499' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >85</text>
+<line  id='pathID5075318550209431550'     x1='109.8687' y1='242.8139' x2='114.8687' y2='242.8139'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='157.1176' y1='242.8139' x2='152.1176' y2='242.8139'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='pathID5075318550209431550'     x1='68.99542' y1='227.8641' x2='114.8687' y2='227.8641'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='82.01284' y='216.7504' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >100</text>
+<line  id='pathID5075318550209431550'     x1='154.1176' y1='227.8641' x2='199.9908' y2='227.8641'   stroke ="#000000"   stroke-opacity="1"  stroke-width="1"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5075318550209431550'    x='183.9734' y='216.7504' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >100</text>
+<text id='textID5075318550209431550'    x='78.53725' y='190.1046' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >℃</text>
+<text id='textID5075318550209431550'    x='188.449' y='190.1046' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >℃</text>
+<rect  id='pathID5075318550209431550' class='ioupdate'  x='120.8687' y='407.2614' width='25.24886' height='169.4715'   fill='#FF4D3B' opacity='1'     >
+
+</rect>
+
+
+<text id='textID5075318550209431550'    x='133.4931' y='575.7328' alignment-baseline='middle' text-anchor='middle'  fill='#FFFFFF'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >10</text>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5576727599697860977'   data-baseshape='SVG_CommonShape'  data-shape='SVG_RectangleShape'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'><path  d=' M111,1059 L111,912 L111,897 C120.5555,901.9999 149.2222,927 168.3333,927 187.4444,927 206.5555,897 225.6667,897 244.7778,897 263.8889,927 283,927 302.1111,927 321.2222,897 340.3333,897 359.4444,897 378.5555,927 397.6667,927 416.7777,927 435.8889,897 455,897 474.1111,897 493.2222,927 512.3333,927 531.4444,927 550.5555,897 569.6666,897 588.7777,897 617.4444,922 627,927 L627,912 L627,1059 L627,1044 C617.4444,1049 588.7778,1074 569.6667,1074 550.5555,1074 531.4444,1044 512.3333,1044 493.2222,1044 474.1111,1074 455,1074 435.8889,1074 416.7778,1044 397.6667,1044 378.5556,1044 359.4444,1074 340.3333,1074 321.2222,1074 302.1111,1044 283,1044 263.8889,1044 244.7778,1074 225.6667,1074 206.5556,1074 187.4444,1044 168.3333,1044 149.2222,1044 120.5556,1069 111,1074 L111,1059 111,912 Z'    stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""   fill='#FFFFFF' opacity='2.55'></path></g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID5731702571016215777'   data-baseshape='SVG_CommonShape'  data-shape='SVG_RectangleShape'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#FFFFFF'><path  d=' M525,414 L1038,414 L1038,895 525,895 Z'    stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""   fill='#FFFFFF' opacity='2.55'></path></g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''     id='shapeID5673100979487941007'  data-baseshape='SVG_IOShape'   data-shape='SVG_IOLabelShape'    data-rect='584,525,198,60'     data-iovalue= '0028F89F632F,5080331090505143995,5222652986588408871,5682962234899281010,Value,2,,120,A8'   date-ioclass='SCADAFlow_String'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      data-changcolor='#FF0000' data-sourcecolor='#9ACD32'      > 
+<path  d=' M584,525 L782,525 L782,585 584,585 Z'    stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""   fill='#FFFFFF' opacity='2.55'>
+</path>
+<defs><linearGradient id="4907784736617516608" > <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+ <a xlink: href ='#' id='iolink'ID5673100979487941007>
+<text id='textID5673100979487941007'    x='683' y='555' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='SimHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >IO参数</text>
+ </a>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''   id='shapeID5095683565138641886'   data-baseshape='SVG_CommonShape' data-shape='SVG_GroupPanelShape'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#1E90FF'><path  d=' M517.5,196 L895.5,196 L895.5,677 517.5,677 Z'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""   fill='none'/>
+<path  d=' M517.5,196 L895.5,196'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""    fill='none'/>
+
+
+<defs><radialGradient id="4980439824462181480"  cx = "50%" cy = "50%" r = "50%" fx = "50%" fy ="50%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#1E90FF;stop-opacity:1" /> </radialGradient> </defs><path  d=' M517.5,196 L895.5,196 L895.5,677 517.5,677 Z' fill='url(#4980439824462181480)'/><defs><linearGradient id="5032193106552207087" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#1E90FF;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#1E90FF;stop-opacity:1" /> </linearGradient> </defs><path  d=' M517.5,166 L896.5,166 L896.5,196 517.5,196 Z' fill='url(#5032193106552207087)'/><text id='groupheadID5095683565138641886'    x='707' y='181' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >分组信息</text></g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''    id='shapeID5128324126230397985'  data-baseshape='SVG_CommonShape'  data-shape='SVG_SplitLabelShape'    data-rect='1148,706,263,20.22754'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000'><line  id='line1ID5128324126230397985'     x1='1148' y1='716.1138' x2='1186' y2='716.1138'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='line2ID5128324126230397985'     x1='1236.913' y1='716.1138' x2='1391' y2='716.1138'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID5128324126230397985'    x='1211.957' y='721.1707' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >分隔线</text>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''    id='shapeID4619493942162855512'  data-baseshape='SVG_CommonShape'  data-shape='SVG_SplitLabelShape'    data-rect='695,1031,526,20.22754'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000'><line  id='line1ID4619493942162855512'     x1='695' y1='1041.114' x2='733' y2='1041.114'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<line  id='line2ID4619493942162855512'     x1='783.9131' y1='1041.114' x2='1201' y2='1041.114'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""      >
+
+</line>
+
+
+<text id='textID4619493942162855512'    x='758.9565' y='1046.171' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >分隔线</text>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''    id='shapeID4738415593880215742'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TitlePanelShape'  data-rect='1,1,2400,62'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      ><rect  id='rect1ID4738415593880215742'   x='1' y='1' width='2399' height='61'   fill='url(#5318177642213194076)'     >
+
+</rect>
+<defs><linearGradient id="5318177642213194076" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#696969;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#A5A5A5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#696969;stop-opacity:1" /> </linearGradient> </defs>
+<polygon points='601,1 1801,1 1739,62 663,62 '     id='polygonID4738415593880215742'       fill='url(#4939449088743342409)'   >
+
+</polygon>
+<defs><linearGradient id="4939449088743342409" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#D3D3D3;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#E4E4E4;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#D3D3D3;stop-opacity:1" /> </linearGradient> </defs>
+
+
+<text id='text1ID4738415593880215742'    x='1200.5' y='31.5' alignment-baseline='middle' text-anchor='middle'  fill='#808080'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >SCADA1.0</text>
+<text id='text2ID4738415593880215742'    x='2101' y='31.5' alignment-baseline='middle' text-anchor='middle'  fill='#006400'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >SCADA</text>
+<text id='text3ID4738415593880215742'    x='301' y='31.5' alignment-baseline='middle' text-anchor='middle'  fill='#006400'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     >00:00:00</text>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4982741378843789762' data-baseshape='SVG_StaticShape'   data-shape='SVG_StaticShape' transform =' rotate(0,652,382)'   data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''          data-changcolor='#FF0000' data-sourcecolor='#800000'  data-rect='552,253,200,258'>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M752.0001,402.2144 L575.431,402.2144' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M752.0001,507.0103 L575.431,507.0103' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M752.0001,297.9505 L575.431,297.9505' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='#7f003f'   id='pathID4982741378843789762'  d=' M746.1423,500.6268 L746.1423,304.6 L721.8745,304.6 721.8745,500.6268 Z' fill='#7f003f' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#7f003f'   id='pathID4982741378843789762'  d=' M606.3933,500.6268 L606.3933,304.6 L581.2887,304.6 581.2887,500.6268 Z' fill='#7f003f' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#7f003f'   id='pathID4982741378843789762'  d=' M746.1423,500.6268 L581.2887,500.6268 L581.2887,508.6062 746.1423,508.6062 Z' fill='#7f003f' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#7f003f'   id='pathID4982741378843789762'  d=' M746.1423,296.3546 L581.2887,296.3546 L581.2887,304.6 746.1423,304.6 Z' fill='#7f003f' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#cb98b2'   id='pathID4982741378843789762'  d=' M748.6528,503.0206 L748.6528,301.9402 L723.5482,301.9402 723.5482,503.0206 Z' fill='#cb98b2' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#cb98b2'   id='pathID4982741378843789762'  d=' M605.5565,503.0206 L605.5565,301.9402 L579.6151,301.9402 579.6151,503.0206 Z' fill='#cb98b2' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#e4cad7'   id='pathID4982741378843789762'  d=' M748.6528,503.0206 L579.6151,503.0206 L579.6151,511 748.6528,511 Z' fill='#e4cad7' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#e4cad7'   id='pathID4982741378843789762'  d=' M748.6528,293.9608 L579.6151,293.9608 L579.6151,301.9402 748.6528,301.9402 Z' fill='#e4cad7' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='#e4cad7'   id='pathID4982741378843789762'  d=' M748.6528,398.2247 L579.6151,398.2247 L579.6151,406.2041 748.6528,406.2041 Z' fill='#e4cad7' opacity='1'   class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M748.6528,293.9608 L579.6151,293.9608 L579.6151,511 L748.6528,511 L748.6528,293.9608' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M723.5482,307.5258 L705.9749,301.9402 L689.2385,301.9402 L723.5482,312.5794 L723.5482,317.899 L673.3389,301.9402 L655.7657,301.9402 L723.5482,323.4845 L723.5482,328.5381 L638.1925,301.9402 L621.4561,301.9402 L723.5482,334.1237 L723.5482,339.4433 L605.5565,301.9402 L605.5565,307.5258 L723.5482,344.4969 L723.5482,350.0825 L605.5565,312.5794 L605.5565,317.899 L723.5482,355.668 L723.5482,361.2536 L605.5565,323.4845 L605.5565,328.5381 L723.5482,366.0412 L723.5482,371.6268 L605.5565,334.1237 L605.5565,339.4433 L723.5482,377.2124 L723.5482,382.266 L605.5565,344.4969 L605.5565,350.0825 L723.5482,387.5856 L723.5482,393.1711 L605.5565,355.668 L605.5565,361.2536 L723.5482,398.2247 L705.9749,398.2247 L605.5565,366.0412 L605.5565,371.6268 L689.2385,398.2247 L673.3389,398.2247 L605.5565,377.2124 L605.5565,382.266 L655.7657,398.2247 L638.1925,398.2247 L605.5565,387.5856 L605.5565,393.1711 L621.4561,398.2247' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M605.5565,307.5258 L621.4561,301.9402 L638.1925,301.9402 L605.5565,312.5794 L605.5565,317.899 L655.7657,301.9402 L671.6653,301.9402 L605.5565,323.4845 L605.5565,328.5381 L689.2385,301.9402 L705.9749,301.9402 L605.5565,334.1237 L605.5565,339.4433 L721.8745,301.9402 L721.8745,307.5258 L605.5565,344.4969 L605.5565,350.0825 L721.8745,312.5794 L721.8745,317.899 L605.5565,355.668 L605.5565,361.2536 L721.8745,323.4845 L721.8745,328.5381 L605.5565,366.0412 L605.5565,371.6268 L721.8745,334.1237 L721.8745,339.4433 L605.5565,377.2124 L605.5565,382.266 L721.8745,344.4969 L721.8745,350.0825 L605.5565,387.5856 L605.5565,393.1711 L721.8745,355.668 L721.8745,361.2536 L605.5565,398.2247 L621.4561,398.2247 L721.8745,366.0412 L721.8745,371.6268 L638.1925,398.2247 L655.7657,398.2247 L721.8745,377.2124 L721.8745,382.266 L671.6653,398.2247 L689.2385,398.2247 L721.8745,387.5856 L721.8745,393.1711 L705.9749,398.2247' fill='none'     stroke ="#999000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M723.5482,301.9402 L605.5565,301.9402 L605.5565,398.2247 L723.5482,398.2247 L723.5482,301.9402' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M723.5482,411.7897 L705.9749,406.2041 L689.2385,406.2041 L723.5482,417.3753 L723.5482,422.9608 L673.3389,406.2041 L655.7657,406.2041 L723.5482,427.7484 L723.5482,433.334 L638.1925,406.2041 L621.4561,406.2041 L723.5482,438.9196 L723.5482,443.9732 L605.5565,406.2041 L605.5565,411.7897 L723.5482,449.2928 L723.5482,454.8784 L605.5565,417.3753 L605.5565,422.9608 L723.5482,459.9319 L723.5482,465.5175 L605.5565,427.7484 L605.5565,433.334 L723.5482,471.1031 L723.5482,476.4227 L605.5565,438.9196 L605.5565,443.9732 L723.5482,481.4763 L723.5482,487.0619 L605.5565,449.2928 L605.5565,454.8784 L723.5482,492.6474 L723.5482,497.4351 L605.5565,459.9319 L605.5565,465.5175 L723.5482,503.0206 L705.9749,503.0206 L605.5565,471.1031 L605.5565,476.4227 L689.2385,503.0206 L673.3389,503.0206 L605.5565,481.4763 L605.5565,487.0619 L655.7657,503.0206 L638.1925,503.0206 L605.5565,492.6474 L605.5565,497.4351 L621.4561,503.0206' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M605.5565,411.7897 L621.4561,406.2041 L638.1925,406.2041 L605.5565,417.3753 L605.5565,422.9608 L655.7657,406.2041 L671.6653,406.2041 L605.5565,427.7484 L605.5565,433.334 L689.2385,406.2041 L705.9749,406.2041 L605.5565,438.9196 L605.5565,443.9732 L721.8745,406.2041 L721.8745,411.7897 L605.5565,449.2928 L605.5565,454.8784 L721.8745,417.3753 L721.8745,422.9608 L605.5565,459.9319 L605.5565,465.5175 L721.8745,427.7484 L721.8745,433.334 L605.5565,471.1031 L605.5565,476.4227 L721.8745,438.9196 L721.8745,443.9732 L605.5565,481.4763 L605.5565,487.0619 L721.8745,449.2928 L721.8745,454.8784 L605.5565,492.6474 L605.5565,497.4351 L721.8745,459.9319 L721.8745,465.5175 L605.5565,503.0206 L621.4561,503.0206 L721.8745,471.1031 L721.8745,476.4227 L638.1925,503.0206 L655.7657,503.0206 L721.8745,481.4763 L721.8745,487.0619 L671.6653,503.0206 L689.2385,503.0206 L721.8745,492.6474 L721.8745,497.4351 L705.9749,503.0206' fill='none'     stroke ="#999000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='none'   id='pathID4982741378843789762'  d=' M723.5482,406.2041 L605.5565,406.2041 L605.5565,503.0206 L723.5482,503.0206 L723.5482,406.2041' fill='none'     stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='#b2648b'   id='pathID4982741378843789762'  d=' M714.3431,260.4474 L698.4435,260.4474 L698.4435,293.9608 714.3431,293.9608 Z' fill='#b2648b' opacity='1'   stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='#b2648b'   id='pathID4982741378843789762'  d=' M630.6611,260.4474 L613.0879,260.4474 L613.0879,293.9608 630.6611,293.9608 Z' fill='#b2648b' opacity='1'   stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='#e4cad7'   id='pathID4982741378843789762'  d=' M714.3431,260.4474 L698.4435,260.4474 L705.9749,275.0763 723.5482,275.0763 Z' fill='#e4cad7' opacity='1'   stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+<path  data-originalfill='#e4cad7'   id='pathID4982741378843789762'  d=' M630.6611,260.4474 L613.0879,260.4474 L605.5565,275.0763 622.2929,275.0763 Z' fill='#e4cad7' opacity='1'   stroke ="#000000"   stroke-opacity="1"  stroke-width="0.3691262"   stroke-dasharray=""    class='ioupdate'  ></path>
+</g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''     id='shapeID5266772884832738113' data-baseshape='SVG_IOShape'  data-batterystyle='Horizontal'    data-maxvalue='100'     data-shape='SVG_BatteryShape'      data-iovalue= '0028F89F632F,5080331090505143995,5222652986588408871,5682962234899281010,Value,1,,120,A8'   date-ioclass='SCADAFlow_Double'   data-rect='662,234,204,139'  data-valuecolor='#FF0000' data-valuetype='Percent'  data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''     >
+<ellipse    id='batterytopID5266772884832738113' cx='866' cy='303' rx='6.12' ry='70'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=" "    fill='url(#5504438427943367202)'    />
+<defs><linearGradient id="5504438427943367202" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#8EC4D8;stop-opacity:1" /> </linearGradient> </defs>
+
+
+<rect  id='batterybodyID5266772884832738113'   x='655.88' y='233' width='210.12' height='140'   fill='url(#5211652047941895481)'     >
+
+</rect>
+<defs><linearGradient id="5211652047941895481" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#8EC4D8;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batterybottomID5266772884832738113' cx='866' cy='302' rx='6.12' ry='69'   fill='#8EC4D8' opacity='1'    />
+
+
+<rect  id='batteryelectric1ID5266772884832738113'   x='866' y='282.65' width='13.26' height='41.7'   fill='url(#5242786589777042472)'     >
+
+</rect>
+<defs><linearGradient id="5242786589777042472" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F5F5F5;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse    id='batteryelectric2ID5266772884832738113' cx='868.06' cy='286.82' rx='3.06' ry='4.17'   fill='url(#5596847452959923499)'    />
+<defs><linearGradient id="5596847452959923499" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#8EC4D8;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#F5F5F5;stop-opacity:1" /> </linearGradient> </defs>
+
+
+<ellipse    id='batteryelectric3ID5266772884832738113' cx='879.26' cy='303.5' rx='3.06' ry='20.85'   fill='#8EC4D8' opacity='1'    />
+
+
+<ellipse    id='batterybottomID5266772884832738113' cx='655.88' cy='303' rx='6.12' ry='70'   stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=" "    fill='url(#5619439103703042514)'    />
+<defs><linearGradient id="5619439103703042514" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+
+
+<rect  id='valuebodyID5266772884832738113' class='ioupdate'  x='655.88' y='233' width='62.5056' height='139'   fill='url(#4981144542580365133)'     >
+
+</rect>
+<defs><linearGradient id="4981144542580365133" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+<ellipse  class='ioupdate'  id='valuebottomID5266772884832738113' cx='655.88' cy='303' rx='6.12' ry='70'   fill='url(#5257630393801989136)'    />
+<defs><linearGradient id="5257630393801989136" x1="0%" y1="0%" x2="0%" y2="100%"> <stop offset ="0%" style ="stop-color:#FF0000;stop-opacity:1" /> <stop offset ="50%" style ="stop-color:#F5F5F5;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FF0000;stop-opacity:1" /> </linearGradient> </defs>
+
+
+<ellipse  class='ioupdate'  id='valuetopID5266772884832738113' cx='718.3856' cy='302' rx='6.12' ry='69'   fill='#FF0000' opacity='1'    />
+
+
+<text id='textID5266772884832738113'    x='764' y='310.45' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >24.0%</text>
+</g>
+
+</a><g   visibility='visible'   sytle=' visibility:visible;display:block;'   id='shapeID5369476426712031848' height = '645' width = '766' y = '256' x = '1390'  data-baseshape='SVG_CommonShape'  data-shape='SVG_LoginShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<foreignObject id = 'svg_ID5369476426712031848'  height = '645' width = '766' y = '256' x = '1390' align = 'left' >
+<iframe scrolling='no' style='width:100%;height:100%;' frameborder='0' srcdoc="<!DOCTYPE HTML>
+<html>
+<head>
+<title> </title>
+<!-- Meta tag Keywords -->
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+ <link href='Content/lib/layui/css/layui.css' rel='stylesheet' />
+<link href='Content/css/okadmin.css' rel='stylesheet' />
+<link href='Content/css/common.css' rel='stylesheet' />
+<script src='Content/lib/layui/layui.js'></script>
+<script src='Content/js/global.js'></script>
+<script src='Content/js/jquery-3.4.1.js'></script>
+<script src='Content/js/jquery.timers-1.2.js'></script>
+<scriptsrc='Content/js/svg-pan-zoom.js'></script>
+<script src='Content/js/SVG.js'></script>
+<script src='Content/js/Scada.js'></script>
+
+<script src='Content/js/zy.media.min.js'></script>
+
+<!-- Meta tag Keywords -->
+
+<!-- css files -->
+<link rel='stylesheet' href='Content/Login/login6/css/style.css' type='text/css' media='all' /> <!-- Style-CSS --> 
+ 
+<!-- //css files -->
+</head>
+<body style='background-color:#FFFFFF;'>
+<!--header-->
+	<div class='header-w3l'>
+		<h1>Lazy Scada OS登录</h1>
+	</div>
+<!--//header-->
+
+<!--main-->
+<div class='main-content-agile'>
+	<div class='sub-main-w3'>	
+		<div class='wthree-pro'>
+			<img src='Content/Login/login6/images/pro.jpg' alt='image'>
+			<h2>立即登录</h2>
+		</div>
+		<form  id='loginForm'  name='loginForm'>
+			<input placeholder='用户名' name='username' id='username' class='user' type='text' required=''>
+			<span class='icon1'><i class='fa fa-user' aria-hidden='true'></i></span><br><br>
+			<input  placeholder='密码' name='password' id='password'  class='pass' type='password' required=''>
+			<span class='icon2'><i class='fa fa-unlock' aria-hidden='true'></i></span><br>
+			<div class='sub-w3l'>
+		 
+				<div class='right-w3l'>
+					<input type='button' value='登 录' class='login-button'    onclick=&quot;SCADA.Login({viewId:'V_4687667529316565339',ReturnViewId:'0'})&quot;>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<div class='footer'>
+	<p>版权所有:宁夏众智科技有限公司</p>
+</div>
+<!--//footer-->
+
+</body>
+</html>
+"  ></iframe>
+</foreignObject>
+<g>
+<a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'     data-role=''   id='shapeID4995562465736246935' height = '553' width = '272' y = '194' x = '1073'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''      >
+<path  d=' M1073,194 L1345,194 L1345,747 1073,747 Z'   fill='#FFFFFF' opacity='2.55'>
+</path>
+
+<g data-filter='treenode'   id='shapenode_5583005183421485559' height = '20.22754' width = '62.33008' y = '219' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='false' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,219,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline5361924681096339041'     x1='1078' y1='228.8638' x2='1093' y2='228.8638'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4666956313791420599'     x1='1078' y1='229.1138' x2='1078' y2='228.8638'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5583005183421485559','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5583005183421485559'    x='1124.165' y='229.1138' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5087067262920879499' height = '20.22754' width = '62.33008' y = '244.2275' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,244.2275,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline4916070129813690073'     x1='1078' y1='254.0913' x2='1093' y2='254.0913'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5067043371992568452'     x1='1078' y1='229.1138' x2='1078' y2='254.0913'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5087067262920879499','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5087067262920879499'    x='1124.165' y='254.3413' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5307079219004044095' height = '20.22754' width = '62.33008' y = '269.4551' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,269.4551,62.33008,20.22754' data-showline='true' data-symbolsize='14.56981,27.01821' data-childnum='2' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline4831140731117536220'     x1='1078' y1='279.3188' x2='1093' y2='279.3188'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4895759329780017469'     x1='1078' y1='229.1138' x2='1078' y2='279.3188'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5307079219004044095','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5307079219004044095'    x='1127.286' y='279.5688' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >&nbsp;&nbsp;新建节点</text>
+</a>
+</g>
+<g data-filter='expandsymbol'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeExpand('true','node_5307079219004044095','ID4995562465736246935')">
+<text id='nodesymbolshapenode_5307079219004044095'    x='1100.285' y='279.5688' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='18.7' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodeexpand'   >-</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5341906406964630156' height = '20.22754' width = '62.33008' y = '294.6826' x = '1113'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5307079219004044095' data-hmargin='20' data-vmargin='20' data-rect='1113,294.6826,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline5266908549125463962'     x1='1093' y1='304.5464' x2='1113' y2='304.5464'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5715675325848597656'     x1='1093' y1='279.5688' x2='1093' y2='304.7964'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+<line  id='vline5278950156314981145'     x1='1093' y1='279.5688' x2='1093' y2='304.7964'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5341906406964630156','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5341906406964630156'    x='1144.165' y='304.7964' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5198355531995314889' height = '20.22754' width = '62.33008' y = '319.9102' x = '1113'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='node_5307079219004044095' data-hmargin='20' data-vmargin='20' data-rect='1113,319.9102,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='1' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline4964022925892607720'     x1='1093' y1='329.7739' x2='1113' y2='329.7739'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5470435266636234917'     x1='1093' y1='279.5688' x2='1093' y2='330.0239'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+<line  id='vline5717371497549750050'     x1='1093' y1='279.5688' x2='1093' y2='330.0239'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5198355531995314889','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5198355531995314889'    x='1144.165' y='330.0239' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5371262492764554040' height = '20.22754' width = '62.33008' y = '345.1377' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,345.1377,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline5426813440224548363'     x1='1078' y1='355.0015' x2='1093' y2='355.0015'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4908690909044529875'     x1='1078' y1='229.1138' x2='1078' y2='355.0015'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5371262492764554040','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5371262492764554040'    x='1124.165' y='355.2515' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5582910431082384619' height = '20.22754' width = '62.33008' y = '370.3652' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,370.3652,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline5078199066642328714'     x1='1078' y1='380.229' x2='1093' y2='380.229'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline4673246399429464494'     x1='1078' y1='229.1138' x2='1078' y2='380.229'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5582910431082384619','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5582910431082384619'    x='1124.165' y='380.479' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g data-filter='treenode'   id='shapenode_5076393428968495380' height = '20.22754' width = '62.33008' y = '395.5928' x = '1093'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeShape'     data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''    data-nodespace='5' data-nodeindent='20' data-localx='1073' data-localy='194'  data-nodesize='62.33008,20.22754' data-expand='true' data-parentid='' data-hmargin='20' data-vmargin='20' data-rect='1093,395.5928,62.33008,20.22754' data-showline='true' data-symbolsize='0,0' data-childnum='0' data-showicon='false' data-iconsize='20,20' data-level='0' data-textcolor='#9ACD32'    > 
+<g data-filter='hline'>
+<line  id='hline5380332878917989532'     x1='1078' y1='405.4565' x2='1093' y2='405.4565'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='vline'>
+<line  id='vline5521741943086703806'     x1='1078' y1='229.1138' x2='1078' y2='405.4565'   stroke ="#808080"   stroke-opacity="1"  stroke-width="0.5"   stroke-dasharray="3 2"      >
+
+</line>
+
+
+</g>
+<g data-filter='text'>
+<a xlink:href="javascript:void(0)" onclick="SCADA.TreeNodeSelect('node_5076393428968495380','ID4995562465736246935')">
+<text id='shapenodetextshapenode_5076393428968495380'    x='1124.165' y='405.7065' alignment-baseline='middle' text-anchor='middle'  fill='#9ACD32'  font-weight='normal' font-size='14' font-family='Microsoft YaHei'   font-style='normal'  text-decoration='normal'     data-filter='treenodetext'     data-changcolor='#FF0000' data-sourcecolor='#9ACD32'  data-baseshape='SVG_CommonShape'  data-shape='SVG_TreeViewNodeText'   >新建节点</text>
+</a>
+</g>
+</g>
+<g>
+</a><a xlink:href='javascript:void(0)'><g   visibility='visible'   sytle=' visibility:visible;display:block;'      data-role=''    id='shapeID4729417231069657533'  data-baseshape='SVG_CommonShape'  data-shape='SVG_ComboBoxShape'    data-event='无'  data-event_servicetype='无' data-event_title=''   data-event_confirm='False' data-event_msg=''         data-changcolor='#FF0000' data-sourcecolor='#000000'>
+<g  data-filter='comboxbackground' onclick="SCADA.PopComboBox('ComboxlistID4729417231069657533')">
+<path  d=' M563.9999,608 C563.9999,605.7908 565.7908,604 567.9999,603.9999 L800.9999,604 C803.2091,603.9999 804.9999,605.7908 804.9999,607.9999 804.9999,607.9999 804.9999,608 804.9999,608 L804.9999,625.7187 C804.9999,627.9279 803.2091,629.7187 801,629.7187 L568,629.7187 C565.7908,629.7188 564,627.9279 564,625.7188 Z'    stroke ="#000000"   stroke-opacity="1"  stroke-width="2"   stroke-dasharray=""   fill='#FFFFFF' opacity='2.55'>
+</path>
+<defs><linearGradient id="4797427761166633340" > <stop offset ="0%" style ="stop-color:#FFFFFF;stop-opacity:1" /> <stop offset ="100%" style ="stop-color:#FFFFFF;stop-opacity:1" /> </linearGradient> </defs>
+<text id='textID4729417231069657533'    x='684.5' y='616.8594' alignment-baseline='middle' text-anchor='middle'  fill='#000000'  font-weight='normal' font-size='14' font-family='SimHei'   font-style='normal'  text-decoration='normal'   class='iotext'    >下拉菜单</text>
+</g>
+<g id='ComboxlistID4729417231069657533' data-filter='items' style='display:none;' visibility='hidden'  >
+<rect  id='itemback5274599946436326989'   x='565' y='629.7188' width='239' height='17.71875'   fill='#FFFFFF' opacity='1'     >
+
+</rect>
+
+
+</g>
+</g>
+</a></svg>
+    </div>
+ <script>
+     SCADA.ScadaFlow();
+ 
+   </script>
+ 
+</body>
+</html>

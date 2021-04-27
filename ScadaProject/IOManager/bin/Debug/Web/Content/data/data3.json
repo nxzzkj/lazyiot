@@ -1,0 +1,167 @@
+[
+    {
+      "id": 1,
+      "name": "zzz",
+      "open": true,
+      "children": [
+        {
+          "id": 2,
+          "name": "1",
+          "open": false,
+          "checked": true,
+          "children": [
+            {
+              "id": 22,
+              "name": "1-1",
+              "open": false,
+              "checked": true,
+              "children": [
+                {
+                  "id": 32,
+                  "name": "1-1-1",
+                  "open": false,
+                  "checked": true
+                },
+                {
+                  "id": 33,
+                  "name": "1-1-2",
+                  "open": false,
+                  "checked": true
+        
+                }
+              ]
+            },
+            {
+              "id": 23,
+              "name": "1-2",
+              "open": false,
+              "checked": true
+    
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "2",
+          "open": false,
+          "checked": true
+
+        },
+        {
+          "id": 17,
+          "name": "3z",
+          "open": false,
+          "checked": true
+        }
+      ],
+      "checked": true
+    },
+    {
+      "id": 4,
+      "name": "评论",
+      "open": false,
+      "children": [
+        {
+          "id": 5,
+          "name": "留言列表",
+          "open": false,
+          "checked": false
+        },
+        {
+          "id": 6,
+          "name": "发表留言",
+          "open": false,
+          "checked": false
+        },
+        {
+          "id": 333,
+          "name": "233333",
+          "open": false,
+          "checked": false
+        }
+      ],
+      "checked": false
+    },
+    {
+      "id": 10,
+      "name": "权限管理",
+      "open": false,
+      "children": [
+        {
+          "id": 8,
+          "name": "用户列表",
+          "open": false,
+          "children": [
+            {
+              "id": 40,
+              "name": "添加用户",
+              "open": false,
+              
+              "url": null,
+              "title": "40",
+              "checked": false,
+              "level": 2,
+              "check_Child_State": 0,
+              "check_Focus": false,
+              "checkedOld": false,
+              "dropInner": false,
+              "drag": false,
+              "parent": false
+            },
+            {
+              "id": 41,
+              "name": "编辑用户",
+              "open": false,
+              "checked": false
+            },
+            {
+              "id": 42,
+              "name": "删除用户",
+              "open": false,
+              "checked": false
+            }
+          ],
+          "checked": false
+        },
+        {
+          "id": 11,
+          "name": "角色列表",
+          "open": false,
+          "checked": false
+        },
+        {
+          "id": 13,
+          "name": "所有权限",
+          "open": false,
+          "children": [
+            {
+              "id": 34,
+              "name": "添加权限",
+              "open": false,
+              "checked": false
+            },
+            {
+              "id": 37,
+              "name": "编辑权限",
+              "open": false,
+              "checked": false
+            },
+            {
+              "id": 38,
+              "name": "删除权限",
+              "open": false,
+              "checked": false
+            }
+          ],
+          "checked": false
+        },
+        {
+          "id": 15,
+          "name": "操作日志",
+          "open": false,
+          "checked": false
+        }
+      ],
+      "checked": false
+    }
+  ]

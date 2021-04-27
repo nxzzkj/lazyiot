@@ -1,0 +1,12 @@
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\BaseProject\Common\bin\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode_2020-12-08时间前未改版前\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\BaseProject\Common\bin\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\bin\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csproj.CoreCompileInputs.cache
+E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.dll
+E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csprojAssemblyReference.cache

@@ -1,0 +1,162 @@
+﻿@model ScadaWeb.Web.Areas.Scada.Models.WellHistorySearchModel
+@{
+    ViewBag.Title = "单井历史数据汇总查询";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+<!--模糊搜索区域-->
+<div class="layui-row">
+    <form class="layui-form layui-col-md12 ok-search" lay-filter="formTest">
+
+        
+        <div class="layui-input-inline">
+            <input id="WellID" name="WellID" type="hidden" value="@Model.WellID" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartDate" id="StartDate" value="@Model.StartDate">
+
+        </div>
+        <div class="layui-input-inline">
+            <input class="layui-input" placeholder="结束日期" autocomplete="off" name="EndDate" id="EndDate" value="@Model.EndDate">
+        </div>
+        <div class="layui-input-inline"  style="width:80px;" >
+            <select name="Period" id="Period"   placeholder="统计周期"  style="width:80px;"  lay-filter="aihao">
+        
+                <option value="1m">1分钟</option>
+                <option value="10m" selected="">10分钟</option>
+                <option value="30m">30分钟</option>
+                <option value="1h">1小时</option>
+                <option value="2h">2小时</option>
+                <option value="4h">4小时</option>
+                <option value="6">6小时</option>
+                <option value="12h">12小时</option>
+                <option value="24h">24小时</option>
+                <option value="1d">1天</option>
+                <option value="2d">2天</option>
+                <option value="1w">1周</option>
+                <option value="2w">2周</option>
+            </select>
+        </div>
+        <div class="layui-input-inline"  style="width:100px;" >
+            <select  name="Method" id="Method" placeholder="统计方法" style="width:80px;"   lay-filter="aihao2">
+             
+                <option value="MEAN">1算数平均值</option>
+                <option value="MEDIAN" selected="">中间值(中位数)</option>
+                <option value="SPREAD">最大最小差值</option>
+                <option value="SUM">求和</option>
+                <option value="MAX">最大值</option>
+                <option value="MIN">最小值</option>
+                <option value="STDDEV">标准偏差</option>
+   
+            </select>
+        </div>
+        @Html.SearchBtnHtml("查询")
+        @Html.ResetBtnHtml()
+
+    </form>
+</div>
+<!--数据表格-->
+<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
+
+<script>
+    var wellls = xmSelect.render({
+        el: '#WellList',
+        filterable: true,
+        paging: true,
+        pageSize: 50,
+        radio: true,
+        clickClose: true,
+
+    });
+
+    layui.config({ base: '/Content/lib/tablePlug/' }).use(["table", "form", "okLayer", "okUtils", 'tablePlug', "laydate"], function () {
+        let table = layui.table;
+        let form = layui.form;
+ 
+        let okLayer = layui.okLayer;
+        let okUtils = layui.okUtils;
+        var tablePlug = layui.tablePlug;
+        let startdate = layui.laydate;
+        let enddate = layui.laydate;
+        var $ = layui.$;
+
+        startdate.render({
+            elem: '#StartDate'
+           , type: 'datetime'
+        });
+        enddate.render({
+            elem: '#EndDate'
+          , type: 'datetime'
+        });
+        tablePlug.smartReload.enable(true);//处理不闪动的关键代码
+  
+
+        let AllTable = table.render({
+            elem: "#tableId",
+            url: "/Scada/WellScada/WellGridHistorySummary",
+            limit: 1000,
+            limits: [100,200,300,500,600,800,1000,1500,2000,3000],
+            width: document.body.clientWidth - 10,
+            height: 'full-80',
+            page: true,
+            loading: true,
+            id: 'wellHistoryGrid',
+            toolbar: "#toolbarTpl",
+            jump: function (obj, first) {
+                if (!first) {
+                    layer.msg('第 ' + obj.curr + ' 页');
+                }
+            },
+            size: "sm",
+            smartReloadModel: true,
+            cols: [[
+                { field: 'zizeng', width: 60, title: '序号', fixed: 'left', templet: '#zizeng' },
+                { field: "DateStampTime", title: "采集时间", width: 130, fixed: 'left' },
+                { field: "IO_DDLY", title: "井底流压", width: 80 },
+                { field: "IO_DYM", title: "动液面", width: 80 },
+                { field: "IO_JKTY", title: "井口套压", width: 80 },
+                { field: "IO_XTYL", title: "系统压力", width: 80 },
+                { field: "IO_LJCQL", title: "累产气量", width: 80 },
+                { field: "IO_SSCQL", title: "瞬产气量", width: 80 },
+                { field: "IO_QTWD", title: "气体温度", width: 80 },
+                { field: "IO_LJCSL", title: "累产水量", width: 80 },
+                { field: "IO_SSCSL", title: "瞬产水量", width: 80 },
+                { field: "IO_GTCC", title: "冲次", width: 80 },
+                { field: "IO_GTCC1", title: "冲程", width: 80 },
+                { field: "IO_GTZH", title: "功图载荷", width: 80 },
+                { field: "IO_SXDY", title: "三相电压", width: 80 },
+                { field: "IO_SXDL", title: "三相电流", width: 80 },
+                { field: "IO_SXGL", title: "三相功率", width: 80 },
+                { field: "IO_YDL", title: "用电量", width: 80 },
+                { field: "IO_BPQPL", title: "变频器频率", width: 80 },
+                { field: "IO_DJGZDL", title: "电机电流", width: 80 },
+                { field: "IO_DJNJ", title: "电机扭矩", width: 80 },
+                { field: "IO_DJGZDY", title: "电机电压", width: 80 }
+
+            ]],
+            done: function (res, curr, count) {
+
+            }
+        });
+        //数据表定时加载
+        form.on("submit(search)", function (data) {
+
+            AllTable.reload({
+                where: data.field,
+                page: { curr: 1 }
+            });
+            return false;
+        });
+    })
+</script>
+<!-- 头工具栏模板 -->
+<script type="text/html" id="toolbarTpl">
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
+</script>
+<!-- 行工具栏模板 -->
+<script type="text/html" id="operationTpl">
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
+</script>
+<script type="text/html" id="zizeng">
+    {{d.LAY_TABLE_INDEX+1}}
+</script>
