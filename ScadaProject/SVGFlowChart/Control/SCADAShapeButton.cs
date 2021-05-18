@@ -65,12 +65,8 @@ namespace ScadaFlowDesign.Control
         }
         public IntPtr GetCursor()
         {
-            if (this.Image != null)
-            {
-                Bitmap bmp = (Bitmap)this.Image;
-                return bmp.GetHicon();
-            }
-            return IntPtr.Zero;
+            
+            return Cursors.Default.Handle;
         }
 
         private ShapeElement mShapeElement = ShapeElement.None;

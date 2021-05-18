@@ -381,7 +381,7 @@ namespace ScadaFlowDesign
             {
                 WorkForm mWorkForm = this.mediator.ActiveWork as WorkForm;
                 mWorkForm.SetDrawShape(button.ShapeElement);
-                ((WorkForm)this.mediator.ActiveWork).GraphControl.Cursor =new Cursor( button.GetCursor());
+                ((WorkForm)this.mediator.ActiveWork).GraphControl.Cursor = DefaultCursor;
             }
            
 

@@ -34,7 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ScadaFlowDesign.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>w28.ico</ApplicationIcon>
@@ -3088,9 +3089,7 @@
     <Folder Include="Help\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web\Content\js\Scada.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Web\Content\js\Scada.js" />
     <Content Include="Web\Content\js\svg-pan-zoom.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

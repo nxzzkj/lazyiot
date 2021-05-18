@@ -134,6 +134,12 @@ namespace ScadaFlowDesign
             this.scadaShapeButton11 = new ScadaFlowDesign.Control.SCADAShapeButton();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.scadaShapeButton62 = new ScadaFlowDesign.Control.SCADAShapeButton();
+            this.scadaShapeButton60 = new ScadaFlowDesign.Control.SCADAShapeButton();
+            this.scadaShapeButton59 = new ScadaFlowDesign.Control.SCADAShapeButton();
+            this.scadaShapeButton58 = new ScadaFlowDesign.Control.SCADAShapeButton();
+            this.scadaShapeButton57 = new ScadaFlowDesign.Control.SCADAShapeButton();
+            this.scadaShapeButton56 = new ScadaFlowDesign.Control.SCADAShapeButton();
             this.scadaShapeButton55 = new ScadaFlowDesign.Control.SCADAShapeButton();
             this.scadaShapeButton54 = new ScadaFlowDesign.Control.SCADAShapeButton();
             this.scadaShapeButton53 = new ScadaFlowDesign.Control.SCADAShapeButton();
@@ -171,6 +177,7 @@ namespace ScadaFlowDesign
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除模板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scadaShapeButton61 = new ScadaFlowDesign.Control.SCADAShapeButton();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.flowLayoutPanelNormal.SuspendLayout();
@@ -274,6 +281,12 @@ namespace ScadaFlowDesign
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton11)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton60)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton59)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton58)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton57)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton56)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton55)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton54)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton53)).BeginInit();
@@ -308,6 +321,7 @@ namespace ScadaFlowDesign
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton61)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1285,6 +1299,7 @@ namespace ScadaFlowDesign
             this.SymbolListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SymbolListView.Font = new System.Drawing.Font("宋体", 9F);
             this.SymbolListView.GridLines = true;
+            this.SymbolListView.HideSelection = false;
             this.SymbolListView.Location = new System.Drawing.Point(0, 0);
             this.SymbolListView.MultiSelect = false;
             this.SymbolListView.Name = "SymbolListView";
@@ -1597,6 +1612,7 @@ namespace ScadaFlowDesign
             this.scadaShapeButton32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.scadaShapeButton32.TabIndex = 21;
             this.scadaShapeButton32.TabStop = false;
+            this.scadaShapeButton32.Visible = false;
             this.scadaShapeButton32.Click += new System.EventHandler(this.ButtonShape_Click);
             // 
             // tabPage6
@@ -1719,6 +1735,13 @@ namespace ScadaFlowDesign
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.scadaShapeButton61);
+            this.groupBox2.Controls.Add(this.scadaShapeButton62);
+            this.groupBox2.Controls.Add(this.scadaShapeButton60);
+            this.groupBox2.Controls.Add(this.scadaShapeButton59);
+            this.groupBox2.Controls.Add(this.scadaShapeButton58);
+            this.groupBox2.Controls.Add(this.scadaShapeButton57);
+            this.groupBox2.Controls.Add(this.scadaShapeButton56);
             this.groupBox2.Controls.Add(this.scadaShapeButton55);
             this.groupBox2.Controls.Add(this.scadaShapeButton54);
             this.groupBox2.Controls.Add(this.scadaShapeButton53);
@@ -1734,10 +1757,100 @@ namespace ScadaFlowDesign
             this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(0, 450);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 614);
+            this.groupBox2.Size = new System.Drawing.Size(225, 1040);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "装饰(动画效果)";
+            // 
+            // scadaShapeButton62
+            // 
+            this.scadaShapeButton62.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton62.BackgroundImage")));
+            this.scadaShapeButton62.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton62.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton62.Location = new System.Drawing.Point(3, 908);
+            this.scadaShapeButton62.Name = "scadaShapeButton62";
+            this.scadaShapeButton62.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_FlylineChartShape;
+            this.scadaShapeButton62.Size = new System.Drawing.Size(219, 61);
+            this.scadaShapeButton62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton62.TabIndex = 50;
+            this.scadaShapeButton62.TabStop = false;
+            this.scadaShapeButton62.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
+            // scadaShapeButton60
+            // 
+            this.scadaShapeButton60.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton60.BackgroundImage")));
+            this.scadaShapeButton60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton60.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton60.Location = new System.Drawing.Point(3, 847);
+            this.scadaShapeButton60.Name = "scadaShapeButton60";
+            this.scadaShapeButton60.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_ConicalChartShape;
+            this.scadaShapeButton60.Size = new System.Drawing.Size(219, 61);
+            this.scadaShapeButton60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton60.TabIndex = 48;
+            this.scadaShapeButton60.TabStop = false;
+            this.scadaShapeButton60.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
+            // scadaShapeButton59
+            // 
+            this.scadaShapeButton59.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton59.BackgroundImage")));
+            this.scadaShapeButton59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton59.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton59.Location = new System.Drawing.Point(3, 786);
+            this.scadaShapeButton59.Name = "scadaShapeButton59";
+            this.scadaShapeButton59.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_RankingBarChartShape;
+            this.scadaShapeButton59.Size = new System.Drawing.Size(219, 61);
+            this.scadaShapeButton59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton59.TabIndex = 47;
+            this.scadaShapeButton59.TabStop = false;
+            this.scadaShapeButton59.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
+            // scadaShapeButton58
+            // 
+            this.scadaShapeButton58.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton58.BackgroundImage")));
+            this.scadaShapeButton58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton58.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton58.Location = new System.Drawing.Point(3, 723);
+            this.scadaShapeButton58.Name = "scadaShapeButton58";
+            this.scadaShapeButton58.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_ProcessChartShape;
+            this.scadaShapeButton58.Size = new System.Drawing.Size(219, 63);
+            this.scadaShapeButton58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton58.TabIndex = 46;
+            this.scadaShapeButton58.TabStop = false;
+            this.scadaShapeButton58.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
+            // scadaShapeButton57
+            // 
+            this.scadaShapeButton57.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton57.BackgroundImage")));
+            this.scadaShapeButton57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton57.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton57.Location = new System.Drawing.Point(3, 660);
+            this.scadaShapeButton57.Name = "scadaShapeButton57";
+            this.scadaShapeButton57.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_ActiveRingChartShape;
+            this.scadaShapeButton57.Size = new System.Drawing.Size(219, 63);
+            this.scadaShapeButton57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton57.TabIndex = 45;
+            this.scadaShapeButton57.TabStop = false;
+            this.scadaShapeButton57.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
+            // scadaShapeButton56
+            // 
+            this.scadaShapeButton56.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton56.BackgroundImage")));
+            this.scadaShapeButton56.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton56.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton56.Location = new System.Drawing.Point(3, 597);
+            this.scadaShapeButton56.Name = "scadaShapeButton56";
+            this.scadaShapeButton56.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_WaterLevelPondShape;
+            this.scadaShapeButton56.Size = new System.Drawing.Size(219, 63);
+            this.scadaShapeButton56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton56.TabIndex = 44;
+            this.scadaShapeButton56.TabStop = false;
+            this.scadaShapeButton56.Click += new System.EventHandler(this.ButtonShape_Click);
             // 
             // scadaShapeButton55
             // 
@@ -2250,6 +2363,21 @@ namespace ScadaFlowDesign
             this.删除模板ToolStripMenuItem.Text = "删除模板";
             this.删除模板ToolStripMenuItem.Click += new System.EventHandler(this.删除模板ToolStripMenuItem_Click);
             // 
+            // scadaShapeButton61
+            // 
+            this.scadaShapeButton61.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scadaShapeButton61.BackgroundImage")));
+            this.scadaShapeButton61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scadaShapeButton61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scadaShapeButton61.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scadaShapeButton61.Location = new System.Drawing.Point(3, 969);
+            this.scadaShapeButton61.Name = "scadaShapeButton61";
+            this.scadaShapeButton61.ShapeElement = Scada.FlowGraphEngine.ShapeElement.SVG_DateTimeShape;
+            this.scadaShapeButton61.Size = new System.Drawing.Size(219, 61);
+            this.scadaShapeButton61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scadaShapeButton61.TabIndex = 51;
+            this.scadaShapeButton61.TabStop = false;
+            this.scadaShapeButton61.Click += new System.EventHandler(this.ButtonShape_Click);
+            // 
             // ShapeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -2369,6 +2497,12 @@ namespace ScadaFlowDesign
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton11)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton60)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton59)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton58)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton57)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton56)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton55)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton54)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton53)).EndInit();
@@ -2403,6 +2537,7 @@ namespace ScadaFlowDesign
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scadaShapeButton61)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2549,5 +2684,12 @@ namespace ScadaFlowDesign
         private SCADAShapeButton pictureBox21;
         private SCADAShapeButton pictureBox20;
         private SCADAShapeButton pictureBox26;
+        private SCADAShapeButton scadaShapeButton59;
+        private SCADAShapeButton scadaShapeButton58;
+        private SCADAShapeButton scadaShapeButton57;
+        private SCADAShapeButton scadaShapeButton56;
+        private SCADAShapeButton scadaShapeButton62;
+        private SCADAShapeButton scadaShapeButton60;
+        private SCADAShapeButton scadaShapeButton61;
     }
 }

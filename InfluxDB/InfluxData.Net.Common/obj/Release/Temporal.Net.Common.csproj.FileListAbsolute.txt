@@ -25,3 +25,12 @@ E:\LazyScadaOS\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal
 E:\LazyScadaOS\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.dll
 E:\LazyScadaOS\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.pdb
 E:\LazyScadaOS\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\bin\Release\Temporal.Net.Common.dll.config
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\bin\Release\Temporal.Net.Common.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\bin\Release\Temporal.Net.Common.pdb
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\bin\Release\Newtonsoft.Json.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.pdb
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Common\obj\Release\Temporal.Net.Common.csprojAssemblyReference.cache

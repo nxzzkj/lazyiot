@@ -32,3 +32,17 @@ E:\LazyScadaOS\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\S
 E:\LazyScadaOS\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\System.Data.SQLite.dll
 E:\LazyScadaOS\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\System.Data.SQLite.xml
 E:\LazyScadaOS\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\Scada.Database.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Scada.Database.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Scada.DBUtility.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Scada.Model.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\System.Data.SQLite.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\MySql.Data.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Scada.IOStructure.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\System.Data.SQLite.xml
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Scada.IOStructure.pdb
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\Scada.Database.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\Scada.Database.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\Scada.Database.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\obj\Release\Scada.Database.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Sybase.Data.AseClient.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.DAL\bin\Release\Newtonsoft.Json.dll

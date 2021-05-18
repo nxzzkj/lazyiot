@@ -115,8 +115,9 @@
       <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
-    <Reference Include="Sybase.Data.AseClient">
-      <HintPath>..\..\..\..\LazyScadaCode\ScadaProject\ScadaWeb\SCADA.Web\bin\Sybase.Data.AseClient.dll</HintPath>
+    <Reference Include="Sybase.Data.AseClient, Version=1.1.327.0, Culture=neutral, PublicKeyToken=26e0f1529304f4a7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Sybase.Data.AseClient.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

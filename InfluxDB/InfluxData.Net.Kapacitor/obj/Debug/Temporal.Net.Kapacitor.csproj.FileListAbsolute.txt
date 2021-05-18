@@ -46,3 +46,15 @@ D:\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\Temporal.Net.Kapaci
 D:\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\Temporal.Net.Kapacitor.csproj.CopyComplete
 D:\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\InfluxData.Net.Kapacitor.dll
 D:\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\InfluxData.Net.Kapacitor.pdb
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\InfluxData.Net.Kapacitor.dll.config
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\InfluxData.Net.Kapacitor.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\InfluxData.Net.Kapacitor.pdb
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\Newtonsoft.Json.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\Temporal.Net.Common.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\Temporal.Net.Common.pdb
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\bin\Debug\Temporal.Net.Common.dll.config
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\Temporal.Net.Kapacitor.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\Temporal.Net.Kapacitor.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\Temporal.Net.Kapacitor.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\InfluxData.Net.Kapacitor.dll
+D:\开源发布\LazyScadaCode\InfluxDB\InfluxData.Net.Kapacitor\obj\Debug\InfluxData.Net.Kapacitor.pdb

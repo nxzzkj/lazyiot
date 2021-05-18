@@ -40,3 +40,14 @@ D:\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.csproj.CoreC
 D:\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.csproj.CopyComplete
 D:\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.dll
 D:\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.pdb
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.MakeAlarm.dll
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.MakeAlarm.pdb
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.IOStructure.dll
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.Model.dll
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.IOStructure.pdb
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\bin\Debug\Scada.Model.pdb
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.dll
+D:\开源发布\LazyScadaCode\Component\ScadaMakeAlarm\obj\Debug\Scada.MakeAlarm.pdb

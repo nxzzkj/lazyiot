@@ -3870,7 +3870,34 @@ function SCADA_Application() {
             $('body').everyTime(SCADA.UpdateFlowUpcycle + "s", function () {
                 SCADA.ReadFlowRealData();
             });
-        } catch(e){ }
+        } catch (e) { }
+        //获取本地日期的图元,并且按照1秒进行自动计时
+        var dateelements = document.querySelectorAll('[data-localdate]');
+        try {
+            $('body').everyTime("1s", function () {
+
+                for (var e = 0; e < dateelements.length; e++) {
+                    var shape = $("#" + dateelements[e].id);
+                    var dateformat = shape.data("dateformat");
+                    var showweek = shape.data("showweek");
+                    var myDate = new Date();
+                    //根据日期格式化
+                    var dateString = JavascriptDateFormat(dateformat, showweek,myDate);
+                    var text = $("#" + dateelements[e].id + ">a>.iotext");
+                    if (text != undefined) {
+                        text.html(dateString);
+                        text.text(dateString);
+
+                    }
+
+                }
+            });
+
+         
+        }
+        catch (e) {
+
+        }
     }
     //当前流程图的登录用户
     this.FlowLoginUser = {};
@@ -3974,6 +4001,7 @@ function SCADA_Application() {
 
         try {
             //获取实时数据
+            $.ajaxSetup({ async: false });
             $.post("/Scada/ScadaFlow/GetReadData", {IoParas},function (result) {
                 //code = 0, msg = "", count = total, data = list
                 for (var i = 0; i < result.data.length; i++) {
@@ -4067,6 +4095,7 @@ function SCADA_Application() {
 
                 isUsed = false;
             });
+            $.ajaxSetup({ async: true });
         }
         catch(e) {
 
@@ -4080,12 +4109,14 @@ function SCADA_Application() {
                 var pagesize = $("#" + iotables[a].id).data("pagesize");
                 var pageindex = $("#" + iotables[a].id).data("pageindex");
                 var id = iotables[a].id;
+                $.ajaxSetup({ async: false });
                 $.post("/Scada/ScadaFlow/GetReadAlarm", { List: IoParas, PageSize: pagesize, PageIndex: pageindex }, function (result) {
 
 
                     SCADA.UpdateFlowAlarm(result.data, result.count, pagesize, pageindex, id.replace("shape", ""));
 
                 });
+                $.ajaxSetup({ async: true });
             }
         }
         catch(e) {
@@ -4123,15 +4154,17 @@ function SCADA_Application() {
                     var subid = dbelements[e].id;
                
                     if (jsonid != undefined && jsonid.trim() != "") {
+                        $.ajaxSetup({ async: false });
                         var jsonContent = JSON.parse(document.getElementById(jsonid).innerHTML);//获取当前的Json数据
                    
                         //向服务器请求数据
                         $.post("/Scada/ScadaFlow/GetDBSingleValues?elementId=" + subid, jsonContent, function (result) {
                             //此处特别注意的是后台返回的是一个将DataTableJson化的字符串，此处需要进行转化为Json对象
                             var returnObj = JSON.parse(result.data);
-                  
-                            SCADA.UpdateFlowSingleDBValue(returnObj, uid, jsonContent, result.elementId);
+                            var jsonContent2 = JSON.parse(document.getElementById(jsonid).innerHTML);//获取当前的Json数据
+                            SCADA.UpdateFlowSingleDBValue(returnObj, uid, jsonContent2, result.elementId);
                         });
+                        $.ajaxSetup({ async: true });
                     }
                     //设置保存当前时间
                     shape.data("datetime", valueDate);
@@ -4142,7 +4175,7 @@ function SCADA_Application() {
         catch (e) {
 
         }
-
+  
     }
     ///更新数据库要显示的对象
     this.UpdateFlowSingleDBValue = function (dbvalue, uid,dbconfig,subid) {
@@ -5491,4 +5524,84 @@ function isNumber(val) {
         result.height = parseFloat(window.getComputedStyle(span).height) - result.height;
         return result;
 }
-//手机端的时候自动横屏
+//获取中文星期
+function  GetWeek(num)
+{
+    switch (num) {
+        case "1":
+            return "星期一";
+        case "2":
+            return "星期二";
+        case "3":
+            return "星期三";
+        case "4":
+            return "星期四";
+        case "5":
+            return "星期五";
+        case "6":
+            return "星期六";
+        case "0":
+            return "星期日";
+    }
+    return "";
+}
+///将C#日期格式化字符串转为javascript显示
+function JavascriptDateFormat(format,showweek,locladate) {
+    var time = {};
+    time.Year = locladate.getFullYear();
+    time.TYear = ("" + time.Year).substr(2);
+    time.Month = locladate.getMonth() + 1;
+    time.TMonth = time.Month < 10 ? "0" + time.Month : time.Month;
+    time.Day = locladate.getDate();
+    time.TDay = time.Day < 10 ? "0" + time.Day : time.Day;
+    time.Hour = locladate.getHours();
+    time.THour = time.Hour < 10 ? "0" + time.Hour : time.Hour;
+    time.hour = time.Hour < 13 ? time.Hour : time.Hour - 12;
+    time.Thour = time.hour < 10 ? "0" + time.hour : time.hour;
+    time.Minute = locladate.getMinutes();
+    time.TMinute = time.Minute < 10 ? "0" + time.Minute : time.Minute;
+    time.Second = locladate.getSeconds();
+    time.TSecond = time.Second < 10 ? "0" + time.Second : time.Second;
+    time.Millisecond = locladate.getMilliseconds();
+    time.Week = locladate.getDay();
+
+    var MMMArrEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var MMMArr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    var WeekArrEn = ["Sun", "Mon", "Tue", "Web", "Thu", "Fri", "Sat"];
+    var WeekArr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+
+    var oNumber = time.Millisecond / 1000;
+
+    if (format != undefined && format.replace(/\s/g, "").length > 0) {
+     
+        format = format
+            .replace(/yyyy/ig, time.Year)
+            .replace(/yyy/ig, time.Year)
+            .replace(/yy/ig, time.TYear)
+            .replace(/y/ig, time.TYear)
+            .replace(/MMM/g, MMMArr[time.Month - 1])
+            .replace(/MM/g, time.TMonth)
+            .replace(/M/g, time.Month)
+            .replace(/dd/ig, time.TDay)
+            .replace(/d/ig, time.Day)
+            .replace(/HH/g, time.THour)
+            .replace(/H/g, time.Hour)
+            .replace(/hh/g, time.Thour)
+            .replace(/h/g, time.hour)
+            .replace(/mm/g, time.TMinute)
+            .replace(/m/g, time.Minute)
+            .replace(/ss/ig, time.TSecond)
+            .replace(/s/ig, time.Second)
+            .replace(/fff/ig, time.Millisecond)
+            .replace(/ff/ig, oNumber.toFixed(2) * 100)
+            .replace(/f/ig, oNumber.toFixed(1) * 10)
+            .replace(/EEE/g, WeekArr[time.Week]);
+    }
+    else {
+        format = time.Year + "-" + time.Month + "-" + time.Day + " " + time.Hour + ":" + time.Minute + ":" + time.Second;
+    }
+    if (showweek || showweek == 'true') {
+        format = format + " " + GetWeek(time.Week.toString());
+    }
+    return format;
+}

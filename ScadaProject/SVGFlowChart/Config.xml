@@ -45,5 +45,10 @@
   <DelayTime>
     200
   </DelayTime>
-  
+	<MDSClientPort>
+		10001
+	</MDSClientPort>
+	<MDSServerPort>
+		10002
+	</MDSServerPort>
 </IOServer>

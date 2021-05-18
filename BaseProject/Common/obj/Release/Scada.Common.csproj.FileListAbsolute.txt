@@ -10,3 +10,6 @@ E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\bin\Release\Scada.Common.dll
 E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.dll
 E:\LazyScadaOS\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\BaseProject\Common\bin\Release\Scada.Common.dll
+D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Release\Scada.Common.dll

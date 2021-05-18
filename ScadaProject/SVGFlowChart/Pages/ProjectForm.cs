@@ -638,11 +638,9 @@ namespace ScadaFlowDesign
                         };
                         if (frm.ShowDialog(this) == DialogResult.OK)
                         {
-                            ScadaConnectionNode node = new ScadaConnectionNode(frm.Connection)
-                            {
-                                ContextMenuStrip = this.contextMenuConnectionDelete
-                            };
-                            parent.Nodes.Add(node);
+                            
+                            selectedNode.ScadaConnection = frm.Connection;
+                            selectedNode.Text = frm.Connection.ToString();
                         }
                     }
                     else if (selectedNode.ScadaConnection.DataBaseType == DataBaseType.Oracle)
@@ -653,11 +651,8 @@ namespace ScadaFlowDesign
                         };
                         if (frm2.ShowDialog(this) == DialogResult.OK)
                         {
-                            ScadaConnectionNode node = new ScadaConnectionNode(frm2.Connection)
-                            {
-                                ContextMenuStrip = this.contextMenuConnectionDelete
-                            };
-                            parent.Nodes.Add(node);
+                            selectedNode.ScadaConnection = frm2.Connection;
+                            selectedNode.Text = frm2.Connection.ToString();
                         }
                     }
                     else if (selectedNode.ScadaConnection.DataBaseType == DataBaseType.MySQL)
@@ -668,11 +663,8 @@ namespace ScadaFlowDesign
                         };
                         if (frm3.ShowDialog(this) == DialogResult.OK)
                         {
-                            ScadaConnectionNode node = new ScadaConnectionNode(frm3.Connection)
-                            {
-                                ContextMenuStrip = this.contextMenuConnectionDelete
-                            };
-                            parent.Nodes.Add(node);
+                            selectedNode.ScadaConnection = frm3.Connection;
+                            selectedNode.Text = frm3.Connection.ToString();
                         }
                     }
                     else if (selectedNode.ScadaConnection.DataBaseType == DataBaseType.SQLite)
@@ -683,11 +675,8 @@ namespace ScadaFlowDesign
                         };
                         if (frm4.ShowDialog(this) == DialogResult.OK)
                         {
-                            ScadaConnectionNode node = new ScadaConnectionNode(frm4.Connection)
-                            {
-                                ContextMenuStrip = this.contextMenuConnectionDelete
-                            };
-                            parent.Nodes.Add(node);
+                            selectedNode.ScadaConnection = frm4.Connection;
+                            selectedNode.Text = frm4.Connection.ToString();
                         }
                     }
                     else if (selectedNode.ScadaConnection.DataBaseType == DataBaseType.SyBase)
@@ -698,11 +687,8 @@ namespace ScadaFlowDesign
                         };
                         if (frm5.ShowDialog(this) == DialogResult.OK)
                         {
-                            ScadaConnectionNode node = new ScadaConnectionNode(frm5.Connection)
-                            {
-                                ContextMenuStrip = this.contextMenuConnectionDelete
-                            };
-                            parent.Nodes.Add(node);
+                            selectedNode.ScadaConnection = frm5.Connection;
+                            selectedNode.Text = frm5.Connection.ToString();
                         }
                     }
                 }

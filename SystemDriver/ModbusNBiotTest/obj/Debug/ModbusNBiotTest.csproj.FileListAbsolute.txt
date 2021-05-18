@@ -18,3 +18,8 @@ D:\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Debug\ModbusNBiotTest.pdb
 D:\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.csproj.CoreCompileInputs.cache
 D:\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.dll
 D:\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.pdb
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Debug\ModbusNBiotTest.dll
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Debug\ModbusNBiotTest.pdb
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.dll
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Debug\ModbusNBiotTest.pdb

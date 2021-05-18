@@ -3,3 +3,8 @@ E:\LazyScadaOS\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Release\ModbusNBio
 E:\LazyScadaOS\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.dll
 E:\LazyScadaOS\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.pdb
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Release\ModbusNBiotTest.dll
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\bin\Release\ModbusNBiotTest.pdb
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.dll
+D:\开源发布\LazyScadaCode\SystemDriver\ModbusNBiotTest\obj\Release\ModbusNBiotTest.pdb

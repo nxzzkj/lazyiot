@@ -4,7 +4,7 @@
   <description asmv2:iconFile="w28.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ScadaCenterServer" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="ScadaCenterServer" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="ScadaCenterServer.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -16,15 +16,15 @@
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
           UAC 清单选项
-         若想要更改 Windows 用户帐户控制级别，请
-         将 requestedExecutionLevel 节点替换为下述某项。
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
 
-       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-        若想要使用文件和注册表虚拟化以实现向后
-        兼容，请删除 requestedExecutionLevel 节点。
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -40,18 +40,6 @@
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Fizzler.dll" size="34816">
-      <assemblyIdentity name="Fizzler" version="1.2.0.0" publicKeyToken="4EBFF4844E382110" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PjgijjNAWq8s7ldbhzPHDTJNqNTEravHq5ZV4+93fws=</dsig:DigestValue>
-      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -86,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DBRy7ORSHGjqXMNFIGLyTlzhOHBD+LcymMZprrZSQO0=</dsig:DigestValue>
+        <dsig:DigestValue>5R4gqKfc9ZFeRkluaiSuWzUZrEZdJQI1EKoMQjT0xV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -152,169 +140,145 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.AsyncNetTcp.dll" size="35328">
-      <assemblyIdentity name="Scada.AsyncNetTcp" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.AsyncNetTcp" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xVK1ytkahphZgAJfdWaMNW0gy7LSySSaXXX4DSLM3rI=</dsig:DigestValue>
+        <dsig:DigestValue>3t8eS3ifXdfbg8Ym7PKSLQCtFA8EIsTtdKLrEPaZWUk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Business.dll" size="36864">
-      <assemblyIdentity name="Scada.Business" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.Business" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h42dTT3NCOm0rmmvuQPVivemOpxkY0tBzvqsFfqxjS0=</dsig:DigestValue>
+        <dsig:DigestValue>dy3lMJnV1gKTjaQi5DbDg/9JG1KC5y2vOvMkZHUnBEs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Common.dll" size="36864">
-      <assemblyIdentity name="Scada.Common" version="3.5.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.Common" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T64BUhlVBbUb6oVmXMSSuOunReqlNmQwSUDVMOe1A+I=</dsig:DigestValue>
+        <dsig:DigestValue>3Khct3AmcLOPudKfOVmkAzkEE88CqseSt19uw9S3jwk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Controls.dll" size="12311552">
-      <assemblyIdentity name="Scada.Controls" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Controls.dll" size="12638208">
+      <assemblyIdentity name="Scada.Controls" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>isxS8+SK8YRlqjvNrE5A2vmI5Kd179trqmQwQ52NUyY=</dsig:DigestValue>
+        <dsig:DigestValue>TT8K31odVAEM+Mu251mS3Ix+gxrHk3MUpkGX7T3K2/A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Database.dll" size="102400">
-      <assemblyIdentity name="Scada.Database" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.Database" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lA7jlaZKxgu0s7Q0mXg2HvnUCGdvr8JHBhtkO440HgE=</dsig:DigestValue>
+        <dsig:DigestValue>iKQbanhEg3VuBCZhHWXMo9zfus7/bRVTBne+/QMrK3w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.DBUtility.dll" size="167936">
-      <assemblyIdentity name="Scada.DBUtility" version="3.5.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.DBUtility.dll" size="221184">
+      <assemblyIdentity name="Scada.DBUtility" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yqjoyaCIQXlikGcbi9JT3oGGXsmyll9G/b2HWhuvn2Q=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.FlowGraphEngine.dll" size="1951744">
-      <assemblyIdentity name="Scada.FlowGraphEngine" version="0.0.0.0" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>prfrZSc9+sT8jCpvZZtHZqsUTyijrk/MRQjymITSjQ8=</dsig:DigestValue>
+        <dsig:DigestValue>RC40sEQbZ6+HjuKvV2GozZuxW2UpHxrI4Ktem/EtMN4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.IOStructure.dll" size="8192">
-      <assemblyIdentity name="Scada.IOStructure" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.IOStructure" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>G9C1207YgYdyt4tT7W8bPl/yqWlNUGkZksiEGrIoKS0=</dsig:DigestValue>
+        <dsig:DigestValue>IpRK4TwvyBsyNQKhrFxo8kw0w9C97MSvUBpyC4dLp0Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Logger.dll" size="12288">
-      <assemblyIdentity name="Scada.Logger" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.Logger" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>w8JVhyJKxTs3xdYxvUxk2aUJ+xyYFMPWq2X+JOuZ0DQ=</dsig:DigestValue>
+        <dsig:DigestValue>Azwlr8nMUP1SC43GigKFjlm/c7ELqzn0ZN4YLOnrC0Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.MakeAlarm.dll" size="9728">
-      <assemblyIdentity name="Scada.MakeAlarm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.MakeAlarm" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9WwY565BX+H6A/2C9NAZ79L5COARXZObGAh490sH940=</dsig:DigestValue>
+        <dsig:DigestValue>egtpDTt9p57tpzXPVHL0YHP2lvGW7ekBXkYUopBE6rs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Scada.Model.dll" size="61440">
-      <assemblyIdentity name="Scada.Model" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Scada.Model" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YAmOnlAi+r8hKXMu6xpfGwfwzUkadooVNa4w6wYdg+A=</dsig:DigestValue>
+        <dsig:DigestValue>ASOsmm25ccEKFBdg/DonfCCHZv19HAG0FD1Lz43+qp0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScadaCenterServer.exe" size="1290752">
-      <assemblyIdentity name="ScadaCenterServer" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScadaCenterServer.exe" size="1288704">
+      <assemblyIdentity name="ScadaCenterServer" version="1.1.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wz5ryxUVhN3uRbAXk1Brcire3TBgLwZaRCwRhgFasKk=</dsig:DigestValue>
+        <dsig:DigestValue>WY5HzRakf5x8wTDpmQCundVa2iuscWfj2xnyEu10nJA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="32392">
-      <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sybase.Data.AseClient.dll" size="184320">
+      <assemblyIdentity name="Sybase.Data.AseClient" version="1.1.327.0" publicKeyToken="26E0F1529304F4A7" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IPt0bQHcNVxdlk/EVgAlYjdDLtQjUdydHQTiomo7Q1E=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Svg.dll" size="554496">
-      <assemblyIdentity name="Svg" version="3.1.0.0" publicKeyToken="12A0BAC221EDEAE2" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZuHV0MXdAXnn56LJvkyZdXDV9UTfTDW+AKgGjJnYb/4=</dsig:DigestValue>
+        <dsig:DigestValue>Q84B2qYnXbEFvDsigkiFeHsO1GEG5c1nvBvj43MpjsY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -331,14 +295,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Temporal.DbAPI.dll" size="45056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Temporal.DbAPI.dll" size="44544">
       <assemblyIdentity name="Temporal.DbAPI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XqENNOLGeTt44Of9rPeOWK7ZbenQIpmwb593EQK5gdo=</dsig:DigestValue>
+        <dsig:DigestValue>QVo++afm6xafRHGjruHBPnL3kmFYMbA7zhNHoihF1IA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -350,43 +314,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ICPXFCEOZX3RyoOcsqWN/21WV9e7nsuoEVGlM5K7Peg=</dsig:DigestValue>
+        <dsig:DigestValue>JOBhQauu7R5FG0J5eVwWxzQ7vttA5EZMU9y0gtYgnQg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Temporal.Net.InfluxDb.dll" size="112128">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Temporal.Net.InfluxDb.dll" size="111616">
       <assemblyIdentity name="Temporal.Net.InfluxDb" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g1UibuigrhbBXBKpceIIZFvG39TxDG5lJ1N4t2b5qok=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebKit.Interop.dll" size="131072">
-      <assemblyIdentity name="WebKit.Interop" version="533.0.0.0" publicKeyToken="B967213F6D29A3BE" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9/OSZNbrOGp7LvzJoFWeTn50zjxGQNry1ZupDXtHBAU=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebKitBrowser.dll" size="96256">
-      <assemblyIdentity name="WebKitBrowser" version="0.5.0.0" publicKeyToken="B967213F6D29A3BE" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xEDg1cVDj7aCLJy1t6KU6sJzHYL8hd2OhFp7FfCVc/s=</dsig:DigestValue>
+        <dsig:DigestValue>DDBEF6dTokIJfUZ3k77mIwN1rrYChcGooP4qYD9ZJCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

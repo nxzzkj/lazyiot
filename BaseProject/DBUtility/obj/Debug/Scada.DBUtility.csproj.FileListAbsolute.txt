@@ -54,3 +54,17 @@ D:\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csproj.CoreComp
 D:\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csproj.CopyComplete
 D:\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.dll
 D:\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.pdb
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\Scada.DBUtility.dll
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\Scada.DBUtility.pdb
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\MySql.Data.dll
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\Newtonsoft.Json.dll
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\System.Data.SQLite.dll
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\bin\Debug\System.Data.SQLite.xml
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.IPAddressSelector.resources
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.ScadaFlowRes.resources
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csproj.GenerateResource.cache
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.dll
+D:\开源发布\LazyScadaCode\BaseProject\DBUtility\obj\Debug\Scada.DBUtility.pdb
