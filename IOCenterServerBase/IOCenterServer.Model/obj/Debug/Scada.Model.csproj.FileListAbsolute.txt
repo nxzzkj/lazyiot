@@ -25,15 +25,6 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Mod
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.csproj.CopyComplete
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.dll
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.pdb
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.Model.dll
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.Model.pdb
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.IOStructure.dll
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.IOStructure.pdb
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.csprojAssemblyReference.cache
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.csproj.CoreCompileInputs.cache
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.csproj.CopyComplete
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.dll
-D:\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Debug\Scada.Model.pdb
 D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.Model.dll
 D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.Model.pdb
 D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Debug\Scada.IOStructure.dll

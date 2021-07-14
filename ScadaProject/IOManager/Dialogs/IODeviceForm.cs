@@ -117,6 +117,8 @@ namespace IOManager.Dialogs
                     Device.IO_DEVICE_ADDRESS = this.txtAddress.Text.Trim();
                     Device.IO_SERVER_ID = Server.SERVER_ID;
                     Device.IO_COMM_ID = Communication.IO_COMM_ID;
+                    Device.IO_DEVICE_UPDATECYCLE = Convert.ToInt32(this.nd_updatecycle.Value);
+                    Device.IO_DEVICE_OVERTIME = Convert.ToInt32(this.nd_timeout.Value);
                     Device.IO_DEVICE_PARASTRING = DriverKernel.DeviceCtrl.GetUIParameter();
                       FormManager.InsertIODeviceNode(this.Server, this.Communication,this.Device);
                     this.DialogResult = DialogResult.OK;

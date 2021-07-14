@@ -39,10 +39,7 @@ namespace Scada.Kernel
         public bool ServerIsRun
         {
             get {
-                if (TaskCancel != null)
-                    return !TaskCancel.IsCancellationRequested;
-                else
-                    return false;
+                return IsSuspend;
 
             }
         }
@@ -206,8 +203,7 @@ namespace Scada.Kernel
             {
                 this.IsSuspend = true;
                 
-                if (TaskCancel != null)
-                    TaskCancel.Cancel();
+          
                 Close();
             }
             catch (Exception ex)
@@ -343,8 +339,7 @@ namespace Scada.Kernel
         /// 设备中的下置命令后的事件
         /// </summary>
         public event DeviceSendedEvent DeviceSended;
-        Task ServerTask = null;
-        CancellationTokenSource TaskCancel = null;
+    
         //发送下置命令,没有返回结构的值
         public  ScadaResult SendCommand(IO_SERVER server, IO_COMMUNICATION comm, IO_DEVICE device, IO_PARA para, string value)
         {
@@ -385,17 +380,7 @@ namespace Scada.Kernel
         {
             try
             {
-                TaskCancel = new CancellationTokenSource();
-                ServerTask = Task.Run(() =>
-                 {
-                     while (true)
-                     {
-                         if (TaskCancel.IsCancellationRequested == true)
-                         {
-                             break;
-                         }
-                     }
-                 }, TaskCancel.Token);
+                Start();
             }
             catch (Exception ex)
             {
@@ -411,12 +396,7 @@ namespace Scada.Kernel
             try
             {
 
-
-                TaskCancel.Cancel();
-                TaskCancel.Dispose();
-                TaskCancel = null;
-                ServerTask.Dispose();
-                ServerTask = null;
+ 
                 IsSuspend = true;
                 Stop();
             }

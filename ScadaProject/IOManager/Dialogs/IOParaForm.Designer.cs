@@ -872,7 +872,7 @@ namespace IOManager.Dialogs
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(655, 502);
+            this.tabPage2.Size = new System.Drawing.Size(754, 513);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "报警规则";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -893,7 +893,7 @@ namespace IOManager.Dialogs
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 217);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(649, 282);
+            this.groupBox8.Size = new System.Drawing.Size(748, 293);
             this.groupBox8.TabIndex = 8;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "报警前置条件";
@@ -903,7 +903,7 @@ namespace IOManager.Dialogs
             this.tbconValue.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.tbconValue.Location = new System.Drawing.Point(178, 78);
             this.tbconValue.Name = "tbconValue";
-            this.tbconValue.Size = new System.Drawing.Size(103, 21);
+            this.tbconValue.Size = new System.Drawing.Size(137, 21);
             this.tbconValue.TabIndex = 37;
             this.tbconValue.Text = "0";
             // 
@@ -956,7 +956,7 @@ namespace IOManager.Dialogs
             // 
             this.btconDel.Location = new System.Drawing.Point(178, 107);
             this.btconDel.Name = "btconDel";
-            this.btconDel.Size = new System.Drawing.Size(49, 23);
+            this.btconDel.Size = new System.Drawing.Size(58, 23);
             this.btconDel.TabIndex = 31;
             this.btconDel.Text = "<";
             this.btconDel.UseVisualStyleBackColor = true;
@@ -967,16 +967,16 @@ namespace IOManager.Dialogs
             this.listCons.Dock = System.Windows.Forms.DockStyle.Right;
             this.listCons.FormattingEnabled = true;
             this.listCons.ItemHeight = 12;
-            this.listCons.Location = new System.Drawing.Point(409, 17);
+            this.listCons.Location = new System.Drawing.Point(508, 17);
             this.listCons.Name = "listCons";
-            this.listCons.Size = new System.Drawing.Size(237, 262);
+            this.listCons.Size = new System.Drawing.Size(237, 273);
             this.listCons.TabIndex = 30;
             // 
             // btconAdd
             // 
-            this.btconAdd.Location = new System.Drawing.Point(233, 107);
+            this.btconAdd.Location = new System.Drawing.Point(255, 107);
             this.btconAdd.Name = "btconAdd";
-            this.btconAdd.Size = new System.Drawing.Size(48, 23);
+            this.btconAdd.Size = new System.Drawing.Size(60, 23);
             this.btconAdd.TabIndex = 29;
             this.btconAdd.Text = ">";
             this.btconAdd.UseVisualStyleBackColor = true;
@@ -992,7 +992,7 @@ namespace IOManager.Dialogs
             "<"});
             this.comconType.Location = new System.Drawing.Point(178, 52);
             this.comconType.Name = "comconType";
-            this.comconType.Size = new System.Drawing.Size(103, 20);
+            this.comconType.Size = new System.Drawing.Size(137, 20);
             this.comconType.TabIndex = 27;
             // 
             // listParas
@@ -1002,7 +1002,7 @@ namespace IOManager.Dialogs
             this.listParas.ItemHeight = 12;
             this.listParas.Location = new System.Drawing.Point(3, 17);
             this.listParas.Name = "listParas";
-            this.listParas.Size = new System.Drawing.Size(107, 262);
+            this.listParas.Size = new System.Drawing.Size(107, 273);
             this.listParas.TabIndex = 0;
             this.listParas.SelectedIndexChanged += new System.EventHandler(this.listParas_SelectedIndexChanged);
             // 
@@ -1027,7 +1027,7 @@ namespace IOManager.Dialogs
             this.groupalarm.Enabled = false;
             this.groupalarm.Location = new System.Drawing.Point(3, 41);
             this.groupalarm.Name = "groupalarm";
-            this.groupalarm.Size = new System.Drawing.Size(649, 176);
+            this.groupalarm.Size = new System.Drawing.Size(748, 176);
             this.groupalarm.TabIndex = 5;
             this.groupalarm.TabStop = false;
             // 
@@ -1228,7 +1228,7 @@ namespace IOManager.Dialogs
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(649, 38);
+            this.groupBox7.Size = new System.Drawing.Size(748, 38);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             // 
@@ -1248,7 +1248,7 @@ namespace IOManager.Dialogs
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(655, 502);
+            this.tabPage3.Size = new System.Drawing.Size(754, 513);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "驱动参数";
             this.tabPage3.UseVisualStyleBackColor = true;

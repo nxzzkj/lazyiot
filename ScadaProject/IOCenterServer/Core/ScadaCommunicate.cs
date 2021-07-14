@@ -2059,7 +2059,7 @@ namespace ScadaCenterServer.Core
 
                                 try
                                 {
-
+                                    paraAlarm.DEVICE_NAME = device.IO_DEVICE_NAME;
                                     await IOCenterManager.InfluxDbManager.DbWrite_AlarmPoints(server.SERVER_ID, communication.IO_COMM_ID, paraAlarm, DateTime.Now);
                                     IOCenterManager.TCPServer.ServerForm.AddReeiveAlarm(endPoint, server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, paraAlarm, true);
 

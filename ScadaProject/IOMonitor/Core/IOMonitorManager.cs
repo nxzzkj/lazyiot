@@ -632,9 +632,12 @@ namespace IOMonitor.Core
                         IO_DEVICE newDevice = device.Copy();
                         try
                         {
-                            //上传实时数据,
-                           bool res= RealDataDBUtility.UploadReal(server, comm, device);
+                            Task.Run(() =>
+                            {
+                                //上传实时数据,
+                                bool res= RealDataDBUtility.UploadReal(server, comm, device);
                             MonitorFormManager.ShowMonitorUploadListView(server, comm, device, res?"上传成功":"上传失败");
+                            });
                         }
                         catch (Exception emx)
                         {
@@ -647,7 +650,30 @@ namespace IOMonitor.Core
                             OnMonitorReceive(server, comm, newDevice, receivedatas);
                             
                         }
-                     
+
+                        #endregion
+                        #region 计算报警并上传
+                        try
+                        {
+                            Task.Run(() =>
+                            {
+                                //计算并处理报警
+                                List<IO_PARAALARM> res = RealDataDBUtility.UploadAlarm(server, comm, device);
+
+                                for (int i = 0; i < res.Count; i++)
+                                {
+                                    MonitorFormManager.MonitorIODataAlarmShowView(server, comm, device, res[i], "上传成功");
+
+                                }
+
+
+                            });
+                        }
+                        catch (Exception emx)
+                        {
+                            ThrowExceptionToMain(emx);
+
+                        }
                         #endregion
                     }
 

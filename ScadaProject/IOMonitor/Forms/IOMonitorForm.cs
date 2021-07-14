@@ -1,5 +1,5 @@
 ﻿using Scada.Model;
- 
+using Scada.Controls.Controls;
 using Scada.Controls;
 using System;
 using System.Collections.Generic;
@@ -84,10 +84,9 @@ namespace IOMonitor.Forms
             {
 
 
-                if (Server.SERVER_ID == server.SERVER_ID && Communication.IO_COMM_ID == comm.IO_COMM_ID && Device.IO_DEVICE_ID == device.IO_DEVICE_ID)
-                {
+              
                     ChangedBinds(server, comm, device.Copy());
-                }
+               
             }
             catch (Exception ex)
             {
@@ -257,7 +256,7 @@ namespace IOMonitor.Forms
                 return;
             if (uccbRealAlarm.Checked)
             {
-                if (this.IsHandleCreated&& listViewAlarm.InvokeRequired)
+                if (listViewAlarm.IsHandleCreated)
                 {
                     listViewAlarm.BeginInvoke(new EventHandler(delegate
                     {

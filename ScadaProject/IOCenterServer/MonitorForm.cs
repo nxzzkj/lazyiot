@@ -103,7 +103,7 @@ namespace ScadaCenterServer
             {
                 lvi.SubItems.Add("入库失败");
             }
-            if (this.IsHandleCreated&& listViewReceive.InvokeRequired)
+            if (listViewReceive.IsHandleCreated)
             {
                 listViewReceive.BeginInvoke(new EventHandler(delegate
             {
@@ -157,7 +157,7 @@ namespace ScadaCenterServer
             lvi.SubItems.Add("入库成功");
             else
                 lvi.SubItems.Add("入库失败");
-            if (this.IsHandleCreated&& listViewAlarm.InvokeRequired)
+            if (listViewAlarm.IsHandleCreated)
             {
                 listViewAlarm.BeginInvoke(new EventHandler(delegate
             {
@@ -186,7 +186,7 @@ namespace ScadaCenterServer
             if (this.ucLog.Checked)
             {
 
-                if (this.IsHandleCreated&& listViewReport.InvokeRequired)
+                if (listViewReport.IsHandleCreated)
                 {
                     listViewReport.BeginInvoke(new EventHandler(delegate
                 {
@@ -221,7 +221,7 @@ namespace ScadaCenterServer
                 return;
             if (ucbSendCommand.Checked)
             {
-                if (this.IsHandleCreated&& listViewSendCommand.InvokeRequired)
+                if (listViewSendCommand.IsHandleCreated)
                 {
                     listViewSendCommand.BeginInvoke(new EventHandler(delegate
                 {

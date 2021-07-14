@@ -15,6 +15,7 @@ using IOMonitor.Forms;
 using System.Windows.Threading;
 using Scada.Controls.Forms;
 using System.Diagnostics;
+using Scada.Model;
 
 namespace IOMonitor.Core
 {
@@ -318,10 +319,9 @@ namespace IOMonitor.Core
             {
                 mediator.IOMonitorForm.BeginInvoke(new EventHandler(delegate
             {
-                if (mediator.IOMonitorForm.Device != null && mediator.IOMonitorForm.Device.IO_COMM_ID == device.IO_COMM_ID && mediator.IOMonitorForm.Device.IO_DEVICE_ID == device.IO_DEVICE_ID && mediator.IOMonitorForm.Device.IO_SERVER_ID == device.IO_SERVER_ID)
-                {
+               
                     mediator.IOMonitorForm.SetIOValue(server, comm, device);
-                }
+              
 
                 //清空接收的数据
                 device.ClearCollectDatas();
@@ -343,6 +343,24 @@ namespace IOMonitor.Core
                     mediator.IOMonitorForm.ShowMonitorUploadListView(server, communication, device, uploadresult);
 
               
+            }
+        }
+        /// <summary>
+        /// 显示更新报警界面的数据
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="comm"></param>
+        /// <param name="device"></param>
+        public static void MonitorIODataAlarmShowView(Scada.Model.IO_SERVER server, Scada.Model.IO_COMMUNICATION comm, Scada.Model.IO_DEVICE device, IO_PARAALARM alarm, string uploadresult)
+        {
+            if (mediator.IOMonitorForm.IsHandleCreated)
+            {
+                mediator.IOMonitorForm.BeginInvoke(new EventHandler(delegate
+                {
+                    
+                        mediator.IOMonitorForm.InsertMonitorAlarmListView(server, comm, device, alarm, uploadresult);
+                  
+                }));
             }
         }
         #endregion

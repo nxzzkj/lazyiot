@@ -14,14 +14,10 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\BaseProject\Common\bin\Debug\Scada.Co
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.dll
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.pdb
-D:\LazyScadaCode\BaseProject\Common\bin\Debug\Scada.Common.dll
-D:\LazyScadaCode\BaseProject\Common\bin\Debug\Scada.Common.pdb
-D:\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csproj.CoreCompileInputs.cache
-D:\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.dll
-D:\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.pdb
-D:\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csprojAssemblyReference.cache
+E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csprojAssemblyReference.cache
 D:\开源发布\LazyScadaCode\BaseProject\Common\bin\Debug\Scada.Common.dll
 D:\开源发布\LazyScadaCode\BaseProject\Common\bin\Debug\Scada.Common.pdb
+D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csprojAssemblyReference.cache
 D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.csproj.CoreCompileInputs.cache
 D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.dll
 D:\开源发布\LazyScadaCode\BaseProject\Common\obj\Debug\Scada.Common.pdb

@@ -395,7 +395,7 @@ namespace MQTTnet
                             {
                                 isValidCleint = true;
                                 IODevices[i].Tag = clientId.Trim();//标记对应的客户端ID号
-                                break;
+                           
                             }
 
                         }
@@ -417,7 +417,7 @@ namespace MQTTnet
 
 
             _mqttServer = new MqttFactory().CreateMqttServer();
-        
+
 
             //开始连接
             _mqttServer.ClientConnected += (sender, args) =>
@@ -426,7 +426,7 @@ namespace MQTTnet
                 if (args.ClientId == null || args.ClientId == "")
                     return;
 
-               
+
                 IO_DEVICE device = this.IODevices.Find(x => x.Tag.ToString().Trim() == args.ClientId.Trim());
                 if (device == null)
                 {
@@ -448,143 +448,98 @@ namespace MQTTnet
                 if (device == null)
                     return;
 
-           
+
 
                 ParaPack commPack = new ParaPack(this.IOCommunication.IO_COMM_PARASTRING);
                 ParaPack devicePack = new ParaPack(device.IO_DEVICE_PARASTRING);
-                if (commPack.GetValue("数据格式") == "江苏协昌环保股份有限公司")
+                #region 通用MQTT解析
                 {
-                    #region 江苏协昌环保解析
+
+                    //客户端连接上后发布订阅数据
+                    List<TopicFilter> topicFilters = new List<TopicFilter>();
+                    device.IO_DEVICE_STATUS = 1;
+                    this.DeviceStatus(this.IOServer, IOCommunication, device, null, "1");
+
+                    string clientId = devicePack.GetValue("MQTT连接ID号").Trim();    // 将字符串转换为字符数组
+                    device.Tag = clientId;
+                    if (clientId.Trim() == args.ClientId.Trim())
                     {
 
-                        //客户端连接上后发布订阅数据
-                        List<TopicFilter> topicFilters = new List<TopicFilter>();
-                        device.IO_DEVICE_STATUS = 1;
-                        this.DeviceStatus(this.IOServer, IOCommunication, device, null, "1");
-
-                        string clientId = devicePack.GetValue("MQTT连接ID号").Trim();    // 将字符串转换为字符数组
-                        device.Tag = clientId;
-                        if (clientId.Trim() == args.ClientId.Trim())
+                        TopicFilter topicFilter = new TopicFilter(devicePack.GetValue("数据订阅主题").Trim(), MessageQulity);
+                        topicFilters.Add(topicFilter);
+                        try
                         {
-                            TopicFilter topicFilter = new TopicFilter(devicePack.GetValue("订阅主题").Trim(), MessageQulity);
-                            topicFilters.Add(topicFilter);
-
-                            try
+                            Task.Run(async () =>
                             {
-                                Task.Run(async () =>
-                                {
 
-                                    await _mqttServer.SubscribeAsync(args.ClientId.Trim(), topicFilters);
-                                });
-
-                            }
-                            catch (Exception)
-                            {
-                                this.DeviceException("ERROR=MQTTNet_20006,发布订阅主题失败 ");
-                            }
+                                await _mqttServer.SubscribeAsync(args.ClientId.Trim(), topicFilters);
+                            });
 
                         }
-                        else
+                        catch (Exception)
                         {
-                            this.DeviceException("ERROR=MQTTNet_20006,MQTT ID与设备配置ID不匹配 ");
+                            this.DeviceException("ERROR=MQTTNet_20006,发布订阅主题失败 ");
                         }
-
 
                     }
-                    #endregion
-                }
-                else if (commPack.GetValue("数据格式") == "通用MQTT解析")
-                {
-                    #region 通用MQTT解析
+                    else
                     {
-
-                        //客户端连接上后发布订阅数据
-                        List<TopicFilter> topicFilters = new List<TopicFilter>();
-                        device.IO_DEVICE_STATUS = 1;
-                        this.DeviceStatus(this.IOServer, IOCommunication, device, null, "1");
-
-                        string clientId = devicePack.GetValue("MQTT连接ID号").Trim();    // 将字符串转换为字符数组
-                        device.Tag = clientId;
-                        if (clientId.Trim() == args.ClientId.Trim())
+                        this.DeviceException("ERROR=MQTTNet_20006,MQTT ID与设备配置ID不匹配 ");
+                    }
+                    //定时向客户端发布一个读取数据的订阅
+                    if (commPack.GetValue("接收方式") == "主动")
+                    {
+                        MQTTTimer cleintMqtt = new MQTTTimer()
                         {
+                            ClientID = args.ClientId
+                        };
+                        MqttClientTimes.Add(cleintMqtt);
 
-                            TopicFilter topicFilter = new TopicFilter(devicePack.GetValue("数据订阅主题").Trim(), MessageQulity);
-                            topicFilters.Add(topicFilter);
-                            try
+                        cleintMqtt.Timer = new Timer(delegate
+                        {
+                            if (!cleintMqtt.IsStop)
                             {
-                                Task.Run(async () =>
+                                try
                                 {
+                                    _mqttServer.PublishAsync(
+                                      new MqttApplicationMessage()
+                                      {
+                                          QualityOfServiceLevel = MessageQulity,
+                                          Retain = false,
+                                          Topic = devicePack.GetValue("主动请求主题").Trim(),
+                                          Payload = Encoding.UTF8.GetBytes("{\"uid\":\"" + devicePack.GetValue("设备ID编码").Trim() + "\",\"updatecycle\":\"" + device.IO_DEVICE_UPDATECYCLE + "\",\"topic\":\"" + devicePack.GetValue("数据订阅主题").Trim() + "\"}")
 
-                                    await _mqttServer.SubscribeAsync(args.ClientId.Trim(), topicFilters);
-                                });
+                                      }
 
-                            }
-                            catch (Exception)
-                            {
-                                this.DeviceException("ERROR=MQTTNet_20006,发布订阅主题失败 ");
-                            }
+                                      );
+                                    ///服务端向客户端发送一个服务器端循环查询数据的周期
 
-                        }
-                        else
-                        {
-                            this.DeviceException("ERROR=MQTTNet_20006,MQTT ID与设备配置ID不匹配 ");
-                        }
-                        //定时向客户端发布一个读取数据的订阅
-                        if (commPack.GetValue("接收方式") == "主动")
-                        {
-                            MQTTTimer cleintMqtt = new MQTTTimer()
-                            {
-                                ClientID = args.ClientId
-                            };
-                            MqttClientTimes.Add(cleintMqtt);
+                                    _mqttServer.PublishAsync(
+                                  new MqttApplicationMessage()
+                                  {
+                                      QualityOfServiceLevel = MessageQulity,
+                                      Retain = false,
+                                      Topic = devicePack.GetValue("循环周期主题").Trim(),
+                                      Payload = Encoding.UTF8.GetBytes("{\"uid\":\"" + devicePack.GetValue("设备ID编码").Trim() + "\",\"updatecycle\":\"" + device.IO_DEVICE_UPDATECYCLE + "\",\"topic\":\"" + devicePack.GetValue("数据订阅主题").Trim() + "\"}")
 
-                            cleintMqtt.Timer = new Timer(delegate
-                            {
-                                if (!cleintMqtt.IsStop)
-                                {
-                                    try
-                                    {
-                                        _mqttServer.PublishAsync(
-                                          new MqttApplicationMessage()
-                                          {
-                                              QualityOfServiceLevel = MessageQulity,
-                                              Retain = false,
-                                              Topic = devicePack.GetValue("主动请求主题").Trim(),
-                                              Payload = Encoding.UTF8.GetBytes("{\"uid\":\"" + devicePack.GetValue("设备ID编码").Trim() + "\",\"updatecycle\":\"" + device.IO_DEVICE_UPDATECYCLE + "\",\"topic\":\"" + devicePack.GetValue("数据订阅主题").Trim() + "\"}")
+                                  }
 
-                                          }
-
-                                          );
-                                            ///服务端向客户端发送一个服务器端循环查询数据的周期
-
-                                            _mqttServer.PublishAsync(
-                                          new MqttApplicationMessage()
-                                          {
-                                              QualityOfServiceLevel = MessageQulity,
-                                              Retain = false,
-                                              Topic = devicePack.GetValue("循环周期主题").Trim(),
-                                              Payload = Encoding.UTF8.GetBytes("{\"uid\":\"" + devicePack.GetValue("设备ID编码").Trim() + "\",\"updatecycle\":\"" + device.IO_DEVICE_UPDATECYCLE + "\",\"topic\":\"" + devicePack.GetValue("数据订阅主题").Trim() + "\"}")
-
-                                          }
-
-                                          );
+                                  );
 
 
 
-                                    }
-                                    catch (Exception)
-                                    {
-                                        this.DeviceException("ERROR=MQTTNet_20006,发布订阅主题失败 ");
-                                    }
                                 }
+                                catch (Exception)
+                                {
+                                    this.DeviceException("ERROR=MQTTNet_20006,发布订阅主题失败 ");
+                                }
+                            }
 
-                            }, args, 1000, device.IO_DEVICE_UPDATECYCLE * 1000);
+                        }, args, 1000, device.IO_DEVICE_UPDATECYCLE * 1000);
 
-                        }
                     }
-                    #endregion
                 }
-
+                #endregion
             };
             ///断开连接
             _mqttServer.ClientDisconnected += (sender, args) =>
@@ -599,8 +554,6 @@ namespace MQTTnet
                         {
                             device.IO_DEVICE_STATUS = 0;
                             this.DeviceStatus(this.IOServer, IOCommunication, device, null, "0");
-
-
                         }
 
                     }
@@ -618,8 +571,8 @@ namespace MQTTnet
 
             _mqttServer.ApplicationMessageReceived += (sender, args) =>
             {
-                if(args.ClientId==null||args.ClientId.Trim()=="")
-                return;
+                if (args.ClientId == null || args.ClientId.Trim() == "")
+                    return;
 
                 if (args.ApplicationMessage.Payload == null || args.ApplicationMessage.Payload.Length <= 0)
                 {
@@ -633,10 +586,10 @@ namespace MQTTnet
                 {
                     Task.Run(() =>
                     {
-             
+
                         string cleintId = args.ClientId.Trim();
                         //将接收到的数据发送到实际的对应的解析数据库中
-              
+
                         List<IO_DEVICE> selects = this.IODevices.FindAll(x => x.Tag.ToString().Trim() == args.ClientId.Trim());
                         if (selects.Count <= 0)
                             return;
@@ -647,47 +600,25 @@ namespace MQTTnet
                         for (int i = 0; i < selects.Count; i++)
                         {
                             ParaPack selePack = new ParaPack(selects[i].IO_DEVICE_PARASTRING);
-                            if (commPack.GetValue("数据格式") == "江苏协昌环保股份有限公司")
+
+                            #region
+                            CommonMqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<CommonMqttJsonObject>(strs);
+                            if (mqttJsonObject == null || mqttJsonObject.paras == null || mqttJsonObject.paras.Count <= 0)
                             {
-                                #region
-                                MqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<MqttJsonObject>(strs);
-                                if (mqttJsonObject == null || mqttJsonObject.paras == null || mqttJsonObject.paras.Count <= 0)
-                                {
 
-                                    this.DeviceException("接收数据对象转换失败了,没有数据" + strs.Count());
-                                    this.DeviceException(strs);
-                                    continue;
+                                this.DeviceException("接收数据对象转换失败了,没有数据" + strs.Count());
+                                this.DeviceException(strs);
+                                continue;
 
-                                }
-                                string selectUid = selePack.GetValue("设备识别号");
-                                if (selectUid.Trim() == mqttJsonObject.device.uid.Trim())
-                                {
-                                    device = selects[i];
-                                    break;
-                                }
-                                #endregion
                             }
-                            else if (commPack.GetValue("数据格式") == "通用MQTT解析")
+
+                            string selectUid = selePack.GetValue("设备ID编码");
+                            if (selectUid.Trim() == mqttJsonObject.device.uid.Trim())
                             {
-                                #region
-                                CommonMqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<CommonMqttJsonObject>(strs);
-                                if (mqttJsonObject == null || mqttJsonObject.paras == null || mqttJsonObject.paras.Count <= 0)
-                                {
-
-                                    this.DeviceException("接收数据对象转换失败了,没有数据" + strs.Count());
-                                    this.DeviceException(strs);
-                                    continue;
-
-                                }
-
-                                string selectUid = selePack.GetValue("设备ID编码");
-                                if (selectUid.Trim() == mqttJsonObject.device.uid.Trim())
-                                {
-                                    device = selects[i];
-                                    break;
-                                }
-                                #endregion
+                                device = selects[i];
+                                break;
                             }
+                            #endregion
 
                         }
                         if (device == null)
@@ -696,29 +627,15 @@ namespace MQTTnet
                         }
                         device.IO_DEVICE_STATUS = 1;
                         ParaPack paraPack = new ParaPack(device.IO_DEVICE_PARASTRING);
-                        if (commPack.GetValue("数据格式") == "江苏协昌环保股份有限公司")
+                        #region
+                        string deviceUid = paraPack.GetValue("设备ID编码");
+                        if (!string.IsNullOrEmpty(device.IO_DEVICE_PARASTRING) && args.ApplicationMessage.Topic.Trim() == paraPack.GetValue("数据订阅主题").Trim())
                         {
-                            #region
-                            string deviceUid = paraPack.GetValue("设备识别号");
-                            if (!string.IsNullOrEmpty(device.IO_DEVICE_PARASTRING) && args.ApplicationMessage.Topic.Trim() == paraPack.GetValue("订阅主题").Trim())
-                            {
-                                MqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<MqttJsonObject>(strs);
-                                this.ReceiveData(this.IOServer, IOCommunication, device, args.ApplicationMessage.Payload, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), mqttJsonObject);
-                            }
+                            CommonMqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<CommonMqttJsonObject>(strs);
+                            this.ReceiveData(this.IOServer, IOCommunication, device, args.ApplicationMessage.Payload, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), mqttJsonObject);
+                        }
+                        #endregion
 
-                            #endregion
-                        }
-                        else if (commPack.GetValue("数据格式") == "通用MQTT解析")
-                        {
-                            #region
-                            string deviceUid = paraPack.GetValue("设备ID编码");
-                            if (!string.IsNullOrEmpty(device.IO_DEVICE_PARASTRING) && args.ApplicationMessage.Topic.Trim() == paraPack.GetValue("数据订阅主题").Trim())
-                            {
-                                CommonMqttJsonObject mqttJsonObject = ScadaHexByteOperator.JsonToObject<CommonMqttJsonObject>(strs);
-                                this.ReceiveData(this.IOServer, IOCommunication, device, args.ApplicationMessage.Payload, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), mqttJsonObject);
-                            }
-                            #endregion
-                        }
 
                     });
                 }
@@ -727,7 +644,7 @@ namespace MQTTnet
                     return;
                 }
 
-            
+
             };
             ///订阅主题
 

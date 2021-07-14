@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DF8D66F-3108-45D6-BFEE-B5BD20ED46FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MQTTnet</RootNamespace>
+    <AssemblyName>MQTTnet</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Publish\IOStation\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\IMqttChannelAdapter.cs" />
+    <Compile Include="Adapter\IMqttServerAdapter.cs" />
+    <Compile Include="Adapter\MqttChannelAdapter.cs" />
+    <Compile Include="Adapter\MqttConnectingFailedException.cs" />
+    <Compile Include="Adapter\MqttServerAdapterClientAcceptedEventArgs.cs" />
+    <Compile Include="Adapter\ReceivedMqttPacket.cs" />
+    <Compile Include="ApplicationMessagePublisherExtensions.cs" />
+    <Compile Include="Channel\IMqttChannel.cs" />
+    <Compile Include="Client\IMqttClient.cs" />
+    <Compile Include="Client\IMqttClientAdapterFactory.cs" />
+    <Compile Include="Client\IMqttClientChannelOptions.cs" />
+    <Compile Include="Client\IMqttClientCredentials.cs" />
+    <Compile Include="Client\IMqttClientFactory.cs" />
+    <Compile Include="Client\IMqttClientOptions.cs" />
+    <Compile Include="Client\MqttClient.cs" />
+    <Compile Include="Client\MqttClientConnectedEventArgs.cs" />
+    <Compile Include="Client\MqttClientConnectResult.cs" />
+    <Compile Include="Client\MqttClientCredentials.cs" />
+    <Compile Include="Client\MqttClientDisconnectedEventArgs.cs" />
+    <Compile Include="Client\MqttClientExtensions.cs" />
+    <Compile Include="Client\MqttClientOptions.cs" />
+    <Compile Include="Client\MqttClientOptionsBuilder.cs" />
+    <Compile Include="Client\MqttClientOptionsBuilderTlsParameters.cs" />
+    <Compile Include="Client\MqttClientTcpOptions.cs" />
+    <Compile Include="Client\MqttClientTcpOptionsExtensions.cs" />
+    <Compile Include="Client\MqttClientTlsOptions.cs" />
+    <Compile Include="Client\MqttClientWebSocketOptions.cs" />
+    <Compile Include="Client\MqttClientWebSocketProxyOptions.cs" />
+    <Compile Include="Client\MqttPacketDispatcher.cs" />
+    <Compile Include="Client\MqttPacketIdentifierProvider.cs" />
+    <Compile Include="Client\MqttSubscribeResult.cs" />
+    <Compile Include="Diagnostics\IMqttNetChildLogger.cs" />
+    <Compile Include="Diagnostics\IMqttNetLogger.cs" />
+    <Compile Include="Diagnostics\MqttNetChildLogger.cs" />
+    <Compile Include="Diagnostics\MqttNetGlobalLogger.cs" />
+    <Compile Include="Diagnostics\MqttNetLogger.cs" />
+    <Compile Include="Diagnostics\MqttNetLogLevel.cs" />
+    <Compile Include="Diagnostics\MqttNetLogMessage.cs" />
+    <Compile Include="Diagnostics\MqttNetLogMessagePublishedEventArgs.cs" />
+    <Compile Include="Exceptions\MqttCommunicationClosedGracefullyException.cs" />
+    <Compile Include="Exceptions\MqttCommunicationException.cs" />
+    <Compile Include="Exceptions\MqttCommunicationTimedOutException.cs" />
+    <Compile Include="Exceptions\MqttProtocolViolationException.cs" />
+    <Compile Include="IApplicationMessagePublisher.cs" />
+    <Compile Include="IApplicationMessageReceiver.cs" />
+    <Compile Include="Implementations\MqttClientAdapterFactory.cs" />
+    <Compile Include="Implementations\MqttTcpChannel.cs" />
+    <Compile Include="Implementations\MqttTcpChannel.Uwp.cs" />
+    <Compile Include="Implementations\MqttTcpServerAdapter.cs" />
+    <Compile Include="Implementations\MqttTcpServerAdapter.Uwp.cs" />
+    <Compile Include="Implementations\MqttTcpServerListener.cs" />
+    <Compile Include="Implementations\MqttWebSocketChannel.cs" />
+    <Compile Include="Internal\AsyncAutoResetEvent.cs" />
+    <Compile Include="Internal\AsyncLock.cs" />
+    <Compile Include="Internal\BlockingQueue.cs" />
+    <Compile Include="Internal\ExceptionHelper.cs" />
+    <Compile Include="Internal\MqttApplicationMessageExtensions.cs" />
+    <Compile Include="Internal\TaskExtensions.cs" />
+    <Compile Include="Internal\TestMqttChannel.cs" />
+    <Compile Include="MqttApplicationMessage.cs" />
+    <Compile Include="MqttApplicationMessageBuilder.cs" />
+    <Compile Include="MqttApplicationMessageExtensions.cs" />
+    <Compile Include="MqttApplicationMessageReceivedEventArgs.cs" />
+    <Compile Include="MqttFactory.cs" />
+    <Compile Include="Packets\IMqttPacketWithIdentifier.cs" />
+    <Compile Include="Packets\MqttBasePacket.cs" />
+    <Compile Include="Packets\MqttBasePublishPacket.cs" />
+    <Compile Include="Packets\MqttConnAckPacket.cs" />
+    <Compile Include="Packets\MqttConnectPacket.cs" />
+    <Compile Include="Packets\MqttDisconnectPacket.cs" />
+    <Compile Include="Packets\MqttPingReqPacket.cs" />
+    <Compile Include="Packets\MqttPingRespPacket.cs" />
+    <Compile Include="Packets\MqttPubAckPacket.cs" />
+    <Compile Include="Packets\MqttPubCompPacket.cs" />
+    <Compile Include="Packets\MqttPublishPacket.cs" />
+    <Compile Include="Packets\MqttPubRecPacket.cs" />
+    <Compile Include="Packets\MqttPubRelPacket.cs" />
+    <Compile Include="Packets\MqttSubAckPacket.cs" />
+    <Compile Include="Packets\MqttSubscribePacket.cs" />
+    <Compile Include="Packets\MqttUnsubAckPacket.cs" />
+    <Compile Include="Packets\MqttUnsubscribe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\MqttConnectReturnCode.cs" />
+    <Compile Include="Protocol\MqttControlPacketType.cs" />
+    <Compile Include="Protocol\MqttQualityOfServiceLevel.cs" />
+    <Compile Include="Protocol\MqttSubscribeReturnCode.cs" />
+    <Compile Include="Serializer\Extensions.cs" />
+    <Compile Include="Serializer\IMqttPacketSerializer.cs" />
+    <Compile Include="Serializer\MqttFixedHeader.cs" />
+    <Compile Include="Serializer\MqttPacketBodyReader.cs" />
+    <Compile Include="Serializer\MqttPacketReader.cs" />
+    <Compile Include="Serializer\MqttPacketSerializer.cs" />
+    <Compile Include="Serializer\MqttPacketWriter.cs" />
+    <Compile Include="Serializer\MqttProtocolVersion.cs" />
+    <Compile Include="Server\CheckSubscriptionsResult.cs" />
+    <Compile Include="Server\IMqttClientSession.cs" />
+    <Compile Include="Server\IMqttClientSessionStatus.cs" />
+    <Compile Include="Server\IMqttServer.cs" />
+    <Compile Include="Server\IMqttServerFactory.cs" />
+    <Compile Include="Server\IMqttServerOptions.cs" />
+    <Compile Include="Server\IMqttServerStorage.cs" />
+    <Compile Include="Server\MqttApplicationMessageInterceptorContext.cs" />
+    <Compile Include="Server\MqttClientConnectedEventArgs.cs" />
+    <Compile Include="Server\MqttClientDisconnectedEventArgs.cs" />
+    <Compile Include="Server\MqttClientDisconnectType.cs" />
+    <Compile Include="Server\MqttClientKeepAliveMonitor.cs" />
+    <Compile Include="Server\MqttClientMessageQueueInterceptorContext.cs" />
+    <Compile Include="Server\MqttClientPendingPacketsQueue.cs" />
+    <Compile Include="Server\MqttClientSession.cs" />
+    <Compile Include="Server\MqttClientSessionsManager.cs" />
+    <Compile Include="Server\MqttClientSessionStatus.cs" />
+    <Compile Include="Server\MqttClientSubscribedTopicEventArgs.cs" />
+    <Compile Include="Server\MqttClientSubscribeResult.cs" />
+    <Compile Include="Server\MqttClientSubscriptionsManager.cs" />
+    <Compile Include="Server\MqttClientUnSubscribedTopicEventArgs.cs" />
+    <Compile Include="Server\MqttConnectionValidatorContext.cs" />
+    <Compile Include="Server\MqttEnqueuedApplicationMessage.cs" />
+    <Compile Include="Server\MqttPendingMessagesOverflowStrategy.cs" />
+    <Compile Include="Server\MqttRetainedMessagesManager.cs" />
+    <Compile Include="Server\MqttServer.cs" />
+    <Compile Include="Server\MqttServerEventDispatcher.cs" />
+    <Compile Include="Server\MqttServerOptions.cs" />
+    <Compile Include="Server\MqttServerOptionsBuilder.cs" />
+    <Compile Include="Server\MqttServerTcpEndpointBaseOptions.cs" />
+    <Compile Include="Server\MqttServerTcpEndpointOptions.cs" />
+    <Compile Include="Server\MqttServerTlsTcpEndpointOptions.cs" />
+    <Compile Include="Server\MqttSubscribeResult.cs" />
+    <Compile Include="Server\MqttSubscriptionInterceptorContext.cs" />
+    <Compile Include="Server\MqttTopicFilterComparer.cs" />
+    <Compile Include="Server\PrepareClientSessionResult.cs" />
+    <Compile Include="TopicFilter.cs" />
+    <Compile Include="TopicFilterBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

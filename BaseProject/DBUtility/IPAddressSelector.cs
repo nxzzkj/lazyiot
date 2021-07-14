@@ -59,6 +59,7 @@ namespace Scada.DBUtility
                 MessageBox.Show("请选择合适的网络");
                 return;
             }
+            AddressIP = cbIPAddress.SelectedItem.ToString();
             this.DialogResult = DialogResult.OK;
         }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Scada.DBUtility;
 using Scada.Model;
+using Scada.MakeAlarm;
 
 namespace IOMonitor.Core
 {
@@ -97,9 +98,50 @@ namespace IOMonitor.Core
         /// <param name="comm"></param>
         /// <param name="device"></param>
         /// <returns></returns>
-        public static bool  UploadAlarm(IO_SERVER server, IO_COMMUNICATION comm, IO_DEVICE device)
+        public static List<IO_PARAALARM> UploadAlarm(IO_SERVER server, IO_COMMUNICATION comm, IO_DEVICE device)
         {
-            return false;
+            List<IO_PARAALARM> alarms = new List<IO_PARAALARM>();
+
+            IODeviceParaMaker paraMaker = new IODeviceParaMaker();
+
+            for (int i = 0; i < device.IOParas.Count; i++)
+            {
+                try
+                {
+
+                    IO_PARAALARM alarm = paraMaker.MakeAlarm(device.IOParas, device.IOParas[i], device.IOParas[i].IORealData, device.IO_DEVICE_LABLE);
+                    if (alarm != null)
+                    {
+                        byte[] simuBytes = TcpData.StaticStringToTcpByte(alarm.GetCommandString(), Scada.AsyncNetTcp.ScadaTcpOperator.报警值);
+
+                        try
+                        {
+                            if (IOMonitorManager.TcpClient != null && IOMonitorManager.TcpClient.IsClientConnected)
+                            {
+                                IOMonitorManager.TcpClient.Send(new ArraySegment<byte>(simuBytes));
+                                alarms.Add(alarm);
+                            }
+                           
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            //写入错误日志，并将错误日志返回的日志窗体
+                            MonitorFormManager.DisplyException(ex);
+                        }
+                    }
+                }
+                catch (Exception emx)
+                {
+                    continue;
+                }
+
+            }
+
+
+
+            return alarms;
         }
     }
 
