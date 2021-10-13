@@ -13,10 +13,3 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOS
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.dll
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.pdb
-E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.dll
-D:\开源发布\LazyScadaCode\DriverBase\IOData\bin\Debug\Scada.IOStructure.pdb
-D:\开源发布\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.csproj.CoreCompileInputs.cache
-D:\开源发布\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.dll
-D:\开源发布\LazyScadaCode\DriverBase\IOData\obj\Debug\Scada.IOStructure.pdb

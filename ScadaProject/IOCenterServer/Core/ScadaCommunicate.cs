@@ -36,8 +36,101 @@ namespace ScadaCenterServer.Core
         public TcpServerStatus TcpServerStatus = TcpServerStatus.停止;
         public   AsyncTcpListener Server = null;
         public   MonitorForm ServerForm = null;
-     
 
+        public  ScadaCommunicate()
+        {
+            //数据读写缓存
+            RealCache = new ReceiveRealCache();
+            ///批量写入实时数据库每次最多3000条
+            RealCache.InsertInfluxdb = (List<ReceiveCacheObject> result) =>
+            {
+                try
+                {
+                    //定时从缓存区上传数据
+                    var analysisTask = Task.Run(async () =>
+                    {
+                        ///批量执行influxdb的写入，一次写入1000条数据
+                        List<IO_DEVICE> devices = new List<IO_DEVICE>();
+                        result.ForEach(delegate (ReceiveCacheObject p)
+                        {
+
+                            devices.Add(p.device);
+                        });
+                        if (devices.Count > 0)
+                        {
+                            await IOCenterManager.InfluxDbManager.DbWrite_RealPoints(devices);
+                        }
+
+                        devices.Clear();
+                        devices = null;
+                        result.Clear();
+                        result = null;
+
+                    });
+                    return analysisTask;
+
+
+
+                }
+                catch (Exception ex)
+                {
+
+
+                    DisplayException(new Exception("" + ex.Message));
+
+                    return null;
+                }
+
+            };
+
+            //批量写入报警数据
+            RealCache.InsertAlarmInfluxdb = (List<AlarmCacheObject> result) =>
+            {
+                try
+                {
+                    //定时从缓存区上传数据
+                    var analysisTask = Task.Run(async () =>
+                    {
+                        ///批量执行influxdb的写入，一次写入1000条数据
+                        List<IO_PARAALARM> alarms = new List<IO_PARAALARM>();
+                        result.ForEach(delegate (AlarmCacheObject p)
+                        {
+                            if (p.Alarm != null)
+                            {
+                                alarms.Add(p.Alarm);
+                            }
+                        });
+                        if (alarms.Count > 0)
+                        {
+                            await IOCenterManager.InfluxDbManager.DbWrite_AlarmPoints(alarms);
+                        }
+
+                        alarms.Clear();
+                        alarms = null;
+
+                        result.Clear();
+                        result = null;
+
+                    });
+                    return analysisTask;
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    DisplayException(new Exception("" + ex.Message));
+                    return null;
+                }
+
+            };
+
+            RealCache.Read();
+        }
+        /// <summary>
+        /// 定义一个数据存储和接收的缓存，influxdb用于批量插入
+        /// </summary>
+        public   ReceiveRealCache RealCache = null;
 
         public void  InitMonitorForm()
         {
@@ -1746,208 +1839,205 @@ namespace ScadaCenterServer.Core
         Scada.Business.IO_DEVICE deviceBll = new Scada.Business.IO_DEVICE();
         Scada.Business.IO_PARA paraBll = new Scada.Business.IO_PARA();
         Scada.Business.IO_SERVER serverBll = new Scada.Business.IO_SERVER();
- 
-        private async void RealTransform(byte[] sourcebytes,  int count,EndPoint endPoint, IPAddress address)
+
+        private async void RealTransform(byte[] sourcebytes, int count, EndPoint endPoint, IPAddress address)
         {
             try
             {
                 // 单独处理每个分包数据
                 #region 处理采集器端传递的实时值
 
-                string source = Encoding.UTF8.GetString(sourcebytes, 0, sourcebytes.Length);
-                if (source.Trim() == "")
+                string allString = Encoding.UTF8.GetString(sourcebytes, 0, sourcebytes.Length);
+                if (allString.Trim() == "")
                     return;
-                TcpData tcpData = new TcpData();
-                byte[] narra = Encoding.UTF8.GetBytes(source);
 
-
-                tcpData.BytesToTcpItem(narra);
-                string TcpDataString = "";
-                bool IsInvalid = false;
-                if (tcpData != null)
+                List<string> recSources = allString.Split(new char[1] { '^' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                if (recSources.Count <= 0)
                 {
-                    IsInvalid = tcpData.IsInvalid;
-                    TcpDataString = tcpData.TcpDataString;
+                    return;
                 }
-
-
-                if (IsInvalid == false)
+                recSources.ForEach(delegate (string source)
                 {
-                    AddLog("数据单元无效，无法入库");
+                    TcpData tcpData = new TcpData();
+                    byte[] narra = Encoding.UTF8.GetBytes(source);
+                    tcpData.BytesToTcpItem(narra);
+                    string TcpDataString = "";
+                    bool IsInvalid = false;
                     if (tcpData != null)
                     {
-                        tcpData.Dispose();
+                        IsInvalid = tcpData.IsInvalid;
+                        TcpDataString = tcpData.TcpDataString;
                     }
-
-                    return;
-                }
-
-                //处理实时值并将数据写入influx
-                string server_id = tcpData.GetItemValue("IO_SERVER_ID");
-                string communication_id = tcpData.GetItemValue("IO_COMM_ID");
-                string device_id = tcpData.GetItemValue("IO_DEVICE_ID");
-                //传递是unix时间戳
-                if (server_id == "" || communication_id == "" || device_id == "")
-                    return;
-                string date = tcpData.GetItemValue("DATE");
-                long dateunix = 0;
-                DateTime? device_date = null;
-                try
-                {
-                    if (date != "" && long.TryParse(date, out dateunix))
+                    if (IsInvalid == false)
                     {
-                        device_date = UnixDateTimeConvert.ConvertIntDateTime(long.Parse(date));
-                    }
-                    else
-                    {
-                        device_date = DateTime.Now;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    device_date = null;
-                    DisplayException(new Exception("ERR10023" + ex.Message));
-                }
-
-                if (server_id != "ERROR" && communication_id != "ERROR" && device_id != "ERROR")
-                {
-                    #region 构造同样的三个类，主要防止多线程对原来数据修改导致错误
-                    IO_SERVER server = null;
-                    IO_DEVICE device = null;
-                    IO_COMMUNICATION communication = null;
-                    lock (server_id)
-                    {
-                        IO_SERVER exserver = IOCenterManager.IOProject.Servers.Find(x => x.SERVER_ID.Trim() == server_id.Trim());
-                        IO_COMMUNICATION excommunication = IOCenterManager.IOProject.Communications.Find(x => x.IO_COMM_ID.Trim() == communication_id.Trim());
-                        if (excommunication == null)
-                            return;
-                        IO_DEVICE exdevice = excommunication.Devices.Find(x => x.IO_DEVICE_ID == device_id);
-                        if (exserver == null)
-                            return;
-                        if (exdevice == null)
-                            return;
-                        server = exserver.Copy();
-                        communication = excommunication.Copy();
-                        device = exdevice.Copy();
-                    }
-                    #endregion
-                    if (device != null && device.IOParas != null && device.IOParas.Count > 0)
-                    {
-
-
-
-                        device.GetedValueDate = device_date;
-                        for (int i = 0; i < device.IOParas.Count; i++)
+                        AddLog("数据单元无效，无法入库");
+                        if (tcpData != null)
                         {
-                            string itemValue = tcpData.GetItemValue(device.IOParas[i].IO_NAME);
-                            if (itemValue != null && itemValue != "" && itemValue != "ERROR")
+                            tcpData.Dispose();
+                        }
+
+                        return;
+                    }
+                    //处理实时值并将数据写入influx
+                    string server_id = tcpData.GetItemValue("IO_SERVER_ID");
+                    string communication_id = tcpData.GetItemValue("IO_COMM_ID");
+                    string device_id = tcpData.GetItemValue("IO_DEVICE_ID");
+                    //传递是unix时间戳
+                    if (server_id == "" || communication_id == "" || device_id == "")
+                        return;
+                    string date = tcpData.GetItemValue("DATE");
+                    long dateunix = 0;
+                    DateTime? device_date = null;
+                    try
+                    {
+                        if (date != "" && long.TryParse(date, out dateunix))
+                        {
+                            device_date = UnixDateTimeConvert.ConvertIntDateTime(long.Parse(date));
+                        }
+                        else
+                        {
+                            device_date = DateTime.Now;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        device_date = null;
+                        DisplayException(new Exception("ERR10023" + ex.Message));
+                    }
+
+                    if (server_id != "ERROR" && communication_id != "ERROR" && device_id != "ERROR")
+                    {
+                        #region 构造同样的三个类，主要防止多线程对原来数据修改导致错误
+                        IO_SERVER server = null;
+                        IO_DEVICE device = null;
+                        IO_COMMUNICATION communication = null;
+                        lock (server_id)
+                        {
+                            IO_SERVER exserver = IOCenterManager.IOProject.Servers.Find(x => x.SERVER_ID.Trim() == server_id.Trim());
+                            IO_COMMUNICATION excommunication = IOCenterManager.IOProject.Communications.Find(x => x.IO_COMM_ID.Trim() == communication_id.Trim());
+                            if (excommunication == null)
+                                return;
+                            IO_DEVICE exdevice = excommunication.Devices.Find(x => x.IO_DEVICE_ID == device_id);
+                            if (exserver == null)
+                                return;
+                            if (exdevice == null)
+                                return;
+                            server = exserver.Copy();
+                            communication = excommunication.Copy();
+                            device = exdevice.Copy();
+                        }
+                        #endregion
+                        if (device != null && device.IOParas != null && device.IOParas.Count > 0)
+                        {
+
+
+
+                            device.GetedValueDate = device_date;
+                            for (int i = 0; i < device.IOParas.Count; i++)
                             {
-                                if (device != null)
+                                string itemValue = tcpData.GetItemValue(device.IOParas[i].IO_NAME);
+                                if (itemValue != null && itemValue != "" && itemValue != "ERROR")
                                 {
-                                    string[] vs = itemValue.Split('|');
-                                    device.IOParas[i].IORealData = new Scada.IOStructure.IOData();
-
-
-                                    if (vs.Length > 0)
-                                        device.IOParas[i].IORealData.ID = itemValue.Split('|')[0];
-                                    else
-                                        device.IOParas[i].IORealData.ID = device.IOParas[i].IO_ID;
-
-                                    device.IOParas[i].IORealData.ServerID = device.IO_SERVER_ID;
-                                    device.IOParas[i].IORealData.Date = device_date;
-                                    device.IOParas[i].IORealData.ParaName = device.IOParas[i].IO_NAME;
-
-                                    if (vs.Length > 1)
-                                        device.IOParas[i].IORealData.ParaValue = itemValue.Split('|')[1];
-                                    else
-                                        device.IOParas[i].IORealData.ParaValue = "-9999";
-
-                                    if (device.IOParas[i].IORealData.ParaValue.Trim() == "")
-                                        device.IOParas[i].IORealData.ParaValue = "-9999";
-                                    QualityStamp qs = QualityStamp.BAD;
-
-                                    if (vs.Length > 2)
+                                    if (device != null)
                                     {
-                                        if (Enum.TryParse(itemValue.Split('|')[2], out qs))
-                                            device.IOParas[i].IORealData.QualityStamp = qs;
+                                        string[] vs = itemValue.Split('|');
+                                        device.IOParas[i].IORealData = new Scada.IOStructure.IOData();
+
+
+                                        if (vs.Length > 0)
+                                            device.IOParas[i].IORealData.ID = itemValue.Split('|')[0];
+                                        else
+                                            device.IOParas[i].IORealData.ID = device.IOParas[i].IO_ID;
+
+                                        device.IOParas[i].IORealData.ServerID = device.IO_SERVER_ID;
+                                        device.IOParas[i].IORealData.Date = device_date;
+                                        device.IOParas[i].IORealData.ParaName = device.IOParas[i].IO_NAME;
+
+                                        if (vs.Length > 1)
+                                            device.IOParas[i].IORealData.ParaValue = itemValue.Split('|')[1];
+                                        else
+                                            device.IOParas[i].IORealData.ParaValue = "-9999";
+
+                                        if (device.IOParas[i].IORealData.ParaValue.Trim() == "")
+                                            device.IOParas[i].IORealData.ParaValue = "-9999";
+                                        QualityStamp qs = QualityStamp.BAD;
+
+                                        if (vs.Length > 2)
+                                        {
+                                            if (Enum.TryParse(itemValue.Split('|')[2], out qs))
+                                                device.IOParas[i].IORealData.QualityStamp = qs;
+                                            else
+                                                device.IOParas[i].IORealData.QualityStamp = QualityStamp.BAD;
+                                        }
                                         else
                                             device.IOParas[i].IORealData.QualityStamp = QualityStamp.BAD;
+                                        if (device.IOParas[i].IORealData.ParaValue.Trim() == "-9999")
+                                            device.IOParas[i].IORealData.QualityStamp = QualityStamp.BAD;
                                     }
-                                    else
-                                        device.IOParas[i].IORealData.QualityStamp = QualityStamp.BAD;
-
-
-
-                                    if (device.IOParas[i].IORealData.ParaValue.Trim() == "-9999")
-                                        device.IOParas[i].IORealData.QualityStamp = QualityStamp.BAD;
                                 }
+
+
+
                             }
 
-
-
-                        }
-
-                        try
-                        {
-                            if (device != null && communication != null && server != null)
+                            try
                             {
-                                await Task.Factory.StartNew(async a =>
+                                if (device != null && communication != null && server != null)
                                 {
-
-                                    try
+                                    if (RealCache != null)
                                     {
-
-                                        await IOCenterManager.InfluxDbManager.DbWrite_RealPoints(server, communication, device, device_date);
-                                        if (ServerForm != null && !ServerForm.IsDisposed)
+                                        //将接收到的数据保存到缓存,通过缓存定时批量写入，每次写入不超过1000条的数据，主要为了提高效率
+                                        RealCache.Push(new ReceiveCacheObject()
                                         {
-                                            ServerForm.AddReeiveDevice(endPoint, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, TcpDataString, true);
-                                        }
-
+                                            communication = communication,
+                                            device = device,
+                                            RealDate = device_date,
+                                        });
                                     }
-                                    catch (Exception ex)
+                                    if (ServerForm != null && !ServerForm.IsDisposed)
                                     {
-                                        DisplayException(new Exception("ERROR17898" + ex.Message));
+                                        ServerForm.AddReeiveDevice(endPoint, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, TcpDataString, true);
                                     }
-                                }, device);
-                            }
 
-                        }
-                        catch (Exception ex)
-                        {
-                            if (ServerForm != null && !ServerForm.IsDisposed)
-                            {
-                                ServerForm.AddReeiveDevice(endPoint, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, TcpDataString, false);
-                                ServerForm.AddReport(endPoint, "ERROR10014" + ex.Message);
-                            }
-                         
-
-
-                        }
-
-                        try
-                        {
-
-                            if (ServerForm != null && !ServerForm.IsDisposed)
-                            {
-                                if (device != null)
-                                {
-                                      ServerForm.DeviceStatus(server.SERVER_ID, device, true);
 
                                 }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                if (ServerForm != null && !ServerForm.IsDisposed)
+                                {
+                                    ServerForm.AddReeiveDevice(endPoint, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, TcpDataString, false);
+                                    ServerForm.AddReport(endPoint, "ERROR10014" + ex.Message);
+                                }
+
+
+
+                            }
+
+                            try
+                            {
+
+                                if (ServerForm != null && !ServerForm.IsDisposed)
+                                {
+                                   
+                                        ServerForm.DeviceStatus(server.SERVER_ID, device, true);
+
+                                    
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                 
+                                    DisplayException(new Exception("ERR10015" + ex.Message));
+                              
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            await Task.Run(() =>
-                            {
-                                DisplayException(new Exception("ERR10015" + ex.Message));
-                            });
-                        }
+
+
+
                     }
-
-
-
-                }
+                });
                 #endregion
             }
             catch
@@ -1964,154 +2054,140 @@ namespace ScadaCenterServer.Core
                 // 单独处理每个分包数据
                 #region 处理采集器端传递的实时值
 
-                string source = Encoding.UTF8.GetString(sourcebytes, 0, sourcebytes.Length);
-                if (source.Trim() == "")
-                    return;
-                TcpData tcpData = new TcpData();
-                byte[] narra = Encoding.UTF8.GetBytes(source);
 
 
-                tcpData.BytesToTcpItem(narra);
-                string TcpDataString = "";
-                bool IsInvalid = false;
-                if (tcpData != null)
+                string allString = Encoding.UTF8.GetString(sourcebytes, 0, sourcebytes.Length);
+                if (string.IsNullOrEmpty(allString))
                 {
-                    IsInvalid = tcpData.IsInvalid;
-                    TcpDataString = tcpData.TcpDataString;
+                    return;
                 }
 
+                List<string> resStrings = allString.Split(new char[1] { '^' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
-                if (IsInvalid == false)
+                resStrings.ForEach(delegate (string source)
                 {
-                    AddLog("报警数据单元无效，无法入库");
+                    TcpData tcpData = new TcpData();
+                    byte[] narra = Encoding.UTF8.GetBytes(source);
+                    tcpData.BytesToTcpItem(narra);
+                    string TcpDataString = "";
+                    bool IsInvalid = false;
                     if (tcpData != null)
                     {
-                        tcpData.Dispose();
+                        IsInvalid = tcpData.IsInvalid;
+                        TcpDataString = tcpData.TcpDataString;
                     }
+                    if (IsInvalid == false)
+                    {
+                        AddLog("报警数据单元无效，无法入库");
+                        if (tcpData != null)
+                        {
+                            tcpData.Dispose();
+                        }
 
-                    return;
-                }
-
-                //处理实时值并将数据写入influx
-                string server_id = tcpData.GetItemValue("IO_SERVER_ID");
-                string communication_id = tcpData.GetItemValue("IO_COMM_ID");
-                string device_id = tcpData.GetItemValue("IO_DEVICE_ID");
-
-
-                if (server_id == "" || communication_id == "" || device_id == "")
-                    return;
-
-
-                IO_PARAALARM paraAlarm = null;
-                try
-                {
-                    paraAlarm = new IO_PARAALARM();
-                    paraAlarm.IO_ALARM_DATE = tcpData.GetItemValue("IO_ALARM_DATE").Replace("//", "#").Replace("\\", ":");
-                    paraAlarm.IO_COMM_ID = tcpData.GetItemValue("IO_COMM_ID");
-                    paraAlarm.IO_DEVICE_ID = tcpData.GetItemValue("IO_DEVICE_ID");
-                    paraAlarm.IO_ID = tcpData.GetItemValue("IO_ID");
-
-                    paraAlarm.IO_ALARM_LEVEL = tcpData.GetItemValue("IO_ALARM_LEVEL");
-                    paraAlarm.IO_ALARM_VALUE = tcpData.GetItemValue("IO_ALARM_VALUE");
-                    paraAlarm.IO_ALARM_TYPE = tcpData.GetItemValue("IO_ALARM_TYPE");
-                    paraAlarm.IO_LABEL = tcpData.GetItemValue("IO_LABEL");
-                    paraAlarm.IO_NAME = tcpData.GetItemValue("IO_NAME");
-
-                }
-                catch (Exception ex)
-                {
-
-                    DisplayException(new Exception("ERR20015" + ex.Message));
-
-                    return;
-                }
-                if (paraAlarm == null)
-                    return;
-
-
-                if (server_id != "ERROR" && communication_id != "ERROR" && device_id != "ERROR")
-                {
-                    IO_SERVER exserver = IOCenterManager.IOProject.Servers.Find(x => x.SERVER_ID.Trim() == server_id.Trim());
-                    if (exserver == null)
                         return;
-                    IO_SERVER server = exserver.Copy();
-                    #region 构造同样的三个类，主要防止多线程对原来数据修改导致错误
-
-                    IO_COMMUNICATION excommunication = IOCenterManager.IOProject.Communications.Find(x => x.IO_COMM_ID.Trim() == communication_id.Trim());
-                    if (excommunication == null)
+                    }
+                    //处理实时值并将数据写入influx
+                    string server_id = tcpData.GetItemValue("IO_SERVER_ID");
+                    string communication_id = tcpData.GetItemValue("IO_COMM_ID");
+                    string device_id = tcpData.GetItemValue("IO_DEVICE_ID");
+                    if (server_id == "" || communication_id == "" || device_id == "")
                         return;
-                    IO_COMMUNICATION communication = excommunication.Copy();
-                    //由于设备比较多，应该构造一个Device ,提高效率\
-                    IO_DEVICE existdevice = excommunication.Devices.Find(x => x.IO_DEVICE_ID == device_id);
-                    if (existdevice == null)
-                        return;
-                    IO_DEVICE device = existdevice.Copy();
-
-
-
+                    IO_PARAALARM paraAlarm = null;
                     try
                     {
-                        if (device != null && communication != null && server != null)
-                        {
+                        paraAlarm = new IO_PARAALARM();
+                        paraAlarm.IO_ALARM_DATE = tcpData.GetItemValue("IO_ALARM_DATE").Replace("//", "#").Replace("\\", ":");
+                        paraAlarm.IO_COMM_ID = tcpData.GetItemValue("IO_COMM_ID");
+                        paraAlarm.IO_DEVICE_ID = tcpData.GetItemValue("IO_DEVICE_ID");
+                        paraAlarm.IO_ID = tcpData.GetItemValue("IO_ID");
 
-                            await Task.Factory.StartNew(async a =>
-                            {
-
-                                try
-                                {
-                                    paraAlarm.DEVICE_NAME = device.IO_DEVICE_NAME;
-                                    await IOCenterManager.InfluxDbManager.DbWrite_AlarmPoints(server.SERVER_ID, communication.IO_COMM_ID, paraAlarm, DateTime.Now);
-                                    IOCenterManager.TCPServer.ServerForm.AddReeiveAlarm(endPoint, server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, paraAlarm, true);
-
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    DisplayException(new Exception("ERR18791" + ex.Message));
-                                }
-                            }, paraAlarm);
-
-                        }
+                        paraAlarm.IO_ALARM_LEVEL = tcpData.GetItemValue("IO_ALARM_LEVEL");
+                        paraAlarm.IO_ALARM_VALUE = tcpData.GetItemValue("IO_ALARM_VALUE");
+                        paraAlarm.IO_ALARM_TYPE = tcpData.GetItemValue("IO_ALARM_TYPE");
+                        paraAlarm.IO_LABEL = tcpData.GetItemValue("IO_LABEL");
+                        paraAlarm.IO_NAME = tcpData.GetItemValue("IO_NAME");
 
                     }
                     catch (Exception ex)
                     {
 
-                        IOCenterManager.TCPServer.ServerForm.AddReeiveAlarm(endPoint, server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, paraAlarm, false);
-                        ServerForm.AddReport(endPoint, "ERROR20014" + ex.Message);
-
-
+                        DisplayException(new Exception("ERR20015" + ex.Message));
+                        return;
                     }
-
-                    try
+                    if (paraAlarm == null)
+                        return;
+                    if (server_id != "ERROR" && communication_id != "ERROR" && device_id != "ERROR")
                     {
+                        IO_SERVER exserver = IOCenterManager.IOProject.Servers.Find(x => x.SERVER_ID.Trim() == server_id.Trim());
+                        if (exserver == null)
+                            return;
+                        IO_SERVER server = exserver.Copy();
+                        #region 构造同样的三个类，主要防止多线程对原来数据修改导致错误
 
-                        if (ServerForm != null && !ServerForm.IsDisposed)
+                        IO_COMMUNICATION excommunication = IOCenterManager.IOProject.Communications.Find(x => x.IO_COMM_ID.Trim() == communication_id.Trim());
+                        if (excommunication == null)
+                            return;
+                        IO_COMMUNICATION communication = excommunication.Copy();
+                        //由于设备比较多，应该构造一个Device ,提高效率\
+                        IO_DEVICE existdevice = excommunication.Devices.Find(x => x.IO_DEVICE_ID == device_id);
+                        if (existdevice == null)
+                            return;
+                        IO_DEVICE device = existdevice.Copy();
+                        try
                         {
-
-
-                            if (device != null)
+                            if (device != null && communication != null && server != null)
                             {
+                                paraAlarm.DEVICE_NAME = device.IO_DEVICE_NAME;
 
-                                  ServerForm.DeviceStatus(server.SERVER_ID, device, true);
+                                if (RealCache != null && !string.IsNullOrEmpty(paraAlarm.IO_ALARM_DATE))
+                                {
+                                    //将接收到的数据保存到缓存,通过缓存定时批量写入，每次写入不超过1000条的数据，主要为了提高效率
+                                    RealCache.Push(new AlarmCacheObject()
+                                    {
+                                        communication = communication,
+                                        device = device,
+                                        Alarm = paraAlarm
+
+                                    });
+                                }
+                                IOCenterManager.TCPServer.ServerForm.AddReeiveAlarm(endPoint, server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, paraAlarm, true);
 
                             }
 
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        await Task.Run(() =>
+                        catch (Exception ex)
+                        {
+                            if (ServerForm != null && !ServerForm.IsDisposed)
+                            {
+                                ServerForm.AddReeiveAlarm(endPoint, server.SERVER_NAME, communication.IO_COMM_NAME, device.IO_DEVICE_NAME, paraAlarm, false);
+                                ServerForm.AddReport(endPoint, "ERROR20014" + ex.Message);
+                            }
+                        }
+
+                        try
+                        {
+                            if (ServerForm != null && !ServerForm.IsDisposed)
+                            {
+                                if (device != null)
+                                {
+                                    ServerForm.DeviceStatus(server.SERVER_ID, device, true);
+
+                                }
+
+                            }
+                        }
+                        catch (Exception ex)
                         {
                             DisplayException(new Exception("ERR20015" + ex.Message));
-                        });
+
+                        }
+
+
+
+
+                        #endregion
                     }
-
-
-
-
-                    #endregion
-                }
+                });
                 #endregion
             }
             catch
@@ -2167,7 +2243,9 @@ namespace ScadaCenterServer.Core
                     TcpServerStatus = TcpServerStatus.运行;
                      await UpdateIOAlarmConfig();
                     AddLog("启动服务成功");
-                 
+
+                  
+
                 }
                 catch (Exception ex)
                 {

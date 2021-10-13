@@ -380,6 +380,7 @@ namespace Scada.Kernel
         {
             try
             {
+                IsSuspend = false;
                 Start();
             }
             catch (Exception ex)

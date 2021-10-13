@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <SerialPort>
+    <Port>
+      
+    </Port>
+    <CheckBit>
+      None
+    </CheckBit>
+    <BaudRate>
+      9600
+    </BaudRate>
+    <StopBit>
+      0
+    </StopBit>
+    <DataBits>
+      8
+    </DataBits>
+    <!--写超时时间-->
+    <WriteTimeout>
+      1000
+    </WriteTimeout>
+    <!--读超时时间-->
+    <ReadTimeout>
+      1000
+    </ReadTimeout>
+    <!--偏移间隔-->
+    <OffsetInterval>
+      
+    </OffsetInterval>
+
+    <!--是否开启RTS-->
+    <RTSEnable>
+      1
+    </RTSEnable>
+    <!--发送前RTS保持时间RTS-->
+    <RSTSendPreKeeyTime>
+      1000
+    </RSTSendPreKeeyTime>
+    <!--发送后RTS保持时间-->
+    <RTSSendAfterKeeyTime>
+1000
+    </RTSSendAfterKeeyTime>
+    <!--包最大长度-->
+    <PackMaxSize>
+      65
+    </PackMaxSize>
+    <!--是否连续采集-->
+    <ContinueCollect>
+      1
+    </ContinueCollect>
+    <!--重试次数-->
+    <CollectFaultsNumber>
+      3
+    </CollectFaultsNumber>
+    <!--重试间隔-->
+    <CollectFaultsInternal>
+      
+    </CollectFaultsInternal>
+    <ModbusType>
+      RTU
+    </ModbusType>
+  </SerialPort>
+  <MQTT>
+    <ClientID>
+      
+    </ClientID>
+    <ServerIP>
+
+    </ServerIP>
+    <Port>
+       1833
+    </Port>
+    <Account>
+
+    </Account>
+    <Password>
+
+    </Password>
+
+    <DataPublicTopic>
+
+    </DataPublicTopic>
+    <CommandSubTopic>
+
+    </CommandSubTopic>
+    <UpdateCycleSubTopic>
+
+    </UpdateCycleSubTopic>
+    <PassiveSubTopic>
+
+    </PassiveSubTopic>
+   
+    <UpdateCycle>
+       5000
+    </UpdateCycle>
+    <PublicType>
+      主动
+    </PublicType>
+</MQTT>
+  <Channels>
+    <Channel>
+      <ChannelID>1</ChannelID>
+      <ChannelName>1号通道</ChannelName>
+      <ChannelText>1号通道</ChannelText>
+      <DeviceAddress>001</DeviceAddress>
+    </Channel>
+    <Channel>
+      <ChannelID>2</ChannelID>
+      <ChannelName>2号通道</ChannelName>
+      <ChannelText>2号通道</ChannelText>
+      <DeviceAddress></DeviceAddress>
+    </Channel>
+    <Channel>
+      <ChannelID>3</ChannelID>
+      <ChannelName>3号通道</ChannelName>
+      <ChannelText>3号通道</ChannelText>
+      <DeviceAddress></DeviceAddress>
+    </Channel>
+    <Channel>
+      <ChannelID>4</ChannelID>
+      <ChannelName>4号通道</ChannelName>
+      <ChannelText>4号通道</ChannelText>
+      <DeviceAddress></DeviceAddress>
+    </Channel>
+    <Channel>
+      <ChannelID>5</ChannelID>
+      <ChannelName>5号通道</ChannelName>
+      <ChannelText>5号通道</ChannelText>
+      <DeviceAddress></DeviceAddress>
+    </Channel>
+    <Channel>
+      <ChannelID>6</ChannelID>
+      <ChannelName>6号通道</ChannelName>
+      <ChannelText>6号通道</ChannelText>
+      <DeviceAddress></DeviceAddress>
+    </Channel>
+  </Channels>
+  <ChannelAlarms>
+    <Alarm ChanelID="1">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+    <Alarm ChanelID="2">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+    <Alarm ChanelID="3">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+    <Alarm ChanelID="4">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+    <Alarm ChanelID="5">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+    <Alarm ChanelID="6">
+      <Para Name="CO"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="H2S" Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="CO2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+      <Para Name="O2"  Enable="0">
+        <AlarmLow >0</AlarmLow>
+        <AlarmHigh >0</AlarmHigh>
+      </Para>
+    </Alarm>
+  </ChannelAlarms>
+  <Modbus>
+    <ModbusParaItem StartRegister="5" Name="H2S" RegisterNum="14" Enable="1" ModbusCode="03"></ModbusParaItem>
+    <ModbusParaItem StartRegister="37" Name="CO" RegisterNum="14"  Enable="1"  ModbusCode="03"></ModbusParaItem>
+    <ModbusParaItem StartRegister="69" Name="O2" RegisterNum="14"  Enable="1"  ModbusCode="03"></ModbusParaItem>
+    <ModbusParaItem StartRegister="101" Name="EX" RegisterNum="14"  Enable="1"  ModbusCode="03"></ModbusParaItem>
+  </Modbus>
+  <Admin>
+    <UserName>admin</UserName>
+    <Password>gas2020</Password>
+  </Admin>
+</Config>

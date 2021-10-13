@@ -87,16 +87,3 @@ E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\
 E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.dll
 E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.pdb
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnetDriver.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.dll
-D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.pdb
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnetDriver.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.GasIODeviceCtrl.resources
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.IODeviceCtrl.resources
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.GasIOParaCtrl.resources
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.IOParaCtrl.resources
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.MQTTServerCtrl.resources
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnetDriver.csproj.GenerateResource.cache
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnetDriver.csproj.CoreCompileInputs.cache
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnetDriver.csproj.CopyComplete
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.dll
-D:\开源发布\LazyScadaCode\SystemDriver\MQTTnetDriver\obj\Debug\MQTTnet.pdb

@@ -1,0 +1,100 @@
++ 增加； - 删除； * 修改 
+
+2020-09-17 V2.2.7
++ 新增双主键线程安全字典，分组线程安全字典
++ UIHorScrollBarEx，UIVerScrollBarEx：重写了两个滚动条
+* UIForm：恢复了WindowState，增加了窗体可拉拽调整大小
+* 增加控件属性显示值及Sunny UI分类
+* UIDateTimePicker,UITimePicker：更改滚轮选择时间的方向
+* UIButton：Tips颜色可设置
+* UIChart：增加图表的边框线颜色设置
+* UITextBox：增加FocusedSelectAll属性，激活时全选。
+* UINavBar：增加节点的Image绘制
+* UIDataGridView：调整水平滚动条
+* UIButton：添加'是否启用双击事件'属性，解决连续点击效率问题
+* UIDataGridView：更新了水平和垂直滚动条的显示，优化滚动效果。
+* UIBbutton：空格键按下press背景效果
+* UIListBox优化滚轮快速滚动流畅性
+* UIBarChart：可设置柱状图最小宽度
+* UIIntegerUpDown, UIDoubleUpDown：增加字体调整
+* UITabControl：标题垂直居中
+* UITreeView：更新可设置背景色
+* UIDatePicker，UITimePicker，UIDateTimePicker：可编辑输入，日期范围控制
+* UIDatePicker：更改日期范围最小值和最大值
+* UITitlePanel：更新大小调整后的按钮位置
+
+2020-07-30 V2.2.6
++ UIPagination：新增分页控件
++ UIToolTip：新增控件，可修改字体
++ UIHorScrollBar：新增水平滚动条
++ UIWaitingBar：新增等待滚动条控件
+* UIDataGridView：重绘水平滚动条，更新默认设置为原生控件设置
+* UITitlePanel：增加可收缩选项
+* UIPieChart,UIBarChart：增加序列自定义颜色
+* UISymbolButton：增加Image属性，增加图片和文字的摆放位置
+* UIButton：增加Selected及选中颜色配置
+* UIForm：支持点击窗体任务栏图标，可以进行最小化
+* UIForm：增加标题栏ICON图标绘制
+* UIDateTimePicker：重写下拉窗体，缩短创建时间
+* UITreeView：全部重写，增加圆角，CheckBoxes等
+* UIDatePicker：重写下拉窗体，缩短创建时间
+* UICheckBoxGroup,UIRadioButtonGroup：可以设置初始选中值
+* UILedBulb：边缘平滑
+* UIForm：仿照QQ，重绘标题栏按钮。
+
+2020-06-29 V2.2.5
++ UIDoughnutChart：环状图
++ UILoginForm：登录窗体
++ UIScrollingText：滚动文字
++ UIBarChart：柱状图
++ UIPieChart：饼状图
++ UIRichTextBox：富文本框
++ UIBattery：电池电量显示
++ UIDatetimePicker：日期时间选择框
++ UIColorPicker：颜色选择框
++ UITimePicker：时间选择框
++ UIMessageTipHelper：增加MessageTip扩展方法
+* UIComboBox：增加数据绑定
+* 页面框架支持通过PageIndex和PageGuid关联
+* UITextBox：增加Multiline属性，增加滚动条
+* UITabControl：新增关闭按钮，重绘左右移动按钮
+* UIForm：更新标题移动、双击最大化/正常、到顶最大化、最大化后拖拽正常
+* UINavMenu：增加字体图标显示
+* 字体图标字体调整从资源文件中加载字体，不用另存为文件
+* UIListBox 增加跟随鼠标滑过高亮
+* UIDatePicker：重写日期选择界面
+* UIButton：增加ShowFocusLine，可获得焦点并显示
+
+2020.05.05 V2.2.5
++ 增加页面框架
++ 增加下拉框窗体，进度提升窗体
++ UITreeView
+
+2020.04.25 V2.2.4
+* 更新主题风格类，各控件主题颜色调用不交叉，便于新增主题
++ 更新Sunny.Demo程序
++ 增加UIDataGridView，基于DataGridView增强、美化
+- UIGrid效率待改，暂时隐藏
+
+2020.04.19 V2.2.3
++ UICheckBoxGroup,UIRadioButtonGroup
+
+2020.04.11 V2.2.2
++ 新增UIGrid
+- 继承DataGridView更改主题风格的UIGridView
+
+2020.02.15 V2.2.1
+* Bug修复
+
+2020.01.01 V2.2.0
+* 增加文件说明，为开源做准备
++ 增加Office主题风格
+
+2019.10.01 V2.1.0
++ 增加Element主题风格
+
+2019.03.12 V2.0.0
++ 增加自定义控件
+
+2012.03.31 V1.0.0
++ 增加工具类、扩展类

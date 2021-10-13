@@ -33,10 +33,3 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\Publish\IOStation\MQTTnet.pdb
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.dll
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.pdb
-E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.dll
-D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.pdb
-D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.csprojAssemblyReference.cache
-D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.csproj.CoreCompileInputs.cache
-D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.dll
-D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Debug\MQTTnet.pdb

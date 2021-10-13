@@ -49,6 +49,7 @@ namespace Temporal.DbAPI
         string User = "root";
         string Password = "root";
         public string Version = "v_1_3";
+        private string precision = "ms";
         private void DisplayException(Exception ex)
         {
             if (InfluxException != null)
@@ -448,8 +449,52 @@ namespace Temporal.DbAPI
             }
 
         }
+        /// <summary>
+        /// 批量多个实时数据
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="communication"></param>
+        /// <param name="device"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public async Task DbWrite_RealPoints(List<IO_DEVICE> devices)
+        {
+            try
+            {
+
+                var points = GetPoints(devices);
 
 
+                var writeResponse = await _influx.Client.WriteAsync(points, _dbName, null, precision);
+                if (writeResponse != null)
+                    writeResponse.Success.Should().BeTrue();
+                points.Clear();
+                points = null;
+
+
+
+            }
+            catch (Exception ex)
+            {
+                DisplayException(new Exception("ERR10009" + ex.Message));
+
+
+            }
+
+        }
+        private List<Point> GetPoints(List<IO_DEVICE> devices)
+        {
+            List<Point> points = new List<Point>();
+            devices.ForEach(delegate (IO_DEVICE device)
+            {
+                var point = CreateDevicePoint(device.IO_SERVER_ID, device.IO_COMM_ID, device, device.GetedValueDate);
+                if (point != null)
+                { points.Add(point); }
+            });
+            devices.Clear();
+            devices = null;
+            return points;
+        }
         ///////////////////////报警写入
         /// <summary>
         /// 写入数据
@@ -483,7 +528,34 @@ namespace Temporal.DbAPI
 
         }
         /// <summary>
+        public async Task DbWrite_AlarmPoints(List<IO_PARAALARM> alarms)
+        {
+            try
+            {
 
+
+                var points = CreateAlarmPoints(alarms);
+                var writeResponse = await _influx.Client.WriteAsync(points, _dbName, null, precision);
+
+            }
+            catch (Exception ex)
+            {
+                DisplayException(new Exception("ERR10010" + ex.Message));
+
+            }
+
+        }
+        private Point[] CreateAlarmPoints(List<IO_PARAALARM> alarms)
+        {
+            List<Point> Points = new List<Point>();
+            for (int i = 0; i < alarms.Count; i++)
+            {
+                Point np = CreateAlarmPoint(alarms[i].IO_SERVER_ID, alarms[i].IO_COMM_ID, alarms[i], Convert.ToDateTime(alarms[i].IO_ALARM_DATE));
+                if (np != null)
+                    Points.Add(np);
+            }
+            return Points.ToArray();
+        }
         public async Task DbWrite_AlarmPoints(List<IO_PARAALARM> alarms, DateTime time)
         {
             try

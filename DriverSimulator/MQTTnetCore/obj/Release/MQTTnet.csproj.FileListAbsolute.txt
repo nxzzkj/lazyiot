@@ -24,3 +24,8 @@ E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\Industrial control\Publish\IOSt
 E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\MQTTnetCore\obj\Release\MQTTnet.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\MQTTnetCore\obj\Release\MQTTnet.dll
 E:\LazyScadaOS\LazyScadaCoreMQV2.0\LazyScadaCode\Industrial control\西安亚泰石油工程技术有限公司工控机端程序\MQTTnetCore\obj\Release\MQTTnet.pdb
+D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.dll
+D:\开源发布\LazyScadaCode\Publish\IOStation\MQTTnet.pdb
+D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Release\MQTTnet.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Release\MQTTnet.dll
+D:\开源发布\LazyScadaCode\DriverSimulator\MQTTnetCore\obj\Release\MQTTnet.pdb

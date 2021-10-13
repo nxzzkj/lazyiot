@@ -71,7 +71,10 @@ namespace IOMonitor.Core
         //当前采集站的主要对象
         private static IO_SERVER IOServer = null;
         //创建读取数据的子任务
- 
+        /// <summary>
+        /// 采集数据缓存
+        /// </summary>
+        private static ReceiveRealCache receiveRealCache = null;
         private static Scada.Business.SCADA_DRIVER commDriverBll = null;
      
         /// <summary>
@@ -276,8 +279,54 @@ namespace IOMonitor.Core
                 {
                     ThrowExceptionToMain(new Exception("ERROR600002" + ex.Message));
                 }
-                #endregion
-                Start();
+            #endregion
+
+
+            receiveRealCache = new ReceiveRealCache(100, 3000);
+            //批量上传实时数据
+            receiveRealCache.WillUpload = (List<ReceiveCacheObject> result) => {
+                try
+                {
+                    //定时从缓存区上传数据
+                    var analysisTask = Task.Run(() =>
+                    {
+                        RealDataDBUtility.UploadReal(result);
+
+
+                    });
+                    return analysisTask;
+
+
+
+                }
+                catch
+                {
+                    return null;
+                }
+            };
+            ///批量上传报警数据
+            receiveRealCache.WillUploadAlarm = (List<AlarmCacheObject> result) => {
+                try
+                {
+                    //定时从缓存区上传数据
+                    var analysisTask = Task.Run(() =>
+                    {
+                        RealDataDBUtility.UploadAlarm(result);
+
+                    });
+                    return analysisTask;
+
+
+
+                }
+                catch
+                {
+                    return null;
+                }
+            };
+            
+            receiveRealCache.Read();
+            Start();
            
         }
 
@@ -632,12 +681,10 @@ namespace IOMonitor.Core
                         IO_DEVICE newDevice = device.Copy();
                         try
                         {
-                            Task.Run(() =>
-                            {
-                                //上传实时数据,
-                                bool res= RealDataDBUtility.UploadReal(server, comm, device);
-                            MonitorFormManager.ShowMonitorUploadListView(server, comm, device, res?"上传成功":"上传失败");
-                            });
+                            //将接收到的数据保存到实时缓存,主要用于批量上传,提高传输效率
+                            receiveRealCache.Push(new ReceiveCacheObject() { DataString = RealDataDBUtility.GetRealDataCacheString(device) });
+                            MonitorFormManager.ShowMonitorUploadListView(server, comm, device, "上传成功");
+                            
                         }
                         catch (Exception emx)
                         {
@@ -657,15 +704,18 @@ namespace IOMonitor.Core
                         {
                             Task.Run(() =>
                             {
-                                //计算并处理报警
-                                List<IO_PARAALARM> res = RealDataDBUtility.UploadAlarm(server, comm, device);
-
+                                List<IO_PARAALARM> res = new List<IO_PARAALARM>();
+                                //将接收到的数据保存到实时缓存,主要用于批量上传,提高传输效率
+                                receiveRealCache.Push(new AlarmCacheObject() { DataString = RealDataDBUtility.GetAlarmCacheString(device, out res) });
                                 for (int i = 0; i < res.Count; i++)
                                 {
                                     MonitorFormManager.MonitorIODataAlarmShowView(server, comm, device, res[i], "上传成功");
 
                                 }
+                                res.Clear();
+                                res = null;
 
+ 
 
                             });
                         }
@@ -1131,6 +1181,7 @@ namespace IOMonitor.Core
             {
                 try
                 {
+                    SystemSleep.PreventForCurrentThread();
                     GC.Collect();
 
                     if (Environment.OSVersion.Platform == PlatformID.Win32NT)

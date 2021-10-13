@@ -222,6 +222,7 @@ namespace ScadaCenterServer.Core
 
                 try
                 {
+                    SystemSleep.PreventForCurrentThread();
                     GC.Collect();
 
                     if (Environment.OSVersion.Platform == PlatformID.Win32NT)

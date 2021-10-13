@@ -126,6 +126,7 @@
     <Compile Include="Core\InfluxdbBackupManager.cs" />
     <Compile Include="Core\IOCenterIOProject.cs" />
     <Compile Include="Core\IOCenterManager.cs" />
+    <Compile Include="Core\ReceiveRealCache.cs" />
     <Compile Include="Dialogs\PopBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>

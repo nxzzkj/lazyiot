@@ -19,3 +19,8 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\Component\Logger\bin\Release\Scada.Lo
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.dll
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.pdb
+D:\开源发布\LazyScadaCode\Component\Logger\bin\Release\Scada.Logger.dll
+D:\开源发布\LazyScadaCode\Component\Logger\bin\Release\Scada.Logger.pdb
+D:\开源发布\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.dll
+D:\开源发布\LazyScadaCode\Component\Logger\obj\Release\Scada.Logger.pdb

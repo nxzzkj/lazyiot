@@ -16,23 +16,19 @@ namespace IOMonitor.Core
     /// </summary>
     public class RealDataDBUtility
     {
-
         /// <summary>
-        /// 插入实时数据
+        /// 获取要上传的实时数据字符串组合
         /// </summary>
-        /// <param name="server"></param>
-        /// <param name="comm"></param>
         /// <param name="device"></param>
-        /// <param name="paras"></param>
         /// <returns></returns>
-        public static  bool UploadReal(IO_SERVER server, IO_COMMUNICATION comm, IO_DEVICE device)
+        public static string GetRealDataCacheString(IO_DEVICE device)
         {
-            bool result = false;
-            string devicestring = device.GetCommandString() + "#";
+
+
             List<IO_PARA> paras = new List<IO_PARA>();
 
 
-            string str = "IO_COMM_ID:" + device.IO_COMM_ID + "#IO_DEVICE_ID:" + device.IO_DEVICE_ID + "#IO_SERVER_ID:" + device.IO_SERVER_ID + "#IO_DEVICE_NAME:" + device.IO_DEVICE_NAME + "#DATE:" + (device.GetedValueDate==null?"":UnixDateTimeConvert.ConvertDateTimeInt(device.GetedValueDate.Value).ToString()) + "";
+            string str = "IO_COMM_ID:" + device.IO_COMM_ID + "#IO_DEVICE_ID:" + device.IO_DEVICE_ID + "#IO_SERVER_ID:" + device.IO_SERVER_ID + "#IO_DEVICE_NAME:" + device.IO_DEVICE_NAME + "#DATE:" + (device.GetedValueDate == null ? "" : UnixDateTimeConvert.ConvertDateTimeInt(device.GetedValueDate.Value).ToString()) + "";
             for (int i = 0; i < device.IOParas.Count; i++)
             {
                 if (device.IOParas[i].IORealData == null)
@@ -62,23 +58,41 @@ namespace IOMonitor.Core
 
                 str += "#" + device.IOParas[i].IO_NAME + ":" + device.IOParas[i].IO_ID + "|" + device.IOParas[i].RealValue + "|" + QualityStampStr;
             }
-             
-            byte[] simuBytes = TcpData.StaticStringToTcpByte(str, Scada.AsyncNetTcp.ScadaTcpOperator.实时值);
-     
+            return str;
+        }
+        
+        /// <summary>
+        /// 上传实时数据
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="comm"></param>
+        /// <param name="device"></param>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public static bool UploadReal(List<ReceiveCacheObject> receiveCaches)
+        {
+            bool result = false;
+            string sendString = "";
+            receiveCaches.ForEach(delegate (ReceiveCacheObject p) {
+
+                sendString += p.DataString + "^";
+            });
+
             try
             {
-                if(IOMonitorManager.TcpClient!=null&& IOMonitorManager.TcpClient.IsClientConnected)
+                TcpData tcpData = new TcpData();
+             
+                byte[] simuBytes = tcpData.StringToTcpByte(sendString, Scada.AsyncNetTcp.ScadaTcpOperator.实时值);
+                if (IOMonitorManager.TcpClient != null && IOMonitorManager.TcpClient.IsClientConnected)
                 {
                     IOMonitorManager.TcpClient.Send(new ArraySegment<byte>(simuBytes));
                     result = true;
                 }
                 else
-                    {
+                {
                     result = false;
                 }
-                
-         
-
+                return result;
             }
             catch (Exception ex)
             {
@@ -87,10 +101,42 @@ namespace IOMonitor.Core
                 //写入错误日志，并将错误日志返回的日志窗体
                 MonitorFormManager.DisplyException(ex);
             }
-
+            sendString = "";
+            receiveCaches.Clear();
+            receiveCaches = null;
             return result;
 
         }
+
+        public static string GetAlarmCacheString(IO_DEVICE device, out List<IO_PARAALARM> alarms)
+        {
+            alarms = new List<IO_PARAALARM>();
+
+            IODeviceParaMaker paraMaker = new IODeviceParaMaker();
+            string alarmString = "";
+            for (int i = 0; i < device.IOParas.Count; i++)
+            {
+                try
+                {
+
+                    IO_PARAALARM alarm = paraMaker.MakeAlarm(device.IOParas, device.IOParas[i], device.IOParas[i].IORealData, device.IO_DEVICE_LABLE);
+                    if (alarm != null && !string.IsNullOrEmpty(alarm.IO_ALARM_DATE))
+                    {
+                        alarmString += "^" + alarm.GetCommandString();
+                        alarms.Add(alarm);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+
+            }
+            return alarmString;
+        }
+        
+
+
         /// <summary>
         /// 从采集站端上传报警值
         /// </summary>
@@ -98,51 +144,45 @@ namespace IOMonitor.Core
         /// <param name="comm"></param>
         /// <param name="device"></param>
         /// <returns></returns>
-        public static List<IO_PARAALARM> UploadAlarm(IO_SERVER server, IO_COMMUNICATION comm, IO_DEVICE device)
+        public static bool UploadAlarm(List<AlarmCacheObject> receiveCaches)
         {
-            List<IO_PARAALARM> alarms = new List<IO_PARAALARM>();
 
-            IODeviceParaMaker paraMaker = new IODeviceParaMaker();
 
-            for (int i = 0; i < device.IOParas.Count; i++)
+            bool result = false;
+            string sendString = "";
+            receiveCaches.ForEach(delegate (AlarmCacheObject p) {
+
+                sendString += p.DataString + "^";
+            });
+
+            try
             {
-                try
+
+                Scada.AsyncNetTcp.TcpData tcpData = new Scada.AsyncNetTcp.TcpData();
+                byte[] simuBytes = tcpData.StringToTcpByte(sendString, Scada.AsyncNetTcp.ScadaTcpOperator.报警值);
+
+
+              
+                if (IOMonitorManager.TcpClient != null && IOMonitorManager.TcpClient.IsClientConnected)
                 {
-
-                    IO_PARAALARM alarm = paraMaker.MakeAlarm(device.IOParas, device.IOParas[i], device.IOParas[i].IORealData, device.IO_DEVICE_LABLE);
-                    if (alarm != null)
-                    {
-                        byte[] simuBytes = TcpData.StaticStringToTcpByte(alarm.GetCommandString(), Scada.AsyncNetTcp.ScadaTcpOperator.报警值);
-
-                        try
-                        {
-                            if (IOMonitorManager.TcpClient != null && IOMonitorManager.TcpClient.IsClientConnected)
-                            {
-                                IOMonitorManager.TcpClient.Send(new ArraySegment<byte>(simuBytes));
-                                alarms.Add(alarm);
-                            }
-                           
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            //写入错误日志，并将错误日志返回的日志窗体
-                            MonitorFormManager.DisplyException(ex);
-                        }
-                    }
+                    IOMonitorManager.TcpClient.Send(new ArraySegment<byte>(simuBytes));
+                    result = true;
                 }
-                catch (Exception emx)
-                {
-                    continue;
-                }
-
             }
+            catch (Exception ex)
+            {
 
+                result = false;
+                //写入错误日志，并将错误日志返回的日志窗体
+                MonitorFormManager.DisplyException(ex);
+            }
+            receiveCaches.Clear();
+            receiveCaches = null;
+            sendString = "";
+            return result;
 
-
-            return alarms;
         }
+
     }
 
 

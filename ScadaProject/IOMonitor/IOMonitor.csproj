@@ -84,6 +84,7 @@
     <Compile Include="Core\IOMonitorManager.cs" />
     <Compile Include="Core\RealDataDBUtility.cs" />
     <Compile Include="Core\IOMonitorTCPClient.cs" />
+    <Compile Include="Core\ReceiveRealCache.cs" />
     <Compile Include="Core\RelationalDatabase.cs" />
     <Compile Include="Core\SimulatorManager.cs" />
     <Compile Include="Forms\IOMonitorForm.cs">

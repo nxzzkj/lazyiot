@@ -26,3 +26,10 @@ E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Mod
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.csproj.CoreCompileInputs.cache
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.csproj.CopyComplete
 E:\LazyScadaOS\LazyScadaCore\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Release\Scada.Model.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Release\Scada.IOStructure.dll
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\bin\Release\Scada.IOStructure.pdb
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.csprojAssemblyReference.cache
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.csproj.CoreCompileInputs.cache
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.csproj.CopyComplete
+D:\开源发布\LazyScadaCode\IOCenterServerBase\IOCenterServer.Model\obj\Release\Scada.Model.dll

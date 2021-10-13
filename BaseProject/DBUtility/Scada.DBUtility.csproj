@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="LocalIp.cs" />
     <Compile Include="MySQL_Connection.cs" />
+    <Compile Include="NoSleepWay.cs" />
     <Compile Include="ObjectSerialize.cs" />
     <Compile Include="Oracle_Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
